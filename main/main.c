@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 #include "SENSORES.H"
+#include "DISTANCIAS.H"
 
 int main()
 {
@@ -12,6 +13,10 @@ int main()
     carregarSensor(listaSensor);
     libertarNodeSensor(nodeSensor);
     //CARREGAR DISTANCIA
+    DISTANCIAS_LISTA* listaDistancias = criarListaDistancias();
+    DISTANCIAS_NODE* nodeDistancia = criarNodeDistancias();
+    carregarDistancia(listaDistancias);
+    mostrarListaDISTANCIA(listaDistancias); //FALTA DESTRUIR NO 
     //CARREGAR PASSAGEM
 }
 

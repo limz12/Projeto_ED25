@@ -34,8 +34,10 @@ NODE_SENSOR* criarNodeSensor()
 	}
 	//alocar memoria para o conteudo
 	node->info = (SENSOR*)malloc(sizeof(SENSOR));
+	node->info->latitude = (Sensor_Latitude*)malloc(sizeof(Sensor_Latitude));
+	node->info->longitude = (Sensor_Longitude*)malloc(sizeof(Sensor_Longitude));
 
-	node->info->codSensor = NULL;
+	
 	node->next = NULL;
 
 	return node;
@@ -58,6 +60,8 @@ void carregarSensor(LISTA_SENSOR* lista)
 {
 	//para o compilador reconhecer os caracteres especiais do ficheiro, visto que sem esta linha obtinha caracteres estranhos
 	setlocale(LC_ALL, "en_US.UTF-8");
+
+
 	
 	if (!lista)
 	{
@@ -97,13 +101,28 @@ void carregarSensor(LISTA_SENSOR* lista)
 				printf("ERRO A CRIAR NODE\n");
 				return;
 			}
-			printf("%s", buffer);
+		
 			//adicionar os valores do BUFFER para o node;
+			sscanf(buffer, "%d\t%[^\t]\t%dº %c, %d’, %d’’\t%dº %c, %d’, %d’’",
+				&node->info->codSensor,
+				node->info->designacao,
+				&node->info->latitude->graus,
+				&node->info->latitude->direcao,
+				&node->info->latitude->minutos,
+				&node->info->latitude->segundos,
+				&node->info->longitude->graus,
+				&node->info->longitude->direcao,
+				&node->info->longitude->minutos,
+				&node->info->longitude->segundos);
+			//adicionar o node para a lista
+			printf("%s", buffer);
+			printf("ID: %d\n", node->info->codSensor);
 			
-
 		}
 		
 	}
 
 	fclose(fich);
 }
+
+//falta libertarLISTA()
