@@ -3,32 +3,14 @@
 
 #define MAX_CHAR 50
 
-//estrutura LATITUDE
-typedef struct
-{
-	int graus;
-	char direcao[3];
-	int minutos;
-	int segundos;
-}Sensor_Latitude;
-
-//estrutura LONGITUDE
-typedef struct
-{
-	int graus;
-	char direcao[3];
-	int minutos;
-	int segundos;
-
-}Sensor_Longitude;
 
 //ESTRUTURA DO SENSOR
 typedef struct
 {
 	int codSensor;
 	char designacao[MAX_CHAR];
-	Sensor_Latitude* latitude;
-	Sensor_Longitude* longitude;
+	char infoLatitude[MAX_CHAR];
+	char infoLongitude[MAX_CHAR];
 }SENSOR;
 
 //NODE DO SENSOR
