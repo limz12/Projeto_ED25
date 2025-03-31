@@ -31,5 +31,5 @@ DISTANCIAS_LISTA* criarListaDistancias();
 DISTANCIAS_NODE* criarNodeDistancias();
 void carregarDistancia(DISTANCIAS_LISTA *lista);
 void adicionarLista(DISTANCIAS_LISTA* lista, DISTANCIAS_NODE* node);
-void mostrarListaDISTANCIA(DISTANCIAS_LISTA* lista);
 void libertarNodeDistancia(DISTANCIAS_NODE* node);
+void mostrarListaDISTANCIA(DISTANCIAS_LISTA* lista);

@@ -41,3 +41,6 @@ typedef struct
 PASSAGEM_LISTA* criarListaPassagem();
 PASSAGEM_NODE* criarNodePassagem();
 void carregarPassagem(PASSAGEM_LISTA* lista);
+void adicionarListaPassagem(PASSAGEM_LISTA* lista, PASSAGEM_NODE* node);
+void mostrarListaPassagem(PASSAGEM_LISTA* lista);
+void libertarNodePassagem(PASSAGEM_NODE* node);

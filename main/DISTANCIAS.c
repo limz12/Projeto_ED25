@@ -75,10 +75,9 @@ void carregarDistancia(DISTANCIAS_LISTA* lista)
 			adicionarLista(lista, node);
 		}
 	}
-
-
-
 	fclose(fich);
+	printf("DISTANCIA.TXT carregado com sucesso!\n");
+
 }
 
 void adicionarLista(DISTANCIAS_LISTA* lista, DISTANCIAS_NODE* node)
@@ -139,4 +138,5 @@ void libertarNodeDistancia(DISTANCIAS_NODE* node)
 	}
 	free(node->info);
 	free(node);
+	printf("NODE LIBERTADO COM SUCESSO\n");
 }

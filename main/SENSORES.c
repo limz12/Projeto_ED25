@@ -49,7 +49,7 @@ int libertarNodeSensor(NODE_SENSOR* node)
 
 	free(node->info);
 	free(node);
-	return 1;
+	printf("NODE LIBERTADO COM SUCESSO\n");
 }
 
 void carregarSensor(LISTA_SENSOR* lista)
@@ -97,6 +97,7 @@ void carregarSensor(LISTA_SENSOR* lista)
 			sscanf(buffer, "%d\t%[^\t]\t%[^\t]\t%[^\t]", &node->info->codSensor, node->info->designacao, node->info->infoLatitude, node->info->infoLongitude);
 				
 			//adicionar o node para a lista
+
 			adicionarListaSensores(lista, node);
 		}
 		

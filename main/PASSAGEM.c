@@ -73,16 +73,74 @@ void carregarPassagem(PASSAGEM_LISTA* lista)
 			
 			sscanf(buffer, "%d\t%d\t%d-%d-%d %d:%d:%d.%d\t%d",&node->info->idSensor, &node->info->codVeiculo, &node->info->data->dia, &node->info->data->mes, &node->info->data->ano, &node->info->data->hora, &node->info->data->minuto, &node->info->data->segundo, &node->info->data->milisegundo, &node->info->tipoRegisto);
 			
-			printf("%d\t%d\t%d-%d-%d %d:%d:%d.%d\t%d\n", node->info->idSensor, node->info->codVeiculo, node->info->data->dia, node->info->data->mes, node->info->data->ano, node->info->data->hora, node->info->data->minuto, node->info->data->segundo, node->info->data->milisegundo, node->info->tipoRegisto);
+			//printf("%d\t%d\t%d-%d-%d %d:%d:%d.%d\t%d\n", node->info->idSensor, node->info->codVeiculo, node->info->data->dia, node->info->data->mes, node->info->data->ano, node->info->data->hora, node->info->data->minuto, node->info->data->segundo, node->info->data->milisegundo, node->info->tipoRegisto);
 
 			//adicionar o node a lista PASSAGEM
-
+			adicionarListaPassagem(lista, node);
 		}
 	}
-
-
-
+	printf("PASSAGEM.TXT carregado com sucesso!\n");
 
 	fclose(fich);
 }
 
+void adicionarListaPassagem(PASSAGEM_LISTA* lista, PASSAGEM_NODE* node)
+{
+	if (!lista || !node)
+	{
+		printf("ERRO! LISTA ou NODE PASSAGEM nao existem\n");
+		return;
+	}
+	
+	//se nao existir nenhum no na lista
+	if (lista->header == NULL)
+	{
+		lista->header = node;
+		lista->ultimoNode = node;
+		lista->numElementos++;
+	}
+	else //se o ja existirem nos, adiciona no fim da lista
+	{
+		lista->ultimoNode->next = node;
+		lista->ultimoNode = node;
+		lista->numElementos++;
+	}
+}
+
+void mostrarListaPassagem(PASSAGEM_LISTA* lista)
+{
+	//verificar se a lista existe
+	if (!lista)
+	{
+		printf("Erro! A lista Passagem nao existe\n");
+		return;
+	}
+
+	//criar um node auxiliar para percorrer toda a lista
+	PASSAGEM_NODE* aux = lista->header;
+	printf("***********************\n");
+	printf("\t LISTA PASSAGENS\n");
+	printf("***********************\n");
+	printf("ID_SENSOR\tCOD_VEICULO\tDATA\tTIPO_REGISTO");
+
+	while (aux != NULL)
+	{
+		printf("%d\t%d\t%d-%d-%d %d:%d:%d.%d\t%d\n",aux->info->idSensor,aux->info->codVeiculo, aux->info->data->dia, aux->info->data->mes, aux->info->data->ano, aux->info->data->hora, aux->info->data->minuto, aux->info->data->segundo, aux->info->data->milisegundo, aux->info->tipoRegisto);
+		aux = aux->next;
+	}
+}
+
+void libertarNodePassagem(PASSAGEM_NODE* node)
+{
+	if (!node)
+	{
+		printf("ERRO! O NODE PASSAGENS EXISTE\n");
+		return;
+	}
+
+	free(node->info->data);
+	free(node->info);
+	free(node);
+	
+	printf("NODE LIBERTADO COM SUCESSO\n");
+}
