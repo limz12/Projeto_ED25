@@ -36,3 +36,4 @@ LISTA_SENSOR* criarListaSensor();
 NODE_SENSOR* criarNodeSensor();
 int libertarNodeSensor(NODE_SENSOR* node);
 void carregarSensor(LISTA_SENSOR* lista);
+void adicionarListaSensores(LISTA_SENSOR* lista, NODE_SENSOR* node);

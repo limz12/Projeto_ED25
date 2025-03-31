@@ -97,15 +97,37 @@ void carregarSensor(LISTA_SENSOR* lista)
 			sscanf(buffer, "%d\t%[^\t]\t%[^\t]\t%[^\t]", &node->info->codSensor, node->info->designacao, node->info->infoLatitude, node->info->infoLongitude);
 				
 			//adicionar o node para a lista
-			//printf("%s", buffer);
-			printf("%d\t%s\t%s\n", node->info->codSensor, node->info->designacao, node->info->infoLatitude, node->info->infoLongitude);
-			
-			//funcao adicionar a lista
+			adicionarListaSensores(lista, node);
 		}
 		
 	}
 
 	fclose(fich);
+}
+
+void adicionarListaSensores(LISTA_SENSOR* lista, NODE_SENSOR* node)
+{
+	//verificacao de entrada
+	if (!lista || !node)
+	{
+		printf("ERRO! LISTA SENSOR E NODE SENSOR NAO EXISTEM\n");
+		return;
+	}
+	NODE_SENSOR* aux = lista->header;
+
+	//se a lista nao possuir nenhum no
+	if (lista->header == NULL)
+	{
+		lista->header = node;
+		lista->ultimoNODE = node;
+		lista->numElementos++;
+	}
+	else // se ja existirem NOS na lista, adiciona no fim
+	{
+		lista->ultimoNODE->next = node;
+		lista->ultimoNODE = node;
+		lista->numElementos++;
+	}
 }
 
 //falta libertarLISTA()

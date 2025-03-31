@@ -118,7 +118,7 @@ void mostrarListaDISTANCIA(DISTANCIAS_LISTA* lista)
 
 	DISTANCIAS_NODE* aux = lista->header;
 	printf("*******************************\n");
-	printf("LISTA SENSORES\n");
+	printf("LISTA DISTANCIAS\n");
 	printf("*******************************\n");
 	printf("COD_SENSOR_1\tCOD_SENSOR_2\tDISTANCIA_PERCORRIDA\n");
 
@@ -128,4 +128,15 @@ void mostrarListaDISTANCIA(DISTANCIAS_LISTA* lista)
 		printf("%d\t\t%d\t\t%.1f\n", aux->info->codSensor1, aux->info->codSensor2, aux->info->distanciaPercorrida);
 		aux = aux->next;
 	}
+}
+
+void libertarNodeDistancia(DISTANCIAS_NODE* node)
+{
+	if (!node)
+	{
+		printf("ERRO! NODE DISTANCIAS NAO EXISTE\n");
+		return;
+	}
+	free(node->info);
+	free(node);
 }

@@ -24,12 +24,18 @@
     <ClCompile Include="DISTANCIAS.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PASSAGEM.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SENSORES.H">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DISTANCIAS.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PASSAGEM.H">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
