@@ -141,6 +141,40 @@ void libertarNodePassagem(PASSAGEM_NODE* node)
 	free(node->info->data);
 	free(node->info);
 	free(node);
-	
-	printf("NODE LIBERTADO COM SUCESSO\n");
+
+}
+
+void libertarListaPassagem(PASSAGEM_LISTA* lista)
+{
+	if (!lista)
+	{
+		printf("ERRO! A LISTA DISTANCIA NAO EXISTE \n");
+		return;
+	}
+	//se a lista tiver vazia libertar
+	if (lista->header == NULL && lista->ultimoNode == NULL)
+	{
+		free(lista);
+		printf("LISTA DISTANCIA REMOVIDA COM SUCESSO\n");
+	}
+	else// se a lista possuir NODES eliminar um a um
+	{
+		//atribuir uma variavel auxiliar para ajudar na eliminacao
+		PASSAGEM_NODE* aux = lista->header;
+
+		while (lista->header != NULL) // vai eliminar do inicio para o fim da fila
+		{
+			//posicionar o aux no proximo no 
+			aux = aux->next;
+			//eliminar o no da primeira posicao
+			libertarNodeDistancia(lista->header);
+			//posicionar o ponteiro header da lista para o auxiliar
+			lista->header = aux;
+			lista->numElementos--;
+
+		}
+		//ao fim de eliminar todos os nos
+		free(lista);
+		printf("LISTA DISTANCIAS LIBERTADA COM SUCESSO! \n");
+	}
 }

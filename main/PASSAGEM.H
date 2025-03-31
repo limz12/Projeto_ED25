@@ -44,3 +44,4 @@ void carregarPassagem(PASSAGEM_LISTA* lista);
 void adicionarListaPassagem(PASSAGEM_LISTA* lista, PASSAGEM_NODE* node);
 void mostrarListaPassagem(PASSAGEM_LISTA* lista);
 void libertarNodePassagem(PASSAGEM_NODE* node);
+void libertarListaPassagem(PASSAGEM_LISTA* lista);

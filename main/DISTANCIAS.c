@@ -129,7 +129,7 @@ void mostrarListaDISTANCIA(DISTANCIAS_LISTA* lista)
 	}
 }
 
-void libertarNodeDistancia(DISTANCIAS_NODE* node)
+void  libertarNodeDistancia(DISTANCIAS_NODE* node)
 {
 	if (!node)
 	{
@@ -138,5 +138,39 @@ void libertarNodeDistancia(DISTANCIAS_NODE* node)
 	}
 	free(node->info);
 	free(node);
-	printf("NODE LIBERTADO COM SUCESSO\n");
+}
+
+void libertarListaDistancia(DISTANCIAS_LISTA* lista)
+{
+	if (!lista)
+	{
+		printf("ERRO! A LISTA DISTANCIA NAO EXISTE \n");
+		return;
+	}
+	//se a lista tiver vazia libertar
+	if (lista->header == NULL && lista->ultimoNode == NULL)
+	{
+		free(lista);
+		printf("LISTA DISTANCIA REMOVIDA COM SUCESSO\n");
+	}
+	else// se a lista possuir NODES eliminar um a um
+	{
+		//atribuir uma variavel auxiliar para ajudar na eliminacao
+		DISTANCIAS_NODE* aux = lista->header;
+
+		while (lista->header != NULL) // vai eliminar do inicio para o fim da fila
+		{
+			//posicionar o aux no proximo no 
+			aux = aux->next;
+			//eliminar o no da primeira posicao
+			libertarNodeDistancia(lista->header);
+			//posicionar o ponteiro header da lista para o auxiliar
+			lista->header = aux;
+			lista->numelementos--;
+
+		}
+		//ao fim de eliminar todos os nos
+		free(lista);
+		printf("LISTA DISTANCIAS LIBERTADA COM SUCESSO! \n");
+	}
 }

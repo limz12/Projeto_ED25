@@ -18,6 +18,7 @@ int main()
     carregarSensor(listaSensor);
     //FALTA MOSTRAR A LISTA SENSOR
     libertarNodeSensor(nodeSensor);
+    FALTA LIBERTAR LISTA
     */
 
     //CARREGAR DISTANCIA
@@ -27,6 +28,7 @@ int main()
     carregarDistancia(listaDistancias);
     //mostrarListaDISTANCIA(listaDistancias);
     libertarNodeDistancia(nodeDistancia);
+    libertarListaDistancia(listaDistancias);
     
     
     //CARREGAR PASSAGEM
@@ -35,7 +37,9 @@ int main()
     carregarPassagem(listaPassagem);
     //mostrarListaPassagem(listaPassagem);
     libertarNodePassagem(nodePassagem);
+    libertarListaPassagem(listaPassagem);
+    
+    //NO FIM DE TUDO FEITO CRIAR UM STARTUP QUE INICIE TODOS OS CARREGAMENTOS E VERIFIQUE SE ESTAO CARREGADOS\
 
-    //NO FIM DE TUDO FEITO CRIAR UM STARTUP QUE INICIE TODOS OS CARREGAMENTOS E VERIFIQUE SE ESTAO CARREGADOS
 }
 
