@@ -1,9 +1,25 @@
-#include <stdlib.h>
-#include <stdio.h>
+#include "carros.h"
 
 int main()
 {
-    printf("PROJETO ED 2025\n");
-    //TESTE 123132
+    printf("\tMAIN CARROS.TXT\n");
+    
+    int opc;
+
+    // FAZER MENU BONITINHO TRALALERO TRALALA...
+
+    printf("Escolha uma opcao:");
+    scanf_s("%d", &opc);
+
+    switch(opc)
+    { 
+        case 1:
+            carregarDados();
+         
+        default:
+            break;
+    }
+    
+    return 0;
 }
 
