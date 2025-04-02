@@ -133,6 +133,9 @@
   <ItemGroup>
     <ClInclude Include="carros.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\carros.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
