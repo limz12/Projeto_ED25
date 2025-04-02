@@ -1,9 +1,14 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "donos.h"
 
 int main()
 {
-    printf("PROJETO ED 2025\n");
-    //TESTE 123132
+    printf("main Donos.txt\n");
+
+	LISTA_DONOS* listaDonos = criarListaDonos();    
+    carregarDadosDonos(listaDonos);
+
+
 }
 
