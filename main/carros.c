@@ -13,13 +13,13 @@ LISTA_CARRO* criarListaCarro()
 		return;
 	}
 
-		lista->header = NULL; // ponteiro do inicio da lista
-		lista->ultimo_node = NULL; // ponteiro para o ultimo elemento da lista
-		lista->num_elem = 0;
+	lista->header = NULL; // ponteiro do inicio da lista
+	lista->ultimo_node = NULL; // ponteiro para o ultimo elemento da lista
+	lista->num_elem = 0;
 
-		printf("Lista de Carros criada com sucesso!\n");
+	printf("Lista de Carros criada com sucesso!\n");
 
-		return lista;
+	return lista;
 }
 
 NODE_CARRO* criarNodeCarro()
@@ -103,9 +103,9 @@ void carregarDadosCarro(LISTA_CARRO* lista)
 			}
 
 			// Adiciona o conteúdo à variável string auxiliar
-			sscanf(str_aux, "%s\t%[^\t]\t%[^\t]\t%[^\t]\t%[^\t]\t%[^\t]",
-				&node->info->matricula, node->info->marca, node->info->modelo,
-				node->info->ano, node->info->dono, node->info->codVeiculo);
+			sscanf(str_aux, "%s\t%s\t%s\t%d\t%d\t%d", 
+				node->info->matricula, node->info->marca, node->info->modelo, 
+				&node->info->ano, &node->info->dono, &node->info->codVeiculo);
 
 			// Adicionar o elemento/linha à lista de carros
 			addListaCarro(lista, node);
