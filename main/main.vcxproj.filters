@@ -27,6 +27,9 @@
     <ClCompile Include="PASSAGEM.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MENU.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SENSORES.H">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PASSAGEM.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MENU.H">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

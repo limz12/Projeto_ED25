@@ -22,22 +22,24 @@ int main()
     */
 
     //CARREGAR DISTANCIA
-    
+    /*
     DISTANCIAS_LISTA* listaDistancias = criarListaDistancias();
     DISTANCIAS_NODE* nodeDistancia = criarNodeDistancias();
     carregarDistancia(listaDistancias);
     //mostrarListaDISTANCIA(listaDistancias);
     libertarNodeDistancia(nodeDistancia);
     libertarListaDistancia(listaDistancias);
-    
+    */
     
     //CARREGAR PASSAGEM
     PASSAGEM_LISTA* listaPassagem = criarListaPassagem();
     PASSAGEM_NODE* nodePassagem = criarNodePassagem();
     carregarPassagem(listaPassagem);
     //mostrarListaPassagem(listaPassagem);
-    libertarNodePassagem(nodePassagem);
-    libertarListaPassagem(listaPassagem);
+    //libertarNodePassagem(nodePassagem);
+    //libertarListaPassagem(listaPassagem);
+    //registarPassagem
+    registarPassagem(listaPassagem);
     
     //NO FIM DE TUDO FEITO CRIAR UM STARTUP QUE INICIE TODOS OS CARREGAMENTOS E VERIFIQUE SE ESTAO CARREGADOS\
 

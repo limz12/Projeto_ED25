@@ -129,11 +129,13 @@
   <ItemGroup>
     <ClCompile Include="DISTANCIAS.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="MENU.c" />
     <ClCompile Include="PASSAGEM.c" />
     <ClCompile Include="SENSORES.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DISTANCIAS.H" />
+    <ClInclude Include="MENU.H" />
     <ClInclude Include="PASSAGEM.H" />
     <ClInclude Include="SENSORES.H" />
   </ItemGroup>
