@@ -58,7 +58,7 @@ void carregarDistancia(DISTANCIAS_LISTA* lista)
 		//verificar se tem linhas em branco
 		if (strcmp(buffer, "\n") == 0)
 		{
-			printf("Linha em branco\n");
+			//printf("Linha em branco\n");
 		}
 		else
 		{
@@ -127,6 +127,7 @@ void mostrarListaDISTANCIA(DISTANCIAS_LISTA* lista)
 		printf("%d\t\t%d\t\t%.1f\n", aux->info->codSensor1, aux->info->codSensor2, aux->info->distanciaPercorrida);
 		aux = aux->next;
 	}
+	printf("**********************************************\n");
 }
 
 void  libertarNodeDistancia(DISTANCIAS_NODE* node)

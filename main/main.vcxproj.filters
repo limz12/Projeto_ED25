@@ -30,6 +30,9 @@
     <ClCompile Include="MENU.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UTEIS.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SENSORES.H">
@@ -42,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MENU.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UTEIS.H">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

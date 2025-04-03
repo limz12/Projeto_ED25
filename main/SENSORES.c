@@ -4,6 +4,7 @@
 #include <string.h>
 #include <locale.h>
 
+#include <windows.h>
 #include "SENSORES.H"
 
 LISTA_SENSOR* criarListaSensor()
@@ -49,15 +50,11 @@ int libertarNodeSensor(NODE_SENSOR* node)
 
 	free(node->info);
 	free(node);
-	printf("NODE LIBERTADO COM SUCESSO\n");
+	
 }
 
 void carregarSensor(LISTA_SENSOR* lista)
 {
-	//para o compilador reconhecer os caracteres especiais do ficheiro, visto que sem esta linha obtinha caracteres estranhos
-	setlocale(LC_ALL, "en_US.UTF-8");
-
-
 	
 	if (!lista)
 	{
@@ -87,18 +84,20 @@ void carregarSensor(LISTA_SENSOR* lista)
 		{
 			//criar o NODE
 			NODE_SENSOR* node = criarNodeSensor();
+			
 			if (!node)
 			{
 				printf("ERRO A CRIAR NODE\n");
 				return;
 			}
-		
+			
 			//adicionar os valores do BUFFER para o node;
-			sscanf(buffer, "%d\t%[^\t]\t%[^\t]\t%[^\t]", &node->info->codSensor, node->info->designacao, node->info->infoLatitude, node->info->infoLongitude);
+			sscanf(buffer,"%d\t%s\t%[^\t]\t%[^\t]", &node->info->codSensor, node->info->designacao, node->info->infoLatitude, node->info->infoLongitude);
 				
 			//adicionar o node para a lista
-
 			adicionarListaSensores(lista, node);
+			 
+			
 		}
 		
 	}
@@ -131,4 +130,44 @@ void adicionarListaSensores(LISTA_SENSOR* lista, NODE_SENSOR* node)
 	}
 }
 
-//falta libertarLISTA()
+void mostrarListaSensores(LISTA_SENSOR* lista)
+{
+	if (!lista)
+	{
+		printf("ERRO! A lista nao existe\n");
+		return;
+	}
+	//criar a variavel aux, para percorrer por todos os nos da lista
+	NODE_SENSOR* aux = lista->header;
+	printf("*******************************\n");
+	printf("LISTA SENSORES\n");
+	printf("*******************************\n");
+	printf("COD_SENSOR\tDESIGNACAO\tLATITUDE\tLONGITUDE\n");
+
+	while (aux)
+	{
+		printf("%d\t\t%s\t\t%s\t%s\n",aux->info->codSensor, aux->info->designacao, aux->info->infoLatitude, aux->info->infoLongitude);
+		aux = aux->next;
+	}
+	printf("*******************************\n");
+}
+
+void libertarListaSensores(LISTA_SENSOR* lista)
+{
+	if (!lista)
+	{
+		printf("ERRO! A lista nao existe\n");
+		return;
+	}
+	
+	//enquanto existir um header na lista
+	while (lista->header)
+	{
+		//eliminar os nodes 1 a 1 do inicio da lista
+		NODE_SENSOR* aux = lista->header;
+		lista->header = aux->next;
+		libertarNodeSensor(aux);
+	}
+
+	printf("LISTA REMOVIDA COM SUCESSO\n");
+}

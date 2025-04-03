@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#define MAX_CHAR 50
+#define MAX_CHAR 1000
 
 
 //ESTRUTURA DO SENSOR
@@ -37,3 +37,5 @@ NODE_SENSOR* criarNodeSensor();
 int libertarNodeSensor(NODE_SENSOR* node);
 void carregarSensor(LISTA_SENSOR* lista);
 void adicionarListaSensores(LISTA_SENSOR* lista, NODE_SENSOR* node);
+void mostrarListaSensores(LISTA_SENSOR* lista);
+void libertarListaSensores(LISTA_SENSOR* lista);

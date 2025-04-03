@@ -225,9 +225,24 @@ void registarPassagem(PASSAGEM_LISTA* lista)
 		scanf("%d ", &node->info->data->minuto);
 		scanf("%d", &node->info->data->segundo);
 		scanf("%d", &node->info->data->milisegundo);
-		printf("Qual foi o tipo de registo? [0 -> ENTRADA / 1-> SAIDA]:\n");
-		scanf("%d", &node->info->tipoRegisto);
-		//verificar os dados intoduzidos
+
+		int flag3 = 0;
+		while (flag3 == 0)
+		{
+			printf("Qual foi o tipo de registo? [0 -> ENTRADA / 1-> SAIDA]:\n");
+			scanf("%d", &node->info->tipoRegisto);
+			//verificar os dados intoduzidos
+			if (node->info->tipoRegisto > 1 || node->info->tipoRegisto < 0)
+			{
+				printf("ERRO! OPCAO INVALIDA\n");
+			}
+			else
+			{
+				flag3 = 1;
+			}
+		}
+
+		
 		if (verificarNodeDadosPassagem(node) == 1)
 		{
 			//depois do utilizador introduzir todas as informacoes vamos guardar na lista
@@ -237,13 +252,24 @@ void registarPassagem(PASSAGEM_LISTA* lista)
 		else
 		{
 			printf("ERRO! INSERCAO REJEITADA. DADOS INVALIDOS\n");
-			return;
 		}
+		int flag2 = 0;
 
-		printf("Pretende registar mais passagens?\n");
-		printf("1 -> SIM | 0 -> NAO\n");
-		scanf("%d", &criar);
-
+		while (flag2 == 0)
+		{
+			printf("Pretende registar mais passagens?\n");
+			printf("1 -> SIM | 0 -> NAO\n");
+			scanf("%d", &criar);
+			//evitar que o user insira outros numeros para alem do 1 e 0
+			if (criar < 0 || criar > 1)
+			{
+				printf("ERRO! OPCAO INVALIDA\n");
+			}
+			else
+			{
+				flag2 = 1;
+			}
+		}
 	}
 
 
