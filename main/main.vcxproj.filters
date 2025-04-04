@@ -23,11 +23,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\..\Downloads\ED_EI_2024-2025 Dados-Portagens-Trab-Pratico\Dados-Portagens-Trab-Pratico\donos.txt">
-      <Filter>Source Files</Filter>
-    </Text>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="donos.h">
       <Filter>Header Files</Filter>
     </ClInclude>

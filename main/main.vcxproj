@@ -133,9 +133,6 @@
   <ItemGroup>
     <ClInclude Include="donos.h" />
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="..\..\..\Downloads\ED_EI_2024-2025 Dados-Portagens-Trab-Pratico\Dados-Portagens-Trab-Pratico\donos.txt" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

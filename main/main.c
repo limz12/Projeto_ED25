@@ -2,13 +2,12 @@
 #include <stdio.h>
 #include "donos.h"
 
-int main()
-{
-    printf("main Donos.txt\n");
+int main() {
+	printf("\tMain donos.txt\n");
 
-	LISTA_DONOS* listaDonos = criarListaDonos();    
-    carregarDadosDonos(listaDonos);
+	LISTA_DONOS* lista = criarListaDonos();
+	carregarDadosDonos(lista);
 
-
+	listarDonos(lista);
 }
 
