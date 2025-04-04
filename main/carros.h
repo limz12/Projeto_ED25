@@ -43,3 +43,6 @@ NODE_CARRO* criarNodeCarro();
 int freeNodeCarro(NODE_CARRO* node);
 void carregarDadosCarro(LISTA_CARRO* lista);
 void addListaCarro(LISTA_CARRO* lista, NODE_CARRO* node);
+void criarCarroUtilizador(LISTA_CARRO* lista);
+void mostrarListaSensores(LISTA_CARRO* lista);
+void freeListaCarro(LISTA_CARRO* lista);

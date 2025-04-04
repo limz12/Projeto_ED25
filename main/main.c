@@ -6,4 +6,10 @@ int main()
 
     LISTA_CARRO* lista = criarListaCarro();
     carregarDadosCarro(lista);
+
+    //criarCarroUtilizador(lista);
+
+    mostrarListaSensores(lista);
+
+    //freeListaCarro(lista);
 }
