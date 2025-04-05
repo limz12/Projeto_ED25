@@ -141,7 +141,7 @@ void menuSensores(LISTA_SENSOR* listaSensores)
 	}
 }
 
-void menuCarros(LISTA_CARRO* listaCarros)
+void menuCarros(LISTA_CARRO* listaCarros, LISTA_DONOS* listaDonos)
 {
 	system("cls");
 	//verificar se todas as listas estao presentes
@@ -153,7 +153,7 @@ void menuCarros(LISTA_CARRO* listaCarros)
 
 	int escolha;
 	printf("# --------------------  MENU CARROS  ----------------------#\n");
-	printf("|  (1) Mostrar Lista Carros                                  |\n");
+	printf("|  (1) Mostrar Lista Carros (ATENCAO! EXTENSO)               |\n");
 	printf("|  (2) Inserir Carro                                         |\n");
 	printf("|------------------------------------------------------------|\n");
 	printf("|  (0) Menu Principal                                        |\n");
@@ -173,11 +173,10 @@ void menuCarros(LISTA_CARRO* listaCarros)
 		break;
 	case 2:
 		system("cls");
-		criarCarroUtilizador(listaCarros);
+		criarCarroUtilizador(listaCarros,listaDonos);
 		break;
 	}
 }
-
 
 void menuDonos(LISTA_DONOS* listaDonos)
 {

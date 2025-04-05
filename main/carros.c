@@ -8,7 +8,7 @@
 
 
 #include "carros.h"
-
+#include "donos.h"
 
 LISTA_CARRO* criarListaCarro()
 {
@@ -152,9 +152,9 @@ void addListaCarro(LISTA_CARRO* lista, NODE_CARRO* node)
 	}
 }
 
-void criarCarroUtilizador(LISTA_CARRO* lista)
+void criarCarroUtilizador(LISTA_CARRO* lista, LISTA_DONOS* listaDonos)
 {
-	if (!lista)
+	if (!lista && !listaDonos)
 	{
 		printf("ERRO! A lista do carro nao existe");
 		return;
@@ -177,9 +177,19 @@ void criarCarroUtilizador(LISTA_CARRO* lista)
 	printf("-> Codigo do Veiculo: ");
 	scanf("%d", &(novo_elem->info->codVeiculo));
 
-	// Adiciona o elemento à lista
-	addListaCarro(lista, novo_elem);
-	printf("CARRO ADICIONADO A LISTA! \n");
+	//verificar se o ID do DONO EXISTE
+	if (verificarDONOexiste(novo_elem->info->dono,listaDonos) == 1)
+	{
+		// Adiciona o elemento à lista
+		addListaCarro(lista, novo_elem);
+		printf("CARRO ADICIONADO A LISTA! \n");
+	}
+	else
+	{
+		printf("ERRO! O DONO NAO EXISTE\n");
+	}
+
+	
 }
 
 void mostrarListaCarro(LISTA_CARRO* lista)
@@ -232,4 +242,37 @@ void freeListaCarro(LISTA_CARRO* lista)
 	}
 
 	printf("Lista CARRO removida com sucesso!\n");
+}
+
+//vai percorrer a lista de donos pelo ID e verificar se existe
+int verificarDONOexiste(int idDono, LISTA_DONOS* listaDonos)
+{
+	if (!listaDonos) {
+		printf("Lista DONOS não existe\n");
+		return;
+	}
+
+	NODE_DONOS* atual = listaDonos->primeiro;
+
+	while (atual) {
+		// Verifica se o nó atual não é nulo
+		if (atual->info != NULL) {
+
+			//compara o ID
+			if (idDono == atual->info->numCont)
+			{
+				//printf("O DONO É VALIDO!\n");
+				return 1;
+			}
+		}
+		// Se o nó atual for nulo, imprime uma mensagem de erro
+		else {
+			printf("Erro: info do nó atual é NULL\n");
+		}
+		// Avança para o próximo nó
+		atual = atual->next;
+
+	}
+	return 0;
+
 }

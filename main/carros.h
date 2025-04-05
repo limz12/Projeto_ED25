@@ -2,7 +2,6 @@
 #define MAX_CHAR_STR 20
 #define MAX_CHAR_MATRICULA 8
 
-
 // ESTRUTURAS DO CARRO
 typedef struct 
 {
@@ -36,6 +35,7 @@ NODE_CARRO* criarNodeCarro();
 int freeNodeCarro(NODE_CARRO* node);
 void carregarDadosCarro(LISTA_CARRO* lista);
 void addListaCarro(LISTA_CARRO* lista, NODE_CARRO* node);
-void criarCarroUtilizador(LISTA_CARRO* lista);
+//void criarCarroUtilizador(LISTA_CARRO* lista, LISTA_DONOS* listaDonos);
 void mostrarListaCarro(LISTA_CARRO* lista);
 void freeListaCarro(LISTA_CARRO* lista);
+//int verificarDONOexiste(int idDono, LISTA_DONOS* listaDonos);
