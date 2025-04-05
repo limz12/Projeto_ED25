@@ -26,8 +26,6 @@ LISTA_CARRO* criarListaCarro()
 	lista->ultimo_node = NULL; // ponteiro para o ultimo elemento da lista
 	lista->num_elem = 0;
 
-	printf("Lista de Carros criada com sucesso!\n");
-
 	return lista;
 }
 

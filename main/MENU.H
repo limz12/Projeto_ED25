@@ -7,3 +7,4 @@ void menuDistancias(DISTANCIAS_LISTA* listaDistancias);
 void menuPassagens(PASSAGEM_LISTA* listaPassagens);
 void menuSensores(LISTA_SENSOR* listaSensores);
 void menuCarros(LISTA_CARRO* listaCarros);
+//void menuDonos(LISTA_DONOS* listaDonos);

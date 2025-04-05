@@ -19,14 +19,14 @@ void main()
     DISTANCIAS_LISTA* listaDistancias = criarListaDistancias();
     PASSAGEM_LISTA* listaPassagem = criarListaPassagem();
     LISTA_CARRO* listaCarro = criarListaCarro();
-    LISTA_DONOS* lista = criarListaDonos();
+    LISTA_DONOS* listaDonos = criarListaDonos();
     //**********************************
     //para o compilador reconhecer os caracteres especiais do ficheiro, visto que sem esta linha obtinha caracteres estranhos
     setlocale(LC_ALL, "pt_PT.UTF-8");
     printf("PROJETO ED 2025\n");
     
     //CARREGA TODA A ED
-    int ED = inicializarED(listaSensor, listaDistancias, listaPassagem,listaCarro);
+    int ED = inicializarED(listaSensor, listaDistancias, listaPassagem,listaCarro, listaDonos);
     if (ED == 1)
     {
         printf("Estrutura de dados carregada com sucesso!\n");
@@ -43,12 +43,13 @@ void main()
     //este for com ; ; serve para o programa correr infinitamente
     for (; ;)
     {
-        switch (menuPrincipal(listaSensor, listaDistancias, listaPassagem,listaCarro))
+        switch (menuPrincipal(listaSensor, listaDistancias, listaPassagem,listaCarro, listaDonos))
         {
             case 1:
                 //MENU DONOS
                 //limpar a linha de comandos
                 system("cls");
+                menuDonos(listaDonos);
             break;
             case 2:
                 //MENU CARROS
@@ -73,7 +74,7 @@ void main()
             case 6:
                 //CALCULAR MEMORIA TOTAL da ED
                 system("cls");
-                memoriaTotalOcupadaED(listaSensor, listaDistancias, listaPassagem, listaCarro);
+                memoriaTotalOcupadaED(listaSensor, listaDistancias, listaPassagem, listaCarro, listaDonos);
                 printf("\n");
             break;
             case 0:
@@ -82,6 +83,7 @@ void main()
                 libertarListaPassagem(listaPassagem);
                 libertarListaSensores(listaSensor);
                 freeListaCarro(listaCarro);
+                freeListaDonos(listaDonos);
                 return 0;
            break;
 

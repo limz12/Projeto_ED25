@@ -12,8 +12,7 @@ LISTA_DONOS* criarListaDonos()
 		lista->primeiro = NULL;  // ponteiro para o inicio da lista
 		lista->ultimo = NULL;   // ponteiro para o fim da lista
 		lista->elem = 0; 
-	
-		printf("Lista de Donos criada com sucesso!\n");
+
 	}
 	return lista;
 }
@@ -91,7 +90,7 @@ void carregarDadosDonos(LISTA_DONOS* lista) {
 		adicionarListaDonos(lista, node);
 	}
 
-	printf("Ficheiro Carregado com sucesso\n");
+	printf("DONOS.TXT CARREGADO COM SUCESSO\n");
 	fclose(ficheiro);
 }
 
@@ -126,17 +125,17 @@ void registarDonos(LISTA_DONOS* lista) {
 	NODE_DONOS* novoNode = criarNodeDonos();
 	
 	printf("Insira Dados do Dono\n");
-	printf("Número de Contribuinte:\n ");
-	sscanf("%s",&novoNode->info->numCont);
+	printf("Numero de Contribuinte:\n ");
+	scanf("%d",&novoNode->info->numCont);
 	printf("Nome:\n");
-	sscanf("%s", &novoNode->info->nome);
-	printf("Código postal:\n");
-	sscanf("%s", &novoNode->info->codpost);
+	scanf("%s", novoNode->info->nome);
+	printf("Codigo postal:\n");
+	scanf("%s", &novoNode->info->codpost);
 	
 	//adiciona o elemento criado a lista
 	adicionarListaDonos(lista, novoNode);
-
-	return 0;
+	system("cls");
+	printf("Dono adicionado com sucesso!\n");
 }
 
 
@@ -188,5 +187,5 @@ void freeListaDonos(LISTA_DONOS* lista) {
 
 		freeNodeDonos(aux);
 	}
-	printf("Lista removida\n");
+	printf("LISTA DONOS REMOVIDA\n");
 }

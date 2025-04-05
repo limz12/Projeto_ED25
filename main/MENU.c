@@ -7,13 +7,13 @@
 #include "PASSAGEM.H"
 #include "UTEIS.H"
 #include "carros.h"
-
+#include "donos.h"
 //RESPONSAVEL POR CRIAR TODOS OS MENUS DO PROGRAMA
-int menuPrincipal(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_CARRO* listaCarro)
+int menuPrincipal(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_CARRO* listaCarro,LISTA_DONOS *listaDonos)
 {
 
 	//verificar se todas as listas estao presentes
-	if (!listaSensor && !listaDistancias && !libertarNodePassagem)
+	if (!listaSensor && !listaDistancias && !listaPassagem && !listaCarro && !listaDonos)
 	{
 		printf("ERRO! AS LISTAS NAO EXISTEM (menuPrincipal)\n");
 		return -1;
@@ -174,6 +174,44 @@ void menuCarros(LISTA_CARRO* listaCarros)
 	case 2:
 		system("cls");
 		criarCarroUtilizador(listaCarros);
+		break;
+	}
+}
+
+
+void menuDonos(LISTA_DONOS* listaDonos)
+{
+	system("cls");
+	//verificar se todas as listas estao presentes
+	if (!listaDonos)
+	{
+		printf("ERRO! A LISTA de Donos nao existe\n");
+		return -1;
+	}
+
+	int escolha;
+	printf("# --------------------  MENU DONOS  -------------------------#\n");
+	printf("|  (1) Mostrar Lista Donos (ATENCAO EXTENSO!)                |\n");
+	printf("|  (2) Registar Dono                                         |\n");
+	printf("|------------------------------------------------------------|\n");
+	printf("|  (0) Menu Principal                                        |\n");
+	printf("#------------------------------------------------------------#\n");
+	do
+	{
+		printf("Seleciona uma opcao: \n");
+		scanf("%d", &escolha);
+	} while (escolha < 0 || escolha > 2);
+
+	//chamar as funcoes aqui
+	switch (escolha)
+	{
+	case 1:
+		system("cls");
+		listarDonos(listaDonos);
+		break;
+	case 2:
+		system("cls");
+		registarDonos(listaDonos);
 		break;
 	}
 }

@@ -39,6 +39,6 @@ int freeNodeDonos(NODE_DONOS* node);
 void carregarDadosDonos(LISTA_DONOS* lista);
 void adicionarListaDonos(LISTA_DONOS* lista, NODE_DONOS* node);
 void registarDonos(LISTA_DONOS* lista);
-void ListarDonos(LISTA_DONOS* lista);
+void listarDonos(LISTA_DONOS* lista);
 void freeListaDonos(LISTA_DONOS* lista);
 
