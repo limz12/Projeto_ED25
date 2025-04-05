@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <locale.h>
+#include "carros.h"
 
 #include "SENSORES.H"
 #include "DISTANCIAS.H"
@@ -84,4 +85,7 @@ void main()
    //*************  PARA TESTES DE BRANCH, COMENTAR TUDO O QUE ESTA ACIMA    ****************************
 
 }
+    mostrarListaSensores(lista);
 
+    //freeListaCarro(lista);
+}
