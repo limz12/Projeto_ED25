@@ -19,17 +19,57 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="carros.c">
+    <ClCompile Include="SENSORES.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DISTANCIAS.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PASSAGEM.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MENU.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UTEIS.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="carros.h">
+    <ClInclude Include="SENSORES.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DISTANCIAS.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PASSAGEM.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MENU.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UTEIS.H">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\carros.txt">
       <Filter>Source Files</Filter>
+    <Text Include="carros.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="distancias.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="donos.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="sensores.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="passagem.txt">
+      <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
 </Project>
