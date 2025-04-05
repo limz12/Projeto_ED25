@@ -6,10 +6,10 @@
 #include "DISTANCIAS.H"
 #include "PASSAGEM.H"
 #include "UTEIS.H"
-
+#include "carros.h"
 
 //RESPONSAVEL POR CRIAR TODOS OS MENUS DO PROGRAMA
-int menuPrincipal(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem)
+int menuPrincipal(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_CARRO* listaCarro)
 {
 
 	//verificar se todas as listas estao presentes
@@ -137,6 +137,43 @@ void menuSensores(LISTA_SENSOR* listaSensores)
 	case 1:
 		system("cls");
 		mostrarListaSensores(listaSensores);
+		break;
+	}
+}
+
+void menuCarros(LISTA_CARRO* listaCarros)
+{
+	system("cls");
+	//verificar se todas as listas estao presentes
+	if (!listaCarros)
+	{
+		printf("ERRO! A LISTA de SENSORES nao existe\n");
+		return -1;
+	}
+
+	int escolha;
+	printf("# --------------------  MENU CARROS  ----------------------#\n");
+	printf("|  (1) Mostrar Lista Carros                                  |\n");
+	printf("|  (2) Inserir Carro                                         |\n");
+	printf("|------------------------------------------------------------|\n");
+	printf("|  (0) Menu Principal                                        |\n");
+	printf("#------------------------------------------------------------#\n");
+	do
+	{
+		printf("Seleciona uma opcao: \n");
+		scanf("%d", &escolha);
+	} while (escolha < 0 || escolha > 2);
+
+	//chamar as funcoes aqui
+	switch (escolha)
+	{
+	case 1:
+		system("cls");
+		mostrarListaCarro(listaCarros);
+		break;
+	case 2:
+		system("cls");
+		criarCarroUtilizador(listaCarros);
 		break;
 	}
 }

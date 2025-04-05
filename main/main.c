@@ -1,14 +1,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <locale.h>
-#include "carros.h"
 
+#include "carros.h"
 #include "SENSORES.H"
 #include "DISTANCIAS.H"
 #include "PASSAGEM.H"
 #include "UTEIS.H"
 #include "MENU.H"
-//FALTA CARREGAR CARROS - DONOS E CALCULAR TAMANHO sizeof() destes 2 
+
+
+//FALTA CARREGAR  DONOS E CALCULAR TAMANHO sizeof() deste
 
 void main()
 {
@@ -16,13 +18,14 @@ void main()
     LISTA_SENSOR* listaSensor = criarListaSensor();
     DISTANCIAS_LISTA* listaDistancias = criarListaDistancias();
     PASSAGEM_LISTA* listaPassagem = criarListaPassagem();
+    LISTA_CARRO* listaCarro = criarListaCarro();
     //**********************************
     //para o compilador reconhecer os caracteres especiais do ficheiro, visto que sem esta linha obtinha caracteres estranhos
     setlocale(LC_ALL, "pt_PT.UTF-8");
     printf("PROJETO ED 2025\n");
     
     //CARREGA TODA A ED
-    int ED = inicializarED(listaSensor, listaDistancias, listaPassagem);
+    int ED = inicializarED(listaSensor, listaDistancias, listaPassagem,listaCarro);
     if (ED == 1)
     {
         printf("Estrutura de dados carregada com sucesso!\n");
@@ -39,7 +42,7 @@ void main()
     //este for com ; ; serve para o programa correr infinitamente
     for (; ;)
     {
-        switch (menuPrincipal(listaSensor, listaDistancias, listaPassagem))
+        switch (menuPrincipal(listaSensor, listaDistancias, listaPassagem,listaCarro))
         {
             case 1:
                 //MENU DONOS
@@ -49,6 +52,7 @@ void main()
             case 2:
                 //MENU CARROS
                 system("cls");
+                menuCarros(listaCarro);
             break;
             case 3:
                 //MENU DISTANCIAS
@@ -66,8 +70,9 @@ void main()
                 menuSensores(listaSensor);
             break;
             case 6:
+                //CALCULAR MEMORIA TOTAL da ED
                 system("cls");
-                memoriaTotalOcupadaED(listaSensor, listaDistancias, listaPassagem);
+                memoriaTotalOcupadaED(listaSensor, listaDistancias, listaPassagem, listaCarro);
                 printf("\n");
             break;
             case 0:
@@ -75,6 +80,7 @@ void main()
                 libertarListaDistancia(listaDistancias);
                 libertarListaPassagem(listaPassagem);
                 libertarListaSensores(listaSensor);
+                freeListaCarro(listaCarro);
                 return 0;
            break;
 
@@ -83,9 +89,4 @@ void main()
 
     
    //*************  PARA TESTES DE BRANCH, COMENTAR TUDO O QUE ESTA ACIMA    ****************************
-
-}
-    mostrarListaSensores(lista);
-
-    //freeListaCarro(lista);
 }

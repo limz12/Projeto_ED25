@@ -1,3 +1,12 @@
+// BIBLIOTECAS
+#include <stdlib.h>
+#include <stdio.h>
+#include <malloc.h>
+#include <string.h>
+#include <locale.h>
+
+
+
 #include "carros.h"
 
 
@@ -112,7 +121,7 @@ void carregarDadosCarro(LISTA_CARRO* lista)
 		}
 	}
 	
-	printf("- Ficheiro lido com sucesso.\n\n");
+	printf("CARROS CARREGADO COM SUCESSO!\n");
 
 	// Depois de ler o ficheiro todo -> Fechar o ficheiro
 	fclose(f);
@@ -147,6 +156,11 @@ void addListaCarro(LISTA_CARRO* lista, NODE_CARRO* node)
 
 void criarCarroUtilizador(LISTA_CARRO* lista)
 {
+	if (!lista)
+	{
+		printf("ERRO! A lista do carro nao existe");
+		return;
+	}
 	// Criação de um elemento novo por parte do utilizador
 	NODE_CARRO* novo_elem = criarNodeCarro();
 
@@ -167,9 +181,10 @@ void criarCarroUtilizador(LISTA_CARRO* lista)
 
 	// Adiciona o elemento à lista
 	addListaCarro(lista, novo_elem);
+	printf("CARRO ADICIONADO A LISTA! \n");
 }
 
-void mostrarListaSensores(LISTA_CARRO* lista)
+void mostrarListaCarro(LISTA_CARRO* lista)
 {
 	// Validação da existência da lista de carros
 	if (!lista)
@@ -218,5 +233,5 @@ void freeListaCarro(LISTA_CARRO* lista)
 		freeNodeCarro(aux);
 	}
 
-	printf("Lista removida com sucesso\n");
+	printf("Lista CARRO removida com sucesso!\n");
 }
