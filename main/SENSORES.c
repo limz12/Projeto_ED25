@@ -103,6 +103,7 @@ void carregarSensor(LISTA_SENSOR* lista)
 	}
 
 	fclose(fich);
+	printf("SENSORES.TXT carregado com sucesso!\n");
 }
 
 void adicionarListaSensores(LISTA_SENSOR* lista, NODE_SENSOR* node)
@@ -169,5 +170,5 @@ void libertarListaSensores(LISTA_SENSOR* lista)
 		libertarNodeSensor(aux);
 	}
 
-	printf("LISTA REMOVIDA COM SUCESSO\n");
+	printf("LISTA SENSOR REMOVIDA COM SUCESSO!\n");
 }

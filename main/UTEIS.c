@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-
+#include <time.h>
 
 #include "SENSORES.H"
 #include "DISTANCIAS.H"
@@ -85,3 +85,26 @@ void memoriaTotalOcupadaED(LISTA_SENSOR* listaS, DISTANCIAS_LISTA* listaD, PASSA
 	//1 Byte = 0.000001
 	printf("A Estrutura de dados ocupa %.2f MB\n", (double)memTotal*0.000001);
 }
+
+//vai inicializar a estrutura de dados, ler os ficheiros / criar listas e carregar todas as informacoes dos respetivos ficheiros
+int inicializarED(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem)
+{
+	//tenho que retornar o enderco da LISTA de cada ficheiro carregado
+
+	//******************CARREGAR-DONOS**************************
+
+
+	//******************CARREGAR-CARROS**************************
+	
+
+	//******************CARREGAR-SENSORES**************************
+	carregarSensor(listaSensor);
+	//******************CARREGAR-DISTANCIAS**************************
+	carregarDistancia(listaDistancias);
+	//******************CARREGAR-PASSAGEM**************************
+	carregarPassagem(listaPassagem);
+
+	return 1;
+	
+}
+

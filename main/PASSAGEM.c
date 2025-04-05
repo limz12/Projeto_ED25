@@ -3,6 +3,8 @@
 #include <malloc.h>
 #include <string.h>
 #include <locale.h>
+#include <time.h>
+
 
 #include "PASSAGEM.H"
 
@@ -175,7 +177,7 @@ void libertarListaPassagem(PASSAGEM_LISTA* lista)
 		}
 		//ao fim de eliminar todos os nos
 		free(lista);
-		printf("LISTA DISTANCIAS LIBERTADA COM SUCESSO! \n");
+		printf("LISTA PASSAGEM LIBERTADA COM SUCESSO! \n");
 	}
 }
 
@@ -216,16 +218,18 @@ void registarPassagem(PASSAGEM_LISTA* lista)
 		}
 		printf("Insere o COD_VEICULO [inteiro] que passou no respetivo Sensor\n");
 		scanf("%d", &node->info->codVeiculo);
+		system("cls");
 		printf("Insere a data em que o veiculo passou no sensor [DIA-MES-ANO]:\n");
 		scanf("%d", &node->info->data->dia);
 		scanf("%d", &node->info->data->mes);
 		scanf("%d", &node->info->data->ano);
+		system("cls");
 		printf("[HORA - MINUTO - SEGUNDO - MILISEGUNDO]:\n");
 		scanf("%d", &node->info->data->hora);
 		scanf("%d ", &node->info->data->minuto);
 		scanf("%d", &node->info->data->segundo);
 		scanf("%d", &node->info->data->milisegundo);
-
+		system("cls");
 		int flag3 = 0;
 		while (flag3 == 0)
 		{
@@ -277,6 +281,12 @@ void registarPassagem(PASSAGEM_LISTA* lista)
 
 int verificarNodeDadosPassagem(PASSAGEM_NODE* node)
 {
+	//utilizar a struct tm presente no time.h para obter a data do sistema
+	struct tm* tempoAtual;
+	time_t t;
+	t = time(NULL);
+	tempoAtual = localtime(&t);
+
 	//verificar se a hora e a data e possivel existir
 	if (node->info->data->dia >= 1 && node->info->data->dia <= 31)
 	{
@@ -288,7 +298,7 @@ int verificarNodeDadosPassagem(PASSAGEM_NODE* node)
 				{
 					if (node->info->data->segundo >= 0 && node->info->data->segundo <= 60)
 					{
-						if (node->info->data->ano >= 1900)
+						if (node->info->data->ano >= 1900 && node->info->data->ano <= tempoAtual->tm_year + 1900)
 						{
 							if (node->info->data->milisegundo >= 0 && node->info->data->milisegundo <= 999)
 							{
@@ -307,7 +317,6 @@ int verificarNodeDadosPassagem(PASSAGEM_NODE* node)
 		printf("ERRO! DADOS INVALIDOS\n");
 		return 0;
 	}
-
 	
 }
 
