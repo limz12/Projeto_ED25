@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="donos.c" />
     <ClCompile Include="carros.c" />
     <ClCompile Include="DISTANCIAS.c" />
     <ClCompile Include="main.c" />
@@ -151,6 +152,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="carros.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="donos.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

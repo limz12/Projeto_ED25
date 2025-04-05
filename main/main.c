@@ -8,7 +8,7 @@
 #include "PASSAGEM.H"
 #include "UTEIS.H"
 #include "MENU.H"
-
+#include "donos.h"
 
 //FALTA CARREGAR  DONOS E CALCULAR TAMANHO sizeof() deste
 
@@ -19,6 +19,7 @@ void main()
     DISTANCIAS_LISTA* listaDistancias = criarListaDistancias();
     PASSAGEM_LISTA* listaPassagem = criarListaPassagem();
     LISTA_CARRO* listaCarro = criarListaCarro();
+    LISTA_DONOS* lista = criarListaDonos();
     //**********************************
     //para o compilador reconhecer os caracteres especiais do ficheiro, visto que sem esta linha obtinha caracteres estranhos
     setlocale(LC_ALL, "pt_PT.UTF-8");
@@ -87,6 +88,6 @@ void main()
         }
     }
 
-    
+
    //*************  PARA TESTES DE BRANCH, COMENTAR TUDO O QUE ESTA ACIMA    ****************************
 }
