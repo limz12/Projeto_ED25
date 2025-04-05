@@ -102,7 +102,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -128,7 +128,30 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="donos.c" />
+    <ClCompile Include="carros.c" />
+    <ClCompile Include="DISTANCIAS.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="MENU.c" />
+    <ClCompile Include="PASSAGEM.c" />
+    <ClCompile Include="SENSORES.c" />
+    <ClCompile Include="UTEIS.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DISTANCIAS.H" />
+    <ClInclude Include="MENU.H" />
+    <ClInclude Include="PASSAGEM.H" />
+    <ClInclude Include="SENSORES.H" />
+    <ClInclude Include="UTEIS.H" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="carros.txt" />
+    <Text Include="distancias.txt" />
+    <Text Include="donos.txt" />
+    <Text Include="passagem.txt" />
+    <Text Include="sensores.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="carros.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="donos.h" />
