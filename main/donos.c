@@ -48,8 +48,6 @@ int freeNodeDonos(NODE_DONOS* node){
 	return 1;
 }
 
-
-
 void carregarDadosDonos(LISTA_DONOS* lista) {
 
 	setlocale(LC_ALL, "en_US.UTF-8");
@@ -94,8 +92,6 @@ void carregarDadosDonos(LISTA_DONOS* lista) {
 	fclose(ficheiro);
 }
 
-
-
 void adicionarListaDonos(LISTA_DONOS* lista, NODE_DONOS* node) {
 
 	//Verifica se exista a lista e o node
@@ -118,7 +114,6 @@ void adicionarListaDonos(LISTA_DONOS* lista, NODE_DONOS* node) {
 	}
 }
 
-
 void registarDonos(LISTA_DONOS* lista) {
 	
 	//Cria um elemento novo
@@ -137,9 +132,6 @@ void registarDonos(LISTA_DONOS* lista) {
 	system("cls");
 	printf("Dono adicionado com sucesso!\n");
 }
-
-
-
 
 void listarDonos(LISTA_DONOS* lista) {
 	if (!lista) {
@@ -188,4 +180,45 @@ void freeListaDonos(LISTA_DONOS* lista) {
 		freeNodeDonos(aux);
 	}
 	printf("LISTA DONOS REMOVIDA\n");
+}
+
+//ordenar (alfabeticamente) nome de todos os condutores
+void ordenarListaDonosAlfabeticamente(LISTA_DONOS* lista)
+{
+	if (!lista)
+	{
+		printf("ERRO! A lista donos nao existe\n");
+		return;
+	}
+
+	//bouble sort
+	NODE_DONOS* atual;
+	NODE_DONOS* proximo;
+	Donos* temp; // apenas para trocar o conteudo
+	int troca;
+
+	printf("A ORDENAR LISTA!\n");
+
+	do
+	{
+		troca = 0;
+		atual = lista->primeiro;
+
+		while (atual->next != NULL)
+		{
+			proximo = atual->next;
+			if (strcmp(atual->info->nome, proximo->info->nome) > 0)
+			{
+				// Trocar os dados dos nos
+				temp = atual->info;
+				atual->info = proximo->info;
+				proximo->info = temp;
+
+				troca = 1;
+			}
+			atual = atual->next;
+		}
+	} while (troca);//vai parar quando percorrer toda a lista e verificar que realmente nao foram efetuadas trocas
+
+	printf("LISTA ORDENADA COM SUCESSO\n");
 }

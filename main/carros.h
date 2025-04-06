@@ -11,7 +11,6 @@ typedef struct
 	int ano;
 	int dono;
 	int codVeiculo;
-	//inserir um ponteiro para a struct dono
 }CARRO;
 
 // NODE DO CARRO
@@ -39,3 +38,4 @@ void addListaCarro(LISTA_CARRO* lista, NODE_CARRO* node);
 void mostrarListaCarro(LISTA_CARRO* lista);
 void freeListaCarro(LISTA_CARRO* lista);
 //int verificarDONOexiste(int idDono, LISTA_DONOS* listaDonos);
+//void ligarCarroDono(NODE_CARRO* novo_elem, LISTA_DONOS* listaDonos);

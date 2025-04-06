@@ -4,17 +4,17 @@
 #include <malloc.h>
 #include <locale.h>
 
+
 #define MAX_NOME_SIZE 60
 #define MAX_CODPOST_SIZE 10
 
 // ESTRUTURAS DO DONO
 typedef struct Donos
 {
-    
     char nome[MAX_NOME_SIZE];
     char codpost[MAX_CODPOST_SIZE];
     int numCont;
-    struct Donos* prox;  // Ponteiro para o próximo nó da lista
+    //struct Donos* prox;  // Ponteiro para o próximo nó da lista
 } Donos;
 
 // NODE DO DONO
@@ -41,4 +41,6 @@ void adicionarListaDonos(LISTA_DONOS* lista, NODE_DONOS* node);
 void registarDonos(LISTA_DONOS* lista);
 void listarDonos(LISTA_DONOS* lista);
 void freeListaDonos(LISTA_DONOS* lista);
+
+void ordenarListaDonosAlfabeticamente(LISTA_DONOS* lista);
 
