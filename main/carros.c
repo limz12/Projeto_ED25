@@ -5,8 +5,6 @@
 #include <string.h>
 #include <locale.h>
 
-
-
 #include "carros.h"
 #include "donos.h"
 
@@ -65,13 +63,13 @@ int freeNodeCarro(NODE_CARRO* node)
 	//printf("Elemento da Lista de Carros libertado com sucesso!\n");
 }
 
-void carregarDadosCarro(LISTA_CARRO* lista)
+void carregarDadosCarro(LISTA_HASHC* listaHashCarros)
 {
 	// Reconhecimento de caracteres especiais do ficheiro, por parte do compilador
 	setlocale(LC_ALL, "en_US.UTF-8");
 
 	// Validação da existência da lista de carros
-	if (!lista)
+	if (!listaHashCarros)
 	{
 		printf("ERRO! A lista nao existe.\n");
 		return;
@@ -102,20 +100,58 @@ void carregarDadosCarro(LISTA_CARRO* lista)
 			// Cria o elemento da lista
 			NODE_CARRO* node = criarNodeCarro();
 
-			// Validação da correta criação do elemento
-			if (!node)
-			{
-				printf("ERRO na criacao do elemento.\n");
-				return;
-			}
-
 			// Adiciona o conteúdo à variável string auxiliar
 			sscanf(str_aux, "%s\t%s\t%s\t%d\t%d\t%d", 
 				node->info->matricula, node->info->marca, node->info->modelo, 
 				&node->info->ano, &node->info->dono, &node->info->codVeiculo);
-
-			// Adicionar o elemento/linha à lista de carros
-			addListaCarro(lista, node);
+			//************** HASHING *************
+			//se nao possuir nos no hash
+			if (listaHashCarros->header == NULL)
+			{
+				//criarNodeHash
+				NODE_HASHC* nodeHash = criarNodeHashCarro();
+				if (!nodeHash)
+				{
+					return;
+				}
+				//inserir Dados / lista no node
+				adicionarInfoNodeHash(nodeHash, node);
+				//adicionar o nodeHash a lista
+				listaHashCarros->header = nodeHash;
+				listaHashCarros->ultimo_node = nodeHash;
+				listaHashCarros->numElementos++;
+			}
+			else // se exsitirem NODES NA LISTA HASH
+			{
+				int flag = 0;
+				//percorrer a lista a procura da chave
+				NODE_HASHC* aux = listaHashCarros->header;
+				while (aux)
+				{
+					if (strcmp(aux->chave, node->info->marca) == 0) //detetar a chave igual
+					{
+						addListaCarro(aux->listaCarros, node);
+						flag = 1; //serve para indicar que foi inserido o NODE
+					}
+					aux = aux->next;
+				}
+				if (flag == 0) //se o node nao foi inserido
+				{
+					//vais ter de criar um NODEHASH
+					NODE_HASHC* nodeHash = criarNodeHashCarro();
+					if (!nodeHash)
+					{
+						return;
+					}
+					//adicionar a info ao nodeHAsh
+					adicionarInfoNodeHash(nodeHash, node);
+					//adicionar o nodeHash ao  final da lista HASH
+					listaHashCarros->ultimo_node->next = nodeHash;
+					listaHashCarros->ultimo_node = nodeHash;
+					listaHashCarros->numElementos++;
+				}
+			}
+			
 		}
 	}
 	
@@ -277,3 +313,46 @@ int verificarDONOexiste(int idDono, LISTA_DONOS* listaDonos)
 
 }
 
+//***************** HASHING ************************
+LISTA_HASHC* criarListaHashCarro()
+{
+	//alocar memoria para a lista hash
+	LISTA_HASHC* lista = (LISTA_HASHC*)malloc(sizeof(LISTA_HASHC));
+	//iniciar a lista a null
+	lista->header = NULL;
+	lista->ultimo_node = NULL;
+	lista->numElementos = 0;
+
+	return lista;
+}
+
+NODE_HASHC* criarNodeHashCarro()
+{
+	NODE_HASHC* nodeHash = (NODE_HASHC*)malloc(sizeof(NODE_HASHC));
+	//strcpy(nodeHash->chave ,'\0');
+	nodeHash->listaCarros = NULL;
+	nodeHash->next = NULL;
+
+}
+
+void adicionarInfoNodeHash(NODE_HASHC* nodeHash, NODE_CARRO* nodeCarro)
+{
+	//adicionar a chave ao nodeHash
+	strcpy(nodeHash->chave, nodeCarro->info->marca);
+	//verificar se uma lista ja exsite no node 
+	if (nodeHash->listaCarros == NULL)
+	{
+		//se nao existir criar uma listaCarros
+		LISTA_CARRO* listaCarros = criarListaCarro();
+		//adicionar o NODECARRO A LISTA
+		addListaCarro(listaCarros, nodeCarro);
+		//adicionar a ligacao do node a lista Carros
+		nodeHash->listaCarros = listaCarros;
+		nodeHash->next = NULL;
+	}
+	else //se existir a lista adicioar carro a lista
+	{
+		addListaCarro(nodeHash->listaCarros, nodeCarro);
+		nodeHash->next = NULL;
+	}
+}

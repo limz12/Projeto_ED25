@@ -131,14 +131,14 @@ void memoriaTotalOcupadaED(LISTA_SENSOR* listaS, DISTANCIAS_LISTA* listaD, PASSA
 }
 
 //vai inicializar a estrutura de dados, ler os ficheiros / criar listas e carregar todas as informacoes dos respetivos ficheiros
-int inicializarED(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_CARRO* listaCarro,LISTA_DONOS* listaDonos)
+int inicializarED(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaHashCarros,LISTA_DONOS* listaDonos)
 {
 	//tenho que retornar o enderco da LISTA de cada ficheiro carregado
 
 	//******************CARREGAR-DONOS**************************
 	carregarDadosDonos(listaDonos);
 	//******************CARREGAR-CARROS**************************
-	carregarDadosCarro(listaCarro);
+	carregarDadosCarro(listaHashCarros);
 	//******************CARREGAR-SENSORES**************************
 	carregarSensor(listaSensor);
 	//******************CARREGAR-DISTANCIAS**************************

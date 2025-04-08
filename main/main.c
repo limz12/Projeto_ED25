@@ -18,15 +18,18 @@ void main()
     LISTA_SENSOR* listaSensor = criarListaSensor();
     DISTANCIAS_LISTA* listaDistancias = criarListaDistancias();
     PASSAGEM_LISTA* listaPassagem = criarListaPassagem();
-    LISTA_CARRO* listaCarro = criarListaCarro();
+   // LISTA_CARRO* listaCarro = criarListaCarro(); -> alterar pelo iniciar hashCarro
     LISTA_DONOS* listaDonos = criarListaDonos();
+    //********** HASHING **************
+    //INICIAR A LISTA HASHING
+    LISTA_HASHC* listaHashCarros = criarListaHashCarro();
     //**********************************
     //para o compilador reconhecer os caracteres especiais do ficheiro, visto que sem esta linha obtinha caracteres estranhos
     setlocale(LC_ALL, "pt_PT.UTF-8");
     printf("PROJETO ED 2025\n");
     
     //CARREGA TODA A ED
-    int ED = inicializarED(listaSensor, listaDistancias, listaPassagem,listaCarro, listaDonos);
+    int ED = inicializarED(listaSensor, listaDistancias, listaPassagem, listaHashCarros, listaDonos);
     if (ED == 1)
     {
         printf("Estrutura de dados carregada com sucesso!\n");
@@ -43,7 +46,7 @@ void main()
     //este for com ; ; serve para o programa correr infinitamente
     for (; ;)
     {
-        switch (menuPrincipal(listaSensor, listaDistancias, listaPassagem,listaCarro, listaDonos))
+        switch (menuPrincipal(listaSensor, listaDistancias, listaPassagem,listaHashCarros, listaDonos))
         {
             case 1:
                 //MENU DONOS
@@ -54,7 +57,7 @@ void main()
             case 2:
                 //MENU CARROS
                 system("cls");
-                menuCarros(listaCarro,listaDonos);
+                menuCarros(listaHashCarros,listaDonos);
             break;
             case 3:
                 //MENU DISTANCIAS
@@ -74,7 +77,7 @@ void main()
             case 6:
                 //CALCULAR MEMORIA TOTAL da ED
                 system("cls");
-                memoriaTotalOcupadaED(listaSensor, listaDistancias, listaPassagem, listaCarro, listaDonos);
+                //memoriaTotalOcupadaED(listaSensor, listaDistancias, listaPassagem, listaCarro, listaDonos); -> FAZER COM LISTAHASH
                 printf("\n");
             break;
             case 0:
@@ -82,7 +85,7 @@ void main()
                 libertarListaDistancia(listaDistancias);
                 libertarListaPassagem(listaPassagem);
                 libertarListaSensores(listaSensor);
-                freeListaCarro(listaCarro);
+                //freeListaCarro(listaCarro); -> LIBERTAR A MEMORIA DO HASH
                 freeListaDonos(listaDonos);
                 return 0;
            break;

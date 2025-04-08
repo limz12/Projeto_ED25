@@ -28,6 +28,24 @@ typedef struct
 	int num_elem;
 }LISTA_CARRO;
 
+//***************** HASHING *****************
+//criar o NODE do hashing
+
+typedef struct nodeHash
+{
+	char chave[MAX_CHAR_STR];
+	struct nodeHash* next;
+	LISTA_CARRO* listaCarros;
+}NODE_HASHC;
+
+//criar a listaHashing
+typedef struct
+{
+	NODE_HASHC* header;//ponteiro para o inicio da lista
+	NODE_HASHC* ultimo_node; // ponteiro para o ultimo node da lista
+	int numElementos;
+}LISTA_HASHC;
+
 // PROTOTIPAGEM
 LISTA_CARRO* criarListaCarro();
 NODE_CARRO* criarNodeCarro();
@@ -39,3 +57,8 @@ void mostrarListaCarro(LISTA_CARRO* lista);
 void freeListaCarro(LISTA_CARRO* lista);
 //int verificarDONOexiste(int idDono, LISTA_DONOS* listaDonos);
 //void ligarCarroDono(NODE_CARRO* novo_elem, LISTA_DONOS* listaDonos);
+
+// ***************** HASHING **********************
+LISTA_HASHC* criarListaHashCarro();
+NODE_HASHC* criarNodeHashCarro();
+void adicionarInfoNodeHash(NODE_HASHC* nodeHash, NODE_CARRO* nodeCarro);
