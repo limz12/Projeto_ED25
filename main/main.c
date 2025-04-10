@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <locale.h>
+#include <ctype.h>
 
 #include "carros.h"
 #include "SENSORES.H"

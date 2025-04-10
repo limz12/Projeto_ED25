@@ -152,4 +152,3 @@ int inicializarED(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, 
 	return 1;
 	
 }
-
