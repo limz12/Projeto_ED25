@@ -141,11 +141,11 @@ void menuSensores(LISTA_SENSOR* listaSensores)
 	}
 }
 
-void menuCarros(LISTA_CARRO* listaCarros, LISTA_DONOS* listaDonos)
+void menuCarros(LISTA_HASHC* hashCarros, LISTA_DONOS* listaDonos)
 {
 	system("cls");
 	//verificar se todas as listas estao presentes
-	if (!listaCarros)
+	if (!hashCarros)
 	{
 		printf("ERRO! A LISTA de SENSORES nao existe\n");
 		return -1;
@@ -169,11 +169,11 @@ void menuCarros(LISTA_CARRO* listaCarros, LISTA_DONOS* listaDonos)
 	{
 	case 1:
 		system("cls");
-		mostrarListaCarro(listaCarros);
+		mostrarHashCarros(hashCarros);
 		break;
 	case 2:
 		system("cls");
-		criarCarroUtilizador(listaCarros,listaDonos);
+		criarCarroUtilizador(hashCarros,listaDonos);
 		break;
 	}
 }

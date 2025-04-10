@@ -188,11 +188,11 @@ void addListaCarro(LISTA_CARRO* lista, NODE_CARRO* node)
 	}
 }
 
-void criarCarroUtilizador(LISTA_CARRO* lista, LISTA_DONOS* listaDonos)
+void criarCarroUtilizador(LISTA_HASHC* hashCarro, LISTA_DONOS* listaDonos)
 {
-	if (!lista && !listaDonos)
+	if (!hashCarro && !listaDonos)
 	{
-		printf("ERRO! A lista do carro nao existe");
+		printf("ERRO! A lista hash do carro nao existe");
 		return;
 	}
 	// Criação de um elemento novo por parte do utilizador
@@ -207,18 +207,41 @@ void criarCarroUtilizador(LISTA_CARRO* lista, LISTA_DONOS* listaDonos)
 	printf("-> Modelo: ");
 	scanf("%s", novo_elem->info->modelo);
 	printf("-> Ano: ");
-	scanf("%d", &(novo_elem->info->ano));
+	scanf("%d", &novo_elem->info->ano);
 	printf("-> ID do Dono: ");
 	scanf("%d", &(novo_elem->info->dono));
 	printf("-> Codigo do Veiculo: ");
-	scanf("%d", &(novo_elem->info->codVeiculo));
+	scanf("%d", &novo_elem->info->codVeiculo);
 
+	//flag para detetar se exite um nodeHash com a chave 
+	int flag = 0;
 	//verificar se o ID do DONO EXISTE
 	if (verificarDONOexiste(novo_elem->info->dono,listaDonos) == 1)
 	{
-		// Adiciona o elemento à lista
-		addListaCarro(lista, novo_elem);
-		printf("CARRO ADICIONADO A LISTA! \n");
+		//percorrer pelos nos da listaHash se a chave existe
+		NODE_HASHC* nodeHash = hashCarro->header;
+		while (nodeHash)
+		{
+			//se existir um nodeHash com a mesma chave
+			if (_stricmp(nodeHash->chave, novo_elem->info->marca) == 0)
+			{
+				//adiciona  a lista do nodeHash o novo elemento
+				addListaCarro(nodeHash->listaCarros,novo_elem);
+				printf("CARRO ADICIONADO COM SUCESSO!\n");
+				flag = 1;
+			}
+			nodeHash = nodeHash->next;
+		}
+		if (flag == 0)//se percorreu a ListaHash e nao encontrou a chave
+		{
+			//criar um novo nodeHash
+			NODE_HASHC* novoNodeHash = criarNodeHashCarro();
+			//adicionar os dados ao novoNodeHash
+			adicionarInfoNodeHash(novoNodeHash, novo_elem);
+			//ligar o nodeHash a listaHash
+			inserirNodeHashListaHash(hashCarro, novoNodeHash);
+			printf("CARRO ADICIONADO COM SUCESSO!\n");
+		}
 	}
 	else
 	{
@@ -355,4 +378,33 @@ void adicionarInfoNodeHash(NODE_HASHC* nodeHash, NODE_CARRO* nodeCarro)
 		addListaCarro(nodeHash->listaCarros, nodeCarro);
 		nodeHash->next = NULL;
 	}
+}
+
+//listar todo o conteudo da HASH DOS CARROS
+void mostrarHashCarros(LISTA_HASHC* listaHash)
+{
+	//percorrer os NODES_HASH
+	NODE_HASHC* nodesHash = listaHash->header;
+	while (nodesHash)
+	{
+		printf("***********************************\n");
+		printf("\t MARCA: %s\n", nodesHash->chave);
+		printf("***********************************\n");
+		//percorrer a lista enquanto existirem nodes
+		mostrarListaCarro(nodesHash->listaCarros);
+		nodesHash = nodesHash->next;
+	}
+}
+
+//liga o NODEHASH PRENCHIDO a LISTA HASH
+void inserirNodeHashListaHash(LISTA_HASHC* listaHash, NODE_HASHC* nodeHash)
+{
+	if (!listaHash || !nodeHash)
+	{
+		return;
+	}
+	//inserir o NodeHash no fim da lista
+	listaHash->ultimo_node->next = nodeHash;
+	listaHash->ultimo_node = nodeHash;
+	listaHash->numElementos++;
 }

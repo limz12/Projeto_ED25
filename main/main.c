@@ -77,7 +77,7 @@ void main()
             case 6:
                 //CALCULAR MEMORIA TOTAL da ED
                 system("cls");
-                //memoriaTotalOcupadaED(listaSensor, listaDistancias, listaPassagem, listaCarro, listaDonos); -> FAZER COM LISTAHASH
+                memoriaTotalOcupadaED(listaSensor, listaDistancias, listaPassagem, listaHashCarros, listaDonos);
                 printf("\n");
             break;
             case 0:

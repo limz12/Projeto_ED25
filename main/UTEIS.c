@@ -74,24 +74,35 @@ int calcularTamanhoEDPassagem(PASSAGEM_LISTA* lista)
 	return tamanho;
 }
 
-int calcularTamanhoEDCarro(LISTA_CARRO* lista)
+int calcularTamanhoEDCarro(LISTA_HASHC* listaHash) //ALTERAR ISTO PARA CALCULAR O TAMANHO DA LISTAHASH
 {
-	if (!lista)
+	if (!listaHash)
 	{
-		printf("ERRO! A lista CARRO nao existe");
+		printf("ERRO! A lista HASH CARRO nao existe");
 		return;
 	}
 	//adicionar o tamanho da lista (8bytes)
-	int tamanho = sizeof(lista);
-	//percorrer a lista e ir somando o tamanho de cada NO e os seus conteudos
-	NODE_CARRO* aux = lista->header;
-	while (aux)
+	int tamanho = sizeof(listaHash);
+	//percorrer cada nodeHash
+	NODE_HASHC* nodeHash = listaHash->header;
+	while (nodeHash)
 	{
-		tamanho += sizeof(aux);
-		tamanho += sizeof(aux->info);
-		aux = aux->next;
+		//tamamnho do nodeHash
+		tamanho += sizeof(nodeHash);
+		//tamanho da lista nodeHas
+		LISTA_CARRO* listaCarro = nodeHash->listaCarros;
+		tamanho += sizeof(listaCarro);
+		//no da listaCarros
+		NODE_CARRO* nodeCarro = listaCarro->header;
+		//percorre a lista toda e calcula o tamanho dos nodes
+		while (nodeCarro)
+		{
+			tamanho += sizeof(nodeCarro);
+			nodeCarro = nodeCarro->next;
+		}
+		nodeHash = nodeHash->next;
+		
 	}
-
 	return tamanho;
 }
 
