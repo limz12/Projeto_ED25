@@ -193,6 +193,7 @@ void menuDonos(LISTA_DONOS* listaDonos)
 	printf("|  (1) Mostrar Lista Donos (ATENCAO EXTENSO!)                |\n");
 	printf("|  (2) Registar Dono                                         |\n");
 	printf("|  (3) Ordenar Lista Alfabeticamente                         |\n");
+	printf("|  (4) Ordenar Donos por Numero de Contribuinte              |\n");
 	printf("|------------------------------------------------------------|\n");
 	printf("|  (0) Menu Principal                                        |\n");
 	printf("#------------------------------------------------------------#\n");
@@ -200,7 +201,7 @@ void menuDonos(LISTA_DONOS* listaDonos)
 	{
 		printf("Seleciona uma opcao: \n");
 		scanf("%d", &escolha);
-	} while (escolha < 0 || escolha > 3);
+	} while (escolha < 0 || escolha > 4);
 
 	//chamar as funcoes aqui
 	switch (escolha)
@@ -216,6 +217,10 @@ void menuDonos(LISTA_DONOS* listaDonos)
 	case 3:
 		system("cls");
 		ordenarListaDonosAlfabeticamente(listaDonos);
+		break;
+	case 4:
+		system("cls");
+		ordenarListaDonosContribuinte(listaDonos);
 		break;
 	}
 }

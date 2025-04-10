@@ -1,4 +1,5 @@
 #include "donos.h"
+#include "carros.h"
 
 
 LISTA_DONOS* criarListaDonos()
@@ -208,6 +209,46 @@ void ordenarListaDonosAlfabeticamente(LISTA_DONOS* lista)
 		{
 			proximo = atual->next;
 			if (strcmp(atual->info->nome, proximo->info->nome) > 0)
+			{
+				// Trocar os dados dos nos
+				temp = atual->info;
+				atual->info = proximo->info;
+				proximo->info = temp;
+
+				troca = 1;
+			}
+			atual = atual->next;
+		}
+	} while (troca);//vai parar quando percorrer toda a lista e verificar que realmente nao foram efetuadas trocas
+
+	printf("LISTA ORDENADA COM SUCESSO\n");
+}
+
+void ordenarListaDonosContribuinte(LISTA_DONOS* lista)
+{
+	if (!lista)
+	{
+		printf("ERRO! A lista donos nao existe\n");
+		return;
+	}
+
+	//bouble sort
+	NODE_DONOS* atual;
+	NODE_DONOS* proximo;
+	Donos* temp; // apenas para trocar o conteudo
+	int troca;
+
+	printf("A Ordenar Lista de Carros por Número de Contribuinte\n");
+
+	do
+	{
+		troca = 0;
+		atual = lista->primeiro;
+
+		while (atual->next != NULL)
+		{
+			proximo = atual->next;
+			if (atual->info->numCont > proximo->info->numCont)
 			{
 				// Trocar os dados dos nos
 				temp = atual->info;

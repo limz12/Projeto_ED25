@@ -44,3 +44,4 @@ void freeListaDonos(LISTA_DONOS* lista);
 
 void ordenarListaDonosAlfabeticamente(LISTA_DONOS* lista);
 
+void ordenarListaDonosContribuinte(LISTA_DONOS* lista); // ex 5
