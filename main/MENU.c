@@ -9,11 +9,11 @@
 #include "carros.h"
 #include "donos.h"
 //RESPONSAVEL POR CRIAR TODOS OS MENUS DO PROGRAMA
-int menuPrincipal(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_CARRO* listaCarro,LISTA_DONOS *listaDonos)
+int menuPrincipal(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaHashCarro,LISTA_DONOS *listaDonos)
 {
 
 	//verificar se todas as listas estao presentes
-	if (!listaSensor && !listaDistancias && !listaPassagem && !listaCarro && !listaDonos)
+	if (!listaSensor && !listaDistancias && !listaPassagem && !listaHashCarro && !listaDonos)
 	{
 		printf("ERRO! AS LISTAS NAO EXISTEM (menuPrincipal)\n");
 		return -1;
@@ -141,11 +141,11 @@ void menuSensores(LISTA_SENSOR* listaSensores)
 	}
 }
 
-void menuCarros(LISTA_CARRO* listaCarros, LISTA_DONOS* listaDonos)
+void menuCarros(LISTA_HASHC* hashCarros, LISTA_DONOS* listaDonos)
 {
 	system("cls");
 	//verificar se todas as listas estao presentes
-	if (!listaCarros)
+	if (!hashCarros)
 	{
 		printf("ERRO! A LISTA de SENSORES nao existe\n");
 		return -1;
@@ -169,11 +169,11 @@ void menuCarros(LISTA_CARRO* listaCarros, LISTA_DONOS* listaDonos)
 	{
 	case 1:
 		system("cls");
-		mostrarListaCarro(listaCarros);
+		mostrarHashCarros(hashCarros);
 		break;
 	case 2:
 		system("cls");
-		criarCarroUtilizador(listaCarros,listaDonos);
+		criarCarroUtilizador(hashCarros,listaDonos);
 		break;
 	}
 }
