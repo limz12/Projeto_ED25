@@ -81,28 +81,52 @@ int calcularTamanhoEDCarro(LISTA_HASHC* listaHash) //ALTERAR ISTO PARA CALCULAR 
 		printf("ERRO! A lista HASH CARRO nao existe");
 		return;
 	}
-	//adicionar o tamanho da lista (8bytes)
-	int tamanho = sizeof(listaHash);
-	//percorrer cada nodeHash
+	//variavel que vai conter o tamanho da ED em bytes
+	int tamanho = 0;
+
+	//tamanho da lista Hash
+	tamanho += sizeof(listaHash);
+	//auxiliar para percorrer os nodes da listaHash
 	NODE_HASHC* nodeHash = listaHash->header;
+	//percorrer os nodes Hash todos
 	while (nodeHash)
 	{
-		//tamamnho do nodeHash
+		//tamanho do nodeHash
 		tamanho += sizeof(nodeHash);
-		//tamanho da lista nodeHas
-		LISTA_CARRO* listaCarro = nodeHash->listaCarros;
-		tamanho += sizeof(listaCarro);
-		//no da listaCarros
-		NODE_CARRO* nodeCarro = listaCarro->header;
-		//percorre a lista toda e calcula o tamanho dos nodes
-		while (nodeCarro)
+		//verificar se o nodeHash possui lista
+		if (nodeHash->listaCarros != NULL)
 		{
-			tamanho += sizeof(nodeCarro);
-			nodeCarro = nodeCarro->next;
-		}
+			//tamanho da lista que pertenec ao nodeHash
+			tamanho += sizeof(nodeHash->listaCarros);
+			//verificar se existem nodes na lista do nodeHash
+			if (nodeHash->listaCarros->header != NULL)
+			{
+				//auxiliar para percorrer a lista do nodeHash
+				NODE_CARRO* nodeCarro = nodeHash->listaCarros->header;
+				//percorrer os nodes todos e armazenar o tamanho
+				while (nodeCarro)
+				{
+					tamanho += sizeof(nodeCarro);
+					nodeCarro = nodeCarro->next;
+				}
+			}
+		}		
 		nodeHash = nodeHash->next;
-		
 	}
+	/*
+	//calcular o ultimo node que sobrou
+	//adicionar tamanho do nodeHash
+	tamanho += sizeof(nodeHash);
+	//adicionar o tamanho da listaCarros do nodeHash
+	tamanho += sizeof(nodeHash->listaCarros);
+	//percorrer todos os carros da lista e adicionar o tamanho
+	NODE_CARRO* nodeCarro = nodeHash->listaCarros->header;
+	while (nodeCarro)
+	{
+		tamanho += sizeof(nodeCarro);
+		nodeCarro = nodeCarro->next;
+	}
+	*/
 	return tamanho;
 }
 
@@ -130,13 +154,13 @@ int calcularTamanhoEDDonos(LISTA_DONOS* lista)
 //FALTA FAZER CARROS E DONOS
 
 //JUNTAR NUMA UNICA FUNCAO QUE SOMA TODOS OS RETURNS E DEVOLVE O TOTAL (BYTES)
-void memoriaTotalOcupadaED(LISTA_SENSOR* listaS, DISTANCIAS_LISTA* listaD, PASSAGEM_LISTA* listaP, LISTA_CARRO* listaC, LISTA_DONOS* listaDonos)
+void memoriaTotalOcupadaED(LISTA_SENSOR* listaS, DISTANCIAS_LISTA* listaD, PASSAGEM_LISTA* listaP, LISTA_HASHC* listaHashCarro, LISTA_DONOS* listaDonos)
 {
 	int memTotal = calcularTamanhoEDSensor(listaS);
 	memTotal += calcularTamanhoEDDistancia(listaD);
 	memTotal += calcularTamanhoEDPassagem(listaP);
-	memTotal += calcularTamanhoEDCarro(listaC);
-	memTotal += calcularTamanhoEDCarro(listaDonos);
+	memTotal += calcularTamanhoEDCarro(listaHashCarro);
+	memTotal += calcularTamanhoEDDonos(listaDonos);
 	//1 Byte = 0.000001
 	printf("A Estrutura de dados ocupa %.2f MB\n", (double)memTotal*0.000001);
 }

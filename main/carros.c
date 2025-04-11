@@ -280,27 +280,41 @@ void mostrarListaCarro(LISTA_CARRO* lista)
 	printf("**************************************************************\n");
 }
 
-void freeListaCarro(LISTA_CARRO* lista)
+void freeListaHashCarro(LISTA_HASHC* listaHashCarro)
 {
-	// Validação da existência da lista de carros
-	if (!lista)
+	
+	if (!listaHashCarro)
 	{
-		printf("ERRO! A lista nao existe.\n");
+		printf("ERRO! A lista HASH nao existe.\n");
 		return;
 	}
 
-	// Ciclo que não para enquanto existir elementos na lista
-	while (lista->header)
-	{ 
-		// Percorre a lista com um ponteiro auxiliar
-		NODE_CARRO* aux = lista->header;
-		lista->header = aux->next;
+	// Enquanto houver nodes na lista HASH
+	while (listaHashCarro->header != NULL)
+	{
+		NODE_HASHC* nodeHash = listaHashCarro->header;
+		listaHashCarro->header = nodeHash->next; 
 
-		// Eliminação dos nós um a um, da lista
-		freeNodeCarro(aux);
+		// se existir lista no NodeHash
+		if (nodeHash->listaCarros)
+		{
+			//percorrer todos os carros da lista
+			NODE_CARRO* nodeCarro = nodeHash->listaCarros->header;
+			while (nodeCarro != NULL)
+			{
+				NODE_CARRO* aux = nodeCarro;
+				nodeCarro = nodeCarro->next;
+				freeNodeCarro(aux);
+			}
+			//eliminar a lista
+			free(nodeHash->listaCarros);
+		}
+
+		free(nodeHash);
 	}
 
-	printf("Lista CARRO removida com sucesso!\n");
+	free(listaHashCarro);
+	printf("Lista HASH CARRO removida com sucesso!\n");
 }
 
 //vai percorrer a lista de donos pelo ID e verificar se existe

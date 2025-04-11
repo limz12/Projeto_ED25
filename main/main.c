@@ -85,7 +85,7 @@ void main()
                 libertarListaDistancia(listaDistancias);
                 libertarListaPassagem(listaPassagem);
                 libertarListaSensores(listaSensor);
-                //freeListaCarro(listaCarro); -> LIBERTAR A MEMORIA DO HASH
+                freeListaHashCarro(listaHashCarros);
                 freeListaDonos(listaDonos);
                 return 0;
            break;

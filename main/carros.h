@@ -54,7 +54,6 @@ void carregarDadosCarro(LISTA_HASHC* listaHashCarros);
 void addListaCarro(LISTA_CARRO* lista, NODE_CARRO* node);
 //void criarCarroUtilizador(LISTA_CARRO* lista, LISTA_DONOS* listaDonos);
 void mostrarListaCarro(LISTA_CARRO* lista);
-void freeListaCarro(LISTA_CARRO* lista);
 //int verificarDONOexiste(int idDono, LISTA_DONOS* listaDonos);
 //void ligarCarroDono(NODE_CARRO* novo_elem, LISTA_DONOS* listaDonos);
 
@@ -64,3 +63,4 @@ NODE_HASHC* criarNodeHashCarro();
 void adicionarInfoNodeHash(NODE_HASHC* nodeHash, NODE_CARRO* nodeCarro);
 void mostrarHashCarros(LISTA_HASHC* listaHash);
 void inserirNodeHashListaHash(LISTA_HASHC* listaHash, NODE_HASHC* nodeHash);
+void freeListaHashCarro(LISTA_HASHC* listaHashCarro);
