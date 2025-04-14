@@ -64,3 +64,4 @@ void adicionarInfoNodeHash(NODE_HASHC* nodeHash, NODE_CARRO* nodeCarro);
 void mostrarHashCarros(LISTA_HASHC* listaHash);
 void inserirNodeHashListaHash(LISTA_HASHC* listaHash, NODE_HASHC* nodeHash);
 void freeListaHashCarro(LISTA_HASHC* listaHashCarro);
+void ordenarHashCarrosAlfabeticamente(LISTA_HASHC* listaHash);

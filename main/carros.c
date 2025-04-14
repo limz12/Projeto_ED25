@@ -422,3 +422,45 @@ void inserirNodeHashListaHash(LISTA_HASHC* listaHash, NODE_HASHC* nodeHash)
 	listaHash->ultimo_node = nodeHash;
 	listaHash->numElementos++;
 }
+
+//ordenar (alfabeticamente) marcas
+void ordenarHashCarrosAlfabeticamente(LISTA_HASHC* listaHash)
+{
+	if (!listaHash)
+	{
+		printf("ERRO! A lista HASH nao existe.\n");
+		return;
+	}
+
+	//bouble sort
+	NODE_HASHC* node_hash_atual;
+	NODE_HASHC* node_hash_proximo;
+	LISTA_CARRO* temp; // apenas para trocar o conteudo
+	int troca;
+
+	printf("A ORDENAR LISTA!\n");
+
+	do
+	{
+		troca = 0;
+		node_hash_atual = listaHash->header;
+
+		while (node_hash_atual->next != NULL) // Percorre a Hash
+		{
+			node_hash_proximo = node_hash_atual->listaCarros->header;
+			
+			if (strcmp(node_hash_atual->chave, node_hash_proximo->chave) > 0) 
+			{				// Trocar os dados dos nos
+				temp = node_hash_atual->listaCarros;
+				node_hash_atual->listaCarros = node_hash_proximo->listaCarros;
+				node_hash_proximo->listaCarros = temp;
+
+				troca = 1;
+			}
+
+			node_hash_atual = node_hash_atual->next;
+		}
+	} while (troca);//vai parar quando percorrer toda a lista e verificar que realmente nao foram efetuadas trocas
+
+	printf("LISTA ORDENADA COM SUCESSO\n");
+}

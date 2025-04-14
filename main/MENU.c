@@ -181,19 +181,20 @@ void menuCarros(LISTA_HASHC* hashCarros, LISTA_DONOS* listaDonos)
 	}
 
 	int escolha;
-	
+
 	do
 	{
 		printf("# --------------------  MENU CARROS  ----------------------#\n");
 		printf("|  (1) Mostrar Lista Carros (ATENCAO! EXTENSO)               |\n");
 		printf("|  (2) Inserir Carro                                         |\n");
+		printf("|  (3) Ordenar por Marca Alfabeticamente                     |\n");
 		printf("|------------------------------------------------------------|\n");
 		printf("|  (0) Menu Principal                                        |\n");
 		printf("#------------------------------------------------------------#\n");
-	
+
 		printf("Seleciona uma opcao: \n");
-		escolha = verificarNumero(2);
-	} while (escolha < 0 || escolha > 2);
+		escolha = verificarNumero(3);
+	} while (escolha < 0 || escolha > 3);
 
 	//chamar as funcoes aqui
 	switch (escolha)
@@ -204,7 +205,11 @@ void menuCarros(LISTA_HASHC* hashCarros, LISTA_DONOS* listaDonos)
 		break;
 	case 2:
 		system("cls");
-		criarCarroUtilizador(hashCarros,listaDonos);
+		criarCarroUtilizador(hashCarros, listaDonos);
+		break;
+	case 3:
+		system("cls");
+		ordenarHashCarrosAlfabeticamente(hashCarros);
 		break;
 	}
 }
