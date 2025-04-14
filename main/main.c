@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <locale.h>
+#include <ctype.h>
 
 #include "carros.h"
 #include "SENSORES.H"
@@ -52,7 +53,7 @@ void main()
                 //MENU DONOS
                 //limpar a linha de comandos
                 system("cls");
-                menuDonos(listaDonos);
+                menuDonos(listaDonos,listaCarro);
             break;
             case 2:
                 //MENU CARROS

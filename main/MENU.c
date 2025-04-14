@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-
+#include <ctype.h>
 
 #include "SENSORES.H"
 #include "DISTANCIAS.H"
@@ -8,6 +8,27 @@
 #include "UTEIS.H"
 #include "carros.h"
 #include "donos.h"
+
+int verificarNumero(int max) // para a validação das escolhas dos menus
+{
+	char opcao[2];
+	int c, escolha;
+
+	scanf("%1s", &opcao, 2); while ((c = getchar()) != '\n' && c != EOF) {}
+	system("cls");
+
+	if (isdigit(opcao[0]))
+	{
+		escolha = atoi(opcao);
+	}
+	else
+	{
+		return max + 1;
+	}
+
+	return escolha;
+}
+
 //RESPONSAVEL POR CRIAR TODOS OS MENUS DO PROGRAMA
 int menuPrincipal(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaHashCarro,LISTA_DONOS *listaDonos)
 {
@@ -20,20 +41,22 @@ int menuPrincipal(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, 
 	}
 
 	int escolha;
-	printf("# --------------------- MENU PRINCIPAL ----------------------#\n");
-	printf("|  (1) Donos                                                 |\n");
-	printf("|  (2) Carros                                                |\n");
-	printf("|  (3) Distancias                                            |\n");
-	printf("|  (4) Passagens                                             |\n");
-	printf("|  (5) Sensores                                              |\n");
-	printf("|  (6) Memoria Ocupada Estrutura Dados                       |\n");
-	printf("|------------------------------------------------------------|\n");
-	printf("|  (0) SAIR (LIBERTAR MEMORIA)                               |\n");
-	printf("#------------------------------------------------------------#\n");
-	do 
+
+	do
 	{
+		printf("# --------------------- MENU PRINCIPAL ----------------------#\n");
+		printf("|  (1) Donos                                                 |\n");
+		printf("|  (2) Carros                                                |\n");
+		printf("|  (3) Distancias                                            |\n");
+		printf("|  (4) Passagens                                             |\n");
+		printf("|  (5) Sensores                                              |\n");
+		printf("|  (6) Memoria Ocupada Estrutura Dados                       |\n");
+		printf("|------------------------------------------------------------|\n");
+		printf("|  (0) SAIR (LIBERTAR MEMORIA)                               |\n");
+		printf("#------------------------------------------------------------#\n");
+	
 		printf("Seleciona uma opcao: \n");
-		scanf("%d", &escolha);
+		escolha = verificarNumero(6);
 	} while (escolha < 0 || escolha > 6);
 	return escolha;
 } 
@@ -49,26 +72,28 @@ void menuDistancias(DISTANCIAS_LISTA* listaDistancias)
 	}
 
 	int escolha;
-	printf("# -------------------- MENU DISTANCIAS ----------------------#\n");
-	printf("|  (1) Mostrar Lista Distancias                              |\n");
-	printf("|------------------------------------------------------------|\n");
-	printf("|  (0) Menu Principal                                        |\n");
-	printf("#------------------------------------------------------------#\n");
+	
 	do
 	{
+		printf("# -------------------- MENU DISTANCIAS ----------------------#\n");
+		printf("|  (1) Mostrar Lista Distancias                              |\n");
+		printf("|------------------------------------------------------------|\n");
+		printf("|  (0) Menu Principal                                        |\n");
+		printf("#------------------------------------------------------------#\n");
+	
 		printf("Seleciona uma opcao: \n");
-		scanf("%d", &escolha);
+		escolha = verificarNumero(1);
 	} while (escolha < 0 || escolha > 1);
 
 	//chamar as funcoes aqui
-		switch (escolha)
-		{
-			case 1:
-				system("cls");
-				mostrarListaDISTANCIA(listaDistancias);
-			break;
+	switch (escolha)
+	{
+		case 1:
+			system("cls");
+			mostrarListaDISTANCIA(listaDistancias);
+		break;
 
-		}
+	}
 	
 }
 
@@ -83,16 +108,18 @@ void menuPassagens(PASSAGEM_LISTA* listaPassagens)
 	}
 
 	int escolha;
-	printf("# -------------------- MENU Passagens ----------------------#\n");
-	printf("|  (1) Mostrar Lista Passagens (ATENCAO! LISTA EXTENSA)      |\n");
-	printf("|  (2) Registar Passagens                                    |\n");
-	printf("|------------------------------------------------------------|\n");
-	printf("|  (0) Menu Principal                                        |\n");
-	printf("#------------------------------------------------------------#\n");
+
 	do
 	{
+		printf("# -------------------- MENU Passagens ----------------------#\n");
+		printf("|  (1) Mostrar Lista Passagens (ATENCAO! LISTA EXTENSA)      |\n");
+		printf("|  (2) Registar Passagens                                    |\n");
+		printf("|------------------------------------------------------------|\n");
+		printf("|  (0) Menu Principal                                        |\n");
+		printf("#------------------------------------------------------------#\n");
+	
 		printf("Seleciona uma opcao: \n");
-		scanf("%d", &escolha);
+		escolha = verificarNumero(2);
 	} while (escolha < 0 || escolha > 2);
 
 	//chamar as funcoes aqui
@@ -120,15 +147,17 @@ void menuSensores(LISTA_SENSOR* listaSensores)
 	}
 
 	int escolha;
-	printf("# -------------------- MENU SENSORES ----------------------#\n");
-	printf("|  (1) Mostrar Lista SENSORES                                |\n");
-	printf("|------------------------------------------------------------|\n");
-	printf("|  (0) Menu Principal                                        |\n");
-	printf("#------------------------------------------------------------#\n");
+
 	do
 	{
+		printf("# -------------------- MENU SENSORES ----------------------#\n");
+		printf("|  (1) Mostrar Lista SENSORES                                |\n");
+		printf("|------------------------------------------------------------|\n");
+		printf("|  (0) Menu Principal                                        |\n");
+		printf("#------------------------------------------------------------#\n");
+	
 		printf("Seleciona uma opcao: \n");
-		scanf("%d", &escolha);
+		escolha = verificarNumero(1);
 	} while (escolha < 0 || escolha > 1);
 
 	//chamar as funcoes aqui
@@ -152,16 +181,18 @@ void menuCarros(LISTA_HASHC* hashCarros, LISTA_DONOS* listaDonos)
 	}
 
 	int escolha;
-	printf("# --------------------  MENU CARROS  ----------------------#\n");
-	printf("|  (1) Mostrar Lista Carros (ATENCAO! EXTENSO)               |\n");
-	printf("|  (2) Inserir Carro                                         |\n");
-	printf("|------------------------------------------------------------|\n");
-	printf("|  (0) Menu Principal                                        |\n");
-	printf("#------------------------------------------------------------#\n");
+	
 	do
 	{
+		printf("# --------------------  MENU CARROS  ----------------------#\n");
+		printf("|  (1) Mostrar Lista Carros (ATENCAO! EXTENSO)               |\n");
+		printf("|  (2) Inserir Carro                                         |\n");
+		printf("|------------------------------------------------------------|\n");
+		printf("|  (0) Menu Principal                                        |\n");
+		printf("#------------------------------------------------------------#\n");
+	
 		printf("Seleciona uma opcao: \n");
-		scanf("%d", &escolha);
+		escolha = verificarNumero(2);
 	} while (escolha < 0 || escolha > 2);
 
 	//chamar as funcoes aqui
@@ -189,18 +220,21 @@ void menuDonos(LISTA_DONOS* listaDonos)
 	}
 
 	int escolha;
-	printf("# --------------------  MENU DONOS  -------------------------#\n");
-	printf("|  (1) Mostrar Lista Donos (ATENCAO EXTENSO!)                |\n");
-	printf("|  (2) Registar Dono                                         |\n");
-	printf("|  (3) Ordenar Lista Alfabeticamente                         |\n");
-	printf("|------------------------------------------------------------|\n");
-	printf("|  (0) Menu Principal                                        |\n");
-	printf("#------------------------------------------------------------#\n");
+
 	do
 	{
+		printf("# --------------------  MENU DONOS  -------------------------#\n");
+		printf("|  (1) Mostrar Lista Donos (ATENCAO EXTENSO!)                |\n");
+		printf("|  (2) Registar Dono                                         |\n");
+		printf("|  (3) Ordenar Lista Alfabeticamente                         |\n");
+		printf("|  (4) Ordenar Donos por Numero de Contribuinte              |\n");
+		printf("|------------------------------------------------------------|\n");
+		printf("|  (0) Menu Principal                                        |\n");
+		printf("#------------------------------------------------------------#\n");
+	
 		printf("Seleciona uma opcao: \n");
-		scanf("%d", &escolha);
-	} while (escolha < 0 || escolha > 3);
+		escolha = verificarNumero(4);
+	} while (escolha < 0 || escolha > 4);
 
 	//chamar as funcoes aqui
 	switch (escolha)
@@ -216,6 +250,10 @@ void menuDonos(LISTA_DONOS* listaDonos)
 	case 3:
 		system("cls");
 		ordenarListaDonosAlfabeticamente(listaDonos);
+		break;
+	case 4:
+		system("cls");
+		ordenarListaDonosContribuinte(listaDonos);
 		break;
 	}
 }
