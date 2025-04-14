@@ -53,7 +53,7 @@ void main()
                 //MENU DONOS
                 //limpar a linha de comandos
                 system("cls");
-                menuDonos(listaDonos,listaCarro);
+                menuDonos(listaDonos,listaHashCarros);
             break;
             case 2:
                 //MENU CARROS

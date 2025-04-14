@@ -238,7 +238,6 @@ void ordenarListaDonosContribuinte(LISTA_DONOS* lista)
 	Donos* temp; // apenas para trocar o conteudo
 	int troca;
 
-	printf("A Ordenar Lista de Carros por Número de Contribuinte\n");
 
 	do
 	{
