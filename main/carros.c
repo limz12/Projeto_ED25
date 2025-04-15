@@ -433,34 +433,40 @@ void ordenarHashCarrosAlfabeticamente(LISTA_HASHC* listaHash)
 	}
 
 	//bouble sort
-	NODE_HASHC* node_hash_atual;
-	NODE_HASHC* node_hash_proximo;
-	LISTA_CARRO* temp; // apenas para trocar o conteudo
+	NODE_HASHC* atual;
+	NODE_HASHC* proximo;
+	LISTA_CARRO* temp; // para trocar as listas dentro dos nós
+	char* temp_chave[MAX_CHAR_STR]; // para trocar as listas dentro dos nós
 	int troca;
 
-	printf("A ORDENAR LISTA!\n");
+	printf("A ORDENAR HASH!\n");
 
 	do
 	{
 		troca = 0;
-		node_hash_atual = listaHash->header;
+		atual = listaHash->header;
 
-		while (node_hash_atual->next != NULL) // Percorre a Hash
+		while (atual->next != NULL) // Percorre a Hash
 		{
-			node_hash_proximo = node_hash_atual->listaCarros->header;
+			proximo = atual->next;
 			
-			if (strcmp(node_hash_atual->chave, node_hash_proximo->chave) > 0) 
-			{				// Trocar os dados dos nos
-				temp = node_hash_atual->listaCarros;
-				node_hash_atual->listaCarros = node_hash_proximo->listaCarros;
-				node_hash_proximo->listaCarros = temp;
+			if (strcmp(atual->chave, proximo->chave) > 0) 
+			{				// Trocar as listas dos nos
+				temp = atual->listaCarros;
+				atual->listaCarros = proximo->listaCarros;
+				proximo->listaCarros = temp;
+
+							// Trocar as chaves dos nos
+				strcpy(temp_chave, atual->chave);
+				strcpy(atual->chave, proximo->chave);
+				strcpy(proximo->chave, temp_chave);
 
 				troca = 1;
 			}
 
-			node_hash_atual = node_hash_atual->next;
+			atual = atual->next;
 		}
-	} while (troca);//vai parar quando percorrer toda a lista e verificar que realmente nao foram efetuadas trocas
+	} while (troca);//vai parar quando percorrer toda a hash e verificar que realmente nao foram efetuadas trocas
 
-	printf("LISTA ORDENADA COM SUCESSO\n");
+	printf("HASH ORDENADA COM SUCESSO\n");
 }
