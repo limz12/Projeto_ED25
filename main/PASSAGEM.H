@@ -47,3 +47,7 @@ void libertarNodePassagem(PASSAGEM_NODE* node);
 void libertarListaPassagem(PASSAGEM_LISTA* lista);
 void registarPassagem(PASSAGEM_LISTA* lista);
 int verificarNodeDadosPassagem(PASSAGEM_NODE* node);
+//void carrosCircularamduranteX(PASSAGEM* listaPassagem, LISTA_HASHC* listaCarros);
+int checkPeriodoX(PASSAGEM_NODE* nodePassagem, DATA* periodoInicial, DATA* periodoFinal);
+//int maiorMatricula(int pCarro, int sCarro, LISTA_HASHC* listaHashCarro);
+//NODE_CARRO* procurarPorId(int id, LISTA_HASHC* listaHash);
