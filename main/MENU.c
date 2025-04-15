@@ -32,7 +32,6 @@ int verificarNumero(int max) // para a validação das escolhas dos menus
 //RESPONSAVEL POR CRIAR TODOS OS MENUS DO PROGRAMA
 int menuPrincipal(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaHashCarro,LISTA_DONOS *listaDonos)
 {
-
 	//verificar se todas as listas estao presentes
 	if (!listaSensor && !listaDistancias && !listaPassagem && !listaHashCarro && !listaDonos)
 	{
@@ -97,7 +96,7 @@ void menuDistancias(DISTANCIAS_LISTA* listaDistancias)
 	
 }
 
-void menuPassagens(PASSAGEM_LISTA* listaPassagens)
+void menuPassagens(PASSAGEM_LISTA* listaPassagens, LISTA_HASHC* listaHashCarros)
 {
 	system("cls");
 	//verificar se todas as listas estao presentes
@@ -114,13 +113,14 @@ void menuPassagens(PASSAGEM_LISTA* listaPassagens)
 		printf("# -------------------- MENU Passagens ----------------------#\n");
 		printf("|  (1) Mostrar Lista Passagens (ATENCAO! LISTA EXTENSA)      |\n");
 		printf("|  (2) Registar Passagens                                    |\n");
+		printf("|  (3) Listagem Carros Que Circularam no periodo X           |\n");
 		printf("|------------------------------------------------------------|\n");
 		printf("|  (0) Menu Principal                                        |\n");
 		printf("#------------------------------------------------------------#\n");
 	
 		printf("Seleciona uma opcao: \n");
-		escolha = verificarNumero(2);
-	} while (escolha < 0 || escolha > 2);
+		escolha = verificarNumero(3);
+	} while (escolha < 0 || escolha > 3);
 
 	//chamar as funcoes aqui
 	switch (escolha)
@@ -132,6 +132,10 @@ void menuPassagens(PASSAGEM_LISTA* listaPassagens)
 	case 2:
 		system("cls");
 		registarPassagem(listaPassagens);
+	break;
+	case 3:
+		system("cls");
+		carrosCircularamduranteX(listaPassagens, listaHashCarros);
 	break;
 	}
 }

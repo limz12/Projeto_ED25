@@ -5,9 +5,10 @@
 #include <locale.h>
 #include <time.h>
 
+#define MAX_ARRAY_CARROS 100000
 
 #include "PASSAGEM.H"
-
+#include "carros.h"
 //criar a LISTA PASSAGEM
 PASSAGEM_LISTA* criarListaPassagem()
 {
@@ -319,4 +320,310 @@ int verificarNodeDadosPassagem(PASSAGEM_NODE* node)
 	}
 	
 }
+
+//retorna o Carro com o id especificado
+NODE_CARRO* procurarPorId(LISTA_HASHC* listaHash, int id)
+{
+	//alocar mem
+	NODE_CARRO* nodeCarroEncontrado = (NODE_CARRO*)malloc(sizeof(NODE_CARRO));
+
+	NODE_HASHC* nodeHashCarro = listaHash->header;
+	//procurar na lista o ID CARRO
+	while (nodeHashCarro)
+	{
+		NODE_CARRO* nodeCarros = nodeHashCarro->listaCarros->header;
+		while (nodeCarros)
+		{
+
+			if (nodeCarros->info->codVeiculo == id)
+			{
+				nodeCarroEncontrado = nodeCarros;
+
+				return nodeCarroEncontrado;
+			}
+			nodeCarros = nodeCarros->next;
+
+		}
+		nodeHashCarro = nodeHashCarro->next;
+	}
+	return NULL;
+}
+
+//listar Ordenadamente matricula passagem na autoestrada durante periodo x (inicio - fim)
+void carrosCircularamduranteX(PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaHashCarros)
+{
+	if (!listaPassagem || !listaHashCarros)
+	{
+		return;
+	}
+	//guardar input do user o periodo inicial
+	DATA* periodoInicial = (DATA*)malloc(sizeof(DATA));
+	//guardar input do user o periodo final
+	DATA* periodoFinal = (DATA*)malloc(sizeof(DATA));
+	if (periodoInicial && periodoFinal == NULL)
+	{
+		return;
+	}
+	//pedir o periodo inicial
+	printf("INSIRA O DIA INICIAL DE PESQUISA!\n");
+	printf("DIA: ");
+	scanf("%d", &periodoInicial->dia);
+	printf("MES: ");
+	scanf("%d", &periodoInicial->mes);
+	printf("ANO: ");
+	scanf("%d", &periodoInicial->ano);
+	printf("**************************\n");
+	//pedir o periodo final
+	printf("INSIRA O DIA FINAL DE PESQUISA!\n");
+	printf("DIA: ");
+	scanf("%d", &periodoFinal->dia);
+	printf("MES: ");
+	scanf("%d", &periodoFinal->mes);
+	printf("ANO: ");
+	scanf("%d", &periodoFinal->ano);
+	printf("**************************\n");
+	//pedir hora inicial
+	printf("INSIRA A HORA INICIAL DE PESQUISA!\n");
+	printf("HORA: ");
+	scanf("%d", &periodoInicial->hora);
+	printf("MINUTOS: ");
+	scanf("%d", &periodoInicial->minuto);
+	//pedir hora final
+	printf("INSIRA A HORA FINAL DE PESQUISA!\n");
+	printf("HORA: ");
+	scanf("%d", &periodoFinal->hora);
+	printf("MINUTOS: ");
+	scanf("%d", &periodoFinal ->minuto);
+	//descartamos os segundos
+
+	//percorrer a lista passagem e adicionar a array todos os IDCARROS que satisfazem a condicao
+	PASSAGEM_NODE* nodePassagem = listaPassagem->header;
+
+	//guardar numa array todos os CARROS que satizfazem a condicao
+	NODE_CARRO* arrayCarros[MAX_ARRAY_CARROS]; 
+	//inicializar a array a null
+	for (int j = 0; j < MAX_ARRAY_CARROS; j++)
+	{
+		arrayCarros[j] = NULL;
+	}
+	int i = 0;
+	printf("PROCURAR CONDICAO PERIODO\n");
+	while (nodePassagem)
+	{
+		//encontrar as datas que satisfacam a condicao
+		if (checkPeriodoX(nodePassagem, periodoInicial, periodoFinal) == 1)
+		{
+			//para combater a repeticao dos IDCARRO presente na lista das passagens
+			if (i > 0)
+			{
+				if (nodePassagem->info->codVeiculo != arrayCarros[i - 1]->info->codVeiculo)
+				{
+					//adicionar na array o id do carro
+					arrayCarros[i] = procurarPorId(listaHashCarros,nodePassagem->info->codVeiculo);
+					//avancar para a proxima casa array
+					i++;
+				}					
+			}
+			else 
+			{
+				//adicionar na array o id do carro
+				arrayCarros[i] = procurarPorId(listaHashCarros, nodePassagem->info->codVeiculo);
+				//avancar para a proxima casa array
+				i++;
+			}
+			
+		}
+		nodePassagem = nodePassagem->next;
+	}
+
+	//*******************************************
+	//bubble sort da Array carros (organizar alfabeticamente matriculas)
+	int troca;
+	NODE_CARRO* buffer = NULL;
+	//percorrer toda a Array dos carros
+	printf("A ORDENAR! (DEPENDENDO DO RANGE DA PESQUISA PODE DEMORAR!)\n");
+	int contador = 0;
+	for (int k = 0; k < MAX_ARRAY_CARROS - 1; k++)
+	{
+		if (arrayCarros[k] != NULL)
+		{
+			contador += 1;
+		}
+	}
+	printf("Existem [%d] Carros que satisfazem a condicao\n", contador);
+	do
+	{
+		troca = 0;
+		//para nao passar do ultimo indice, resolver o problema out of bounds tamanho da array
+		for (i = 0; i < MAX_ARRAY_CARROS - 1; i++)
+		{
+			//se nao existir o proximo quer dizer que esta no ultimo indice, entao nao faz a troca
+			if(arrayCarros[i+1] != NULL)
+			{ 
+				//se a segunda matricula for maior
+				if (maiorMatricula(arrayCarros[i]->info->codVeiculo, arrayCarros[i + 1]->info->codVeiculo, listaHashCarros) == 1)
+				{
+					//trocar a posicao do indice atual com o segundo
+					buffer = arrayCarros[i];
+					arrayCarros[i] = arrayCarros[i + 1];
+					arrayCarros[i + 1] = buffer;
+					troca = 1;
+					
+				}
+			}
+		}
+	} while (troca);
+	
+	//listar os conteudos da array (que ja esta ordenada por matricula)
+	// Cabeçalho da lista
+	printf("**************************************************************\n");
+	printf("|                        LISTA CARROS                        |\n");
+	printf("**************************************************************\n");
+	printf("\nMatricula\tMarca\t\tModelo\t\tAno\t\tID_Dono\t\tCodigo_Veiculo\n\n");
+
+	for (i = 0; i < MAX_ARRAY_CARROS; i++)
+	{
+		if (arrayCarros[i] != NULL)
+		{
+			printf("%s\t%s\t\t%s\t\t%d\t\t%d\t\t%d\n", arrayCarros[i]->info->matricula, arrayCarros[i]->info->marca, arrayCarros[i]->info->modelo, arrayCarros[i]->info->ano, arrayCarros[i]->info->dono, arrayCarros[i]->info->codVeiculo);
+		}
+	}
+	printf("*****************************************************************************\n");
+
+	//libertar a array de carros como a array esta alocada na heap, ele acaba por libertar sozinho no fim da funcao
+	//percorrer a array e se existir um indice, dar free
+	for (i = 0; i < MAX_ARRAY_CARROS - 1; i++) // - 1 para nao passar do bound da array
+	{
+		if (arrayCarros[i] != NULL)
+		{
+			arrayCarros[i] = NULL;
+		}
+	
+	}
+	
+
+	//free dos periodos
+	free(periodoFinal);
+	free(periodoInicial);
+}
+
+//verifica se esta entre o tempoX e Y
+int checkPeriodoX(PASSAGEM_NODE* nodePassagem, DATA* periodoInicial, DATA* periodoFinal)
+{
+	//verificar se esta antes da data inicial
+	if (nodePassagem->info->data->ano < periodoInicial->ano)
+	{
+		return 0;
+	}
+	//se tiver o mesmo ano
+	if (nodePassagem->info->data->ano == periodoInicial->ano)
+	{
+		//verificar se o mes e inferior
+		if (nodePassagem->info->data->mes < periodoInicial->mes)
+		{
+			return 0;
+		}
+		//verificar se tem o dia inferior ao targetInicial
+		if (nodePassagem->info->data->mes == periodoInicial->mes && nodePassagem->info->data->dia < periodoInicial->dia)
+		{
+			return 0;
+		}
+	}
+	//verificar se esta depois da data final
+	if (nodePassagem->info->data->ano > periodoFinal->ano)
+	{
+		return 0;
+	}
+	if (nodePassagem->info->data->ano == periodoFinal->ano)
+	{
+		//verificar se o mes e superior
+		if (nodePassagem->info->data->mes > periodoFinal->mes)
+		{
+			return 0;
+		}
+	
+		//verificar se o dia e superior ao limite
+		if (nodePassagem->info->data->mes == periodoFinal->mes && nodePassagem->info->data->dia > periodoFinal->dia)
+		{
+			return 0;
+		}
+	}
+	
+		//verificar se a data e inferior ao periodo inicial
+		if (nodePassagem->info->data->hora < periodoInicial->hora)
+		{
+			return 0;
+		}
+			
+		if (nodePassagem->info->data->hora == periodoInicial->hora && nodePassagem->info->data->minuto < periodoInicial->minuto)
+		{
+			return 0;
+		}
+			
+
+	//se passou os testes de dia/mes/ano verificar o periodoFinal
+		if (nodePassagem->info->data->hora > periodoFinal->hora)
+		{
+			return 0;
+		}
+			
+		if (nodePassagem->info->data->hora == periodoFinal->hora && nodePassagem->info->data->minuto > periodoFinal->minuto)
+		{
+			return 0;
+		}
+			
+	//se passou os testes esta dentro do intervalo 
+	return 1;
+}
+
+
+//verificar se a seguinte matricula  e maior (por IDCARRO)
+int maiorMatricula(int pCarro, int sCarro, LISTA_HASHC* listaHashCarro)
+{
+	NODE_CARRO* primeiroCarro = NULL;
+	NODE_CARRO* segundoCarro = NULL;
+
+	int encontrei1 = 0;
+	int encontrei2 = 0;
+	//criar o Node para percorrer a lista Hash
+	NODE_HASHC* nodeHashCarro = listaHashCarro->header;
+	while ( (encontrei1 && encontrei2) == 0) //operacao AND 
+	{
+		//percorrer a lista dos carros
+		NODE_CARRO* nodeCarro = nodeHashCarro->listaCarros->header;
+		while (nodeCarro != NULL)
+		{
+			
+
+			//se encontrar o carro com o mesmo id que o pCarro , adicionar a struct primeiroCarro
+			if (nodeCarro->info->codVeiculo == pCarro)
+			{
+				primeiroCarro = nodeCarro;
+				encontrei1 = 1;
+			}
+			//se for igual ao sCarro
+			if (nodeCarro->info->codVeiculo == sCarro)
+			{
+				segundoCarro = nodeCarro;
+				encontrei2 = 1;
+			}
+			nodeCarro = nodeCarro->next;
+		}
+	
+		nodeHashCarro = nodeHashCarro->next;
+		
+	}
+	//ordem crescente
+	if (strcmp(primeiroCarro->info->matricula, segundoCarro->info->matricula) > 0)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+
+
 
