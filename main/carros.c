@@ -424,7 +424,7 @@ void inserirNodeHashListaHash(LISTA_HASHC* listaHash, NODE_HASHC* nodeHash)
 }
 
 //ordenar (alfabeticamente) marcas
-void ordenarHashCarrosAlfabeticamente(LISTA_HASHC* listaHash)
+void ordenarMarcasHashCarrosAlfabeticamente(LISTA_HASHC* listaHash)
 {
 	if (!listaHash)
 	{
@@ -465,6 +465,105 @@ void ordenarHashCarrosAlfabeticamente(LISTA_HASHC* listaHash)
 			}
 
 			atual = atual->next;
+		}
+	} while (troca);//vai parar quando percorrer toda a hash e verificar que realmente nao foram efetuadas trocas
+
+	printf("HASH ORDENADA COM SUCESSO\n");
+}
+
+//ordenar (alfabeticamente) modelo
+void ordenarModeloHashCarrosAlfabeticamente(LISTA_HASHC* listaHash)
+{
+	if (!listaHash)
+	{
+		printf("ERRO! A lista HASH nao existe.\n");
+		return;
+	}
+
+	//bouble sort
+	NODE_HASHC* node_atual;
+	NODE_CARRO* atual;
+	NODE_CARRO* proximo;
+	CARRO* temp; // apenas para trocar o conteudo
+	int troca;
+
+	printf("A ORDENAR HASH!\n");
+
+	do
+	{
+		troca = 0;
+		node_atual = listaHash->header;
+
+		while (node_atual->next != NULL) // Percorre a Hash
+		{
+			atual = node_atual->listaCarros->header;
+
+			while (atual->next != NULL)
+			{
+				proximo = atual->next;
+
+				if (strcmp(atual->info->modelo, proximo->info->modelo) > 0)
+				{				// Trocar as listas dos nos
+					temp = atual->info;
+					atual->info = proximo->info;
+					proximo->info = temp;
+
+					troca = 1;
+				}
+
+				atual = atual->next;
+			}
+
+			node_atual = node_atual->next;
+		}
+	} while (troca);//vai parar quando percorrer toda a hash e verificar que realmente nao foram efetuadas trocas
+
+	printf("HASH ORDENADA COM SUCESSO\n");
+}
+
+void ordenarMatriculaHashCarrosAlfabeticamente(LISTA_HASHC* listaHash)
+{
+	if (!listaHash)
+	{
+		printf("ERRO! A lista HASH nao existe.\n");
+		return;
+	}
+
+	//bouble sort
+	NODE_HASHC* node_atual;
+	NODE_CARRO* atual;
+	NODE_CARRO* proximo;
+	CARRO* temp; // apenas para trocar o conteudo
+	int troca;
+
+	printf("A ORDENAR HASH!\n");
+
+	do
+	{
+		troca = 0;
+		node_atual = listaHash->header;
+
+		while (node_atual->next != NULL) // Percorre a Hash
+		{
+			atual = node_atual->listaCarros->header;
+
+			while (atual->next != NULL)
+			{
+				proximo = atual->next;
+
+				if (strcmp(atual->info->matricula, proximo->info->matricula) > 0)
+				{				// Trocar as listas dos nos
+					temp = atual->info;
+					atual->info = proximo->info;
+					proximo->info = temp;
+
+					troca = 1;
+				}
+
+				atual = atual->next;
+			}
+
+			node_atual = node_atual->next;
 		}
 	} while (troca);//vai parar quando percorrer toda a hash e verificar que realmente nao foram efetuadas trocas
 
