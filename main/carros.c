@@ -422,3 +422,150 @@ void inserirNodeHashListaHash(LISTA_HASHC* listaHash, NODE_HASHC* nodeHash)
 	listaHash->ultimo_node = nodeHash;
 	listaHash->numElementos++;
 }
+
+//ordenar (alfabeticamente) marcas
+void ordenarMarcasHashCarrosAlfabeticamente(LISTA_HASHC* listaHash)
+{
+	if (!listaHash)
+	{
+		printf("ERRO! A lista HASH nao existe.\n");
+		return;
+	}
+
+	//bouble sort
+	NODE_HASHC* atual;
+	NODE_HASHC* proximo;
+	LISTA_CARRO* temp; // para trocar as listas dentro dos nós
+	char* temp_chave[MAX_CHAR_STR]; // para trocar as listas dentro dos nós
+	int troca;
+
+	printf("A ORDENAR HASH!\n");
+
+	do
+	{
+		troca = 0;
+		atual = listaHash->header;
+
+		while (atual->next != NULL) // Percorre a Hash
+		{
+			proximo = atual->next;
+			
+			if (strcmp(atual->chave, proximo->chave) > 0) 
+			{				// Trocar as listas dos nos
+				temp = atual->listaCarros;
+				atual->listaCarros = proximo->listaCarros;
+				proximo->listaCarros = temp;
+
+							// Trocar as chaves dos nos
+				strcpy(temp_chave, atual->chave);
+				strcpy(atual->chave, proximo->chave);
+				strcpy(proximo->chave, temp_chave);
+
+				troca = 1;
+			}
+
+			atual = atual->next;
+		}
+	} while (troca);//vai parar quando percorrer toda a hash e verificar que realmente nao foram efetuadas trocas
+
+	printf("HASH ORDENADA COM SUCESSO\n");
+}
+
+//ordenar (alfabeticamente) modelo
+void ordenarModeloHashCarrosAlfabeticamente(LISTA_HASHC* listaHash)
+{
+	if (!listaHash)
+	{
+		printf("ERRO! A lista HASH nao existe.\n");
+		return;
+	}
+
+	//bouble sort
+	NODE_HASHC* node_atual;
+	NODE_CARRO* atual;
+	NODE_CARRO* proximo;
+	CARRO* temp; // apenas para trocar o conteudo
+	int troca;
+
+	printf("A ORDENAR HASH!\n");
+
+	do
+	{
+		troca = 0;
+		node_atual = listaHash->header;
+
+		while (node_atual->next != NULL) // Percorre a Hash
+		{
+			atual = node_atual->listaCarros->header;
+
+			while (atual->next != NULL)
+			{
+				proximo = atual->next;
+
+				if (strcmp(atual->info->modelo, proximo->info->modelo) > 0)
+				{				// Trocar as listas dos nos
+					temp = atual->info;
+					atual->info = proximo->info;
+					proximo->info = temp;
+
+					troca = 1;
+				}
+
+				atual = atual->next;
+			}
+
+			node_atual = node_atual->next;
+		}
+	} while (troca);//vai parar quando percorrer toda a hash e verificar que realmente nao foram efetuadas trocas
+
+	printf("HASH ORDENADA COM SUCESSO\n");
+}
+
+void ordenarMatriculaHashCarrosAlfabeticamente(LISTA_HASHC* listaHash)
+{
+	if (!listaHash)
+	{
+		printf("ERRO! A lista HASH nao existe.\n");
+		return;
+	}
+
+	//bouble sort
+	NODE_HASHC* node_atual;
+	NODE_CARRO* atual;
+	NODE_CARRO* proximo;
+	CARRO* temp; // apenas para trocar o conteudo
+	int troca;
+
+	printf("A ORDENAR HASH!\n");
+
+	do
+	{
+		troca = 0;
+		node_atual = listaHash->header;
+
+		while (node_atual->next != NULL) // Percorre a Hash
+		{
+			atual = node_atual->listaCarros->header;
+
+			while (atual->next != NULL)
+			{
+				proximo = atual->next;
+
+				if (strcmp(atual->info->matricula, proximo->info->matricula) > 0)
+				{				// Trocar as listas dos nos
+					temp = atual->info;
+					atual->info = proximo->info;
+					proximo->info = temp;
+
+					troca = 1;
+				}
+
+				atual = atual->next;
+			}
+
+			node_atual = node_atual->next;
+		}
+	} while (troca);//vai parar quando percorrer toda a hash e verificar que realmente nao foram efetuadas trocas
+
+	printf("HASH ORDENADA COM SUCESSO\n");
+}
