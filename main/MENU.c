@@ -43,20 +43,21 @@ int menuPrincipal(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, 
 
 	do
 	{
-		printf("# --------------------- MENU PRINCIPAL ----------------------#\n");
+		printf("# --------------------- MENU PRINCIPAL --------------------- #\n");
 		printf("|  (1) Donos                                                 |\n");
 		printf("|  (2) Carros                                                |\n");
 		printf("|  (3) Distancias                                            |\n");
 		printf("|  (4) Passagens                                             |\n");
 		printf("|  (5) Sensores                                              |\n");
-		printf("|  (6) Memoria Ocupada Estrutura Dados                       |\n");
+		printf("|  (6) Estatisticas                                          |\n");
+		printf("|  (7) Memoria Ocupada Estrutura Dados                       |\n");
 		printf("|------------------------------------------------------------|\n");
 		printf("|  (0) SAIR (LIBERTAR MEMORIA)                               |\n");
 		printf("#------------------------------------------------------------#\n");
 	
 		printf("Seleciona uma opcao: \n");
-		escolha = verificarNumero(6);
-	} while (escolha < 0 || escolha > 6);
+		escolha = verificarNumero(7);
+	} while (escolha < 0 || escolha > 7);
 	return escolha;
 } 
 
@@ -100,7 +101,7 @@ void menuPassagens(PASSAGEM_LISTA* listaPassagens, LISTA_HASHC* listaHashCarros)
 {
 	system("cls");
 	//verificar se todas as listas estao presentes
-	if (!listaPassagens)
+	if (!listaPassagens && !listaHashCarros)
 	{
 		printf("ERRO! AS LISTAS PASSAGEM nao existe\n");
 		return -1;
@@ -178,7 +179,7 @@ void menuCarros(LISTA_HASHC* hashCarros, LISTA_DONOS* listaDonos)
 {
 	system("cls");
 	//verificar se todas as listas estao presentes
-	if (!hashCarros)
+	if (!hashCarros && !listaDonos)
 	{
 		printf("ERRO! A LISTA de SENSORES nao existe\n");
 		return -1;
@@ -273,6 +274,40 @@ void menuDonos(LISTA_DONOS* listaDonos)
 	case 4:
 		system("cls");
 		ordenarListaDonosContribuinte(listaDonos);
+		break;
+	}
+}
+
+void menuSTATS(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaHashCarro, LISTA_DONOS* listaDonos)
+{
+	system("cls");
+	//verificar se todas as listas estao presentes
+	if (!listaSensor && !listaDistancias && !listaPassagem && !listaHashCarro && !listaDonos)
+	{
+		printf("ERRO! AS LISTAS NAO EXISTEM (menuPrincipal)\n");
+		return -1;
+	}
+
+	int escolha;
+
+	do
+	{
+		printf("# -------------------  MENU ESTATISTICA  ------------------- #\n");
+		printf("|  (1) Ranking de Marcas por Total de Km's percorridos       |\n");
+		printf("|------------------------------------------------------------|\n");
+		printf("|  (0) Menu Principal                                        |\n");
+		printf("#------------------------------------------------------------#\n");
+
+		printf("Seleciona uma opcao: \n");
+		escolha = verificarNumero(1);
+	} while (escolha < 0 || escolha > 1);
+
+	//chamar as funcoes aqui
+	switch (escolha)
+	{
+	case 1:
+		system("cls");
+		rankingMarcaPorKm(listaHashCarro, listaDistancias, listaPassagem);
 		break;
 	}
 }

@@ -10,6 +10,7 @@
 #include "UTEIS.H"
 #include "MENU.H"
 #include "donos.h"
+#include "Stats.h"
 
 //FALTA CARREGAR  DONOS E CALCULAR TAMANHO sizeof() deste
 
@@ -76,6 +77,11 @@ void main()
                 menuSensores(listaSensor);
             break;
             case 6:
+                //MENU ESTATÍSTICAS
+                system("cls");
+                menuSTATS(listaSensor, listaDistancias, listaPassagem, listaHashCarros, listaDonos);
+                break;
+            case 7:
                 //CALCULAR MEMORIA TOTAL da ED
                 system("cls");
                 memoriaTotalOcupadaED(listaSensor, listaDistancias, listaPassagem, listaHashCarros, listaDonos);

@@ -134,6 +134,7 @@
     <ClCompile Include="MENU.c" />
     <ClCompile Include="PASSAGEM.c" />
     <ClCompile Include="SENSORES.c" />
+    <ClCompile Include="Stats.c" />
     <ClCompile Include="UTEIS.c" />
   </ItemGroup>
   <ItemGroup>
@@ -141,6 +142,7 @@
     <ClInclude Include="MENU.H" />
     <ClInclude Include="PASSAGEM.H" />
     <ClInclude Include="SENSORES.H" />
+    <ClInclude Include="Stats.h" />
     <ClInclude Include="UTEIS.H" />
   </ItemGroup>
   <ItemGroup>
