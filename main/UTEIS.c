@@ -176,7 +176,7 @@ int calcularTamanhoEDViagens(LISTA_VIAGEM* lista)
 */
 
 //JUNTAR NUMA UNICA FUNCAO QUE SOMA TODOS OS RETURNS E DEVOLVE O TOTAL (BYTES)
-void memoriaTotalOcupadaED(LISTA_SENSOR* listaS, DISTANCIAS_LISTA* listaD, PASSAGEM_LISTA* listaP, LISTA_HASHC* listaHashCarro, LISTA_DONOS* listaDonos, LISTA_VIAGEM* listaViagens)
+void memoriaTotalOcupadaED(LISTA_SENSOR* listaS, DISTANCIAS_LISTA* listaD, PASSAGEM_LISTA* listaP, LISTA_HASHC* listaHashCarro, LISTA_DONOS* listaDonos, LISTA_VIAGENS* listaViagens)
 {
 	int memTotal = calcularTamanhoEDSensor(listaS);
 	memTotal += calcularTamanhoEDDistancia(listaD);
@@ -189,7 +189,7 @@ void memoriaTotalOcupadaED(LISTA_SENSOR* listaS, DISTANCIAS_LISTA* listaD, PASSA
 }
 
 //vai inicializar a estrutura de dados, ler os ficheiros / criar listas e carregar todas as informacoes dos respetivos ficheiros
-int inicializarED(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaHashCarros,LISTA_DONOS* listaDonos, LISTA_VIAGEM* listaViagens)
+int inicializarED(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaHashCarros,LISTA_DONOS* listaDonos, LISTA_VIAGENS* listaViagens)
 {
 	//tenho que retornar o enderco da LISTA de cada ficheiro carregado
 

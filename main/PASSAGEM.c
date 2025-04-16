@@ -623,7 +623,3 @@ int maiorMatricula(int pCarro, int sCarro, LISTA_HASHC* listaHashCarro)
 		return 0;
 	}
 }
-
-
-
-
