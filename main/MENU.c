@@ -8,6 +8,7 @@
 #include "UTEIS.H"
 #include "carros.h"
 #include "donos.h"
+#include "Stats.h"
 
 int verificarNumero(int max) // para a validação das escolhas dos menus
 {
@@ -30,10 +31,10 @@ int verificarNumero(int max) // para a validação das escolhas dos menus
 }
 
 //RESPONSAVEL POR CRIAR TODOS OS MENUS DO PROGRAMA
-int menuPrincipal(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaHashCarro,LISTA_DONOS *listaDonos)
+int menuPrincipal(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaHashCarro,LISTA_DONOS *listaDonos, LISTA_VIAGEM* listaViagens)
 {
 	//verificar se todas as listas estao presentes
-	if (!listaSensor && !listaDistancias && !listaPassagem && !listaHashCarro && !listaDonos)
+	if (!listaSensor && !listaDistancias && !listaPassagem && !listaHashCarro && !listaDonos && !listaViagens)
 	{
 		printf("ERRO! AS LISTAS NAO EXISTEM (menuPrincipal)\n");
 		return -1;
@@ -307,7 +308,7 @@ void menuSTATS(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PAS
 	{
 	case 1:
 		system("cls");
-		rankingMarcaPorKm(listaHashCarro, listaDistancias, listaPassagem);
+		rankingMarcaPorKm(listaHashCarro, listaDistancias, listaPassagem, 1, 1, 2020, 31, 12, 2025); // data teste -> fazer uma função para pedir as datas ao utilizador
 		break;
 	}
 }

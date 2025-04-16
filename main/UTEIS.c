@@ -8,6 +8,7 @@
 #include "UTEIS.H"
 #include "carros.h"
 #include "donos.h"
+#include "Stats.h"
 // FALTA MEMORIA OCUPADA POR : DISTANCIA     PASSAGEM
 
 //determinar a memoria ocupada por toda a estrutura de dados
@@ -151,22 +152,42 @@ int calcularTamanhoEDDonos(LISTA_DONOS* lista)
 	return tamanho;
 }
 
-//FALTA FAZER CARROS E DONOS
+int calcularTamanhoEDViagens(LISTA_VIAGEM* lista)
+{
+	if (!lista)
+	{
+		printf("ERRO! A lista SENSOR nao existe");
+		return;
+	}
+	//adicionar o tamanho da lista (8bytes)
+	int tamanho = sizeof(lista);
+	//percorrer a lista e ir somando o tamanho de cada NO e os seus conteudos
+	NODE_VIAGEM* aux = lista->header;
+	while (aux)
+	{
+		tamanho += sizeof(aux);
+		tamanho += sizeof(aux->info);
+		aux = aux->next;
+	}
+
+	return tamanho;
+}
 
 //JUNTAR NUMA UNICA FUNCAO QUE SOMA TODOS OS RETURNS E DEVOLVE O TOTAL (BYTES)
-void memoriaTotalOcupadaED(LISTA_SENSOR* listaS, DISTANCIAS_LISTA* listaD, PASSAGEM_LISTA* listaP, LISTA_HASHC* listaHashCarro, LISTA_DONOS* listaDonos)
+void memoriaTotalOcupadaED(LISTA_SENSOR* listaS, DISTANCIAS_LISTA* listaD, PASSAGEM_LISTA* listaP, LISTA_HASHC* listaHashCarro, LISTA_DONOS* listaDonos, LISTA_VIAGEM* listaViagens)
 {
 	int memTotal = calcularTamanhoEDSensor(listaS);
 	memTotal += calcularTamanhoEDDistancia(listaD);
 	memTotal += calcularTamanhoEDPassagem(listaP);
 	memTotal += calcularTamanhoEDCarro(listaHashCarro);
 	memTotal += calcularTamanhoEDDonos(listaDonos);
+	memTotal += calcularTamanhoEDViagens(listaViagens);
 	//1 Byte = 0.000001
 	printf("A Estrutura de dados ocupa %.2f MB\n", (double)memTotal*0.000001);
 }
 
 //vai inicializar a estrutura de dados, ler os ficheiros / criar listas e carregar todas as informacoes dos respetivos ficheiros
-int inicializarED(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaHashCarros,LISTA_DONOS* listaDonos)
+int inicializarED(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaHashCarros,LISTA_DONOS* listaDonos, LISTA_VIAGEM* listaViagens)
 {
 	//tenho que retornar o enderco da LISTA de cada ficheiro carregado
 
@@ -180,7 +201,8 @@ int inicializarED(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, 
 	carregarDistancia(listaDistancias);
 	//******************CARREGAR-PASSAGEM**************************
 	carregarPassagem(listaPassagem);
-
+	//******************CARREGAR-VIAGENS**************************
+	listaViagens = carregarViagens(listaPassagem, listaDistancias);
 
 	//ITERAR PELA LISTA DONOS E ASSOCIAR O CARRO AO DONO
 

@@ -3,7 +3,7 @@
 
 //prototipagem
 int verificarNumero(int max);
-//int menuPrincipal(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* hashCarros, LISTA_DONOS* listaDonos);
+//int menuPrincipal(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaHashCarro, LISTA_DONOS* listaDonos, LISTA_VIAGEM* listaPassagens);
 void menuDistancias(DISTANCIAS_LISTA* listaDistancias);
 void menuPassagens(PASSAGEM_LISTA* listaPassagens, LISTA_HASHC* listaHashCarros);
 void menuSensores(LISTA_SENSOR* listaSensores);
