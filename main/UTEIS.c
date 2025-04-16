@@ -152,6 +152,7 @@ int calcularTamanhoEDDonos(LISTA_DONOS* lista)
 	return tamanho;
 }
 
+/*
 int calcularTamanhoEDViagens(LISTA_VIAGEM* lista)
 {
 	if (!lista)
@@ -172,6 +173,7 @@ int calcularTamanhoEDViagens(LISTA_VIAGEM* lista)
 
 	return tamanho;
 }
+*/
 
 //JUNTAR NUMA UNICA FUNCAO QUE SOMA TODOS OS RETURNS E DEVOLVE O TOTAL (BYTES)
 void memoriaTotalOcupadaED(LISTA_SENSOR* listaS, DISTANCIAS_LISTA* listaD, PASSAGEM_LISTA* listaP, LISTA_HASHC* listaHashCarro, LISTA_DONOS* listaDonos, LISTA_VIAGEM* listaViagens)
@@ -181,7 +183,7 @@ void memoriaTotalOcupadaED(LISTA_SENSOR* listaS, DISTANCIAS_LISTA* listaD, PASSA
 	memTotal += calcularTamanhoEDPassagem(listaP);
 	memTotal += calcularTamanhoEDCarro(listaHashCarro);
 	memTotal += calcularTamanhoEDDonos(listaDonos);
-	memTotal += calcularTamanhoEDViagens(listaViagens);
+	//memTotal += calcularTamanhoEDViagens(listaViagens);
 	//1 Byte = 0.000001
 	printf("A Estrutura de dados ocupa %.2f MB\n", (double)memTotal*0.000001);
 }
@@ -202,7 +204,7 @@ int inicializarED(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, 
 	//******************CARREGAR-PASSAGEM**************************
 	carregarPassagem(listaPassagem);
 	//******************CARREGAR-VIAGENS**************************
-	listaViagens = carregarViagens(listaPassagem, listaDistancias);
+	//carregarViagens(listaPassagem, listaDistancias);
 
 	//ITERAR PELA LISTA DONOS E ASSOCIAR O CARRO AO DONO
 

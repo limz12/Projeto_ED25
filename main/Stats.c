@@ -10,7 +10,9 @@
 #include "donos.h"
 #include "Stats.h"
 
+//--------------------------------------------------------------------------------------------------------
 
+/*
 LISTA_VIAGEM* criarListaViagem()
 {
 	// Alocação de memória da lista de Viagens
@@ -46,7 +48,7 @@ NODE_VIAGEM* criarNodeViagem()
 	node->info = (VIAGEM*)malloc(sizeof(VIAGEM)); // Conteúdo do Elemento = Dados da Viagem
 	node->next = NULL; // ponteiro para o próximo é "= NULL", pois é adicionado no fim da lista
 
-	/*printf("Elemento da Lista de Viagens criado com sucesso!\n");*/
+    //printf("Elemento da Lista de Viagens criado com sucesso!\n");
 
 	return node;
 }
@@ -159,6 +161,9 @@ void freeListaViagens(LISTA_VIAGEM* lista)
     }
     printf("LISTA VIAGENS REMOVIDA\n");
 }
+*/
+
+// -------------------------------------------- EX 9 -----------------------------------------------------
 
 float DistanciaEntreSensores(int codS1, int codS2, DISTANCIAS_LISTA* listaDist) 
 {
@@ -174,58 +179,129 @@ float DistanciaEntreSensores(int codS1, int codS2, DISTANCIAS_LISTA* listaDist)
     return -1; // não encontrado
 }
 
-int totalKmsPercorridosListaCarro(LISTA_CARRO* listaCarros, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagens, int diaInicio, int mesInicio, int anoInicio, int diaFim, int mesFim, int anoFim)
+void ordenarPassagensPorTempo(PASSAGEM_LISTA* listaPassagens)
 {
-    int totalKm = 0;
-
-    if (!listaCarros || !listaCarros->header) return 0;
-
-    NODE_CARRO* carroNode = listaCarros->header;
-
-    while (carroNode != NULL)
+    if (!listaPassagens)
     {
-        int codVeiculo = carroNode->info->codVeiculo;
-        PASSAGEM_NODE* atual = listaPassagens->header;
+        printf("ERRO! A lista passagens nao existe\n");
+        return;
+    }
 
-        while (atual != NULL)
+    //bubble sort
+    PASSAGEM_NODE* atual;
+    PASSAGEM_NODE* proximo;
+    PASSAGEM* temp; // apenas para trocar o conteudo
+    int troca;
+
+    printf("A Ordenar a lista de Passagens...\n");
+
+    do
+    {
+        troca = 0;
+        atual = listaPassagens->header;
+
+        while (atual->next != NULL)
         {
-            if (atual->info->codVeiculo == codVeiculo && atual->info->tipoRegisto == 0)
+            proximo = atual->next;
+            if ((atual->info->data->ano > proximo->info->data->ano) ||
+                (atual->info->data->ano == proximo->info->data->ano &&
+                    atual->info->data->mes > proximo->info->data->mes) ||
+                (atual->info->data->ano == proximo->info->data->ano &&
+                    atual->info->data->mes == proximo->info->data->mes &&
+                    atual->info->data->dia > proximo->info->data->dia) ||
+                (atual->info->data->ano == proximo->info->data->ano &&
+                    atual->info->data->mes == proximo->info->data->mes &&
+                    atual->info->data->dia == proximo->info->data->dia &&
+                    atual->info->data->hora > proximo->info->data->hora) ||
+                (atual->info->data->ano == proximo->info->data->ano &&
+                    atual->info->data->mes == proximo->info->data->mes &&
+                    atual->info->data->dia == proximo->info->data->dia &&
+                    atual->info->data->hora == proximo->info->data->hora &&
+                    atual->info->data->minuto > proximo->info->data->minuto))
             {
-                int sensorEntrada = atual->info->idSensor;
-                DATA* dataEntrada = atual->info->data;
+                // Trocar os dados dos nos
+                temp = atual->info;
+                atual->info = proximo->info;
+                proximo->info = temp;
 
-                // verificar se dataEntrada está no período
-                if (dataEntrada->ano < anoInicio || dataEntrada->ano > anoFim ||
-                    (dataEntrada->ano == anoInicio && dataEntrada->mes < mesInicio) ||
-                    (dataEntrada->ano == anoFim && dataEntrada->mes > mesFim))
-                {
-                    atual = atual->next;
-                    continue;
-                }
-
-                // procurar saída
-                PASSAGEM_NODE* procuraSaida = atual->next;
-                while (procuraSaida != NULL)
-                {
-                    if (procuraSaida->info->codVeiculo == codVeiculo && procuraSaida->info->tipoRegisto == 1)
-                    {
-                        int sensorSaida = procuraSaida->info->idSensor;
-                        float distancia = DistanciaEntreSensores(sensorEntrada, sensorSaida, listaDistancias);
-                        if (distancia > 0)
-                        {
-                            totalKm += distancia;
-                        }
-                        break;
-                    }
-                    procuraSaida = procuraSaida->next;
-                }
+                troca = 1;
             }
             atual = atual->next;
         }
-        carroNode = carroNode->next;
+    } while (troca);//vai parar quando percorrer toda a lista e verificar que realmente nao foram efetuadas trocas
+
+    printf("LISTA ORDENADA COM SUCESSO\n");
+}
+
+float totalKmsPercorridosListaCarro(LISTA_CARRO* listaCarros, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagens, int diaInicio, int mesInicio, int anoInicio, int diaFim, int mesFim, int anoFim)
+{
+    if (!listaCarros || !listaDistancias || !listaPassagens)
+    {
+        printf("ERRO! A lista HASH nao existe.\n");
+        return;
     }
 
-    return totalKm;
+    // Percorre a lista de CARROS
+    NODE_CARRO* aux_carro = listaCarros->header;
+
+    float soma_total_KM_por_marca = 0;
+    int sensorEntrada = 0; // Numero do Sensor de Entrada
+    int sensorSaida = 0; // Numero do Sensor de Saída
+    
+    while(aux_carro)
+    {
+        aux_carro->info->total_km = 0;
+
+        // Percorre a lista das Passagens
+        PASSAGEM_NODE* aux_passagem = listaPassagens->header;
+        while (aux_passagem)
+        {
+            // SE codVeiculo (CARROS) == codVeiculo (Passagens) :)
+            if (aux_carro->info->codVeiculo == aux_passagem->info->codVeiculo) // Encontrou uma passagem desse veículo
+            {
+                // SE Tipo Registo (Passagens) == 0 -> Entrada
+                if (aux_passagem->info->tipoRegisto == 0)
+                {
+                    // idSensor (Passagens) == codSensor1 (Distancias)
+                    // Guarda Numero do Sensor de Entrada
+                    sensorEntrada = aux_passagem->info->idSensor;
+                }
+                // SE Tipo Registo (Passagens) == 1 -> Saída
+                else if (aux_passagem->info->tipoRegisto == 1)
+                {
+                    // idSensor (Passagens) == codSensor2 (Distancias)
+                    // Guarda Numero do Sensor de Saída
+                    sensorSaida = aux_passagem->info->idSensor;
+                }
+            }
+
+            // Juntar as distâncias a cada 
+            if (sensorEntrada != NULL && sensorSaida != NULL)
+            {
+                DISTANCIAS_NODE* aux_distancias = listaDistancias->header;
+                while (aux_distancias)
+                {
+                    // Verificação para sensores trocados nas distancias
+                    if ((sensorEntrada == aux_distancias->info->codSensor1 && sensorSaida == aux_distancias->info->codSensor2)
+                        || (sensorSaida == aux_distancias->info->codSensor1 && sensorEntrada == aux_distancias->info->codSensor2))
+                    {
+                        // Soma total de KM do mesmo carro
+                        aux_carro->info->total_km += aux_distancias->info->distanciaPercorrida;
+                    }
+                    aux_distancias = aux_distancias->next;
+                }
+            }
+
+            aux_passagem = aux_passagem->next;
+        }
+
+        // Percorrer a lista das Distancias e ver a distancia percorrida
+        // nesses dois sensores e guarda no total_km do carro
+        soma_total_KM_por_marca += aux_carro->info->total_km;
+        aux_carro = aux_carro->next;
+    }
+        
+    return soma_total_KM_por_marca;
 }
 
 //ordenar marcas por mais km's percorridos
@@ -243,7 +319,7 @@ void rankingMarcaPorKm(LISTA_HASHC* listaHash, DISTANCIAS_LISTA* listaDistancia,
 
     while (aux)
     {
-        printf("%d ELEMENTOS DA HASH ENCPNTRADOS!\n", i);
+        printf("%d ELEMENTOS DA HASH ENCONTRADOS!\n", i);
         // Conta os Km's percorridos por cada Marca
         aux->total_Km_marca = totalKmsPercorridosListaCarro(aux->listaCarros, listaDistancia, listaPassagem, diaInicio, mesInicio, anoInicio, diaFim, mesFim, anoFim);
 
@@ -292,7 +368,7 @@ void rankingMarcaPorKm(LISTA_HASHC* listaHash, DISTANCIAS_LISTA* listaDistancia,
     aux = listaHash->header;
     while (aux != NULL)
     {
-        printf("%dº - Marca: %s | Total Km: %d\n", pos, aux->chave, aux->total_Km_marca);
+        printf("%dº - Marca: %s | Total Km Acumulados: %d\n", pos, aux->chave, aux->total_Km_marca);
         pos++;
         aux = aux->next;
     }

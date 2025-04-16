@@ -22,7 +22,7 @@ void main()
     PASSAGEM_LISTA* listaPassagem = criarListaPassagem();
    // LISTA_CARRO* listaCarro = criarListaCarro(); -> alterar pelo iniciar hashCarro
     LISTA_DONOS* listaDonos = criarListaDonos();
-    LISTA_VIAGEM* listaViagens = criarListaViagem();
+    //LISTA_VIAGEM* listaViagens = criarListaViagem();
     //********** HASHING **************
     //INICIAR A LISTA HASHING
     LISTA_HASHC* listaHashCarros = criarListaHashCarro();
@@ -32,7 +32,7 @@ void main()
     printf("PROJETO ED 2025\n");
     
     //CARREGA TODA A ED
-    int ED = inicializarED(listaSensor, listaDistancias, listaPassagem, listaHashCarros, listaDonos, listaViagens);
+    int ED = inicializarED(listaSensor, listaDistancias, listaPassagem, listaHashCarros, listaDonos); // listaViagens
     if (ED == 1)
     {
         printf("Estrutura de dados carregada com sucesso!\n");
@@ -49,7 +49,7 @@ void main()
     //este for com ; ; serve para o programa correr infinitamente
     for (; ;)
     {
-        switch (menuPrincipal(listaSensor, listaDistancias, listaPassagem,listaHashCarros, listaDonos, listaViagens))
+        switch (menuPrincipal(listaSensor, listaDistancias, listaPassagem,listaHashCarros, listaDonos)) // listaViagens
         {
             case 1:
                 //MENU DONOS
@@ -80,7 +80,7 @@ void main()
             case 6:
                 //MENU ESTATÍSTICAS
                 system("cls");
-                menuSTATS(listaSensor, listaDistancias, listaPassagem, listaHashCarros, listaDonos);
+                menuSTATS(listaSensor, listaDistancias, listaPassagem, listaHashCarros, listaDonos); // listaViagens
                 break;
             case 7:
                 //CALCULAR MEMORIA TOTAL da ED
@@ -95,7 +95,7 @@ void main()
                 libertarListaSensores(listaSensor);
                 freeListaHashCarro(listaHashCarros);
                 freeListaDonos(listaDonos);
-                freeListaViagens(listaViagens);
+                //freeListaViagens(listaViagens);
                 return 0;
            break;
 

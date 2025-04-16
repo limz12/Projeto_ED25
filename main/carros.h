@@ -11,7 +11,7 @@ typedef struct
 	int ano;
 	int dono;
 	int codVeiculo;
-	int total_km;
+	float total_km;
 }CARRO;
 
 // NODE DO CARRO
@@ -35,7 +35,7 @@ typedef struct
 typedef struct nodeHash
 {
 	char chave[MAX_CHAR_STR];
-	int total_Km_marca;
+	float total_Km_marca;
 	struct nodeHash* next;
 	LISTA_CARRO* listaCarros;
 }NODE_HASHC;

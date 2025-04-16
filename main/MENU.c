@@ -279,7 +279,7 @@ void menuDonos(LISTA_DONOS* listaDonos)
 	}
 }
 
-void menuSTATS(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaHashCarro, LISTA_DONOS* listaDonos)
+void menuSTATS(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaHashCarro, LISTA_DONOS* listaDonos, LISTA_VIAGEM* listaViagens)
 {
 	system("cls");
 	//verificar se todas as listas estao presentes
@@ -308,6 +308,7 @@ void menuSTATS(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PAS
 	{
 	case 1:
 		system("cls");
+		ordenarPassagensPorTempo(listaPassagem);
 		rankingMarcaPorKm(listaHashCarro, listaDistancias, listaPassagem, 1, 1, 2020, 31, 12, 2025); // data teste -> fazer uma função para pedir as datas ao utilizador
 		break;
 	}

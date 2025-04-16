@@ -9,16 +9,17 @@ typedef struct
 	DATA* data_entrada;
 	DATA* data_saida;
 	float distancia_percorrida;
+	CARRO* carro;
 }VIAGEM;
 
-// NODE DO CARRO
+// NODE DA VIAGEM
 typedef struct nodeviagem
 {
 	VIAGEM* info;
 	struct nodeviagem* next;
 }NODE_VIAGEM;
 
-// LISTA CARRO
+// LISTA VIAGEM
 typedef struct
 {
 	NODE_VIAGEM* header; // ponteiro para o primeiro NO
@@ -30,8 +31,11 @@ typedef struct
 LISTA_VIAGEM* criarListaViagem();
 NODE_VIAGEM* criarNodeViagem();
 int freeNodeViagem(NODE_VIAGEM* node);
-LISTA_VIAGEM* carregarViagens(PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias);
-void freeListaViagens(LISTA_VIAGEM* lista);
 float DistanciaEntreSensores(int codS1, int codS2, DISTANCIAS_LISTA* listaDist);
-int totalKmsPercorridosListaCarro(LISTA_CARRO* listaCarros, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagens, int diaInicio, int mesInicio, int anoInicio, int diaFim, int mesFim, int anoFim);
-void rankingMarcaPorKm(LISTA_HASHC* listaHash, DISTANCIAS_LISTA* listaDistancia, PASSAGEM_LISTA* listaPassagem, int diaInicio, int mesInicio, int anoInicio, int diaFim, int mesFim, int anoFim);
+//LISTA_VIAGEM* carregarViagens(PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias);
+void freeListaViagens(LISTA_VIAGEM* lista);
+void ordenarPassagensPorTempo(PASSAGEM_LISTA* listaPassagens);
+float totalKmsPercorridosListaCarro(LISTA_CARRO* listaCarros, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagens, int diaInicio, int mesInicio, int anoInicio, int diaFim, int mesFim, int anoFim);
+void rankingMarcaPorKm(LISTA_HASHC* listaHash, DISTANCIAS_LISTA* listaDistancia,
+	PASSAGEM_LISTA* listaPassagem, int diaInicio, int mesInicio, int anoInicio,
+	int diaFim, int mesFim, int anoFim);
