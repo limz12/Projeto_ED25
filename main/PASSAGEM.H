@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+
+
 typedef struct
 {
 	//para os dias em que o carro passou pelo sensor
@@ -37,6 +39,7 @@ typedef struct
 	int numElementos;
 }PASSAGEM_LISTA;
 
+
 //prototiopagem
 PASSAGEM_LISTA* criarListaPassagem();
 PASSAGEM_NODE* criarNodePassagem();
@@ -51,3 +54,5 @@ int verificarNodeDadosPassagem(PASSAGEM_NODE* node);
 int checkPeriodoX(PASSAGEM_NODE* nodePassagem, DATA* periodoInicial, DATA* periodoFinal);
 //int maiorMatricula(int pCarro, int sCarro, LISTA_HASHC* listaHashCarro);
 //NODE_CARRO* procurarPorId(int id, LISTA_HASHC* listaHash);
+//void totalKmCarroDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPassagem, DISTANCIAS_LISTA* listaDistancias);
+//CARRO* retornaCarro(LISTA_HASHC* listaHash, int id);

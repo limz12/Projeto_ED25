@@ -8,25 +8,23 @@
     <ClCompile Include="PASSAGEM.c" />
     <ClCompile Include="SENSORES.c" />
     <ClCompile Include="UTEIS.c" />
+    <ClCompile Include="donos.c" />
+    <ClCompile Include="VIAGENS.c" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="donos.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="donos.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="DISTANCIAS.H" />
     <ClInclude Include="MENU.H" />
     <ClInclude Include="PASSAGEM.H" />
     <ClInclude Include="SENSORES.H" />
     <ClInclude Include="UTEIS.H" />
     <ClInclude Include="carros.h" />
+    <ClInclude Include="donos.h" />
+    <ClInclude Include="VIAGENS.H" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="distancias.txt" />

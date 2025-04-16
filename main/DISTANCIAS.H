@@ -34,3 +34,4 @@ void adicionarLista(DISTANCIAS_LISTA* lista, DISTANCIAS_NODE* node);
 void libertarNodeDistancia(DISTANCIAS_NODE* node);
 void mostrarListaDISTANCIA(DISTANCIAS_LISTA* lista);
 void libertarListaDistancia(DISTANCIAS_LISTA* lista);
+float distanciaEntreSensor(int sensor1, int sensor2, DISTANCIAS_LISTA* listaDistancias);

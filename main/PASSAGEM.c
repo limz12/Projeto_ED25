@@ -8,7 +8,9 @@
 #define MAX_ARRAY_CARROS 100000
 
 #include "PASSAGEM.H"
-#include "carros.h"
+#include "DISTANCIAS.H"
+#include "VIAGENS.H"
+
 //criar a LISTA PASSAGEM
 PASSAGEM_LISTA* criarListaPassagem()
 {
@@ -321,7 +323,7 @@ int verificarNodeDadosPassagem(PASSAGEM_NODE* node)
 	
 }
 
-//retorna o Carro com o id especificado
+//retorna o NODECarro com o id especificado
 NODE_CARRO* procurarPorId(LISTA_HASHC* listaHash, int id)
 {
 	//alocar mem
@@ -340,6 +342,34 @@ NODE_CARRO* procurarPorId(LISTA_HASHC* listaHash, int id)
 				nodeCarroEncontrado = nodeCarros;
 
 				return nodeCarroEncontrado;
+			}
+			nodeCarros = nodeCarros->next;
+
+		}
+		nodeHashCarro = nodeHashCarro->next;
+	}
+	return NULL;
+}
+
+//retorna o carro com o id especificado
+CARRO* retornaCarro(LISTA_HASHC* listaHash, int id)
+{
+	//alocar mem
+	NODE_CARRO* nodeCarroEncontrado = (NODE_CARRO*)malloc(sizeof(NODE_CARRO));
+
+	NODE_HASHC* nodeHashCarro = listaHash->header;
+	//procurar na lista o ID CARRO
+	while (nodeHashCarro)
+	{
+		NODE_CARRO* nodeCarros = nodeHashCarro->listaCarros->header;
+		while (nodeCarros)
+		{
+
+			if (nodeCarros->info->codVeiculo == id)
+			{
+				nodeCarroEncontrado = nodeCarros;
+
+				return nodeCarroEncontrado->info;
 			}
 			nodeCarros = nodeCarros->next;
 
@@ -622,6 +652,94 @@ int maiorMatricula(int pCarro, int sCarro, LISTA_HASHC* listaHashCarro)
 	{
 		return 0;
 	}
+}
+
+//exercicio 8
+void totalKmCarroDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPassagem, DISTANCIAS_LISTA* listaDistancias)
+{
+	if (!listaPassagem || !listaHashCarros || !listaDistancias)
+	{
+		return;
+	}
+	//guardar input do user o periodo inicial
+	DATA* periodoInicial = (DATA*)malloc(sizeof(DATA));
+	//guardar input do user o periodo final
+	DATA* periodoFinal = (DATA*)malloc(sizeof(DATA));
+	if (periodoInicial && periodoFinal == NULL)
+	{
+		return;
+	}
+	//pedir o periodo inicial
+	printf("INSIRA O DIA INICIAL DE PESQUISA!\n");
+	printf("DIA: ");
+	scanf("%d", &periodoInicial->dia);
+	printf("MES: ");
+	scanf("%d", &periodoInicial->mes);
+	printf("ANO: ");
+	scanf("%d", &periodoInicial->ano);
+	printf("**************************\n");
+	//pedir o periodo final
+	printf("INSIRA O DIA FINAL DE PESQUISA!\n");
+	printf("DIA: ");
+	scanf("%d", &periodoFinal->dia);
+	printf("MES: ");
+	scanf("%d", &periodoFinal->mes);
+	printf("ANO: ");
+	scanf("%d", &periodoFinal->ano);
+	printf("**************************\n");
+	//pedir hora inicial
+	printf("INSIRA A HORA INICIAL DE PESQUISA!\n");
+	printf("HORA: ");
+	scanf("%d", &periodoInicial->hora);
+	printf("MINUTOS: ");
+	scanf("%d", &periodoInicial->minuto);
+	//pedir hora final
+	printf("INSIRA A HORA FINAL DE PESQUISA!\n");
+	printf("HORA: ");
+	scanf("%d", &periodoFinal->hora);
+	printf("MINUTOS: ");
+	scanf("%d", &periodoFinal->minuto);
+	//descartamos os segundos
+
+	//criar ListaViagens
+	LISTA_VIAGENS* listaViagens = criarListaViagens();
+	
+	//verificar se algum carro passou na autoestrada durante periodo X
+	PASSAGEM_NODE* nodePassagem = listaPassagem->header;
+	
+	int idEntrada = 0;
+	int idSaida = 0;
+	while (nodePassagem)
+	{
+		
+		//encontrar as datas que satisfacam a condicao
+		if (checkPeriodoX(nodePassagem, periodoInicial, periodoFinal) == 1)
+		{
+			//verificar se ja existe o carro na lista VIAGENS (EVITAR REPETICAO DE DADOS)
+			if (existeCarroListaViagens(listaViagens, nodePassagem->info->codVeiculo) == 0) //se nao existir o carro
+			{
+				//criar o NODE_VIAGENS
+				NODE_VIAGENS* nodeViagens = criarNodeViagens();
+				//adicionar o carro ao NODE_VIAGENS
+				nodeViagens->carro = retornaCarro(listaHashCarros, nodePassagem->info->codVeiculo);
+				//adicionar o ID de entrada e saida
+				idEntrada = nodePassagem->info->idSensor;
+				idSaida = nodePassagem->next->info->idSensor;
+				
+				//ver a distancia entre o ENTRADA E SAIDA E SOMAR (PODE RECEBER [3 - 1] ou [1 - 3], atencao)
+				nodeViagens->totalKm += distanciaEntreSensor(idEntrada, idSaida, listaDistancias);
+
+				//adicionar a lista nodeViagens a lista Viagens
+				adicionarNodeListaViagens(nodeViagens, listaViagens);
+			}
+			
+		}
+		nodePassagem = nodePassagem->next;
+	}
+	//ao fim da listaViagens prenchida, falta organizar por distancia de ordem crescente
+	
+	//listar listaViagens (* carro - kmPercorridos)
+	//ELIMINAR MEMORIA PARA A LISTA VIAGENS
 }
 
 
