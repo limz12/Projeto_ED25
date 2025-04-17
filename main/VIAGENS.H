@@ -22,3 +22,4 @@ LISTA_VIAGENS* criarListaViagens();
 NODE_VIAGENS* criarNodeViagens();
 int existeCarroListaViagens(LISTA_VIAGENS* listaViagens, int codCarro);
 void adicionarNodeListaViagens(NODE_VIAGENS* nodeViagens, LISTA_VIAGENS* listaViagens);
+void freeListaViagens(LISTA_VIAGENS* listaViagens);

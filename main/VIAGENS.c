@@ -68,3 +68,21 @@ void adicionarNodeListaViagens(NODE_VIAGENS* nodeViagens, LISTA_VIAGENS* listaVi
 	}
 
 }
+
+//remover da memoria a Lista Viagens
+void freeListaViagens(LISTA_VIAGENS* listaViagens)
+{
+	if (!listaViagens) {
+		return;
+	}
+
+	NODE_VIAGENS* nodeViagens = listaViagens->header;
+	while (nodeViagens != NULL) 
+{
+		NODE_VIAGENS* proximo = nodeViagens->next;
+		free(nodeViagens->carro);
+		free(nodeViagens);
+		nodeViagens = proximo;
+	}
+	free(listaViagens);
+}

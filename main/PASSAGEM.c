@@ -11,6 +11,9 @@
 #include "DISTANCIAS.H"
 #include "VIAGENS.H"
 
+//VARIAVEL GLOBAL PARA PODER USAR NO COMPARAR CARROS()
+LISTA_HASHC* listaParaComparar = NULL;
+
 //criar a LISTA PASSAGEM
 PASSAGEM_LISTA* criarListaPassagem()
 {
@@ -379,6 +382,32 @@ CARRO* retornaCarro(LISTA_HASHC* listaHash, int id)
 	return NULL;
 }
 
+//uso do quickSort para ter um guia de como ordenar
+int compararCarros(const void* a, const void* b)
+{
+	//converter o ponteiro generico recebido para um NODE CARRO
+	NODE_CARRO* carroA = *(NODE_CARRO**)a;
+	NODE_CARRO* carroB = *(NODE_CARRO**)b;
+	//verificar SE OS NODES EXISTEM
+	if (carroA == NULL && carroB == NULL)
+	{
+		return 0;
+	}
+	if (carroA == NULL)
+	{
+		return 1;
+	}
+	if (carroB == NULL) 
+	{
+		return -1;
+	}
+
+	// usar a função maiorMatricula
+	if (maiorMatricula(carroA->info->codVeiculo, carroB->info->codVeiculo, listaParaComparar) == 1)
+		return 1;
+	else
+		return -1;
+}
 //listar Ordenadamente matricula passagem na autoestrada durante periodo x (inicio - fim)
 void carrosCircularamduranteX(PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaHashCarros)
 {
@@ -390,8 +419,10 @@ void carrosCircularamduranteX(PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaH
 	DATA* periodoInicial = (DATA*)malloc(sizeof(DATA));
 	//guardar input do user o periodo final
 	DATA* periodoFinal = (DATA*)malloc(sizeof(DATA));
-	if (periodoInicial && periodoFinal == NULL)
+	if (periodoInicial == NULL || periodoFinal == NULL)
 	{
+		free(periodoInicial);
+		free(periodoFinal);
 		return;
 	}
 	//pedir o periodo inicial
@@ -423,14 +454,14 @@ void carrosCircularamduranteX(PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaH
 	printf("HORA: ");
 	scanf("%d", &periodoFinal->hora);
 	printf("MINUTOS: ");
-	scanf("%d", &periodoFinal ->minuto);
+	scanf("%d", &periodoFinal->minuto);
 	//descartamos os segundos
 
 	//percorrer a lista passagem e adicionar a array todos os IDCARROS que satisfazem a condicao
 	PASSAGEM_NODE* nodePassagem = listaPassagem->header;
 
 	//guardar numa array todos os CARROS que satizfazem a condicao
-	NODE_CARRO* arrayCarros[MAX_ARRAY_CARROS]; 
+	NODE_CARRO* arrayCarros[MAX_ARRAY_CARROS];
 	//inicializar a array a null
 	for (int j = 0; j < MAX_ARRAY_CARROS; j++)
 	{
@@ -443,67 +474,37 @@ void carrosCircularamduranteX(PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaH
 		//encontrar as datas que satisfacam a condicao
 		if (checkPeriodoX(nodePassagem, periodoInicial, periodoFinal) == 1)
 		{
-			//para combater a repeticao dos IDCARRO presente na lista das passagens
-			if (i > 0)
+			NODE_CARRO* carroEncontrado = procurarPorId(listaHashCarros, nodePassagem->info->codVeiculo);
+			if (carroEncontrado != NULL)
 			{
-				if (nodePassagem->info->codVeiculo != arrayCarros[i - 1]->info->codVeiculo)
+				int encontrado = 0;
+				for (int j = 0; j < i; j++)
+				{
+					if (arrayCarros[j] != NULL && arrayCarros[j]->info->codVeiculo == carroEncontrado->info->codVeiculo)
+					{
+						encontrado = 1;
+						break;
+					}
+				}
+				if (!encontrado)
 				{
 					//adicionar na array o id do carro
-					arrayCarros[i] = procurarPorId(listaHashCarros,nodePassagem->info->codVeiculo);
+					arrayCarros[i] = carroEncontrado;
 					//avancar para a proxima casa array
 					i++;
-				}					
-			}
-			else 
-			{
-				//adicionar na array o id do carro
-				arrayCarros[i] = procurarPorId(listaHashCarros, nodePassagem->info->codVeiculo);
-				//avancar para a proxima casa array
-				i++;
-			}
-			
-		}
-		nodePassagem = nodePassagem->next;
-	}
-
-	//*******************************************
-	//bubble sort da Array carros (organizar alfabeticamente matriculas)
-	int troca;
-	NODE_CARRO* buffer = NULL;
-	//percorrer toda a Array dos carros
-	printf("A ORDENAR! (DEPENDENDO DO RANGE DA PESQUISA PODE DEMORAR!)\n");
-	int contador = 0;
-	for (int k = 0; k < MAX_ARRAY_CARROS - 1; k++)
-	{
-		if (arrayCarros[k] != NULL)
-		{
-			contador += 1;
-		}
-	}
-	printf("Existem [%d] Carros que satisfazem a condicao\n", contador);
-	do
-	{
-		troca = 0;
-		//para nao passar do ultimo indice, resolver o problema out of bounds tamanho da array
-		for (i = 0; i < MAX_ARRAY_CARROS - 1; i++)
-		{
-			//se nao existir o proximo quer dizer que esta no ultimo indice, entao nao faz a troca
-			if(arrayCarros[i+1] != NULL)
-			{ 
-				//se a segunda matricula for maior
-				if (maiorMatricula(arrayCarros[i]->info->codVeiculo, arrayCarros[i + 1]->info->codVeiculo, listaHashCarros) == 1)
-				{
-					//trocar a posicao do indice atual com o segundo
-					buffer = arrayCarros[i];
-					arrayCarros[i] = arrayCarros[i + 1];
-					arrayCarros[i + 1] = buffer;
-					troca = 1;
-					
 				}
 			}
 		}
-	} while (troca);
-	
+		nodePassagem = nodePassagem->next;
+	}
+	//definir a listaComparar, para poder usar dentro do compararCarros
+	listaParaComparar = listaHashCarros;
+
+	//ordenar a array atraves do quickSort
+	//faz a troca do indice segundo o que o compararCarros retorna (se tiver a maior matricula troca, senao mantem no indice)
+	qsort(arrayCarros, MAX_ARRAY_CARROS, sizeof(NODE_CARRO*), compararCarros);
+
+
 	//listar os conteudos da array (que ja esta ordenada por matricula)
 	// Cabeçalho da lista
 	printf("**************************************************************\n");
@@ -522,19 +523,18 @@ void carrosCircularamduranteX(PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaH
 
 	//libertar a array de carros como a array esta alocada na heap, ele acaba por libertar sozinho no fim da funcao
 	//percorrer a array e se existir um indice, dar free
-	for (i = 0; i < MAX_ARRAY_CARROS - 1; i++) // - 1 para nao passar do bound da array
+	for (i = 0; i < MAX_ARRAY_CARROS; i++)
 	{
 		if (arrayCarros[i] != NULL)
 		{
 			arrayCarros[i] = NULL;
 		}
-	
 	}
-	
 
 	//free dos periodos
 	free(periodoFinal);
 	free(periodoInicial);
+
 }
 
 //verifica se esta entre o tempoX e Y
@@ -654,7 +654,7 @@ int maiorMatricula(int pCarro, int sCarro, LISTA_HASHC* listaHashCarro)
 	}
 }
 
-//exercicio 8
+//ordena por total de km percorridos por carro
 void totalKmCarroDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPassagem, DISTANCIAS_LISTA* listaDistancias)
 {
 	if (!listaPassagem || !listaHashCarros || !listaDistancias)
@@ -700,7 +700,7 @@ void totalKmCarroDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPas
 	printf("MINUTOS: ");
 	scanf("%d", &periodoFinal->minuto);
 	//descartamos os segundos
-
+	int contador = 0;
 	//criar ListaViagens
 	LISTA_VIAGENS* listaViagens = criarListaViagens();
 	
@@ -731,15 +731,61 @@ void totalKmCarroDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPas
 
 				//adicionar a lista nodeViagens a lista Viagens
 				adicionarNodeListaViagens(nodeViagens, listaViagens);
+				contador++;
 			}
 			
 		}
 		nodePassagem = nodePassagem->next;
 	}
-	//ao fim da listaViagens prenchida, falta organizar por distancia de ordem crescente
+	printf("EXISTEM [%d] carros que satizfazem a condicao\n", contador);
+	printf("A ORGANIZAR POR TOTAL KM (DESCENDENTE)\n");
+	//organizar os nodesViagens da listaViagens por maior carro distancia percorrida
+	NODE_VIAGENS* aux = listaViagens->header;
+	//criar um buffer para armazenar o nodeViagens
+	NODE_VIAGENS* buffer = NULL;
+	int troca = 0;
+	do
+	{
+		//dar reset ao aux
+		aux = listaViagens->header;
+		troca = 0;
+		//so troca se existir um proximo node
+		while (aux->next!= NULL)
+		{
+			//verificar se o atual e menor que o seguinte
+			if (aux->totalKm < aux->next->totalKm)
+			{
+				// troca o conteudo dos nos
+				float tempTotalKm = aux->totalKm;
+				CARRO* tempCarro = aux->carro;
+
+				aux->totalKm = aux->next->totalKm;
+				aux->carro = aux->next->carro;
+
+				aux->next->totalKm = tempTotalKm;
+				aux->next->carro = tempCarro;
+
+				troca = 1;
+			}
+			aux = aux->next;
+		}
+	} while (troca); // percorre sempre uma ultima vez a lista se nao existirem trocas, a lista esta ordenada
 	
-	//listar listaViagens (* carro - kmPercorridos)
+	//print da listaViagens
+	aux = listaViagens->header;
+	// Cabeçalho da lista
+	printf("**************************************************************\n");
+	printf("|                        LISTA VIAGENS                        |\n");
+	printf("**************************************************************\n");
+	printf("\nTotalKM\tMatricula\tMarca\t\tModelo\t\tAno\t\tID_Dono\t\tCodigo_Veiculo\n\n");
+	while (aux)
+	{
+		printf("%.2f\t%s\t%s\t\t%s\t\t%d\t\t%d\t\t\t%d\n", aux->totalKm, aux->carro->matricula, aux->carro->marca, aux->carro->modelo, aux->carro->ano, aux->carro->dono, aux->carro->codVeiculo);
+		aux = aux->next;
+	}
+
 	//ELIMINAR MEMORIA PARA A LISTA VIAGENS
+	freeListaViagens(listaViagens);
 }
 
 
