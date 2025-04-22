@@ -810,7 +810,7 @@ void totalKmCarroDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPas
 		printf("%.2f\t%s\t%s\t\t%s\t\t%d\t\t%d\t\t\t%d\n", aux->totalKm, aux->carro->matricula, aux->carro->marca, aux->carro->modelo, aux->carro->ano, aux->carro->dono, aux->carro->codVeiculo);
 		aux = aux->next;
 	}
-	printf("\n");
+
 	//ELIMINAR MEMORIA PARA A LISTA VIAGENS
 	freeListaViagens(listaViagens);
 }

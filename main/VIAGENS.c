@@ -25,12 +25,17 @@ NODE_VIAGENS* criarNodeViagens()
 	return nodeViagens;
 }
 
-//verificar se o determinado carro existe na lista
+//verificar se o determinado carro existe na lista, return 1 se existe | return 0 se nao existe
 int existeCarroListaViagens(LISTA_VIAGENS* listaViagens, int codCarro)
 {
 	if (!listaViagens || !codCarro)
 	{
 		return;
+	}
+	// se a lista nao possuir header, nao tem carros
+	if (listaViagens->header == NULL)
+	{
+		return 0;
 	}
 	//variavel auxiliar para percorrer a lista
 	NODE_VIAGENS* nodeViagens = listaViagens->header;
