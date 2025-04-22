@@ -21,7 +21,7 @@ typedef struct nodeSensor
 }NODE_SENSOR;
 
 //LISTA SENSOR
-typedef struct
+typedef struct listaSensor
 {
 	//ponteiro para o primeiro NO
 	NODE_SENSOR* header;

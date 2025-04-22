@@ -16,7 +16,7 @@ typedef struct nodeDistancia
 	struct nodeDistancia* next;
 }DISTANCIAS_NODE;
 
-typedef struct 
+typedef struct distanciaLista
 {
 	//aponta para o primeiro no
 	DISTANCIAS_NODE* header;

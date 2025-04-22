@@ -2,8 +2,11 @@
 #define MAX_CHAR_STR 20
 #define MAX_CHAR_MATRICULA 8
 
+//dar o alias LISTA_DONOS, ao ListaDonos e resolver os problemas (typedef, para atribuir o outro nome)
+typedef struct ListaDonos LISTA_DONOS;
+
 // ESTRUTURAS DO CARRO
-typedef struct 
+typedef struct carro
 {
 	char matricula[MAX_CHAR_MATRICULA + 1];
 	char marca[MAX_CHAR_STR + 1];
@@ -21,7 +24,7 @@ typedef struct nodecarro
 }NODE_CARRO;
 
 // LISTA CARRO
-typedef struct
+typedef struct listaCarro
 {
 	NODE_CARRO* header; // ponteiro para o primeiro NO
 	NODE_CARRO* ultimo_node; // ponteiro para o último NO
@@ -39,7 +42,7 @@ typedef struct nodeHash
 }NODE_HASHC;
 
 //criar a listaHashing
-typedef struct
+typedef struct listaHashCarros
 {
 	NODE_HASHC* header;//ponteiro para o inicio da lista
 	NODE_HASHC* ultimo_node; // ponteiro para o ultimo node da lista
@@ -52,10 +55,10 @@ NODE_CARRO* criarNodeCarro();
 int freeNodeCarro(NODE_CARRO* node);
 void carregarDadosCarro(LISTA_HASHC* listaHashCarros);
 void addListaCarro(LISTA_CARRO* lista, NODE_CARRO* node);
-//void criarCarroUtilizador(LISTA_CARRO* lista, LISTA_DONOS* listaDonos);
+void criarCarroUtilizador(LISTA_CARRO* lista, LISTA_DONOS* listaDonos);
 void mostrarListaCarro(LISTA_CARRO* lista);
-//int verificarDONOexiste(int idDono, LISTA_DONOS* listaDonos);
-//void ligarCarroDono(NODE_CARRO* novo_elem, LISTA_DONOS* listaDonos);
+int verificarDONOexiste(int idDono, LISTA_DONOS* listaDonos);
+void ligarCarroDono(NODE_CARRO* novo_elem, LISTA_DONOS* listaDonos);
 
 // ***************** HASHING **********************
 LISTA_HASHC* criarListaHashCarro();

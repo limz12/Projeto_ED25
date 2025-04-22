@@ -1,7 +1,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
+typedef struct listaCarro LISTA_CARRO;
+typedef struct listaHashCarros LISTA_HASHC;
+typedef struct passagemLista PASSAGEM_LISTA;
+typedef struct distanciaLista DISTANCIAS_LISTA;
+typedef struct carro CARRO;
+typedef struct nodecarro NODE_CARRO;
 
 typedef struct
 {
@@ -32,7 +37,7 @@ typedef struct nodePassagem
 	struct nodePassagem* next;
 }PASSAGEM_NODE;
 
-typedef struct
+typedef struct passagemLista
 {
 	PASSAGEM_NODE* header;
 	PASSAGEM_NODE* ultimoNode;
@@ -50,10 +55,10 @@ void libertarNodePassagem(PASSAGEM_NODE* node);
 void libertarListaPassagem(PASSAGEM_LISTA* lista);
 void registarPassagem(PASSAGEM_LISTA* lista);
 int verificarNodeDadosPassagem(PASSAGEM_NODE* node);
-//void carrosCircularamduranteX(PASSAGEM* listaPassagem, LISTA_HASHC* listaCarros);
+void carrosCircularamduranteX(PASSAGEM* listaPassagem, LISTA_HASHC* listaCarros);
 int checkPeriodoX(PASSAGEM_NODE* nodePassagem, DATA* periodoInicial, DATA* periodoFinal);
-//int maiorMatricula(int pCarro, int sCarro, LISTA_HASHC* listaHashCarro);
-//NODE_CARRO* procurarPorId(int id, LISTA_HASHC* listaHash);
-//void totalKmCarroDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPassagem, DISTANCIAS_LISTA* listaDistancias);
-//CARRO* retornaCarro(LISTA_HASHC* listaHash, int id);
+int maiorMatricula(int pCarro, int sCarro, LISTA_HASHC* listaHashCarro);
+NODE_CARRO* procurarPorId(int id, LISTA_HASHC* listaHash);
+void totalKmCarroDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPassagem, DISTANCIAS_LISTA* listaDistancias);
+CARRO* retornaCarro(LISTA_HASHC* listaHash, int id);
 int compararCarros(const void* a, const void* b);
