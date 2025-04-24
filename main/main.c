@@ -67,7 +67,7 @@ void main()
             case 4:
                 //MENU PASSAGENS
                 system("cls");
-                menuPassagens(listaPassagem,listaHashCarros);
+                menuPassagens(listaPassagem,listaHashCarros, listaDistancias);
                 
             break;
             case 5:

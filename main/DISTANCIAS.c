@@ -175,3 +175,25 @@ void libertarListaDistancia(DISTANCIAS_LISTA* lista)
 		printf("LISTA DISTANCIAS LIBERTADA COM SUCESSO! \n");
 	}
 }
+
+//funcao que devolve a distancia entre 2 sensores
+float distanciaEntreSensor(int sensor1, int sensor2, DISTANCIAS_LISTA* listaDistancias)
+{
+	if (!sensor1 || !sensor2 || !listaDistancias)
+	{
+		return;
+	}
+	//percorrer a lista Distancias
+	DISTANCIAS_NODE* nodeDistancias = listaDistancias->header;
+	while (nodeDistancias)
+	{
+		//na lista de passagens nem sempre os sensores estao por ordem numerica
+		if ((nodeDistancias->info->codSensor1 == sensor1 && nodeDistancias->info->codSensor2 == sensor2) || (nodeDistancias->info->codSensor1 == sensor2 && nodeDistancias->info->codSensor2 == sensor1))
+		{
+			return nodeDistancias->info->distanciaPercorrida;
+		}
+		nodeDistancias = nodeDistancias->next;
+	}
+	printf("ERRO! NAO FOI ENCONTRADA A DISTANCIA ENTRE [%d e %d]\n", sensor1, sensor2);
+	return 0;
+}

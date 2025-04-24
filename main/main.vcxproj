@@ -135,6 +135,7 @@
     <ClCompile Include="PASSAGEM.c" />
     <ClCompile Include="SENSORES.c" />
     <ClCompile Include="UTEIS.c" />
+    <ClCompile Include="VIAGENS.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DISTANCIAS.H" />
@@ -142,6 +143,7 @@
     <ClInclude Include="PASSAGEM.H" />
     <ClInclude Include="SENSORES.H" />
     <ClInclude Include="UTEIS.H" />
+    <ClInclude Include="VIAGENS.H" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="carros.txt" />

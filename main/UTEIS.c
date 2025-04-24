@@ -25,7 +25,7 @@ int calcularTamanhoEDSensor(LISTA_SENSOR *lista)
 	while (aux)
 	{
 		tamanho += sizeof(aux);
-		tamanho += sizeof(aux->info);
+		tamanho += sizeof(SENSOR);
 		aux = aux->next;
 	}
 
@@ -46,7 +46,7 @@ int calcularTamanhoEDDistancia(DISTANCIAS_LISTA* lista)
 	while (aux)
 	{
 		tamanho += sizeof(aux);
-		tamanho += sizeof(aux->info);
+		tamanho += sizeof(DISTANCIAS);
 		aux = aux->next;
 	}
 
@@ -67,14 +67,14 @@ int calcularTamanhoEDPassagem(PASSAGEM_LISTA* lista)
 	while (aux)
 	{
 		tamanho += sizeof(aux);
-		tamanho += sizeof(aux->info);
+		tamanho += sizeof(PASSAGEM);
 		aux = aux->next;
 	}
 
 	return tamanho;
 }
 
-int calcularTamanhoEDCarro(LISTA_HASHC* listaHash) //ALTERAR ISTO PARA CALCULAR O TAMANHO DA LISTAHASH
+int calcularTamanhoEDCarro(LISTA_HASHC* listaHash) //CALCULAR O TAMANHO DE TODA A LISTAHASH
 {
 	if (!listaHash)
 	{
@@ -96,8 +96,8 @@ int calcularTamanhoEDCarro(LISTA_HASHC* listaHash) //ALTERAR ISTO PARA CALCULAR 
 		//verificar se o nodeHash possui lista
 		if (nodeHash->listaCarros != NULL)
 		{
-			//tamanho da lista que pertenec ao nodeHash
-			tamanho += sizeof(nodeHash->listaCarros);
+			//tamanho da lista que pertenece ao nodeHash
+			tamanho += sizeof(LISTA_CARRO);
 			//verificar se existem nodes na lista do nodeHash
 			if (nodeHash->listaCarros->header != NULL)
 			{
@@ -107,6 +107,7 @@ int calcularTamanhoEDCarro(LISTA_HASHC* listaHash) //ALTERAR ISTO PARA CALCULAR 
 				while (nodeCarro)
 				{
 					tamanho += sizeof(nodeCarro);
+					tamanho += sizeof(CARRO);
 					nodeCarro = nodeCarro->next;
 				}
 			}
@@ -144,7 +145,7 @@ int calcularTamanhoEDDonos(LISTA_DONOS* lista)
 	while (aux)
 	{
 		tamanho += sizeof(aux);
-		tamanho += sizeof(aux->info);
+		tamanho += sizeof(Donos);
 		aux = aux->next;
 	}
 
