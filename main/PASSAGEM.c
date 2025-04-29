@@ -824,7 +824,7 @@ void totalKmMarcaDuranteX(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPas
 		return;
 	}
 
-	// Guardar os dados sobre a data que o user escolhe
+	// Guardar os dados sobre a data que o User escolhe
 	DATA* periodoInicial = (DATA*)malloc(sizeof(DATA));
 	DATA* periodoFinal = (DATA*)malloc(sizeof(DATA));
 
@@ -871,15 +871,15 @@ void totalKmMarcaDuranteX(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPas
 	// Criação da Lista Viagens
 	LISTA_VIAGENS* listaViagens = criarListaViagens();
 
-	// Estrutura para armazenar os totais de quilómetros por marca
+	// Estrutura para armazenar os totais Km's por marca
 	LISTA_HASHC* listaMarcas = listaHashCarros;
 
 	// Validação da situação de haver algum carro que passe na autoestrada durante a data de pesquisa
 	PASSAGEM_NODE* nodePassagem = listaPassagem->header;
 
-	int contador = 0; // Para ver quantos carros estão dentro da data de pesquisa
-	int idEntrada = 0;
-	int idSaida = 0;
+	int contador = 0; // Contador para ver quantos carros estão dentro da data de pesquisa
+	int idEntrada = 0; // ID de Entrada temporário para calcular a distancia entre os sensores
+	int idSaida = 0; // ID de Saída temporário para calcular a distancia entre os sensores
 
 	while (nodePassagem) // Percorre a lista das Passagens
 	{
@@ -902,7 +902,8 @@ void totalKmMarcaDuranteX(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPas
 					idEntrada = nodePassagem->info->idSensor;
 					idSaida = nodePassagem->next->info->idSensor;
 
-					// Ver a distancia entre o ENTRADA E SAIDA E SOMAR
+					// Ver a distancia entre o Sensor de ENTRADA e o Sensor de SAIDA
+					// De seguida atualiza o somatório
 					nodeViagens->totalKm += distanciaEntreSensor(idEntrada, idSaida, listaDistancias);
 
 					// Adicionar a lista nodeViagens a lista Viagens
@@ -937,7 +938,7 @@ void totalKmMarcaDuranteX(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPas
 		nodePassagem = nodePassagem->next;
 	}
 
-	printf("EXISTEM [%d] carros que satisfazem a condição\n", contador);
+	printf("EXISTEM [%d] carros que satisfazem a condicao\n\n", contador);
 
 	// **Agora, devemos somar os quilómetros de cada carro por marca**
 	NODE_HASHC* nodeHash = listaMarcas->header;
@@ -968,7 +969,7 @@ void totalKmMarcaDuranteX(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPas
 
 	// Ordenção das marcas pelo total de km percorridos (ordem decrescente)
 
- ordenarListaMarcasPorKm(listaMarcas);
+	ordenarListaMarcasPorKm(listaMarcas);
 
 	// Apresentação da Lista de Marcas por Ordem Decrescente de Km's Totais
 	nodeHash = listaMarcas->header;
@@ -1028,5 +1029,3 @@ void ordenarListaMarcasPorKm(LISTA_HASHC* lista) {
 		}
 	} while (troca);
 }
-
-

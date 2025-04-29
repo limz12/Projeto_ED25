@@ -81,6 +81,25 @@ void freeListaViagens(LISTA_VIAGENS* listaViagens)
 		return;
 	}
 
+	NODE_VIAGENS* atual = listaViagens->header;
+	while (atual) 
+	{
+		NODE_VIAGENS* temp = atual;
+		atual = atual->next;
+		free(temp);
+	}
+
+	free(listaViagens);
+}
+
+// FUNÇÃO ANTIGA DO "freeListaViagens"
+/*
+void freeListaViagens(LISTA_VIAGENS* listaViagens)
+{
+	if (!listaViagens) {
+		return;
+	}
+
 	NODE_VIAGENS* nodeViagens = listaViagens->header;
 	while (nodeViagens != NULL) 
 {
@@ -91,3 +110,4 @@ void freeListaViagens(LISTA_VIAGENS* listaViagens)
 	}
 	free(listaViagens);
 }
+*/
