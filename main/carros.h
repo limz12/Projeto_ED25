@@ -37,6 +37,7 @@ typedef struct listaCarro
 typedef struct nodeHash
 {
 	char chave[MAX_CHAR_STR];
+	float totalKm_marca;
 	struct nodeHash* next;
 	LISTA_CARRO* listaCarros;
 }NODE_HASHC;

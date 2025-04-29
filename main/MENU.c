@@ -115,13 +115,14 @@ void menuPassagens(PASSAGEM_LISTA* listaPassagens, LISTA_HASHC* listaHashCarros,
 		printf("|  (2) Registar Passagens                                    |\n");
 		printf("|  (3) Listagem Carros Que Circularam no periodo X           |\n");
 		printf("|  (4) Listagem Carros Que Circularam no periodo X (TOTAL KM)|\n");
+		printf("|  (5) Listagem Marcas Que Circularam no periodo X (TOTAL KM)|\n");
 		printf("|------------------------------------------------------------|\n");
 		printf("|  (0) Menu Principal                                        |\n");
 		printf("#------------------------------------------------------------#\n");
 	
 		printf("Seleciona uma opcao: \n");
-		escolha = verificarNumero(4);
-	} while (escolha < 0 || escolha > 4);
+		escolha = verificarNumero(5);
+	} while (escolha < 0 || escolha > 5);
 
 	//chamar as funcoes aqui
 	switch (escolha)
@@ -140,6 +141,9 @@ void menuPassagens(PASSAGEM_LISTA* listaPassagens, LISTA_HASHC* listaHashCarros,
 	break;
 	case 4:
 		totalKmCarroDuranteX(listaHashCarros, listaPassagens, listaDistancias);
+	break;
+	case 5:
+		totalKmMarcaDuranteX(listaHashCarros, listaPassagens, listaDistancias);
 	break;
 	}
 }
