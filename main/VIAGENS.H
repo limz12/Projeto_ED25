@@ -7,6 +7,7 @@ typedef struct nodeViagem
 {
 	float totalKm; // vai armazenar todos os km percorridos em viagem do carro
 	CARRO* carro;
+	long int milisegundosPercorridos; //vai armazenar o tempo em MS durante o periodo X que o carro viajou
 	struct nodeViagem* next;
 }NODE_VIAGENS;
 
