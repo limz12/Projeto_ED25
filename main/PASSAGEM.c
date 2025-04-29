@@ -968,7 +968,7 @@ void totalKmMarcaDuranteX(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPas
 
 	// Ordenção das marcas pelo total de km percorridos (ordem decrescente)
 
-
+ ordenarListaMarcasPorKm(listaMarcas);
 
 	// Apresentação da Lista de Marcas por Ordem Decrescente de Km's Totais
 	nodeHash = listaMarcas->header;
@@ -986,3 +986,47 @@ void totalKmMarcaDuranteX(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPas
 	// Liberar memória para a lista de viagens
 	freeListaViagens(listaViagens);
 }
+
+void ordenarListaMarcasPorKm(LISTA_HASHC* lista) {
+	
+	if (!lista || !lista->header)
+	{
+		printf("ERRO! A lista HASH nao existe.\n");
+		return;
+	}
+	
+	NODE_HASHC* atual;
+	NODE_HASHC* proximo;
+	char tempMarca[100];
+	float tempKm;
+	LISTA_CARRO* tempLista;
+	int troca;
+
+	do {
+		troca = 0;
+		atual = lista->header;
+
+		while (atual != NULL && atual->next != NULL) {
+			proximo = atual->next;
+			
+			if(proximo->totalKm_marca > atual->totalKm_marca){
+				tempKm = atual->totalKm_marca;
+				atual->totalKm_marca = proximo->totalKm_marca;
+				proximo->totalKm_marca = tempKm;
+
+				strcpy(tempMarca,atual->chave);
+				strcpy(atual->chave,proximo->chave);
+				strcpy(proximo->chave,tempMarca);
+
+				tempLista = atual->listaCarros;
+				atual->listaCarros = proximo->listaCarros;
+				proximo->listaCarros = tempLista;
+
+				troca = 1;
+			}
+			atual = atual->next;
+		}
+	} while (troca);
+}
+
+
