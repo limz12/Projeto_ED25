@@ -21,6 +21,7 @@ NODE_VIAGENS* criarNodeViagens()
 	
 	nodeViagens->carro =(CARRO*)malloc(sizeof(CARRO));
 	nodeViagens->totalKm = 0;
+	nodeViagens->milisegundosPercorridos = 0;
 	nodeViagens->next = NULL;
 	return nodeViagens;
 }

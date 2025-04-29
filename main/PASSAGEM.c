@@ -815,6 +815,207 @@ void totalKmCarroDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPas
 	freeListaViagens(listaViagens);
 }
 
+long int calculoDistancia(DATA* dataEntrada, DATA* dataSaida)
+{
 
+	if (!dataEntrada || !dataSaida)
+	{
+		return;
+	}
+
+	long int milisegundosSaida = 0;
+	//transformar a data de SAIDA em MS
+	milisegundosSaida += dataSaida->hora * 3600000;
+	milisegundosSaida += dataSaida->minuto * 60000;
+	milisegundosSaida += dataSaida->segundo * 1000;
+	milisegundosSaida += dataSaida->milisegundo;
+
+	long int milisegundosEntrada = 0;
+	//transformar a data de Entrada em MS
+	milisegundosEntrada += dataEntrada->hora * 3600000;
+	milisegundosEntrada += dataEntrada->minuto * 60000;
+	milisegundosEntrada += dataEntrada->segundo * 1000;
+	milisegundosEntrada += dataEntrada->milisegundo;
+
+	long int tempoViagemMS = milisegundosSaida - milisegundosEntrada;
+	//verificar se o tempo de viagem e positivo
+	if (tempoViagemMS > 0)
+	{
+		return tempoViagemMS;
+	}
+	else
+	{
+		return;
+	}
+}
+
+void infracoesDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPassagem, DISTANCIAS_LISTA* listaDistancias)
+{
+	if (!listaPassagem || !listaHashCarros || !listaDistancias)
+	{
+		return;
+	}
+	//guardar input do user o periodo inicial
+	DATA* periodoInicial = (DATA*)malloc(sizeof(DATA));
+	//guardar input do user o periodo final
+	DATA* periodoFinal = (DATA*)malloc(sizeof(DATA));
+	if (periodoInicial && periodoFinal == NULL)
+	{
+		return;
+	}
+	//pedir o periodo inicial
+	printf("INSIRA O DIA INICIAL DE PESQUISA!\n");
+	printf("DIA: ");
+	scanf("%d", &periodoInicial->dia);
+	printf("MES: ");
+	scanf("%d", &periodoInicial->mes);
+	printf("ANO: ");
+	scanf("%d", &periodoInicial->ano);
+	printf("**************************\n");
+	//pedir o periodo final
+	printf("INSIRA O DIA FINAL DE PESQUISA!\n");
+	printf("DIA: ");
+	scanf("%d", &periodoFinal->dia);
+	printf("MES: ");
+	scanf("%d", &periodoFinal->mes);
+	printf("ANO: ");
+	scanf("%d", &periodoFinal->ano);
+	printf("**************************\n");
+	//pedir hora inicial
+	printf("INSIRA A HORA INICIAL DE PESQUISA!\n");
+	printf("HORA: ");
+	scanf("%d", &periodoInicial->hora);
+	printf("MINUTOS: ");
+	scanf("%d", &periodoInicial->minuto);
+	//pedir hora final
+	printf("INSIRA A HORA FINAL DE PESQUISA!\n");
+	printf("HORA: ");
+	scanf("%d", &periodoFinal->hora);
+	printf("MINUTOS: ");
+	scanf("%d", &periodoFinal->minuto);
+	//descartamos os segundos
+	int contador = 0;
+	//criar ListaViagens
+	LISTA_VIAGENS* listaViagens = criarListaViagens();
+
+	//verificar se algum carro passou na autoestrada durante periodo X
+	PASSAGEM_NODE* nodePassagem = listaPassagem->header;
+
+	int idEntrada = 0;
+	int idSaida = 0;
+	while (nodePassagem)
+	{
+
+		//encontrar as datas que satisfacam a condicao
+		if (checkPeriodoX(nodePassagem, periodoInicial, periodoFinal) == 1)
+		{
+			//cria um no apenas se ainda nao existir o carro na listaViagens (EVITAR REPETICAO DE DADOS)
+			if (existeCarroListaViagens(listaViagens, nodePassagem->info->codVeiculo) == 0) //se nao existir o carro
+			{
+				//se for o sensor de entrada cria um novo
+				if (nodePassagem->info->tipoRegisto == 0)
+				{
+					//criar o NODE_VIAGENS
+					NODE_VIAGENS* nodeViagens = criarNodeViagens();
+					//adicionar o carro ao NODE_VIAGENS
+					nodeViagens->carro = retornaCarro(listaHashCarros, nodePassagem->info->codVeiculo);
+					//adicionar o ID de entrada e saida
+					idEntrada = nodePassagem->info->idSensor;
+					idSaida = nodePassagem->next->info->idSensor;
+
+					//ver a distancia entre o ENTRADA E SAIDA E SOMAR (PODE RECEBER [3 - 1] ou [1 - 3], atencao)
+					nodeViagens->totalKm += distanciaEntreSensor(idEntrada, idSaida, listaDistancias);
+					//adicionar a diference dntre os tempos de entrada e saida
+					nodeViagens->milisegundosPercorridos += calculoDistancia(nodePassagem->info->data, nodePassagem->next->info->data);
+					//adicionar a lista nodeViagens a lista Viagens
+					adicionarNodeListaViagens(nodeViagens, listaViagens);
+					contador++;
+				}
+			}
+			else // se o carro ja existir
+			{
+				// vai adicionar apenas os km da nova passagem se e so se for o sensor de entrada
+				if (nodePassagem->info->tipoRegisto == 0)
+				{
+					idEntrada = 0;
+					idSaida = 0;
+
+					NODE_VIAGENS* nodeViagem = listaViagens->header;
+					while (nodeViagem)
+					{
+						//encontrar a posicao do carro e adicionar apenas os novos km
+						if (nodeViagem->carro->codVeiculo == nodePassagem->info->codVeiculo)
+						{
+							//adicionar o ID de entrada e saida
+							idEntrada = nodePassagem->info->idSensor;
+							idSaida = nodePassagem->next->info->idSensor;
+							nodeViagem->totalKm += distanciaEntreSensor(idEntrada, idSaida, listaDistancias);
+							nodeViagem->milisegundosPercorridos += calculoDistancia(nodePassagem->info->data, nodePassagem->next->info->data);
+						}
+						nodeViagem = nodeViagem->next;
+					}
+				}
+			}
+
+		}
+		nodePassagem = nodePassagem->next;
+	}
+	printf("EXISTEM [%d] carros que satizfazem a condicao\n", contador);
+	printf("A ORGANIZAR POR TOTAL KM (DESCENDENTE)\n");
+	//organizar os nodesViagens da listaViagens por maior carro distancia percorrida
+	NODE_VIAGENS* aux = listaViagens->header;
+	//criar um buffer para armazenar o nodeViagens
+	NODE_VIAGENS* buffer = NULL;
+	int troca = 0;
+	do
+	{
+		//dar reset ao aux
+		aux = listaViagens->header;
+		troca = 0;
+		//so troca se existir um proximo node
+		while (aux->next != NULL)
+		{
+			//verificar se o atual e menor que o seguinte
+			if (aux->totalKm < aux->next->totalKm)
+			{
+				// troca o conteudo dos nos
+				float tempTotalKm = aux->totalKm;
+				CARRO* tempCarro = aux->carro;
+
+				aux->totalKm = aux->next->totalKm;
+				aux->carro = aux->next->carro;
+
+				aux->next->totalKm = tempTotalKm;
+				aux->next->carro = tempCarro;
+
+				troca = 1;
+			}
+			aux = aux->next;
+		}
+	} while (troca); // percorre sempre uma ultima vez a lista se nao existirem trocas, a lista esta ordenada
+
+	//print da listaViagens
+	aux = listaViagens->header;
+	// Cabeçalho da lista
+	printf("**************************************************************\n");
+	printf("|                        LISTA VIAGENS                        |\n");
+	printf("**************************************************************\n");
+	printf("\nTotalKM\t\tMatricula\tCodigo_Veiculo\tVelocidade Media\n\n");
+	while (aux)
+	{
+		
+		//para evitar overflow
+		long float horasTotais = aux->milisegundosPercorridos / 3600000.0f;
+		long float velocidadeMedia = aux->totalKm / horasTotais;
+		if (velocidadeMedia > 120.0)
+		{
+			printf("%.2f\t\t%s\t%d\t\t%.2lf\n",aux->totalKm, aux->carro->matricula,aux->carro->codVeiculo, velocidadeMedia);
+		}
+		aux = aux->next;
+	}
+	printf("\n");
+	//ELIMINAR MEMORIA PARA A LISTA VIAGENS
+	freeListaViagens(listaViagens);
+}
 
 
