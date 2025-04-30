@@ -64,3 +64,5 @@ CARRO* retornaCarro(LISTA_HASHC* listaHash, int id);
 int compararCarros(const void* a, const void* b);
 int calculoDistancia(DATA* dataEntrada, DATA* dataSaida);
 void infracoesDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPassagem, DISTANCIAS_LISTA* listaDistancias);
+
+void totalinfracoesDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPassagem, DISTANCIAS_LISTA* listaDistancias);
