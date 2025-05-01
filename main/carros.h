@@ -14,6 +14,7 @@ typedef struct carro
 	int ano;
 	int dono;
 	int codVeiculo;
+	int totalInfracoes; // vai armazenar as infracoes cometidas pelo carro
 }CARRO;
 
 // NODE DO CARRO

@@ -1231,3 +1231,164 @@ void ordenarListaMarcasPorKm(LISTA_HASHC* lista) {
 		}
 	} while (troca);
 }
+
+void totalinfracoesDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPassagem, DISTANCIAS_LISTA* listaDistancias)
+{
+	if (!listaPassagem || !listaHashCarros || !listaDistancias)
+	{
+		return;
+	}
+
+	//guardar input do user o periodo inicial
+	DATA* periodoInicial = (DATA*)malloc(sizeof(DATA));
+	//guardar input do user o periodo final
+	DATA* periodoFinal = (DATA*)malloc(sizeof(DATA));
+
+	if (periodoInicial && periodoFinal == NULL)
+	{
+		return;
+	}
+
+	//pedir o periodo inicial
+	printf("INSIRA O DIA INICIAL DE PESQUISA!\n");
+	printf("DIA: ");
+	scanf("%d", &periodoInicial->dia);
+	printf("MES: ");
+	scanf("%d", &periodoInicial->mes);
+	printf("ANO: ");
+	scanf("%d", &periodoInicial->ano);
+	printf("**************************\n");
+	//pedir o periodo final
+	printf("INSIRA O DIA FINAL DE PESQUISA!\n");
+	printf("DIA: ");
+	scanf("%d", &periodoFinal->dia);
+	printf("MES: ");
+	scanf("%d", &periodoFinal->mes);
+	printf("ANO: ");
+	scanf("%d", &periodoFinal->ano);
+	printf("**************************\n");
+
+	//pedir hora inicial
+	printf("INSIRA A HORA INICIAL DE PESQUISA!\n");
+	printf("HORA: ");
+	scanf("%d", &periodoInicial->hora);
+	printf("MINUTOS: ");
+	scanf("%d", &periodoInicial->minuto);
+	//pedir hora final
+	printf("INSIRA A HORA FINAL DE PESQUISA!\n");
+	printf("HORA: ");
+	scanf("%d", &periodoFinal->hora);
+	printf("MINUTOS: ");
+	scanf("%d", &periodoFinal->minuto);
+	//descartamos os segundos
+
+	// Criar lista de viagens com infrações
+	LISTA_VIAGENS* listaInfracoes = criarListaViagens();
+
+	// Verifica se algum carro passou na autoestrada durante periodo X
+	PASSAGEM_NODE* nodePassagem = listaPassagem->header;
+
+	while (nodePassagem && nodePassagem->next)
+	{
+		// Considera apenas registos de entrada dentro do período X
+		if (nodePassagem->info->tipoRegisto == 0 && checkPeriodoX(nodePassagem, periodoInicial, periodoFinal))
+		{
+			PASSAGEM_NODE* proximo = nodePassagem->next;
+
+			if (!checkPeriodoX(proximo, periodoInicial, periodoFinal))
+			{
+				nodePassagem = nodePassagem->next;
+				continue;
+			}
+
+			float distancia = distanciaEntreSensor(nodePassagem->info->idSensor, proximo->info->idSensor, listaDistancias);
+			long tempoMilisegundos = calculoDistancia(nodePassagem->info->data, proximo->info->data);
+			float horas = tempoMilisegundos / 3600000.0f;
+			float velocidade = distancia / horas;
+
+			if (velocidade > 120)
+			{
+				// Verifica se já existe NODE_VIAGENS para o carro
+				NODE_VIAGENS* nodeViagem = listaInfracoes->header;
+				int encontrou = 0;
+
+				while (nodeViagem)
+				{
+					if (nodeViagem->carro->codVeiculo == nodePassagem->info->codVeiculo)
+					{
+						nodeViagem->totalInfracoes++;
+						encontrou = 1;
+						break;
+					}
+
+					nodeViagem = nodeViagem->next;
+				}
+
+				if (!encontrou)
+				{
+					NODE_VIAGENS* novaViagem = criarNodeViagens();
+					novaViagem->carro = retornaCarro(listaHashCarros, nodePassagem->info->codVeiculo);
+					novaViagem->totalInfracoes = 1;
+					adicionarNodeListaViagens(novaViagem, listaInfracoes);
+				}
+			}
+		}
+		nodePassagem = nodePassagem->next;
+	}
+
+	// Ordenar lista por totalInfracoes (ordem descendente)
+	int troca;
+	NODE_VIAGENS* aux;
+
+	do
+	{
+		troca = 0;
+		aux = listaInfracoes->header;
+
+		while (aux && aux->next)
+		{
+			if (aux->totalInfracoes < aux->next->totalInfracoes)
+			{
+				// Troca os dados dos nodes
+				int tempInfracoes = aux->totalInfracoes;
+				float tempKm = aux->totalKm;
+				long tempTempo = aux->milisegundosPercorridos;
+				CARRO* tempCarro = aux->carro;
+
+				aux->totalInfracoes = aux->next->totalInfracoes;
+				aux->totalKm = aux->next->totalKm;
+				aux->milisegundosPercorridos = aux->next->milisegundosPercorridos;
+				aux->carro = aux->next->carro;
+
+				aux->next->totalInfracoes = tempInfracoes;
+				aux->next->totalKm = tempKm;
+				aux->next->milisegundosPercorridos = tempTempo;
+				aux->next->carro = tempCarro;
+
+				troca = 1;
+			}
+
+			aux = aux->next;
+		}
+	} while (troca);
+
+	// Cabeçalho
+	printf("**************************************************************\n");
+	printf("|              RANKING DE INFRACOES POR VEICULO              |\n");
+	printf("**************************************************************\n");
+	printf("\nTotal Infracoes\tMatricula\tMarca\t\tModelo\t\tCodigo_Veiculo\n\n");
+
+	// Mostrar o Ranking
+	aux = listaInfracoes->header;
+
+	while (aux)
+	{
+		printf("%d\t\t%s\t%s\t\t%s\t\t%d\n", aux->totalInfracoes, aux->carro->matricula, aux->carro->marca, aux->carro->modelo, aux->carro->codVeiculo);
+		aux = aux->next;
+	}
+
+	// Destruir a memória alocada para a Lista e os Períodos
+	freeListaViagens(listaInfracoes);
+	free(periodoInicial);
+	free(periodoFinal);
+}
