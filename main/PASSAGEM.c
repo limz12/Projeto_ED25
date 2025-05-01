@@ -606,7 +606,6 @@ int checkPeriodoX(PASSAGEM_NODE* nodePassagem, DATA* periodoInicial, DATA* perio
 	return 1;
 }
 
-
 //verificar se a seguinte matricula  e maior (por IDCARRO)
 int maiorMatricula(int pCarro, int sCarro, LISTA_HASHC* listaHashCarro)
 {
@@ -1018,4 +1017,217 @@ void infracoesDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPassag
 	freeListaViagens(listaViagens);
 }
 
+void totalKmMarcaDuranteX(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPassagem, DISTANCIAS_LISTA* listaDistancias)
+{
+	// Validação da existência das listas
+	if (!listaPassagem || !listaHashCarros || !listaDistancias)
+	{
+		return;
+	}
 
+	// Guardar os dados sobre a data que o User escolhe
+	DATA* periodoInicial = (DATA*)malloc(sizeof(DATA));
+	DATA* periodoFinal = (DATA*)malloc(sizeof(DATA));
+
+	// Validação da alocação de memória
+	if (periodoInicial && periodoFinal == NULL)
+	{
+		return;
+	}
+
+	// Pede a Data Inicial de Pesquisa
+	printf("INSIRA O DIA INICIAL DE PESQUISA!\n");
+	printf("DIA: ");
+	scanf("%d", &periodoInicial->dia);
+	printf("MES: ");
+	scanf("%d", &periodoInicial->mes);
+	printf("ANO: ");
+	scanf("%d", &periodoInicial->ano);
+	printf("**************************\n");
+
+	// Pede a Data Final de Pesquisa
+	printf("INSIRA O DIA FINAL DE PESQUISA!\n");
+	printf("DIA: ");
+	scanf("%d", &periodoFinal->dia);
+	printf("MES: ");
+	scanf("%d", &periodoFinal->mes);
+	printf("ANO: ");
+	scanf("%d", &periodoFinal->ano);
+	printf("**************************\n");
+
+	// Pede a Hora Inicial de Pesquisa
+	printf("INSIRA A HORA INICIAL DE PESQUISA!\n");
+	printf("HORA: ");
+	scanf("%d", &periodoInicial->hora);
+	printf("MINUTOS: ");
+	scanf("%d", &periodoInicial->minuto);
+
+	// Pede a Hora Final de Pesquisa
+	printf("INSIRA A HORA FINAL DE PESQUISA!\n");
+	printf("HORA: ");
+	scanf("%d", &periodoFinal->hora);
+	printf("MINUTOS: ");
+	scanf("%d", &periodoFinal->minuto);
+
+	// Criação da Lista Viagens
+	LISTA_VIAGENS* listaViagens = criarListaViagens();
+
+	// Estrutura para armazenar os totais Km's por marca
+	LISTA_HASHC* listaMarcas = listaHashCarros;
+
+	// Validação da situação de haver algum carro que passe na autoestrada durante a data de pesquisa
+	PASSAGEM_NODE* nodePassagem = listaPassagem->header;
+
+	int contador = 0; // Contador para ver quantos carros estão dentro da data de pesquisa
+	int idEntrada = 0; // ID de Entrada temporário para calcular a distancia entre os sensores
+	int idSaida = 0; // ID de Saída temporário para calcular a distancia entre os sensores
+
+	while (nodePassagem) // Percorre a lista das Passagens
+	{
+		// Encontra as datas que satisfaçam a condição
+		if (checkPeriodoX(nodePassagem, periodoInicial, periodoFinal) == 1)
+		{
+			// Cria um Nó apenas se ainda não existir o carro na Lista Viagens (EVITAR REPETIÇÃO DE DADOS)
+			if (existeCarroListaViagens(listaViagens, nodePassagem->info->codVeiculo) == 0)
+			{
+				// Se for um sensor de entrada cria um novo Nó
+				if (nodePassagem->info->tipoRegisto == 0)
+				{
+					// Criação do NODE_VIAGENS
+					NODE_VIAGENS* nodeViagens = criarNodeViagens();
+
+					// Adicionar o carro ao NODE_VIAGENS
+					nodeViagens->carro = retornaCarro(listaHashCarros, nodePassagem->info->codVeiculo);
+
+					// Adicionar o ID de entrada e saida
+					idEntrada = nodePassagem->info->idSensor;
+					idSaida = nodePassagem->next->info->idSensor;
+
+					// Ver a distancia entre o Sensor de ENTRADA e o Sensor de SAIDA
+					// De seguida atualiza o somatório
+					nodeViagens->totalKm += distanciaEntreSensor(idEntrada, idSaida, listaDistancias);
+
+					// Adicionar a lista nodeViagens a lista Viagens
+					adicionarNodeListaViagens(nodeViagens, listaViagens);
+					contador++;
+				}
+			}
+			else // se o carro já existir
+			{
+				// vai adicionar apenas os km da nova passagem se for o sensor de entrada
+				if (nodePassagem->info->tipoRegisto == 0)
+				{
+					idEntrada = 0;
+					idSaida = 0;
+
+					NODE_VIAGENS* nodeViagem = listaViagens->header;
+					while (nodeViagem)
+					{
+						// Encontrar a posição do carro e adicionar apenas os novos km
+						if (nodeViagem->carro->codVeiculo == nodePassagem->info->codVeiculo)
+						{
+							// Adicionar o ID de entrada e saída
+							idEntrada = nodePassagem->info->idSensor;
+							idSaida = nodePassagem->next->info->idSensor;
+							nodeViagem->totalKm += distanciaEntreSensor(idEntrada, idSaida, listaDistancias);
+						}
+						nodeViagem = nodeViagem->next;
+					}
+				}
+			}
+		}
+		nodePassagem = nodePassagem->next;
+	}
+
+	printf("EXISTEM [%d] carros que satisfazem a condicao\n\n", contador);
+
+	// **Agora, devemos somar os quilómetros de cada carro por marca**
+	NODE_HASHC* nodeHash = listaMarcas->header;
+
+	while (nodeHash)
+	{
+		// Resetando o total de km para cada marca
+		nodeHash->totalKm_marca = 0;
+
+		// Percorrendo todos os carros desta marca
+		NODE_CARRO* nodeCarro = nodeHash->listaCarros->header;
+		while (nodeCarro)
+		{
+			NODE_VIAGENS* nodeViagem = listaViagens->header;
+			while (nodeViagem)
+			{
+				// Se o carro estiver na lista de viagens, soma os km da viagem
+				if (nodeCarro->info->codVeiculo == nodeViagem->carro->codVeiculo)
+				{
+					nodeHash->totalKm_marca += nodeViagem->totalKm;
+				}
+				nodeViagem = nodeViagem->next;
+			}
+			nodeCarro = nodeCarro->next;
+		}
+		nodeHash = nodeHash->next;
+	}
+
+	// Ordenção das marcas pelo total de km percorridos (ordem decrescente)
+
+	ordenarListaMarcasPorKm(listaMarcas);
+
+	// Apresentação da Lista de Marcas por Ordem Decrescente de Km's Totais
+	nodeHash = listaMarcas->header;
+
+	printf("**************************************************************\n");
+	printf("|           RANKING DAS MARCA POR KM'S PERCORRIDOS           |\n");
+	printf("**************************************************************\n");
+
+	while (nodeHash)
+	{
+		printf("Marca: %s | Km Total: %.2f\n", nodeHash->chave, nodeHash->totalKm_marca);
+		nodeHash = nodeHash->next;
+	}
+
+	printf("\n");
+	// Liberar memória para a lista de viagens
+	freeListaViagens(listaViagens);
+}
+
+void ordenarListaMarcasPorKm(LISTA_HASHC* lista) {
+
+	if (!lista || !lista->header)
+	{
+		printf("ERRO! A lista HASH nao existe.\n");
+		return;
+	}
+
+	NODE_HASHC* atual;
+	NODE_HASHC* proximo;
+	char tempMarca[100];
+	float tempKm;
+	LISTA_CARRO* tempLista;
+	int troca;
+
+	do {
+		troca = 0;
+		atual = lista->header;
+
+		while (atual != NULL && atual->next != NULL) {
+			proximo = atual->next;
+
+			if (proximo->totalKm_marca > atual->totalKm_marca) {
+				tempKm = atual->totalKm_marca;
+				atual->totalKm_marca = proximo->totalKm_marca;
+				proximo->totalKm_marca = tempKm;
+
+				strcpy(tempMarca, atual->chave);
+				strcpy(atual->chave, proximo->chave);
+				strcpy(proximo->chave, tempMarca);
+
+				tempLista = atual->listaCarros;
+				atual->listaCarros = proximo->listaCarros;
+				proximo->listaCarros = tempLista;
+
+				troca = 1;
+			}
+			atual = atual->next;
+		}
+	} while (troca);
+}

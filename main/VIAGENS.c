@@ -82,13 +82,14 @@ void freeListaViagens(LISTA_VIAGENS* listaViagens)
 		return;
 	}
 
-	NODE_VIAGENS* nodeViagens = listaViagens->header;
-	while (nodeViagens != NULL) 
-{
-		NODE_VIAGENS* proximo = nodeViagens->next;
-		free(nodeViagens->carro);
-		free(nodeViagens);
-		nodeViagens = proximo;
+	NODE_VIAGENS* atual = listaViagens->header;
+	while (atual)
+	{
+		NODE_VIAGENS* temp = atual;
+		atual = atual->next;
+		free(temp);
 	}
+
 	free(listaViagens);
+
 }
