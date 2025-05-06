@@ -4,6 +4,7 @@
 #include <malloc.h>
 #include <string.h>
 #include <locale.h>
+#include <string.h>
 
 #include "carros.h"
 #include "donos.h"
@@ -450,7 +451,7 @@ void ordenarMarcasHashCarrosAlfabeticamente(LISTA_HASHC* listaHash)
 		{
 			proximo = atual->next;
 			
-			if (strcmp(atual->chave, proximo->chave) > 0) 
+			if (_stricmp(atual->chave, proximo->chave) > 0) 
 			{				// Trocar as listas dos nos
 				temp = atual->listaCarros;
 				atual->listaCarros = proximo->listaCarros;
