@@ -826,15 +826,15 @@ long int calculoDistancia(DATA* dataEntrada, DATA* dataSaida)
 	//transformar a data de SAIDA em MS
 	milisegundosSaida += dataSaida->hora * 3600000;
 	milisegundosSaida += dataSaida->minuto * 60000;
-	milisegundosSaida += dataSaida->segundo * 1000;
-	milisegundosSaida += dataSaida->milisegundo;
+	//milisegundosSaida += dataSaida->segundo * 1000;
+	//milisegundosSaida += dataSaida->milisegundo;
 
 	long int milisegundosEntrada = 0;
 	//transformar a data de Entrada em MS
 	milisegundosEntrada += dataEntrada->hora * 3600000;
 	milisegundosEntrada += dataEntrada->minuto * 60000;
-	milisegundosEntrada += dataEntrada->segundo * 1000;
-	milisegundosEntrada += dataEntrada->milisegundo;
+	//milisegundosEntrada += dataEntrada->segundo * 1000;
+	//milisegundosEntrada += dataEntrada->milisegundo;
 
 	long int tempoViagemMS = milisegundosSaida - milisegundosEntrada;
 	//verificar se o tempo de viagem e positivo

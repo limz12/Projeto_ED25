@@ -58,7 +58,7 @@ void main()
             case 2:
                 //MENU CARROS
                 system("cls");
-                menuCarros(listaHashCarros,listaDonos);
+                menuCarros(listaHashCarros,listaDonos, listaPassagem, listaDistancias);
             break;
             case 3:
                 //MENU DISTANCIAS

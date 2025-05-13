@@ -15,6 +15,6 @@ int menuPrincipal(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, 
 void menuDistancias(DISTANCIAS_LISTA* listaDistancias);
 void menuPassagens(PASSAGEM_LISTA* listaPassagens, LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaDistancias);
 void menuSensores(LISTA_SENSOR* listaSensores);
-void menuCarros(LISTA_CARRO* listaCarros, LISTA_DONOS* listaDonos);
+void menuCarros(LISTA_HASHC* hashCarros, LISTA_DONOS* listaDonos, PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias);
 void menuDonos(LISTA_DONOS* listaDonos, LISTA_HASHC* listaHashCarros);
 
