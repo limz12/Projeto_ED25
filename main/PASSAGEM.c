@@ -814,6 +814,9 @@ void totalKmCarroDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPas
 	freeListaViagens(listaViagens);
 }
 
+//------------------------------- TESTE ----------------------------------
+
+/*
 long int calculoDistancia(DATA* dataEntrada, DATA* dataSaida)
 {
 
@@ -847,6 +850,42 @@ long int calculoDistancia(DATA* dataEntrada, DATA* dataSaida)
 		return;
 	}
 }
+*/
+
+long int calculoDistancia(DATA* dataEntrada, DATA* dataSaida)
+{
+	if (!dataEntrada || !dataSaida)
+	{
+		return 0;
+	}
+
+	struct tm entrada = { 0 }, saida = { 0 };
+
+	entrada.tm_year = dataEntrada->ano - 1900;
+	entrada.tm_mon = dataEntrada->mes - 1;
+	entrada.tm_mday = dataEntrada->dia;
+	entrada.tm_hour = dataEntrada->hora;
+	entrada.tm_min = dataEntrada->minuto;
+	entrada.tm_sec = dataEntrada->segundo;
+
+	saida.tm_year = dataSaida->ano - 1900;
+	saida.tm_mon = dataSaida->mes - 1;
+	saida.tm_mday = dataSaida->dia;
+	saida.tm_hour = dataSaida->hora;
+	saida.tm_min = dataSaida->minuto;
+	saida.tm_sec = dataSaida->segundo;
+
+	time_t tEntrada = mktime(&entrada);
+	time_t tSaida = mktime(&saida);
+
+	if (tEntrada == -1 || tSaida == -1)
+		return 0;
+
+	long int tempoMS = difftime(tSaida, tEntrada) * 1000 + (dataSaida->milisegundo - dataEntrada->milisegundo);
+
+	return (tempoMS > 0) ? tempoMS : 0;
+}
+
 
 void infracoesDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPassagem, DISTANCIAS_LISTA* listaDistancias)
 {

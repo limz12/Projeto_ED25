@@ -45,3 +45,5 @@ void freeListaDonos(LISTA_DONOS* lista);
 void ordenarListaDonosAlfabeticamente(LISTA_DONOS* lista);
 
 void ordenarListaDonosContribuinte(LISTA_DONOS* lista); // ex 5
+
+//void maiorVelocidadeMediaDono(LISTA_DONOS* listaDonos, LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPassagem, DISTANCIAS_LISTA* listaDistancias); // ex 14

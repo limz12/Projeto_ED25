@@ -1,5 +1,7 @@
 #include "donos.h"
 #include "carros.h"
+#include "DISTANCIAS.H"
+#include "PASSAGEM.H"
 
 
 LISTA_DONOS* criarListaDonos()
@@ -261,4 +263,99 @@ void ordenarListaDonosContribuinte(LISTA_DONOS* lista)
 	} while (troca);//vai parar quando percorrer toda a lista e verificar que realmente nao foram efetuadas trocas
 
 	printf("LISTA ORDENADA COM SUCESSO\n");
+}
+
+//condutor (dono) que circula a maior velocidade média
+void maiorVelocidadeMediaDono(LISTA_DONOS* listaDonos, LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPassagem, DISTANCIAS_LISTA* listaDistancias)
+{
+	// Validação da existência das listas
+	if (!listaHashCarros || !listaPassagem || !listaDistancias || !listaDonos)
+	{
+		printf("Uma das listas esta vazia!\n");
+		return;
+	}
+	
+	PASSAGEM_NODE* nodePassagem = listaPassagem->header; // ponteiro para percorrer a lista das Passagens
+	float maiorVelocidade = 0.0f; // variável para atualizar a maior velocidade, à medida que percorre as Passagens
+	Donos* donoMaisRapido = NULL; // ponteiro para o conteúdo de um nó dono (por causa do dono com a velocidade mais alta)
+
+	// Percorre a lista das Passagens
+	while (nodePassagem && nodePassagem->next)
+	{
+		if (nodePassagem->info->tipoRegisto == 0) // Procura só nos de entrada (pesquisa mais eficiente)
+		{
+			// Ponteiro para o só a seguir do ponteiro nodePassagem por causa de andar na saída
+			PASSAGEM_NODE* proximo = nodePassagem->next;
+
+			if (proximo && proximo->info->tipoRegisto == 1 && nodePassagem->info->codVeiculo == proximo->info->codVeiculo) // literalmente uma passagem (entrada + saída)
+			{
+				// Distancia percorrida pelo veiculo entre os sensores de entrada e saída
+				float distancia = distanciaEntreSensor(nodePassagem->info->idSensor, proximo->info->idSensor, listaDistancias);
+
+				// Ignorar se há distancias inválidas (distancia tem de ser positiva)
+				if (distancia <= 0.0f)
+				{
+					nodePassagem = nodePassagem->next;
+					continue;
+				}
+
+				// Tempo percorrido pelo veiculo entre os sensores de entrada e saída
+				long tempoMS = calculoDistancia(nodePassagem->info->data, proximo->info->data);
+
+				// Ignorar se há tempo inválido (tempos também têm de ser positivos)
+				if (tempoMS <= 0)
+				{
+					nodePassagem = nodePassagem->next;
+					continue;
+				}
+
+				float tempoHoras = tempoMS / 3600000.0f; // conversão do tempo percorrido para horas
+				float velocidade = distancia / tempoHoras; // cálculo da velocidade media nessa passagem
+
+				// Atualização da variável maiorVelocidade, caso seja maior que a maiorVelocidade anterior
+				if (velocidade > maiorVelocidade)
+				{
+					maiorVelocidade = velocidade;
+
+					// Indentifica o Carro, com essa velocidade media, através do codigo do Veiculo
+					CARRO* carro = retornaCarro(listaHashCarros, nodePassagem->info->codVeiculo);
+
+					if (carro && carro->dono)
+					{
+						// Ponteiro para procurar o Dono na lista de Donos
+						NODE_DONOS* atual = listaDonos->primeiro;
+						
+						// Pesquisa do dono na lista Donos, a partir do numero de contribuinte
+						while (atual)
+						{
+							if (atual->info->numCont == carro->dono)
+							{
+								// Atualização do ponteiro donoMaisRapido
+								donoMaisRapido = atual->info;
+								break;
+							}
+							atual = atual->next;
+						}
+					}
+					else
+					{
+						printf("Carro nao encontrado ou sem dono (codVeiculo: %d)\n", nodePassagem->info->codVeiculo);
+					}
+				}
+			}
+		}
+
+		nodePassagem = nodePassagem->next;
+	}
+
+	// Print no ecrâ do Dono com a Velocidade Media mais alta
+	if (donoMaisRapido)
+	{
+		printf("Dono com a maior velocidade media: %s\n", donoMaisRapido->nome);
+		printf("Velocidade media maxima: %.2f km/h\n", maiorVelocidade);
+	}
+	else
+	{
+		printf("Nenhum dono com velocidade media encontrada.\n");
+	}
 }

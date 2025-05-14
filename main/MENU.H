@@ -16,5 +16,4 @@ void menuDistancias(DISTANCIAS_LISTA* listaDistancias);
 void menuPassagens(PASSAGEM_LISTA* listaPassagens, LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaDistancias);
 void menuSensores(LISTA_SENSOR* listaSensores);
 void menuCarros(LISTA_CARRO* listaCarros, LISTA_DONOS* listaDonos);
-void menuDonos(LISTA_DONOS* listaDonos, LISTA_HASHC* listaHashCarros);
-
+void menuDonos(LISTA_DONOS* listaDonos, LISTA_HASHC* hashCarros, PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias);
