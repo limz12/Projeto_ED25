@@ -190,7 +190,7 @@ void menuSensores(LISTA_SENSOR* listaSensores)
 	}
 }
 
-void menuCarros(LISTA_HASHC* hashCarros, LISTA_DONOS* listaDonos)
+void menuCarros(LISTA_HASHC* hashCarros, LISTA_DONOS* listaDonos, PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias)
 {
 	system("cls");
 	//verificar se todas as listas estao presentes
@@ -210,13 +210,14 @@ void menuCarros(LISTA_HASHC* hashCarros, LISTA_DONOS* listaDonos)
 		printf("|  (3) Ordenar por Marca Alfabeticamente                     |\n");
 		printf("|  (4) Ordenar por Modelo Alfabeticamente                    |\n");
 		printf("|  (5) Ordenar por Matricula Alfabeticamente                 |\n");
+		printf("|  (6) Marca Carros com Maior Velocidade Media               |\n");
 		printf("|------------------------------------------------------------|\n");
 		printf("|  (0) Menu Principal                                        |\n");
 		printf("#------------------------------------------------------------#\n");
 
 		printf("Seleciona uma opcao: \n");
-		escolha = verificarNumero(5);
-	} while (escolha < 0 || escolha > 5);
+		escolha = verificarNumero(6);
+	} while (escolha < 0 || escolha > 6);
 
 	//chamar as funcoes aqui
 	switch (escolha)
@@ -241,6 +242,9 @@ void menuCarros(LISTA_HASHC* hashCarros, LISTA_DONOS* listaDonos)
 		system("cls");
 		ordenarMatriculaHashCarrosAlfabeticamente(hashCarros);
 		break;
+	case 6:
+		system("cls");
+		maiorVelocidadeMediaMarca(hashCarros, listaPassagens, listaDistancias);
 	}
 }
 

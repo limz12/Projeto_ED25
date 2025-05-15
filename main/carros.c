@@ -8,6 +8,8 @@
 
 #include "carros.h"
 #include "donos.h"
+#include "DISTANCIAS.H"
+#include "PASSAGEM.H"
 
 LISTA_CARRO* criarListaCarro()
 {
@@ -43,7 +45,8 @@ NODE_CARRO* criarNodeCarro()
 	// Alocação de memória para o conteúdo dentro do elemento
 	node->info = (CARRO*)malloc(sizeof(CARRO)); // Conteúdo do Elemento = Carro
 	node->next = NULL; // ponteiro para o próximo é "= NULL", pois é adicionado no fim da lista
-
+	node->info->totalKMPercorridos = 0.0;
+	node->info->totalMinutosPercorridos = 0;
 	/*printf("Elemento da Lista de Carros criado com sucesso!\n");*/
 
 	return node;
@@ -369,6 +372,7 @@ NODE_HASHC* criarNodeHashCarro()
 	NODE_HASHC* nodeHash = (NODE_HASHC*)malloc(sizeof(NODE_HASHC));
 	//strcpy(nodeHash->chave ,'\0');
 	nodeHash->listaCarros = NULL;
+
 	nodeHash->next = NULL;
 
 }
@@ -569,4 +573,125 @@ void ordenarMatriculaHashCarrosAlfabeticamente(LISTA_HASHC* listaHash)
 	} while (troca);//vai parar quando percorrer toda a hash e verificar que realmente nao foram efetuadas trocas
 
 	printf("HASH ORDENADA COM SUCESSO\n");
+}
+
+//devolver o carro encontrado pelo ID
+NODE_CARRO* procuraCarroPorID(int codVeiculo, LISTA_HASHC* listaHashCarros)
+{
+	if (!codVeiculo)
+	{
+		return;
+	}
+	//auxiliar para percorrer o listaHashCarros
+	NODE_HASHC* auxNodeHash = listaHashCarros->header;
+	while (auxNodeHash)
+	{
+		//auxiliar para percorrer a lista Carros
+		NODE_CARRO* nodeCarro = auxNodeHash->listaCarros->header;
+		while (nodeCarro)
+		{
+			if (nodeCarro->info->codVeiculo == codVeiculo)
+			{
+				return nodeCarro;
+			}
+			nodeCarro = nodeCarro->next;
+		}
+
+
+		auxNodeHash = auxNodeHash->next;
+	}
+
+	if (auxNodeHash == NULL)
+	{
+		printf("O CARRO NAO EXITE! \n");
+		return NULL;
+	}
+
+}
+
+void maiorVelocidadeMediaMarca(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias)
+{
+	if (!listaHashCarros || !listaPassagens || !listaDistancias)
+		return;
+
+	printf("CALCULAR DISTANCIAS, POR FAVOR AGUARDE! (CERCA DE 1:30 MIN)\n");
+
+	PASSAGEM_NODE* atual = listaPassagens->header;
+
+	while (atual && atual->next)
+	{
+		PASSAGEM* entrada = atual->info;
+		PASSAGEM* saida = atual->next->info;
+
+		// verificar se o par e valido (entrada seguida de saida perternce ao mesmo carro)
+		if (entrada->tipoRegisto == 0 && saida->tipoRegisto == 1 && entrada->codVeiculo == saida->codVeiculo)
+		{
+			float km = distanciaEntreSensor(entrada->idSensor, saida->idSensor, listaDistancias);
+			long tempoMs = calculoDistancia(entrada->data, saida->data);
+			float minutos = tempoMs / 60000.0f;
+			if (km >= 0 && minutos > 0)
+			{
+
+				NODE_CARRO* carro = procuraCarroPorID(entrada->codVeiculo, listaHashCarros);
+				if (carro)
+				{
+					if (km > 0 && minutos > 0) // evitar viagens e kilometros negativos
+					{
+						carro->info->totalKMPercorridos += km;
+						carro->info->totalMinutosPercorridos += minutos;
+					}
+					
+				}
+			}
+			atual = atual->next->next; // (par ja processado)
+		}
+		else
+		{
+			atual = atual->next; // se o par de entrada/saida for invalido avanca um node apenas
+		}
+	}
+
+	// adicionar velocidade media aos nodeHash
+	NODE_HASHC* marcaAtual = listaHashCarros->header;
+	float maiorVelMedia = 0.0;
+	char* marcaMaisRapida = NULL;
+
+	while (marcaAtual)
+	{
+		float totalKm = 0.0f;
+		float totalMin = 0.0f;
+
+		NODE_CARRO* carro = marcaAtual->listaCarros;
+		while (carro)
+		{
+			totalKm += carro->info->totalKMPercorridos;
+			totalMin += carro->info->totalMinutosPercorridos;
+			carro = carro->next;
+		}
+
+		if (totalMin > 0)
+		{
+			float velMedia = totalKm / (totalMin / 60.0f); // converter minutos para km/h
+			if (velMedia > maiorVelMedia)
+			{
+				maiorVelMedia = velMedia;
+				marcaMaisRapida = marcaAtual->chave;
+			}
+		}
+
+		marcaAtual = marcaAtual->next;
+	}
+
+	// Apresentar resultados
+	printf("**************************************************************\n");
+	printf("|              MARCA COM MAIOR VELOCIDADE MEDIA             |\n");
+	printf("**************************************************************\n");
+
+	if (marcaMaisRapida)
+	{
+		printf("%s -> Velocidade Media: %.2f KM/h\n", marcaMaisRapida, maiorVelMedia);
+		printf("**************************************************************\n");
+	}
+	else
+		printf("Nenhuma marca com dados válidos.\n");
 }

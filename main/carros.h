@@ -2,9 +2,19 @@
 #define MAX_CHAR_STR 20
 #define MAX_CHAR_MATRICULA 8
 
+// ########### TESTE #####################
+
+
+//##############################################
+
+
+
+
 //dar o alias LISTA_DONOS, ao ListaDonos e resolver os problemas (typedef, para atribuir o outro nome)
 typedef struct ListaDonos LISTA_DONOS;
-
+typedef struct passagemLista PASSAGEM_LISTA;
+typedef struct distanciaLista DISTANCIAS_LISTA;
+typedef struct listaHashCarros LISTA_HASHC;
 // ESTRUTURAS DO CARRO
 typedef struct carro
 {
@@ -15,6 +25,8 @@ typedef struct carro
 	int dono;
 	int codVeiculo;
 	int totalInfracoes; // vai armazenar as infracoes cometidas pelo carro
+	float totalKMPercorridos; //vai armazenar o total de km percorridos pelo carro
+	float totalMinutosPercorridos;
 }CARRO;
 
 // NODE DO CARRO
@@ -39,6 +51,7 @@ typedef struct nodeHash
 {
 	char chave[MAX_CHAR_STR];
 	float totalKm_marca;
+	float minutosTotalPercorrido;
 	struct nodeHash* next;
 	LISTA_CARRO* listaCarros;
 }NODE_HASHC;
@@ -72,3 +85,5 @@ void freeListaHashCarro(LISTA_HASHC* listaHashCarro);
 void ordenarMarcasHashCarrosAlfabeticamente(LISTA_HASHC* listaHash);
 void ordenarModeloHashCarrosAlfabeticamente(LISTA_HASHC* listaHash);
 void ordenarMatriculaHashCarrosAlfabeticamente(LISTA_HASHC* listaHash);
+NODE_CARRO* procuraCarroPorID(int codVeiculo, LISTA_HASHC* listaHashCarros);
+void maiorVelocidadeMediaMarca(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias);
