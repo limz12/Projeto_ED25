@@ -624,15 +624,14 @@ void maiorVelocidadeMediaMarca(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* lis
 		PASSAGEM* saida = atual->next->info;
 
 		// verificar se o par e valido (entrada seguida de saida perternce ao mesmo carro)
-		if (entrada->tipoRegisto == 0 && saida->tipoRegisto == 1 &&
-			entrada->codVeiculo == saida->codVeiculo)
+		if (entrada->tipoRegisto == 0 && saida->tipoRegisto == 1 && entrada->codVeiculo == saida->codVeiculo)
 		{
 			float km = distanciaEntreSensor(entrada->idSensor, saida->idSensor, listaDistancias);
 			long tempoMs = calculoDistancia(entrada->data, saida->data);
 			float minutos = tempoMs / 60000.0f;
-
 			if (km >= 0 && minutos > 0)
 			{
+
 				NODE_CARRO* carro = procuraCarroPorID(entrada->codVeiculo, listaHashCarros);
 				if (carro)
 				{
@@ -644,7 +643,6 @@ void maiorVelocidadeMediaMarca(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* lis
 					
 				}
 			}
-
 			atual = atual->next->next; // (par ja processado)
 		}
 		else
@@ -690,7 +688,10 @@ void maiorVelocidadeMediaMarca(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* lis
 	printf("**************************************************************\n");
 
 	if (marcaMaisRapida)
+	{
 		printf("%s -> Velocidade Media: %.2f KM/h\n", marcaMaisRapida, maiorVelMedia);
+		printf("**************************************************************\n");
+	}
 	else
 		printf("Nenhuma marca com dados válidos.\n");
 }

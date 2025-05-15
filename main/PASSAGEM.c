@@ -823,7 +823,7 @@ long int calculoDistancia(DATA* dataEntrada, DATA* dataSaida)
 	}
 
 	long int milisegundosSaida = 0;
-	//transformar a data de SAIDA em MS
+	//transformar a data de SAIDA em MS (feedback do prof)
 	milisegundosSaida += dataSaida->hora * 3600000;
 	milisegundosSaida += dataSaida->minuto * 60000;
 	//milisegundosSaida += dataSaida->segundo * 1000;
