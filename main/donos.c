@@ -1,5 +1,7 @@
 #include "donos.h"
 #include "carros.h"
+#include "PASSAGEM.h"
+#include "DISTANCIAS.h"
 
 
 LISTA_DONOS* criarListaDonos()
@@ -261,4 +263,65 @@ void ordenarListaDonosContribuinte(LISTA_DONOS* lista)
 	} while (troca);//vai parar quando percorrer toda a lista e verificar que realmente nao foram efetuadas trocas
 
 	printf("LISTA ORDENADA COM SUCESSO\n");
+}
+
+void maiorVelocidadeMediaDonos(LISTA_DONOS* listaDonos, LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias)
+{
+	// Validação da existência das listas
+	if (!listaHashCarros || !listaPassagens || !listaDistancias || !listaDonos)
+	{
+		printf("Uma das listas esta vazia!\n");
+		return;
+	}
+
+	PASSAGEM_NODE* nodePassagem = listaPassagens->header; // ponteiro para percorrer a lista das Passagens
+	float maiorVelocidade = 0.0f; // variável para atualizar a maior velocidade, à medida que percorre as Passagens
+	Donos* donoMaisRapido = NULL; // ponteiro para o conteúdo de um nó dono (por causa do dono com a velocidade mais alta)
+
+	while (nodePassagem)
+	{
+		if (nodePassagem->info->tipoRegisto == 0) // Entrada
+		{
+			// distancia percorrida nesta passagem
+			// guardar numa variável auxiliar
+			float distancia = distanciaEntreSensor(nodePassagem->info->idSensor, nodePassagem->next->info->idSensor, listaDistancias);
+			
+			// Tempo em MS
+			long tempoMS = calculoDistancia(nodePassagem->info->data, nodePassagem->next->info->data);
+
+			// Conversão de MS para Minutos (fazer cast)
+			float tempoMin = tempoMS / 60000;
+
+			NODE_HASHC* nodeHashCarro = listaHashCarros->header;
+
+			while (nodeHashCarro)
+			{
+				NODE_CARRO* nodeCarro = nodeHashCarro->listaCarros->header;
+
+				while (nodeCarro)
+				{
+					if (nodePassagem->info->codVeiculo == nodeCarro->info->codVeiculo)
+					{
+						if (distancia > 0 && tempoMin > 0)
+						{
+							nodeCarro->info->totalKMPercorridos += distancia;
+							nodeCarro->info->totalMinutosPercorridos += tempoMin;
+
+							nodeCarro->info->velocidadeMediaKM = nodeCarro->info->totalKMPercorridos / (nodeCarro->info->totalMinutosPercorridos / 60);
+
+							if (nodeCarro->info->velocidadeMediaKM > maiorVelocidade)
+							{
+								maiorVelocidade = nodeCarro->info->velocidadeMediaKM;
+							}
+						}
+					}
+					nodeCarro = nodeCarro->next;
+				}
+				nodeHashCarro = nodeHashCarro->next;
+			}
+		}
+		nodePassagem = nodePassagem->next;
+	}
+
+	printf("Maior Velocidade Media: %.2f\n", maiorVelocidade);
 }

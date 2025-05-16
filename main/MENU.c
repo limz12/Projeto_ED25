@@ -248,7 +248,7 @@ void menuCarros(LISTA_HASHC* hashCarros, LISTA_DONOS* listaDonos, PASSAGEM_LISTA
 	}
 }
 
-void menuDonos(LISTA_DONOS* listaDonos)
+void menuDonos(LISTA_DONOS* listaDonos, LISTA_HASHC* hashCarro, PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias)
 {
 	system("cls");
 	//verificar se todas as listas estao presentes
@@ -267,13 +267,14 @@ void menuDonos(LISTA_DONOS* listaDonos)
 		printf("|  (2) Registar Dono                                         |\n");
 		printf("|  (3) Ordenar Lista Alfabeticamente                         |\n");
 		printf("|  (4) Ordenar Donos por Numero de Contribuinte              |\n");
+		printf("|  (5) TESTE								                 |\n");
 		printf("|------------------------------------------------------------|\n");
 		printf("|  (0) Menu Principal                                        |\n");
 		printf("#------------------------------------------------------------#\n");
 	
 		printf("Seleciona uma opcao: \n");
-		escolha = verificarNumero(4);
-	} while (escolha < 0 || escolha > 4);
+		escolha = verificarNumero(5);
+	} while (escolha < 0 || escolha > 5);
 
 	//chamar as funcoes aqui
 	switch (escolha)
@@ -293,6 +294,10 @@ void menuDonos(LISTA_DONOS* listaDonos)
 	case 4:
 		system("cls");
 		ordenarListaDonosContribuinte(listaDonos);
+		break;
+	case 5:
+		system("cls");
+		maiorVelocidadeMediaDonos(listaDonos, hashCarro, listaPassagens, listaDistancias);
 		break;
 	}
 }

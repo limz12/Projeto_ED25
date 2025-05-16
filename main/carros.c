@@ -47,6 +47,7 @@ NODE_CARRO* criarNodeCarro()
 	node->next = NULL; // ponteiro para o próximo é "= NULL", pois é adicionado no fim da lista
 	node->info->totalKMPercorridos = 0.0;
 	node->info->totalMinutosPercorridos = 0;
+	node->info->velocidadeMediaKM = 0;
 	/*printf("Elemento da Lista de Carros criado com sucesso!\n");*/
 
 	return node;

@@ -27,6 +27,7 @@ typedef struct carro
 	int totalInfracoes; // vai armazenar as infracoes cometidas pelo carro
 	float totalKMPercorridos; //vai armazenar o total de km percorridos pelo carro
 	float totalMinutosPercorridos;
+	float velocidadeMediaKM;
 }CARRO;
 
 // NODE DO CARRO
