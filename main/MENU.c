@@ -211,13 +211,14 @@ void menuCarros(LISTA_HASHC* hashCarros, LISTA_DONOS* listaDonos, PASSAGEM_LISTA
 		printf("|  (4) Ordenar por Modelo Alfabeticamente                    |\n");
 		printf("|  (5) Ordenar por Matricula Alfabeticamente                 |\n");
 		printf("|  (6) Marca Carros com Maior Velocidade Media               |\n");
+		printf("|  (7) Marca Carros Mais Comum                               |\n");
 		printf("|------------------------------------------------------------|\n");
 		printf("|  (0) Menu Principal                                        |\n");
 		printf("#------------------------------------------------------------#\n");
 
 		printf("Seleciona uma opcao: \n");
-		escolha = verificarNumero(6);
-	} while (escolha < 0 || escolha > 6);
+		escolha = verificarNumero(7);
+	} while (escolha < 0 || escolha > 7);
 
 	//chamar as funcoes aqui
 	switch (escolha)
@@ -245,6 +246,11 @@ void menuCarros(LISTA_HASHC* hashCarros, LISTA_DONOS* listaDonos, PASSAGEM_LISTA
 	case 6:
 		system("cls");
 		maiorVelocidadeMediaMarca(hashCarros, listaPassagens, listaDistancias);
+		break;
+	case 7:
+		system("cls");
+		marcaMaisComum(hashCarros);
+		break;
 	}
 }
 
