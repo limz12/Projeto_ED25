@@ -47,6 +47,7 @@ NODE_CARRO* criarNodeCarro()
 	node->next = NULL; // ponteiro para o próximo é "= NULL", pois é adicionado no fim da lista
 	node->info->totalKMPercorridos = 0.0;
 	node->info->totalMinutosPercorridos = 0;
+	node->info->velocidadeMediaKM = 0;
 	/*printf("Elemento da Lista de Carros criado com sucesso!\n");*/
 
 	return node;
@@ -694,4 +695,38 @@ void maiorVelocidadeMediaMarca(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* lis
 	}
 	else
 		printf("Nenhuma marca com dados válidos.\n");
+}
+
+// 16. Determinar qual a marca de automóvel mais comum?
+void marcaMaisComum(LISTA_HASHC* listaHashCarros)
+{
+	// Verificação da existência da Hash
+	if (!listaHashCarros)
+	{
+		printf("ERRO! A lista HASH nao existe.\n");
+		return;
+	}
+
+	// Variáveis para guardar o numero de elementos e o nome da marca mais comum
+	int elem_marca_maior = 0;
+	char marca_maior[MAX_CHAR_STR + 1];
+	// Ponteiro para percorrer a Hash de Carros
+	NODE_HASHC* node_atual = listaHashCarros->header;
+
+	// Ciclo para percorrer a Hash de Carros
+	while (node_atual)
+	{
+		// Determinação da Marca Mais Comum
+		if (node_atual->listaCarros->num_elem > elem_marca_maior)
+		{
+			elem_marca_maior = node_atual->listaCarros->num_elem;
+			strcpy(marca_maior, node_atual->chave);
+		}
+
+		node_atual = node_atual->next;
+	}
+
+	// Output para o User
+	printf("MARCA mais comum: %s\n", marca_maior);
+	printf("Numero de veiculos dessa marca: %d \n\n", elem_marca_maior);
 }

@@ -4,6 +4,12 @@
 #include <malloc.h>
 #include <locale.h>
 
+typedef struct listaSensor LISTA_SENSOR;
+typedef struct distanciaLista DISTANCIAS_LISTA;
+typedef struct passagemLista PASSAGEM_LISTA;
+typedef struct listaCarro LISTA_CARRO;
+typedef struct ListaDonos LISTA_DONOS;
+typedef struct listaHashCarros LISTA_HASHC;
 
 #define MAX_NOME_SIZE 60
 #define MAX_CODPOST_SIZE 10
@@ -45,3 +51,5 @@ void freeListaDonos(LISTA_DONOS* lista);
 void ordenarListaDonosAlfabeticamente(LISTA_DONOS* lista);
 
 void ordenarListaDonosContribuinte(LISTA_DONOS* lista); // ex 5
+
+void maiorVelocidadeMediaDonos(LISTA_DONOS* listaDnos, LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias);

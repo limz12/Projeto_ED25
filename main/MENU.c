@@ -50,13 +50,14 @@ int menuPrincipal(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, 
 		printf("|  (4) Passagens                                             |\n");
 		printf("|  (5) Sensores                                              |\n");
 		printf("|  (6) Memoria Ocupada Estrutura Dados                       |\n");
+		printf("|  (7) Guardar Estrutura de Dados                            |\n");
 		printf("|------------------------------------------------------------|\n");
 		printf("|  (0) SAIR (LIBERTAR MEMORIA)                               |\n");
 		printf("#------------------------------------------------------------#\n");
 	
 		printf("Seleciona uma opcao: \n");
-		escolha = verificarNumero(6);
-	} while (escolha < 0 || escolha > 6);
+		escolha = verificarNumero(7);
+	} while (escolha < 0 || escolha > 7);
 	return escolha;
 } 
 
@@ -90,6 +91,7 @@ void menuDistancias(DISTANCIAS_LISTA* listaDistancias)
 		case 1:
 			system("cls");
 			mostrarListaDISTANCIA(listaDistancias);
+			printf("\n");
 		break;
 
 	}
@@ -132,26 +134,37 @@ void menuPassagens(PASSAGEM_LISTA* listaPassagens, LISTA_HASHC* listaHashCarros,
 	case 1:
 		system("cls");
 		mostrarListaPassagem(listaPassagens);
+		printf("\n");
 	break;
 	case 2:
 		system("cls");
 		registarPassagem(listaPassagens);
+		printf("\n");
 	break;
 	case 3:
 		system("cls");
 		carrosCircularamduranteX(listaPassagens, listaHashCarros);
+		printf("\n");
 	break;
 	case 4:
+		system("cls");
 		totalKmCarroDuranteX(listaHashCarros, listaPassagens, listaDistancias);
+		printf("\n");
 	break;
 	case 5:
+		system("cls");
 		infracoesDuranteX(listaHashCarros, listaPassagens, listaDistancias);
+		printf("\n");
 		break;
 	case 6:
+		system("cls");
 		totalKmMarcaDuranteX(listaHashCarros, listaPassagens, listaDistancias);
+		printf("\n");
 	break;
 	case 7:
+		system("cls");
 		totalinfracoesDuranteX(listaHashCarros, listaPassagens, listaDistancias);
+		printf("\n");
 	break;
 	}
 }
@@ -186,6 +199,7 @@ void menuSensores(LISTA_SENSOR* listaSensores)
 	case 1:
 		system("cls");
 		mostrarListaSensores(listaSensores);
+		printf("\n");
 		break;
 	}
 }
@@ -211,13 +225,14 @@ void menuCarros(LISTA_HASHC* hashCarros, LISTA_DONOS* listaDonos, PASSAGEM_LISTA
 		printf("|  (4) Ordenar por Modelo Alfabeticamente                    |\n");
 		printf("|  (5) Ordenar por Matricula Alfabeticamente                 |\n");
 		printf("|  (6) Marca Carros com Maior Velocidade Media               |\n");
+		printf("|  (7) Marca Carros Mais Comum                               |\n");
 		printf("|------------------------------------------------------------|\n");
 		printf("|  (0) Menu Principal                                        |\n");
 		printf("#------------------------------------------------------------#\n");
 
 		printf("Seleciona uma opcao: \n");
-		escolha = verificarNumero(6);
-	} while (escolha < 0 || escolha > 6);
+		escolha = verificarNumero(7);
+	} while (escolha < 0 || escolha > 7);
 
 	//chamar as funcoes aqui
 	switch (escolha)
@@ -225,30 +240,42 @@ void menuCarros(LISTA_HASHC* hashCarros, LISTA_DONOS* listaDonos, PASSAGEM_LISTA
 	case 1:
 		system("cls");
 		mostrarHashCarros(hashCarros);
+		printf("\n");
 		break;
 	case 2:
 		system("cls");
 		criarCarroUtilizador(hashCarros, listaDonos);
+		printf("\n");
 		break;
 	case 3:
 		system("cls");
 		ordenarMarcasHashCarrosAlfabeticamente(hashCarros);
+		printf("\n");
 		break;
 	case 4:
 		system("cls");
 		ordenarModeloHashCarrosAlfabeticamente(hashCarros);
+		printf("\n");
 		break;
 	case 5:
 		system("cls");
 		ordenarMatriculaHashCarrosAlfabeticamente(hashCarros);
+		printf("\n");
 		break;
 	case 6:
 		system("cls");
 		maiorVelocidadeMediaMarca(hashCarros, listaPassagens, listaDistancias);
+		printf("\n");
+		break;
+	case 7:
+		system("cls");
+		marcaMaisComum(hashCarros);
+		printf("\n");
+		break;
 	}
 }
 
-void menuDonos(LISTA_DONOS* listaDonos)
+void menuDonos(LISTA_DONOS* listaDonos, LISTA_HASHC* hashCarro, PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias)
 {
 	system("cls");
 	//verificar se todas as listas estao presentes
@@ -267,13 +294,14 @@ void menuDonos(LISTA_DONOS* listaDonos)
 		printf("|  (2) Registar Dono                                         |\n");
 		printf("|  (3) Ordenar Lista Alfabeticamente                         |\n");
 		printf("|  (4) Ordenar Donos por Numero de Contribuinte              |\n");
+		printf("|  (5) Dono com a maior velocidade media		     |\n");
 		printf("|------------------------------------------------------------|\n");
 		printf("|  (0) Menu Principal                                        |\n");
 		printf("#------------------------------------------------------------#\n");
 	
 		printf("Seleciona uma opcao: \n");
-		escolha = verificarNumero(4);
-	} while (escolha < 0 || escolha > 4);
+		escolha = verificarNumero(5);
+	} while (escolha < 0 || escolha > 5);
 
 	//chamar as funcoes aqui
 	switch (escolha)
@@ -281,18 +309,66 @@ void menuDonos(LISTA_DONOS* listaDonos)
 	case 1:
 		system("cls");
 		listarDonos(listaDonos);
+		printf("\n");
 		break;
 	case 2:
 		system("cls");
 		registarDonos(listaDonos);
+		printf("\n");
 		break;
 	case 3:
 		system("cls");
 		ordenarListaDonosAlfabeticamente(listaDonos);
+		printf("\n");
 		break;
 	case 4:
 		system("cls");
 		ordenarListaDonosContribuinte(listaDonos);
+		printf("\n");
+		break;
+	case 5:
+		system("cls");
+		maiorVelocidadeMediaDonos(listaDonos, hashCarro, listaPassagens, listaDistancias);
+		printf("\n");
+		break;
+	}
+}
+
+void menuGuardarEDFicheiro(LISTA_SENSOR* listaSensor,DISTANCIAS_LISTA* listaDistancias,PASSAGEM_LISTA* listaPassagem,LISTA_HASHC* listaHashCarros,LISTA_DONOS* listaDonos)
+{
+	system("cls");
+	//verificar se todas as listas estao presentes
+	if (!listaSensor || !listaDistancias || !listaPassagem || !listaHashCarros || !listaDonos)
+	{
+		printf("ERRO! A LISTA de SENSORES nao existe\n");
+		return -1;
+	}
+
+	int escolha;
+	do
+	{
+		printf("# --------------------  MENU GUARDAR ED  --------------------#\n");
+		printf("|  (1) Guardar ED em CSV                                     |\n");
+		printf("|  (2) Guardar ED em XML                                     |\n");
+		printf("|------------------------------------------------------------|\n");
+		printf("|  (0) Menu Principal                                        |\n");
+		printf("#------------------------------------------------------------#\n");
+		printf("Seleciona uma opcao: \n");
+		escolha = verificarNumero(2);
+	} while (escolha < 0 || escolha > 2);
+
+	//chamar as funcoes aqui
+	switch (escolha)
+	{
+	case 1:
+		system("cls");
+		//mostrarHashCarros(hashCarros);
+		printf("\n");
+		break;
+	case 2:
+		system("cls");
+		//criarCarroUtilizador(hashCarros, listaDonos);
+		printf("\n");
 		break;
 	}
 }
