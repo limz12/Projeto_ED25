@@ -2,13 +2,6 @@
 #define MAX_CHAR_STR 20
 #define MAX_CHAR_MATRICULA 8
 
-// ########### TESTE #####################
-
-
-//##############################################
-
-
-
 
 //dar o alias LISTA_DONOS, ao ListaDonos e resolver os problemas (typedef, para atribuir o outro nome)
 typedef struct ListaDonos LISTA_DONOS;

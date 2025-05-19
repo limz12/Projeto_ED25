@@ -265,169 +265,74 @@ void ordenarListaDonosContribuinte(LISTA_DONOS* lista)
 	printf("LISTA ORDENADA COM SUCESSO\n");
 }
 
-/*
+
+//CONSIDERANDO QUE NO EXERCICIO QUEREMOS SABER APENAS O CONDUTOR COM O CARRO QUE CIRCULA A MAIOR VELOCIDADE MEDIA
 void maiorVelocidadeMediaDonos(LISTA_DONOS* listaDonos, LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias)
 {
-	// Validação da existência das listas
-	if (!listaHashCarros || !listaPassagens || !listaDistancias || !listaDonos)
-	{
-		printf("Uma das listas esta vazia!\n");
-		return;
-	}
 
-	PASSAGEM_NODE* nodePassagem = listaPassagens->header; // ponteiro para percorrer a lista das Passagens
-	float maiorVelocidade = 0.0f; // variável para atualizar a maior velocidade, à medida que percorre as Passagens
-	Donos* donoMaisRapido = NULL; // ponteiro para o conteúdo de um nó dono (por causa do dono com a velocidade mais alta)
+	float maiorVelocidadeMediaCarro = 0.0f;
+	int idDonoCarroMaisRapido;
 
-	while (nodePassagem)
+	//**************** POPULAR VELOCIDADE MEDIA DE TODOS OS CARROS *************************************
+
+	printf("CALCULAR VELOCIDADE MEDIA DOS CARROS AGUARDE (CERCA DE 2:50 MIN)\n");
+
+	PASSAGEM_NODE* atual = listaPassagens->header;
+
+	while (atual && atual->next)
 	{
-		if (nodePassagem->info->tipoRegisto == 0) // Entrada
+		PASSAGEM* entrada = atual->info;
+		PASSAGEM* saida = atual->next->info;
+
+		// verificar se o par e valido (entrada seguida de saida perternce ao mesmo carro)
+		if (entrada->tipoRegisto == 0 && saida->tipoRegisto == 1 && entrada->codVeiculo == saida->codVeiculo)
 		{
-			// distancia percorrida nesta passagem
-			// guardar numa variável auxiliar
-			float distancia = distanciaEntreSensor(nodePassagem->info->idSensor, nodePassagem->next->info->idSensor, listaDistancias);
-			
-			// Tempo em MS
-			long tempoMS = calculoDistancia(nodePassagem->info->data, nodePassagem->next->info->data);
-
-			// Conversão de MS para Minutos (fazer cast)
-			float tempoMin = tempoMS / 60000;
-
-			NODE_HASHC* nodeHashCarro = listaHashCarros->header;
-
-			while (nodeHashCarro)
+			float km = distanciaEntreSensor(entrada->idSensor, saida->idSensor, listaDistancias);
+			long tempoMs = calculoDistancia(entrada->data, saida->data);
+			float minutos = tempoMs / 60000.0f;
+			if (km >= 0 && minutos > 0)
 			{
-				NODE_CARRO* nodeCarro = nodeHashCarro->listaCarros->header;
 
-				while (nodeCarro)
+				NODE_CARRO* carro = procuraCarroPorID(entrada->codVeiculo, listaHashCarros);
+				if (carro)
 				{
-					if (nodePassagem->info->codVeiculo == nodeCarro->info->codVeiculo)
+					if (km > 0 && minutos > 0) // evitar viagens e kilometros negativos
 					{
-						if (distancia > 0 && tempoMin > 0)
+						carro->info->totalKMPercorridos += km;
+						carro->info->totalMinutosPercorridos += minutos;
+						//adicionar velocidade media ao carro 
+						carro->info->velocidadeMediaKM = carro->info->totalKMPercorridos / (carro->info->totalMinutosPercorridos / 60.00f);
+						//TER A REFERENCIA DA MAIOR VELOCIDADE MEDIA
+						if (carro->info->velocidadeMediaKM > maiorVelocidadeMediaCarro)
 						{
-							nodeCarro->info->totalKMPercorridos += distancia;
-							nodeCarro->info->totalMinutosPercorridos += tempoMin;
-
-							nodeCarro->info->velocidadeMediaKM = nodeCarro->info->totalKMPercorridos / (nodeCarro->info->totalMinutosPercorridos / 60);
-
-							if (nodeCarro->info->velocidadeMediaKM > maiorVelocidade)
-							{
-								maiorVelocidade = nodeCarro->info->velocidadeMediaKM;
-							}
+							maiorVelocidadeMediaCarro = carro->info->velocidadeMediaKM;
+							idDonoCarroMaisRapido = carro->info->dono;
 						}
 					}
-					nodeCarro = nodeCarro->next;
+
 				}
-				nodeHashCarro = nodeHashCarro->next;
 			}
+			atual = atual->next->next; // (par ja processado)
 		}
-		nodePassagem = nodePassagem->next;
-	}
-
-	printf("Maior Velocidade Media: %.2f\n", maiorVelocidade);
-}
-*/
-
-void maiorVelocidadeMediaDonos(LISTA_DONOS* listaDonos, LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias)
-{
-	// Verificar se alguma das listas é nula
-	if (!listaHashCarros || !listaPassagens || !listaDistancias || !listaDonos)
-	{
-		printf("Uma das listas esta vazia!\n");
-		return;
-	}
-
-	PASSAGEM_NODE* nodePassagem = listaPassagens->header;
-
-	float maiorVelocidade = 0.0f;
-	Donos* donoMaisRapido = NULL;
-
-	while (nodePassagem)
-	{
-		if (nodePassagem->info->tipoRegisto == 0 && nodePassagem->next != NULL && nodePassagem->next->info->tipoRegisto == 1)
+		else
 		{
-			// Obter sensores e verificar distância
-			int sensorEntrada = nodePassagem->info->idSensor;
-			int sensorSaida = nodePassagem->next->info->idSensor;
-			float distancia = distanciaEntreSensor(sensorEntrada, sensorSaida, listaDistancias);
-
-			if (distancia <= 0)
-			{
-				nodePassagem = nodePassagem->next;
-				continue;
-			}
-
-			// Calcular tempo em milissegundos e converter para minutos
-			long tempoMS = calculoDistancia(nodePassagem->info->data, nodePassagem->next->info->data);
-			float tempoMin = (float)tempoMS / 60000.0f;
-
-			if (tempoMin <= 0)
-			{
-				nodePassagem = nodePassagem->next;
-				continue;
-			}
-
-			int codVeiculo = nodePassagem->info->codVeiculo;
-
-			// Procurar o carro na lista hash
-			NODE_HASHC* nodeHashCarro = listaHashCarros->header;
-			while (nodeHashCarro)
-			{
-				NODE_CARRO* nodeCarro = nodeHashCarro->listaCarros->header;
-				while (nodeCarro)
-				{
-					if (nodeCarro->info->codVeiculo == codVeiculo)
-					{
-						// Atualizar dados do carro
-						nodeCarro->info->totalKMPercorridos += distancia;
-						nodeCarro->info->totalMinutosPercorridos += tempoMin;
-
-						nodeCarro->info->velocidadeMediaKM =
-							nodeCarro->info->totalKMPercorridos / (nodeCarro->info->totalMinutosPercorridos / 60.0f);
-
-						if (nodeCarro->info->velocidadeMediaKM > maiorVelocidade)
-						{
-							maiorVelocidade = nodeCarro->info->velocidadeMediaKM;
-
-							// Procurar o dono com base no ID do carro
-							NODE_DONOS* nodeDono = listaDonos->primeiro;
-							while (nodeDono)
-							{
-								if (nodeDono->info->numCont == nodeCarro->info->dono)
-								{
-									donoMaisRapido = nodeDono->info;
-									break;
-								}
-								nodeDono = nodeDono->next;
-							}
-						}
-
-						break; // Carro encontrado, não precisa continuar este loop
-					}
-
-					nodeCarro = nodeCarro->next;
-				}
-
-				nodeHashCarro = nodeHashCarro->next;
-			}
-
-			// Avança dois nós (entrada + saída)
-			nodePassagem = nodePassagem->next;
+			atual = atual->next; // se o par de entrada/saida for invalido avanca um node apenas
 		}
-
-		// Avança normalmente se não for um par válido
-		nodePassagem = nodePassagem->next;
 	}
-
-	// Mostrar resultado
-	if (donoMaisRapido)
+	printf("CALCULO  DE TODAS AS VELOCIDADES MEDIAS POR CARRO FINALIZADO\n");
+	system("cls");
+	printf("A PROCURA DO DONO CORRESPONDENTE\n");
+	//procurar na lista donos pelo id e dar print ao nome
+	NODE_DONOS* nodeDono = listaDonos->primeiro;
+	int encontrado = 0;
+	while (nodeDono && encontrado == 0)
 	{
-		printf("\nDono com a maior velocidade media:\n");
-		printf("Nome: %s\n", donoMaisRapido->nome);
-		printf("Velocidade Media: %.2f km/h\n", maiorVelocidade);
+		if (nodeDono->info->numCont == idDonoCarroMaisRapido)
+		{
+			printf("Maior Velocidade Media : %.2f -> Condutor: %s\n", maiorVelocidadeMediaCarro, nodeDono->info->nome);
+			encontrado = 1;
+		}
+		nodeDono = nodeDono->next;
 	}
-	else
-	{
-		printf("Nenhum dono com dados validos encontrado.\n");
-	}
+
 }

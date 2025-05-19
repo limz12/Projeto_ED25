@@ -11,15 +11,12 @@
 #include "MENU.H"
 #include "donos.h"
 
-//FALTA CARREGAR  DONOS E CALCULAR TAMANHO sizeof() deste
-
 void main()
 {
     //CRIAR AS LISTAS
     LISTA_SENSOR* listaSensor = criarListaSensor();
     DISTANCIAS_LISTA* listaDistancias = criarListaDistancias();
     PASSAGEM_LISTA* listaPassagem = criarListaPassagem();
-   // LISTA_CARRO* listaCarro = criarListaCarro(); -> alterar pelo iniciar hashCarro
     LISTA_DONOS* listaDonos = criarListaDonos();
     //********** HASHING **************
     //INICIAR A LISTA HASHING
@@ -54,12 +51,14 @@ void main()
                 //limpar a linha de comandos
                 system("cls");
                 menuDonos(listaDonos, listaHashCarros, listaPassagem, listaDistancias);
+                break;
             case 2:
                 //MENU CARROS
                 system("cls");
                 menuCarros(listaHashCarros,listaDonos, listaPassagem, listaDistancias);
             break;
             case 3:
+                system("cls");
                 //MENU DISTANCIAS
                 menuDistancias(listaDistancias);
             break;
@@ -78,9 +77,14 @@ void main()
                 //CALCULAR MEMORIA TOTAL da ED
                 system("cls");
                 memoriaTotalOcupadaED(listaSensor, listaDistancias, listaPassagem, listaHashCarros, listaDonos);
-                printf("\n");
             break;
+            case 7:
+                //CALCULAR MEMORIA TOTAL da ED
+                system("cls");
+                menuGuardarEDFicheiro(listaSensor, listaDistancias, listaPassagem, listaHashCarros, listaDonos);
+                break;
             case 0:
+                system("cls");
                 //libertar todos os dados e fechar o programa
                 libertarListaDistancia(listaDistancias);
                 libertarListaPassagem(listaPassagem);
@@ -92,7 +96,4 @@ void main()
 
         }
     }
-
-
-   //*************  PARA TESTES DE BRANCH, COMENTAR TUDO O QUE ESTA ACIMA    ****************************
 }
