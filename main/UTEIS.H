@@ -20,3 +20,9 @@ int calcularTamanhoEDDonos(LISTA_DONOS* lista);
 int calcularTamanhoEDCarro(LISTA_HASHC* listaHash);
 void memoriaTotalOcupadaED(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaHashCarros, LISTA_DONOS* listaDonos);
 int inicializarED(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaHashCarros, LISTA_DONOS* listaDonos);
+
+void exportar_csv_DONOS(LISTA_DONOS* lista);
+void exportar_csv_SENSORES(LISTA_SENSOR* listaSensor);
+void exportar_csv_DISTANCIAS(DISTANCIAS_LISTA* listaDistancias);
+void exportar_csv_CARROS(LISTA_HASHC* listaHash);
+void exportar_csv_PASSAGENS(PASSAGEM_LISTA* listaPassagem);
