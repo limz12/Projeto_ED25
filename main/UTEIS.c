@@ -188,3 +188,148 @@ int inicializarED(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, 
 	return 1;
 	
 }
+
+//EXPORTAÇÔES EM CSV
+void exportar_csv_DONOS(LISTA_DONOS* lista)
+{
+	// Cria nó auxiliar para percorrer a lista
+	NODE_DONOS* aux = lista->primeiro;
+
+	// Ponteiro para percorrer o ficheiro em modo Write ("w")
+	FILE* f_csv = fopen("donos.csv", "w");
+
+	// Cabeçalho de cada coluna
+	fputs("Numero de Contribuinte, Nome, Codigo Postal\n", f_csv);
+
+	// Percorre a lista até ao último nó
+	while (aux)
+	{
+		// Preenche linha a linha, com a informação de nó em nó
+		fprintf(f_csv, "%d, %s, %s\n", aux->info->numCont, aux->info->nome, aux->info->codpost);
+
+		aux = aux->next;
+	}
+	
+	// Fim do preenchimento do ficheiro
+	fclose(f_csv);
+
+	printf("Ficheiro donos.csv exportado com sucesso!\n");
+}
+
+void exportar_csv_SENSORES(LISTA_SENSOR* listaSensor)
+{
+	// Cria nó auxiliar para percorrer a lista
+	NODE_SENSOR* aux = listaSensor->header;
+
+	// Ponteiro para percorrer o ficheiro em modo Write ("w")
+	FILE* f_csv = fopen("sensores.csv", "w");
+
+	// Cabeçalho de cada coluna
+	fputs("Codigo do Sensor; Designacao; Latitude; Longitude \n", f_csv);
+
+	// Percorre a lista até ao último nó
+	while (aux)
+	{
+		// Preenche linha a linha, com a informação de nó em nó
+		fprintf(f_csv, "%d; %s; %s; %s\n", aux->info->codSensor, aux->info->designacao, aux->info->infoLatitude, aux->info->infoLongitude);
+
+		aux = aux->next;
+	}
+
+	// Fim do preenchimento do ficheiro
+	fclose(f_csv);
+
+	printf("Ficheiro sensores.csv exportado com sucesso!\n");
+}
+
+void exportar_csv_DISTANCIAS(DISTANCIAS_LISTA* listaDistancias)
+{
+	// Cria nó auxiliar para percorrer a lista
+	DISTANCIAS_NODE* aux = listaDistancias->header;
+
+	// Ponteiro para percorrer o ficheiro em modo Write ("w")
+	FILE* f_csv = fopen("distancias.csv", "w");
+
+	// Cabeçalho de cada coluna
+	fputs("Codigo do Sensor 1, Codigo do Sensor 2, Distancia\n", f_csv);
+
+	// Percorre a lista até ao último nó
+	while (aux)
+	{	
+		// Preenche linha a linha, com a informação de nó em nó
+		fprintf(f_csv, "%d, %d, %f\n", aux->info->codSensor1, aux->info->codSensor2, aux->info->distanciaPercorrida);
+
+		aux = aux->next;
+	}
+
+	// Fim do preenchimento do ficheiro
+	fclose(f_csv);
+
+	printf("Ficheiro distancias.csv exportado com sucesso!\n");
+}
+
+void exportar_csv_CARROS(LISTA_HASHC* listaHash)
+{
+	// Cria nó auxiliar para percorrer a Hash
+	NODE_HASHC* aux_hash = listaHash->header;
+
+	// Ponteiro para percorrer o ficheiro em modo Write ("w")
+	FILE* f_csv = fopen("carros.csv", "w");
+
+	// Cabeçalho de cada coluna
+	fputs("Matricula, Marca, Modelo, Ano, Dono, Codigo do Veiculo\n", f_csv);
+
+	// Percorre a Hash até ao último nó
+	while (aux_hash)
+	{
+		// Cria nó auxiliar para percorrer a lista dentro de cada nó da Hash
+		NODE_CARRO* aux = aux_hash->listaCarros->header;
+
+		// Percorre a lista até ao último nó
+		while (aux)
+		{
+			// Preenche linha a linha, com a informação de nó em nó
+			fprintf(f_csv, "%s, %s, %s, %d, %d, %d\n", aux->info->matricula,
+				aux->info->marca, aux->info->modelo, aux->info->ano, 
+				aux->info->dono, aux->info->codVeiculo);
+		
+			aux = aux->next;
+		}
+
+		aux_hash = aux_hash->next;
+	}
+
+	// Fim do preenchimento do ficheiro
+	fclose(f_csv);
+
+	printf("Ficheiro carros.csv exportado com sucesso!\n");
+}
+
+void exportar_csv_PASSAGENS(PASSAGEM_LISTA* listaPassagem)
+{
+	// Cria nó auxiliar para percorrer a lista
+	PASSAGEM_NODE* aux = listaPassagem->header;
+
+	// Ponteiro para percorrer o ficheiro em modo Write ("w")
+	FILE* f_csv = fopen("passagem.csv", "w");
+
+	// Cabeçalho de cada coluna
+	fputs("ID do Sensor, Codigo do Veiculo, Data, Tipo de Registo\n", f_csv);
+
+	// Percorre a lista até ao último nó
+	while (aux)
+	{
+		// Preenche linha a linha, com a informação de nó em nó
+		fprintf(f_csv, "%d, %d, %d-%d-%d %d:%d:%d.%d, %d\n", aux->info->idSensor,
+			aux->info->codVeiculo, aux->info->data->dia, aux->info->data->mes, 
+			aux->info->data->ano, aux->info->data->hora, aux->info->data->minuto,
+			aux->info->data->segundo, aux->info->data->milisegundo, aux->info->tipoRegisto);
+
+		aux = aux->next;
+	}
+
+	// Fim do preenchimento do ficheiro
+	fclose(f_csv);
+
+	printf("Ficheiro passagem.csv exportado com sucesso!\n");
+}

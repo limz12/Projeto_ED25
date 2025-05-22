@@ -92,7 +92,7 @@ void carregarSensor(LISTA_SENSOR* lista)
 			}
 			
 			//adicionar os valores do BUFFER para o node;
-			sscanf(buffer,"%d\t%s\t%[^\t]\t%[^\t]", &node->info->codSensor, node->info->designacao, node->info->infoLatitude, node->info->infoLongitude);
+			sscanf(buffer,"%d\t%[^\t]\t%[^\t]\t%[^\t]", &node->info->codSensor, node->info->designacao, node->info->infoLatitude, node->info->infoLongitude);
 				
 			//adicionar o node para a lista
 			adicionarListaSensores(lista, node);
