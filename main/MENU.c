@@ -362,12 +362,12 @@ void menuGuardarEDFicheiro(LISTA_SENSOR* listaSensor,DISTANCIAS_LISTA* listaDist
 	{
 	case 1:
 		system("cls");
-		exportar_csv_DONOS(listaDonos);
+		//exportar_csv_DONOS(listaDonos);
 		exportar_csv_SENSORES(listaSensor);
-		exportar_csv_DISTANCIAS(listaDistancias);
+		/*exportar_csv_DISTANCIAS(listaDistancias);
 		exportar_csv_CARROS(listaHashCarros);
 		exportar_csv_PASSAGENS(listaPassagem);
-		printf("\n");
+		*/printf("\n");
 		break;
 	case 2:
 		system("cls");

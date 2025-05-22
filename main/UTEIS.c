@@ -225,13 +225,13 @@ void exportar_csv_SENSORES(LISTA_SENSOR* listaSensor)
 	FILE* f_csv = fopen("sensores.csv", "w");
 
 	// Cabeçalho de cada coluna
-	fputs("Codigo do Sensor, Designacao, Latitude (Graus - º), Latitude (Minutos - '), Latitude (Segundos - ''), Longitude (Graus - º), Longitude (Minutos - '), Longitude (Segundos - '')\n", f_csv);
+	fputs("Codigo do Sensor; Designacao; Latitude; Longitude \n", f_csv);
 
 	// Percorre a lista até ao último nó
 	while (aux)
 	{
 		// Preenche linha a linha, com a informação de nó em nó
-		fprintf(f_csv, "%d, %s, %s, %s\n", aux->info->codSensor, aux->info->designacao, aux->info->infoLatitude, aux->info->infoLongitude);
+		fprintf(f_csv, "%d; %s; %s; %s\n", aux->info->codSensor, aux->info->designacao, aux->info->infoLatitude, aux->info->infoLongitude);
 
 		aux = aux->next;
 	}
