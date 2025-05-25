@@ -1,0 +1,80 @@
+\doxysection{DISTANCIAS.\+c File Reference}
+\hypertarget{_d_i_s_t_a_n_c_i_a_s_8c}{}\label{_d_i_s_t_a_n_c_i_a_s_8c}\index{DISTANCIAS.c@{DISTANCIAS.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$malloc.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$locale.\+h$>$}\newline
+{\ttfamily \#include "{}DISTANCIAS.\+H"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8c_a189851605483abf7c8ac80ac4c333c23}{criar\+Lista\+Distancias}} ()
+\item 
+\mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8_h_a353f6bbc501ea1af8843852c41ef45c1}{DISTANCIAS\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8c_aabea5be103131b001cfc4f2ce24618a5}{criar\+Node\+Distancias}} ()
+\item 
+void \mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8c_a92ba107be74bc93a318121a4edfd6075}{carregar\+Distancia}} (\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista)
+\item 
+void \mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8c_a1901706ad927ac7e47c4fce97d7a847a}{adicionar\+Lista}} (\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista, \mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8_h_a353f6bbc501ea1af8843852c41ef45c1}{DISTANCIAS\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}node)
+\item 
+void \mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8c_a32a8e4fb792e4142bc3c3ab6909b47d1}{mostrar\+Lista\+DISTANCIA}} (\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista)
+\item 
+void \mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8c_aaa056e513239a03a413ea9684cc359cb}{libertar\+Node\+Distancia}} (\mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8_h_a353f6bbc501ea1af8843852c41ef45c1}{DISTANCIAS\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}node)
+\item 
+void \mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8c_a4ad9da12254d638f241b996628c35dc9}{libertar\+Lista\+Distancia}} (\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista)
+\item 
+float \mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8c_a98d08abb63adf4ca20a9d3a3ef975197}{distancia\+Entre\+Sensor}} (int sensor1, int sensor2, \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{_d_i_s_t_a_n_c_i_a_s_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_d_i_s_t_a_n_c_i_a_s_8c_a1901706ad927ac7e47c4fce97d7a847a}\index{DISTANCIAS.c@{DISTANCIAS.c}!adicionarLista@{adicionarLista}}
+\index{adicionarLista@{adicionarLista}!DISTANCIAS.c@{DISTANCIAS.c}}
+\doxysubsubsection{\texorpdfstring{adicionarLista()}{adicionarLista()}}
+{\footnotesize\ttfamily \label{_d_i_s_t_a_n_c_i_a_s_8c_a1901706ad927ac7e47c4fce97d7a847a} 
+void adicionar\+Lista (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{\mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8_h_a353f6bbc501ea1af8843852c41ef45c1}{DISTANCIAS\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_d_i_s_t_a_n_c_i_a_s_8c_a92ba107be74bc93a318121a4edfd6075}\index{DISTANCIAS.c@{DISTANCIAS.c}!carregarDistancia@{carregarDistancia}}
+\index{carregarDistancia@{carregarDistancia}!DISTANCIAS.c@{DISTANCIAS.c}}
+\doxysubsubsection{\texorpdfstring{carregarDistancia()}{carregarDistancia()}}
+{\footnotesize\ttfamily \label{_d_i_s_t_a_n_c_i_a_s_8c_a92ba107be74bc93a318121a4edfd6075} 
+void carregar\+Distancia (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_d_i_s_t_a_n_c_i_a_s_8c_a189851605483abf7c8ac80ac4c333c23}\index{DISTANCIAS.c@{DISTANCIAS.c}!criarListaDistancias@{criarListaDistancias}}
+\index{criarListaDistancias@{criarListaDistancias}!DISTANCIAS.c@{DISTANCIAS.c}}
+\doxysubsubsection{\texorpdfstring{criarListaDistancias()}{criarListaDistancias()}}
+{\footnotesize\ttfamily \label{_d_i_s_t_a_n_c_i_a_s_8c_a189851605483abf7c8ac80ac4c333c23} 
+\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*} criar\+Lista\+Distancias (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_d_i_s_t_a_n_c_i_a_s_8c_aabea5be103131b001cfc4f2ce24618a5}\index{DISTANCIAS.c@{DISTANCIAS.c}!criarNodeDistancias@{criarNodeDistancias}}
+\index{criarNodeDistancias@{criarNodeDistancias}!DISTANCIAS.c@{DISTANCIAS.c}}
+\doxysubsubsection{\texorpdfstring{criarNodeDistancias()}{criarNodeDistancias()}}
+{\footnotesize\ttfamily \label{_d_i_s_t_a_n_c_i_a_s_8c_aabea5be103131b001cfc4f2ce24618a5} 
+\mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8_h_a353f6bbc501ea1af8843852c41ef45c1}{DISTANCIAS\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*} criar\+Node\+Distancias (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_d_i_s_t_a_n_c_i_a_s_8c_a98d08abb63adf4ca20a9d3a3ef975197}\index{DISTANCIAS.c@{DISTANCIAS.c}!distanciaEntreSensor@{distanciaEntreSensor}}
+\index{distanciaEntreSensor@{distanciaEntreSensor}!DISTANCIAS.c@{DISTANCIAS.c}}
+\doxysubsubsection{\texorpdfstring{distanciaEntreSensor()}{distanciaEntreSensor()}}
+{\footnotesize\ttfamily \label{_d_i_s_t_a_n_c_i_a_s_8c_a98d08abb63adf4ca20a9d3a3ef975197} 
+float distancia\+Entre\+Sensor (\begin{DoxyParamCaption}\item[{int}]{sensor1}{, }\item[{int}]{sensor2}{, }\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_d_i_s_t_a_n_c_i_a_s_8c_a4ad9da12254d638f241b996628c35dc9}\index{DISTANCIAS.c@{DISTANCIAS.c}!libertarListaDistancia@{libertarListaDistancia}}
+\index{libertarListaDistancia@{libertarListaDistancia}!DISTANCIAS.c@{DISTANCIAS.c}}
+\doxysubsubsection{\texorpdfstring{libertarListaDistancia()}{libertarListaDistancia()}}
+{\footnotesize\ttfamily \label{_d_i_s_t_a_n_c_i_a_s_8c_a4ad9da12254d638f241b996628c35dc9} 
+void libertar\+Lista\+Distancia (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_d_i_s_t_a_n_c_i_a_s_8c_aaa056e513239a03a413ea9684cc359cb}\index{DISTANCIAS.c@{DISTANCIAS.c}!libertarNodeDistancia@{libertarNodeDistancia}}
+\index{libertarNodeDistancia@{libertarNodeDistancia}!DISTANCIAS.c@{DISTANCIAS.c}}
+\doxysubsubsection{\texorpdfstring{libertarNodeDistancia()}{libertarNodeDistancia()}}
+{\footnotesize\ttfamily \label{_d_i_s_t_a_n_c_i_a_s_8c_aaa056e513239a03a413ea9684cc359cb} 
+void libertar\+Node\+Distancia (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8_h_a353f6bbc501ea1af8843852c41ef45c1}{DISTANCIAS\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_d_i_s_t_a_n_c_i_a_s_8c_a32a8e4fb792e4142bc3c3ab6909b47d1}\index{DISTANCIAS.c@{DISTANCIAS.c}!mostrarListaDISTANCIA@{mostrarListaDISTANCIA}}
+\index{mostrarListaDISTANCIA@{mostrarListaDISTANCIA}!DISTANCIAS.c@{DISTANCIAS.c}}
+\doxysubsubsection{\texorpdfstring{mostrarListaDISTANCIA()}{mostrarListaDISTANCIA()}}
+{\footnotesize\ttfamily \label{_d_i_s_t_a_n_c_i_a_s_8c_a32a8e4fb792e4142bc3c3ab6909b47d1} 
+void mostrar\+Lista\+DISTANCIA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+

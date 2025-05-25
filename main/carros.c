@@ -1,3 +1,9 @@
+/**
+ * @file carros.c
+ * @brief Implementacao das funcoes respetivas aos carros.
+ */
+
+
 // BIBLIOTECAS
 #include <stdlib.h>
 #include <stdio.h>
@@ -11,25 +17,34 @@
 #include "DISTANCIAS.H"
 #include "PASSAGEM.H"
 
+
+/**
+* @brief Funcao responsavel por criar uma lista que ira conter carros
+* @return ponteiro para uma Lista_Carro, que e o resultado da alocacao de memoria da estrutura LISTA_CARRO
+*/
 LISTA_CARRO* criarListaCarro()
 {
-	// Alocação de memória da lista de Carros
+	//Alocacao de memoria da lista de Carros
 	LISTA_CARRO* lista = (LISTA_CARRO*)malloc(sizeof(LISTA_CARRO));
 
-	// Validação da alocação da lista
+	// Validacao da alocacao da lista
 	if (!lista)
 	{
 		printf("ERRO a alocar a lista de carros!\n");
 		return NULL;
 	}
 
-	lista->header = NULL; // ponteiro do inicio da lista
-	lista->ultimo_node = NULL; // ponteiro para o ultimo elemento da lista
-	lista->num_elem = 0;
+	lista->header = NULL; //ponteiro do inicio da lista.
+	lista->ultimo_node = NULL; // ponteiro para o ultimo elemento da lista.
+	lista->num_elem = 0; // Inicializacao do numero de elementos da lista para 0.
 
 	return lista;
 }
 
+/**
+* @brief Funcao responsavel por alocar memoria para um node que contem todos os dados de um respetivo carro
+* @return retorna um ponteiro para um NODE_CARRO, com todos os valores da estrutura nulos 
+*/
 NODE_CARRO* criarNodeCarro()
 {
 	// Alocação de memória para elemento da lista de Carros
@@ -48,11 +63,15 @@ NODE_CARRO* criarNodeCarro()
 	node->info->totalKMPercorridos = 0.0;
 	node->info->totalMinutosPercorridos = 0;
 	node->info->velocidadeMediaKM = 0;
-	/*printf("Elemento da Lista de Carros criado com sucesso!\n");*/
 
 	return node;
 }
 
+/**
+* @brief Funcao responsavel por receber um NODE_CARRO e destruir libertando toda a memoria e os dados que possui
+* @param node : Recebe um ponteiro NODE_CARRO 
+* @return NULL se o node inserido nao existir
+*/
 int freeNodeCarro(NODE_CARRO* node)
 {
 	// Validação da existência do elemento na lista de carros
@@ -65,9 +84,13 @@ int freeNodeCarro(NODE_CARRO* node)
 	free(node->info); // Libertar a memória alocada para conteúdo/carro dentro do elemento
 	free(node); // Libertar a memória alocada para o elemento
 	
-	//printf("Elemento da Lista de Carros libertado com sucesso!\n");
 }
 
+/**
+* @brief Funcao responsavel por ler o ficheiro "carros.txt", e inserir cada carro presente no ficheiro na estrutura da lista de carros
+* @param listaHashCarros : Recebe um ponteiro de uma LISTA_HASHC
+* @return VOID
+*/
 void carregarDadosCarro(LISTA_HASHC* listaHashCarros)
 {
 	// Reconhecimento de caracteres especiais do ficheiro, por parte do compilador
@@ -166,6 +189,12 @@ void carregarDadosCarro(LISTA_HASHC* listaHashCarros)
 	fclose(f);
 }
 
+/**
+* @brief Funcao responsavel por receber um NODE_CARRO e adiciona-lo a uma lista de carros
+* @param lista : Recebe um ponteiro para a LISTA_CARRO para onde o carro vai ser "armazenado"
+* @param node : Recebe o NODE_CARRO que vai ser inserido no parametro de entrada lista
+* @return VOID
+*/
 void addListaCarro(LISTA_CARRO* lista, NODE_CARRO* node)
 {
 	// Verificação  da existência da lista de carros e do elemento
@@ -193,6 +222,12 @@ void addListaCarro(LISTA_CARRO* lista, NODE_CARRO* node)
 	}
 }
 
+/**
+* @brief Funcao responsavel por criar e adicionar um novo carro a pedido do utilizador
+* @param hashCarro : Recebe um ponteiro de uma LISTA_HASHC, que ja contem todos os carros organizados por marca
+* @param listaDonos : Recebe um ponteiro de uma LISTA_DONOS com todos os donos para fazer verificacoes se os donos a que os carros estao associados existem
+* @return VOID
+*/
 void criarCarroUtilizador(LISTA_HASHC* hashCarro, LISTA_DONOS* listaDonos)
 {
 	if (!hashCarro && !listaDonos)
@@ -227,18 +262,41 @@ void criarCarroUtilizador(LISTA_HASHC* hashCarro, LISTA_DONOS* listaDonos)
 		NODE_HASHC* nodeHash = hashCarro->header;
 		while (nodeHash)
 		{
-			//se existir um nodeHash com a mesma chave
+			//se existir um nodeHash com a mesma chave, e se a matricula for unica pode se proceder ao registo
 			if (_stricmp(nodeHash->chave, novo_elem->info->marca) == 0)
 			{
-				//adiciona  a lista do nodeHash o novo elemento
-				addListaCarro(nodeHash->listaCarros,novo_elem);
-				printf("CARRO ADICIONADO COM SUCESSO!\n");
-				flag = 1;
+				if (verificarMatriculaExiste(novo_elem->info->matricula, nodeHash->listaCarros) == 0)
+				{
+					//adiciona  a lista do nodeHash o novo elemento
+					addListaCarro(nodeHash->listaCarros, novo_elem);
+					printf("CARRO ADICIONADO COM SUCESSO!\n");
+					flag = 1;
+				}
+				else
+				{
+					printf("ERRO! A matricula inserida nao ja existe\n");
+					return;
+				}
+				
 			}
 			nodeHash = nodeHash->next;
 		}
 		if (flag == 0)//se percorreu a ListaHash e nao encontrou a chave
 		{
+			//percorrer pelos nos da listaHash se a  matricula existe
+			int matriculaEncontrada = 0;
+			NODE_HASHC* nodeHash = hashCarro->header;
+			while (nodeHash)
+			{
+				 matriculaEncontrada = verificarMatriculaExiste(novo_elem->info->matricula, nodeHash->listaCarros);
+				 if (matriculaEncontrada == 1)
+				 {
+					 printf("ERRO! JA EXISTE UM CARRO COM ESSA MATRICULA\n");
+					 return;
+				 }
+				nodeHash = nodeHash->next;
+			}
+			//se nao existir nenhum carro registado com a matricula cria um novo
 			//criar um novo nodeHash
 			NODE_HASHC* novoNodeHash = criarNodeHashCarro();
 			//adicionar os dados ao novoNodeHash
@@ -246,6 +304,8 @@ void criarCarroUtilizador(LISTA_HASHC* hashCarro, LISTA_DONOS* listaDonos)
 			//ligar o nodeHash a listaHash
 			inserirNodeHashListaHash(hashCarro, novoNodeHash);
 			printf("CARRO ADICIONADO COM SUCESSO!\n");
+			
+
 		}
 	}
 	else
@@ -256,6 +316,12 @@ void criarCarroUtilizador(LISTA_HASHC* hashCarro, LISTA_DONOS* listaDonos)
 	
 }
 
+/**
+* @brief Funcao responsavel por listar todos os carros presentes na Lista de carros
+* @param lista : Recebe um ponteiro de uma LISTA_CARRO, que ja contem todos os carros pertencentes uma determinada marca
+* 
+* @return VOID
+*/
 void mostrarListaCarro(LISTA_CARRO* lista)
 {
 	// Validação da existência da lista de carros
@@ -285,6 +351,11 @@ void mostrarListaCarro(LISTA_CARRO* lista)
 	printf("**************************************************************\n");
 }
 
+/**
+* @brief Funcao responsavel por libertar a memoria alocada de toda a listaHash e todo o seu conteudo
+* @param ListaHashCarro : Recebe um ponteiro de uma LISTA_HASHC para ser destruida
+* @return VOID
+*/
 void freeListaHashCarro(LISTA_HASHC* listaHashCarro)
 {
 	
@@ -322,7 +393,13 @@ void freeListaHashCarro(LISTA_HASHC* listaHashCarro)
 	printf("Lista HASH CARRO removida com sucesso!\n");
 }
 
-//vai percorrer a lista de donos pelo ID e verificar se existe
+/**
+* @brief Funcao responsavel por percorrer a lista de donos pelo ID e verificar se o dono ja existe
+* @param idDono : Recebe um inteiro que e o numero de contribuinte do dono
+* @param listaDonos : Recebe um ponteiro de uma LISTA_DONOS com todos os donos para fazer verificacoes se o dono com o numero de contribuinte existe
+* @return 1 : se numero de contribuinte existe
+* @return 0 : se numero de contribuinte nao existe
+*/
 int verificarDONOexiste(int idDono, LISTA_DONOS* listaDonos)
 {
 	if (!listaDonos) {
@@ -355,6 +432,37 @@ int verificarDONOexiste(int idDono, LISTA_DONOS* listaDonos)
 
 }
 
+/**
+* @brief Funcao responsavel por percorrer a lista de carros e verificar se a matricula ja pertence a algum carro
+* @param matricula : Recebe um char que e a matricula que se pretende verificar 
+* @param listaCarro : Recebe um ponteiro de uma LISTA_CARROS com todos os carros da mesma marca 
+* @return existe : Retorna um inteiro sendo que 1 -> matricula existe | 0 -> matricula nao existe
+* 
+*/
+int verificarMatriculaExiste(char* matricula, LISTA_CARRO* listaCarro)
+{
+	if (!matricula || !listaCarro)
+	{
+		printf("ERRO! matricula ou listaCarro nao estao presentes! \n");
+		return;
+	}
+	int existe = 0; //este e o valor por defeito, se nao for alterado quer dizer que a matricula aunda nao foi registada
+
+	//percorrer pela lista do carro a procura da mesma matricula
+	NODE_CARRO* nodecarro = listaCarro->header;
+	while (nodecarro)
+	{
+		if (_stricmp(matricula, nodecarro->info->matricula) == 0) // se a matricula ja existir
+		{
+			return 1;
+		}
+		nodecarro = nodecarro->next;
+	}
+
+	return existe;
+
+
+}
 //***************** HASHING ************************
 LISTA_HASHC* criarListaHashCarro()
 {
