@@ -26,3 +26,10 @@ void exportar_csv_SENSORES(LISTA_SENSOR* listaSensor);
 void exportar_csv_DISTANCIAS(DISTANCIAS_LISTA* listaDistancias);
 void exportar_csv_CARROS(LISTA_HASHC* listaHash);
 void exportar_csv_PASSAGENS(PASSAGEM_LISTA* listaPassagem);
+
+//EXPORTAR XML 
+void exportar_xml_DONOS(LISTA_DONOS* listaDonos);
+void exportar_xml_SENSORES(LISTA_SENSOR* listaSensor);
+void exportar_xml_DISTANCIAS(DISTANCIAS_LISTA* listaDistancias);
+void exportar_xml_PASSAGENS(PASSAGEM_LISTA* listaPassagens);
+void exportar_xml_CARROS(LISTA_HASHC* listaHashCarros);
