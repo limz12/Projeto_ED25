@@ -336,3 +336,106 @@ void maiorVelocidadeMediaDonos(LISTA_DONOS* listaDonos, LISTA_HASHC* listaHashCa
 	}
 
 }
+
+
+
+void velocidadeMediaPorCodigoPostal(LISTA_DONOS* listaDonos, LISTA_HASHC* listaHashCarros,
+	PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias,
+	const char* codigoPostal)
+{
+	if (!listaDonos || !listaHashCarros || !listaPassagens || !listaDistancias || !codigoPostal)
+	{
+		printf("ERRO! Parâmetros inválidos.\n");
+		return;
+	}
+
+	// Variáveis para acumular totais
+	float totalKm = 0.0f;
+	float totalMinutos = 0.0f;
+	int contadorCarros = 0;
+	int donosEncontrados = 0;
+
+	// Percorrer todos os donos
+	NODE_DONOS* nodeDono = listaDonos->primeiro;
+	while (nodeDono)
+	{
+		if (strcmp(nodeDono->info->codpost, codigoPostal) == 0)
+		{
+			donosEncontrados++;
+
+			// Encontrar todos os carros desse dono
+			NODE_HASHC* nodeHash = listaHashCarros->header;
+			while (nodeHash)
+			{
+				NODE_CARRO* nodeCarro = nodeHash->listaCarros->header;
+				while (nodeCarro)
+				{
+					if (nodeCarro->info->dono == nodeDono->info->numCont)
+					{
+						contadorCarros++;
+
+						// Resetar valores antes do cálculo
+						nodeCarro->info->totalKMPercorridos = 0.0f;
+						nodeCarro->info->totalMinutosPercorridos = 0;
+
+						// Processar passagens deste carro
+						PASSAGEM_NODE* nodePassagem = listaPassagens->header;
+						while (nodePassagem && nodePassagem->next)
+						{
+							if (nodePassagem->info->codVeiculo == nodeCarro->info->codVeiculo &&
+								nodePassagem->info->tipoRegisto == 0 &&
+								nodePassagem->next->info->tipoRegisto == 1)
+							{
+								float km = distanciaEntreSensor(nodePassagem->info->idSensor,
+									nodePassagem->next->info->idSensor,
+									listaDistancias);
+								long tempoMs = calculoDistancia(nodePassagem->info->data,
+									nodePassagem->next->info->data);
+								float minutos = tempoMs / 60000.0f;
+
+								if (km > 0 && minutos > 0)
+								{
+									nodeCarro->info->totalKMPercorridos += km;
+									nodeCarro->info->totalMinutosPercorridos += minutos;
+								}
+							}
+							nodePassagem = nodePassagem->next;
+						}
+
+						// Acumular totais
+						if (nodeCarro->info->totalMinutosPercorridos > 0)
+						{
+							totalKm += nodeCarro->info->totalKMPercorridos;
+							totalMinutos += nodeCarro->info->totalMinutosPercorridos;
+						}
+					}
+					nodeCarro = nodeCarro->next;
+				}
+				nodeHash = nodeHash->next;
+			}
+		}
+		nodeDono = nodeDono->next;
+	}
+
+	
+	printf("\n****************************************************\n");
+	if (donosEncontrados == 0)
+	{
+		printf("NENHUM DONO ENCONTRADO COM CODIGO POSTAL %s\n", codigoPostal);
+	}
+	else if (contadorCarros > 0 && totalMinutos > 0)
+	{
+		float velocidadeMediaGeral = totalKm / (totalMinutos / 60.0f);
+		printf("RESULTADO PARA CODIGO POSTAL %s\n", codigoPostal);
+		printf("Donos: %d | Carros: %d\n", donosEncontrados, contadorCarros);
+		printf("VELOCIDADE MEDIA: %.2f km/h\n", velocidadeMediaGeral);
+	}
+	else
+	{
+		printf("Donos encontrados: %d\n", donosEncontrados);
+		printf("Nenhum dado de viagem válido encontrado.\n");
+	}
+	printf("****************************************************\n");
+}
+
+

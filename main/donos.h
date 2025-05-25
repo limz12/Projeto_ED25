@@ -53,3 +53,5 @@ void ordenarListaDonosAlfabeticamente(LISTA_DONOS* lista);
 void ordenarListaDonosContribuinte(LISTA_DONOS* lista); // ex 5
 
 void maiorVelocidadeMediaDonos(LISTA_DONOS* listaDnos, LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias);
+
+void velocidadeMediaPorCodigoPostal(LISTA_DONOS* listaDonos, LISTA_HASHC* listaHashCarros,PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias,const char* codigoPostal);
