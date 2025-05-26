@@ -1,3 +1,10 @@
+/**
+ * @file DISTANCIAS.c
+ * @brief Implementacao das funcoes respetivas as distancias.
+ */
+
+
+// BIBLIOTECAS
 #include <stdlib.h>
 #include <stdio.h>
 #include <malloc.h>
@@ -6,6 +13,11 @@
 
 #include "DISTANCIAS.H"
 
+
+/**
+* @brief Funcao responsavel por criar uma lista que ira conter distancias
+* @return ponteiro para uma DISTANCIAS_LISTA, que e o resultado da alocacao de memoria da estrutura DISTANCIAS_LISTA
+*/
 DISTANCIAS_LISTA *criarListaDistancias()
 {
 	DISTANCIAS_LISTA* lista = (DISTANCIAS_LISTA*)malloc(sizeof(DISTANCIAS_LISTA));
@@ -21,6 +33,10 @@ DISTANCIAS_LISTA *criarListaDistancias()
 	return lista;
 }
 
+/**
+* @brief Funcao responsavel por alocar memoria para um node que contem todos os dados de uma respetiva distancia
+* @return retorna um ponteiro para um DISTANCIAS_NODE, com todos os valores da estrutura nulos
+*/
 DISTANCIAS_NODE* criarNodeDistancias()
 {
 	DISTANCIAS_NODE* node = (DISTANCIAS_NODE*)malloc(sizeof(DISTANCIAS_NODE));
@@ -40,6 +56,11 @@ DISTANCIAS_NODE* criarNodeDistancias()
 
 }
 
+/**
+* @brief Funcao responsavel por ler o ficheiro "distancias.txt", e inserir cada distancia presente no ficheiro na estrutura da lista de distancias
+* @param lista : Recebe um ponteiro de uma DISTANCIAS_LISTA
+* @return VOID
+*/
 void carregarDistancia(DISTANCIAS_LISTA* lista)
 {
 	if(!lista)
@@ -80,6 +101,12 @@ void carregarDistancia(DISTANCIAS_LISTA* lista)
 
 }
 
+/**
+* @brief Funcao responsavel por receber um NODE_CARRO e adiciona-lo a uma lista de carros
+* @param lista : Recebe um ponteiro para a DISTANCIAS_LISTA para onde a distancia vai ser "armazenada"
+* @param node : Recebe o DISTANCIAS_NODE que vai ser inserido no parametro de entrada lista
+* @return VOID
+*/
 void adicionarLista(DISTANCIAS_LISTA* lista, DISTANCIAS_NODE* node)
 {
 	if (!lista || !node)
@@ -106,6 +133,11 @@ void adicionarLista(DISTANCIAS_LISTA* lista, DISTANCIAS_NODE* node)
 
 }
 
+/**
+* @brief Funcao responsavel por listar todos as distancias presentes na Lista de distancias
+* @param lista : Recebe um ponteiro de uma DISTANCIAS_LISTA
+* @return VOID
+*/
 void mostrarListaDISTANCIA(DISTANCIAS_LISTA* lista)
 {
 	if (!lista)
@@ -130,6 +162,11 @@ void mostrarListaDISTANCIA(DISTANCIAS_LISTA* lista)
 	printf("**********************************************\n");
 }
 
+/**
+* @brief Funcao responsavel por receber um DISTANCIAS_NODE e destruir esse mesmo nó, libertando toda a memoria e os dados que possui
+* @param node : Recebe um ponteiro DISTANCIAS_NODE
+* @return NULL se o node inserido nao existir
+*/
 void  libertarNodeDistancia(DISTANCIAS_NODE* node)
 {
 	if (!node)
@@ -141,6 +178,11 @@ void  libertarNodeDistancia(DISTANCIAS_NODE* node)
 	free(node);
 }
 
+/**
+* @brief Funcao responsavel por libertar a memoria alocada de toda a lista de distancias e todo o seu conteudo
+* @param lista : Recebe um ponteiro de uma DISTANCIAS_LISTA para ser destruida
+* @return VOID
+*/
 void libertarListaDistancia(DISTANCIAS_LISTA* lista)
 {
 	if (!lista)
@@ -176,7 +218,13 @@ void libertarListaDistancia(DISTANCIAS_LISTA* lista)
 	}
 }
 
-//funcao que devolve a distancia entre 2 sensores
+/**
+* @brief Funcao responsavel por determinar a distancia entre dois sensores (em FLOAT)
+* @param sensor1 : Recebe um inteiro com o número que identifica o sensor de entrada/saída
+* @param sensor2 : Recebe um inteiro com o número que identifica o sensor de saída/entrada
+* @param listaDistancias : Recebe um ponteiro de uma DISTANCIAS_LISTA
+* @return NULL se o sensor1 ou o sensor2 ou a listaDistancias nao existirem
+*/
 float distanciaEntreSensor(int sensor1, int sensor2, DISTANCIAS_LISTA* listaDistancias)
 {
 	if (!sensor1 || !sensor2 || !listaDistancias)
