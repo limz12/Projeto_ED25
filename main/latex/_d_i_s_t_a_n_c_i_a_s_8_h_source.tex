@@ -1,0 +1,42 @@
+\doxysection{DISTANCIAS.\+H}
+\hypertarget{_d_i_s_t_a_n_c_i_a_s_8_h_source}{}\label{_d_i_s_t_a_n_c_i_a_s_8_h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{//ESTRUTURA\ DISTANCIA}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{int}\ codSensor1;}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{int}\ codSensor2;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{float}\ distanciaPercorrida;}
+\DoxyCodeLine{00010\ \}\mbox{\hyperlink{struct_d_i_s_t_a_n_c_i_a_s}{DISTANCIAS}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{//NO\ da\ distancias}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnode_distancia}{nodeDistancia}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{struct_d_i_s_t_a_n_c_i_a_s}{DISTANCIAS}}*\ info;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnode_distancia}{nodeDistancia}}*\ next;}
+\DoxyCodeLine{00017\ \}DISTANCIAS\_NODE;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdistancia_lista}{distanciaLista}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//aponta\ para\ o\ primeiro\ no}}
+\DoxyCodeLine{00022\ \ \ \ \ DISTANCIAS\_NODE*\ header;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//aponta\ par\ o\ ultimo\ no}}
+\DoxyCodeLine{00024\ \ \ \ \ DISTANCIAS\_NODE*\ ultimoNode;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ numelementos;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \}DISTANCIAS\_LISTA;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//prototipagem}}
+\DoxyCodeLine{00030\ DISTANCIAS\_LISTA*\ criarListaDistancias();}
+\DoxyCodeLine{00031\ DISTANCIAS\_NODE*\ criarNodeDistancias();}
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ carregarDistancia(DISTANCIAS\_LISTA\ *lista);}
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{void}\ adicionarLista(DISTANCIAS\_LISTA*\ lista,\ DISTANCIAS\_NODE*\ node);}
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{void}\ libertarNodeDistancia(DISTANCIAS\_NODE*\ node);}
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ mostrarListaDISTANCIA(DISTANCIAS\_LISTA*\ lista);}
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ libertarListaDistancia(DISTANCIAS\_LISTA*\ lista);}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{float}\ distanciaEntreSensor(\textcolor{keywordtype}{int}\ sensor1,\ \textcolor{keywordtype}{int}\ sensor2,\ DISTANCIAS\_LISTA*\ listaDistancias);}
+
+\end{DoxyCode}

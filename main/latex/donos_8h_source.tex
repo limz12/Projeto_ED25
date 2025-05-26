@@ -1,0 +1,60 @@
+\doxysection{donos.\+h}
+\hypertarget{donos_8h_source}{}\label{donos_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <malloc.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <locale.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlista_sensor}{listaSensor}}\ LISTA\_SENSOR;}
+\DoxyCodeLine{00008\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdistancia_lista}{distanciaLista}}\ DISTANCIAS\_LISTA;}
+\DoxyCodeLine{00009\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structpassagem_lista}{passagemLista}}\ PASSAGEM\_LISTA;}
+\DoxyCodeLine{00010\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlista_carro}{listaCarro}}\ LISTA\_CARRO;}
+\DoxyCodeLine{00011\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_lista_donos}{ListaDonos}}\ LISTA\_DONOS;}
+\DoxyCodeLine{00012\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlista_hash_carros}{listaHashCarros}}\ LISTA\_HASHC;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ MAX\_NOME\_SIZE\ 60}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ MAX\_CODPOST\_SIZE\ 10}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ ESTRUTURAS\ DO\ DONO}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_donos}{Donos}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{char}\ nome[MAX\_NOME\_SIZE];}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{char}\ codpost[MAX\_CODPOST\_SIZE];}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ numCont;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//struct\ Donos*\ prox;\ \ //\ Ponteiro\ para\ o\ próximo\ nó da\ lista}}
+\DoxyCodeLine{00024\ \}\ \mbox{\hyperlink{struct_donos}{Donos}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ NODE\ DO\ DONO}}
+\DoxyCodeLine{00027\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnode_donos}{nodeDonos}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{struct_donos}{Donos}}*\ info;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnode_donos}{nodeDonos}}*\ next;}
+\DoxyCodeLine{00031\ \}\ NODE\_DONOS;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{comment}{//\ LISTA\ DONO}}
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_lista_donos}{ListaDonos}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ NODE\_DONOS*\ primeiro;\ \textcolor{comment}{//\ Ponteiro\ para\ o\ primeiro\ nó}}
+\DoxyCodeLine{00037\ \ \ \ \ NODE\_DONOS*\ ultimo;\ \textcolor{comment}{//\ Ponteiro\ para\ o\ último\ nó}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ elem;\ \ \ \textcolor{comment}{//\ Número\ de\ elementos\ na\ lista}}
+\DoxyCodeLine{00039\ \}\ LISTA\_DONOS;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ PROTOTIPAGEM}}
+\DoxyCodeLine{00042\ LISTA\_DONOS*\ criarListaDonos();}
+\DoxyCodeLine{00043\ NODE\_DONOS*\ criarNodeDonos();}
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{int}\ freeNodeDonos(NODE\_DONOS*\ node);}
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ carregarDadosDonos(LISTA\_DONOS*\ lista);}
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{void}\ adicionarListaDonos(LISTA\_DONOS*\ lista,\ NODE\_DONOS*\ node);}
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{void}\ registarDonos(LISTA\_DONOS*\ lista);}
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{void}\ listarDonos(LISTA\_DONOS*\ lista);}
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ freeListaDonos(LISTA\_DONOS*\ lista);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{void}\ ordenarListaDonosAlfabeticamente(LISTA\_DONOS*\ lista);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{void}\ ordenarListaDonosContribuinte(LISTA\_DONOS*\ lista);\ \textcolor{comment}{//\ ex\ 5}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ maiorVelocidadeMediaDonos(LISTA\_DONOS*\ listaDnos,\ LISTA\_HASHC*\ \mbox{\hyperlink{structlista_hash_carros}{listaHashCarros}},\ PASSAGEM\_LISTA*\ listaPassagens,\ DISTANCIAS\_LISTA*\ listaDistancias);}
+
+\end{DoxyCode}

@@ -1,0 +1,90 @@
+\doxysection{carros.\+h}
+\hypertarget{carros_8h_source}{}\label{carros_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ CONSTANTES}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MAX\_CHAR\_STR\ 20}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ MAX\_CHAR\_MATRICULA\ 8}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{comment}{//dar\ o\ alias\ LISTA\_DONOS,\ ao\ ListaDonos\ e\ resolver\ os\ problemas\ (typedef,\ para\ atribuir\ o\ outro\ nome)}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_lista_donos}{ListaDonos}}\ LISTA\_DONOS;}
+\DoxyCodeLine{00008\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structpassagem_lista}{passagemLista}}\ PASSAGEM\_LISTA;}
+\DoxyCodeLine{00009\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdistancia_lista}{distanciaLista}}\ DISTANCIAS\_LISTA;}
+\DoxyCodeLine{00010\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlista_hash_carros}{listaHashCarros}}\ LISTA\_HASHC;}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ ESTRUTURAS\ DO\ CARRO}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcarro}{carro}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{char}\ matricula[MAX\_CHAR\_MATRICULA\ +\ 1];}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{char}\ marca[MAX\_CHAR\_STR\ +\ 1];}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{char}\ modelo[MAX\_CHAR\_STR\ +\ 1];}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ ano;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ dono;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ codVeiculo;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ totalInfracoes;\ \textcolor{comment}{//\ vai\ armazenar\ as\ infracoes\ cometidas\ pelo\ carro}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{float}\ totalKMPercorridos;\ \textcolor{comment}{//vai\ armazenar\ o\ total\ de\ km\ percorridos\ pelo\ carro}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{float}\ totalMinutosPercorridos;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{float}\ velocidadeMediaKM;}
+\DoxyCodeLine{00024\ \}CARRO;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ NODE\ DO\ CARRO}}
+\DoxyCodeLine{00027\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnodecarro}{nodecarro}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ CARRO*\ info;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnodecarro}{nodecarro}}*\ next;}
+\DoxyCodeLine{00031\ \}NODE\_CARRO;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{comment}{//\ LISTA\ CARRO}}
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlista_carro}{listaCarro}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ NODE\_CARRO*\ header;\ \textcolor{comment}{//\ ponteiro\ para\ o\ primeiro\ NO}}
+\DoxyCodeLine{00037\ \ \ \ \ NODE\_CARRO*\ ultimo\_node;\ \textcolor{comment}{//\ ponteiro\ para\ o\ último\ NO}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_elem;}
+\DoxyCodeLine{00039\ \}LISTA\_CARRO;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{//*****************\ HASHING\ *****************}}
+\DoxyCodeLine{00042\ \textcolor{comment}{//criar\ o\ NODE\ do\ hashing}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnode_hash}{nodeHash}}}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{char}\ chave[MAX\_CHAR\_STR];}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{float}\ totalKm\_marca;}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{float}\ minutosTotalPercorrido;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnode_hash}{nodeHash}}*\ next;}
+\DoxyCodeLine{00050\ \ \ \ \ LISTA\_CARRO*\ listaCarros;}
+\DoxyCodeLine{00051\ \}NODE\_HASHC;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{//criar\ a\ listaHashing}}
+\DoxyCodeLine{00054\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlista_hash_carros}{listaHashCarros}}}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ NODE\_HASHC*\ header;\textcolor{comment}{//ponteiro\ para\ o\ inicio\ da\ lista}}
+\DoxyCodeLine{00057\ \ \ \ \ NODE\_HASHC*\ ultimo\_node;\ \textcolor{comment}{//\ ponteiro\ para\ o\ ultimo\ node\ da\ lista}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ numElementos;}
+\DoxyCodeLine{00059\ \}LISTA\_HASHC;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ PROTOTIPAGEM}}
+\DoxyCodeLine{00062\ LISTA\_CARRO*\ \mbox{\hyperlink{carros_8c_a87914afb98468a8027a038619281508c}{criarListaCarro}}();}
+\DoxyCodeLine{00063\ NODE\_CARRO*\ \mbox{\hyperlink{carros_8c_a353ae4d813a06a1ddae26ff7dfc7af9f}{criarNodeCarro}}();}
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{carros_8c_a09f1dae778235302be0197bb6cd46780}{freeNodeCarro}}(NODE\_CARRO*\ node);}
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{carros_8c_a4dddb250bc7768f41e57e899641941b1}{carregarDadosCarro}}(LISTA\_HASHC*\ \mbox{\hyperlink{structlista_hash_carros}{listaHashCarros}});}
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{carros_8c_ae3cdf5844f7c1b93c77849459a8229e4}{addListaCarro}}(LISTA\_CARRO*\ lista,\ NODE\_CARRO*\ node);}
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{carros_8c_afd901457e0719dca5377fb3536255913}{criarCarroUtilizador}}(LISTA\_CARRO*\ lista,\ LISTA\_DONOS*\ listaDonos);}
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{carros_8c_a0884c11787e0807519d5eca57f987cf6}{mostrarListaCarro}}(LISTA\_CARRO*\ lista);}
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{carros_8c_af8b20e5ba37df98a5d860699f86a9d5f}{verificarDONOexiste}}(\textcolor{keywordtype}{int}\ idDono,\ LISTA\_DONOS*\ listaDonos);}
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{void}\ ligarCarroDono(NODE\_CARRO*\ novo\_elem,\ LISTA\_DONOS*\ listaDonos);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{comment}{//\ *****************\ HASHING\ **********************}}
+\DoxyCodeLine{00073\ LISTA\_HASHC*\ \mbox{\hyperlink{carros_8c_afe92d060877745414115c38b971ed2be}{criarListaHashCarro}}();}
+\DoxyCodeLine{00074\ NODE\_HASHC*\ \mbox{\hyperlink{carros_8c_a3a3cc0c5541b809c07d9f11e7dfaf8c3}{criarNodeHashCarro}}();}
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{carros_8c_ae0eba5dd9931788784f18ff8a893db05}{adicionarInfoNodeHash}}(NODE\_HASHC*\ \mbox{\hyperlink{structnode_hash}{nodeHash}},\ NODE\_CARRO*\ nodeCarro);}
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{carros_8c_a3a35c26e33d3c866b7eb80e4d37b0181}{mostrarHashCarros}}(LISTA\_HASHC*\ listaHash);}
+\DoxyCodeLine{00077\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{carros_8c_a38959630a3c2faea5e0c3149cde922c7}{inserirNodeHashListaHash}}(LISTA\_HASHC*\ listaHash,\ NODE\_HASHC*\ \mbox{\hyperlink{structnode_hash}{nodeHash}});}
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{carros_8c_a8578af03eb6c79130dfafbfed7d6f088}{freeListaHashCarro}}(LISTA\_HASHC*\ listaHashCarro);}
+\DoxyCodeLine{00079\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{carros_8c_a174e6db3fccffb6b2e1a8b17bf3cb11c}{ordenarMarcasHashCarrosAlfabeticamente}}(LISTA\_HASHC*\ listaHash);}
+\DoxyCodeLine{00080\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{carros_8c_a13ef0874d7b22c8fdf424283cfc33bf5}{ordenarModeloHashCarrosAlfabeticamente}}(LISTA\_HASHC*\ listaHash);}
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{carros_8c_a5e9808e30d088e9d9c182dbb37d56cce}{ordenarMatriculaHashCarrosAlfabeticamente}}(LISTA\_HASHC*\ listaHash);}
+\DoxyCodeLine{00082\ NODE\_CARRO*\ \mbox{\hyperlink{carros_8c_a55c675f4f841e04675d208c4d045f74e}{procuraCarroPorID}}(\textcolor{keywordtype}{int}\ codVeiculo,\ LISTA\_HASHC*\ \mbox{\hyperlink{structlista_hash_carros}{listaHashCarros}});}
+\DoxyCodeLine{00083\ \textcolor{keywordtype}{void}\ maiorVelocidadeMediaMarca(LISTA\_HASHC*\ \mbox{\hyperlink{structlista_hash_carros}{listaHashCarros}},\ PASSAGEM\_LISTA*\ listaPassagens,\ DISTANCIAS\_LISTA*\ listaDistancias);}
+\DoxyCodeLine{00084\ \textcolor{keywordtype}{void}\ marcaMaisComum(LISTA\_HASHC*\ \mbox{\hyperlink{structlista_hash_carros}{listaHashCarros}});}
+\DoxyCodeLine{00085\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{carros_8c_a4772b0df8036e2e5d9487863271f71b8}{verificarMatriculaExiste}}(\textcolor{keywordtype}{char}*\ matricula,\ LISTA\_CARRO*\ \mbox{\hyperlink{structlista_carro}{listaCarro}});}
+
+\end{DoxyCode}

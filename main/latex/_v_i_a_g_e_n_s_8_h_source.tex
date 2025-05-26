@@ -1,0 +1,32 @@
+\doxysection{VIAGENS.\+H}
+\hypertarget{_v_i_a_g_e_n_s_8_h_source}{}\label{_v_i_a_g_e_n_s_8_h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}carros.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnode_viagem}{nodeViagem}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{float}\ totalKm;\ \textcolor{comment}{//\ vai\ armazenar\ todos\ os\ km\ percorridos\ em\ viagem\ do\ carro}}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{int}\ totalInfracoes;\ \textcolor{comment}{//\ vai\ armazenar\ as\ infracoes\ cometidas\ pelo\ carro}}
+\DoxyCodeLine{00010\ \ \ \ \ CARRO*\ carro;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ milisegundosPercorridos;\ \textcolor{comment}{//vai\ armazenar\ o\ tempo\ em\ MS\ durante\ o\ periodo\ X\ que\ o\ carro\ viajou}}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnode_viagem}{nodeViagem}}*\ next;}
+\DoxyCodeLine{00013\ \}NODE\_VIAGENS;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//lista\ que\ vai\ conter\ nodesViagens}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ NODE\_VIAGENS*\ header;}
+\DoxyCodeLine{00019\ \ \ \ \ NODE\_VIAGENS*\ ultimoNode;}
+\DoxyCodeLine{00020\ \}\mbox{\hyperlink{struct_l_i_s_t_a___v_i_a_g_e_n_s}{LISTA\_VIAGENS}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//prototipagens}}
+\DoxyCodeLine{00023\ \mbox{\hyperlink{struct_l_i_s_t_a___v_i_a_g_e_n_s}{LISTA\_VIAGENS}}*\ criarListaViagens();}
+\DoxyCodeLine{00024\ NODE\_VIAGENS*\ criarNodeViagens();}
+\DoxyCodeLine{00025\ \textcolor{keywordtype}{int}\ existeCarroListaViagens(\mbox{\hyperlink{struct_l_i_s_t_a___v_i_a_g_e_n_s}{LISTA\_VIAGENS}}*\ listaViagens,\ \textcolor{keywordtype}{int}\ codCarro);}
+\DoxyCodeLine{00026\ \textcolor{keywordtype}{void}\ adicionarNodeListaViagens(NODE\_VIAGENS*\ nodeViagens,\ \mbox{\hyperlink{struct_l_i_s_t_a___v_i_a_g_e_n_s}{LISTA\_VIAGENS}}*\ listaViagens);}
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{void}\ freeListaViagens(\mbox{\hyperlink{struct_l_i_s_t_a___v_i_a_g_e_n_s}{LISTA\_VIAGENS}}*\ listaViagens);}
+
+\end{DoxyCode}

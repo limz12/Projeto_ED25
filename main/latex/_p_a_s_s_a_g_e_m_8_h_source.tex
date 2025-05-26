@@ -1,0 +1,77 @@
+\doxysection{PASSAGEM.\+H}
+\hypertarget{_p_a_s_s_a_g_e_m_8_h_source}{}\label{_p_a_s_s_a_g_e_m_8_h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\ \ \ \ \#include\ <stdlib.h>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlista_carro}{listaCarro}}\ LISTA\_CARRO;}
+\DoxyCodeLine{00005\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlista_hash_carros}{listaHashCarros}}\ LISTA\_HASHC;}
+\DoxyCodeLine{00006\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structpassagem_lista}{passagemLista}}\ PASSAGEM\_LISTA;}
+\DoxyCodeLine{00007\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdistancia_lista}{distanciaLista}}\ DISTANCIAS\_LISTA;}
+\DoxyCodeLine{00008\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcarro}{carro}}\ CARRO;}
+\DoxyCodeLine{00009\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnodecarro}{nodecarro}}\ NODE\_CARRO;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//para\ os\ dias\ em\ que\ o\ carro\ passou\ pelo\ sensor}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ dia;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ mes;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ ano;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//para\ a\ hora\ em\ que\ o\ carro\ passou\ no\ sensor}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ hora;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ minuto;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ segundo;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ milisegundo;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \}\mbox{\hyperlink{struct_d_a_t_a}{DATA}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ idSensor;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ codVeiculo;}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{struct_d_a_t_a}{DATA}}*\ data;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ tipoRegisto;\ \textcolor{comment}{//\ \ atributo\ “tipo\ de\ registo”\ contem\ um\ de\ 2\ valores:\ 0\ =\ entrada,\ 1\ =\ saída.}}
+\DoxyCodeLine{00031\ \ \ \ \ }
+\DoxyCodeLine{00032\ \}\mbox{\hyperlink{struct_p_a_s_s_a_g_e_m}{PASSAGEM}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnode_passagem}{nodePassagem}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{struct_p_a_s_s_a_g_e_m}{PASSAGEM}}*\ info;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnode_passagem}{nodePassagem}}*\ next;}
+\DoxyCodeLine{00038\ \}PASSAGEM\_NODE;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structpassagem_lista}{passagemLista}}}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ PASSAGEM\_NODE*\ header;}
+\DoxyCodeLine{00043\ \ \ \ \ PASSAGEM\_NODE*\ ultimoNode;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ numElementos;}
+\DoxyCodeLine{00045\ \}PASSAGEM\_LISTA;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{comment}{//prototiopagem}}
+\DoxyCodeLine{00049\ PASSAGEM\_LISTA*\ criarListaPassagem();}
+\DoxyCodeLine{00050\ PASSAGEM\_NODE*\ criarNodePassagem();}
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{void}\ carregarPassagem(PASSAGEM\_LISTA*\ lista);}
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ adicionarListaPassagem(PASSAGEM\_LISTA*\ lista,\ PASSAGEM\_NODE*\ node);}
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{void}\ mostrarListaPassagem(PASSAGEM\_LISTA*\ lista);}
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ libertarNodePassagem(PASSAGEM\_NODE*\ node);}
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ libertarListaPassagem(PASSAGEM\_LISTA*\ lista);}
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ registarPassagem(PASSAGEM\_LISTA*\ lista);}
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{int}\ verificarNodeDadosPassagem(PASSAGEM\_NODE*\ node);}
+\DoxyCodeLine{00058\ \textcolor{keywordtype}{void}\ carrosCircularamduranteX(\mbox{\hyperlink{struct_p_a_s_s_a_g_e_m}{PASSAGEM}}*\ listaPassagem,\ LISTA\_HASHC*\ listaCarros);}
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{int}\ checkPeriodoX(PASSAGEM\_NODE*\ \mbox{\hyperlink{structnode_passagem}{nodePassagem}},\ \mbox{\hyperlink{struct_d_a_t_a}{DATA}}*\ periodoInicial,\ \mbox{\hyperlink{struct_d_a_t_a}{DATA}}*\ periodoFinal);}
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{int}\ maiorMatricula(\textcolor{keywordtype}{int}\ pCarro,\ \textcolor{keywordtype}{int}\ sCarro,\ LISTA\_HASHC*\ listaHashCarro);}
+\DoxyCodeLine{00061\ NODE\_CARRO*\ procurarPorId(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ LISTA\_HASHC*\ listaHash);}
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ totalKmCarroDuranteX(LISTA\_CARRO*\ \mbox{\hyperlink{structlista_hash_carros}{listaHashCarros}},\ PASSAGEM\_LISTA*\ listaPassagem,\ DISTANCIAS\_LISTA*\ listaDistancias);}
+\DoxyCodeLine{00063\ CARRO*\ retornaCarro(LISTA\_HASHC*\ listaHash,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{int}\ compararCarros(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ b);}
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{int}\ calculoDistancia(\mbox{\hyperlink{struct_d_a_t_a}{DATA}}*\ dataEntrada,\ \mbox{\hyperlink{struct_d_a_t_a}{DATA}}*\ dataSaida);}
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{void}\ infracoesDuranteX(LISTA\_CARRO*\ \mbox{\hyperlink{structlista_hash_carros}{listaHashCarros}},\ PASSAGEM\_LISTA*\ listaPassagem,\ DISTANCIAS\_LISTA*\ listaDistancias);}
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{int}\ compararCarros(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ b);}
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ totalKmMarcaDuranteX(LISTA\_CARRO*\ \mbox{\hyperlink{structlista_hash_carros}{listaHashCarros}},\ PASSAGEM\_LISTA*\ listaPassagem,\ DISTANCIAS\_LISTA*\ listaDistancias);}
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{void}\ ordenarListaMarcasPorKm(LISTA\_HASHC*\ lista);\(\backslash\)}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ infracoesDuranteX(LISTA\_CARRO*\ \mbox{\hyperlink{structlista_hash_carros}{listaHashCarros}},\ PASSAGEM\_LISTA*\ listaPassagem,\ DISTANCIAS\_LISTA*\ listaDistancias);}
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{void}\ totalinfracoesDuranteX(LISTA\_CARRO*\ \mbox{\hyperlink{structlista_hash_carros}{listaHashCarros}},\ PASSAGEM\_LISTA*\ listaPassagem,\ DISTANCIAS\_LISTA*\ listaDistancias);}
+
+\end{DoxyCode}
