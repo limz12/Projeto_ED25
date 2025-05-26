@@ -463,7 +463,15 @@ int verificarMatriculaExiste(char* matricula, LISTA_CARRO* listaCarro)
 
 
 }
+
+
 //***************** HASHING ************************
+
+
+/**
+* @brief Funcao responsavel por criar uma Lista hash que vai armazenar os nodes hash organizados por marcas.
+* @return retorna um ponteiro LISTA_HASH vazia
+*/
 LISTA_HASHC* criarListaHashCarro()
 {
 	//alocar memoria para a lista hash
@@ -476,6 +484,10 @@ LISTA_HASHC* criarListaHashCarro()
 	return lista;
 }
 
+/**
+* @brief Funcao responsavel por criar um node hash, que possui uma chave "Marca dos carros"e a lista com os respetivos carros da mesma marca
+* @return existe : Retorna um ponteiro para um NODE_HASHC vazio
+*/
 NODE_HASHC* criarNodeHashCarro()
 {
 	NODE_HASHC* nodeHash = (NODE_HASHC*)malloc(sizeof(NODE_HASHC));
@@ -486,6 +498,13 @@ NODE_HASHC* criarNodeHashCarro()
 
 }
 
+/**
+* @brief Funcao responsavel por percorrer preencher o nodeHash, com a respetiva chave e adicionar o carro a sua lista carros
+* @param nodeHash : recebe um ponteiro NODE_HASHC em vai ser inserido o carro
+* @param nodeCarro : Recebe um ponteiro NODE_CARRO com um carro preenchido para ser inserido na respetiva hash
+* @return VOID
+*
+*/
 void adicionarInfoNodeHash(NODE_HASHC* nodeHash, NODE_CARRO* nodeCarro)
 {
 	//adicionar a chave ao nodeHash
@@ -508,6 +527,11 @@ void adicionarInfoNodeHash(NODE_HASHC* nodeHash, NODE_CARRO* nodeCarro)
 	}
 }
 
+/**
+* @brief Funcao responsavel por listar todo o conteudo da LISTA_HASHC
+* @param listaHash : recebe um ponteiro LISTA_HASCH com todos os NODE_HASHC e os carros agrupados por marca
+* @return VOID
+*/
 //listar todo o conteudo da HASH DOS CARROS
 void mostrarHashCarros(LISTA_HASHC* listaHash)
 {
@@ -524,6 +548,12 @@ void mostrarHashCarros(LISTA_HASHC* listaHash)
 	}
 }
 
+/**
+* @brief Funcao responsavel por inserir um NODE_HASHC na LISTA_HASHC
+* @param listaHash : recebe um ponteiro LISTA_HASCH
+* @param nodeHash : recebe um ponteiro NODE_HASHC que vai ser inserido na LISTA_HASCH
+* @return VOID
+*/
 //liga o NODEHASH PRENCHIDO a LISTA HASH
 void inserirNodeHashListaHash(LISTA_HASHC* listaHash, NODE_HASHC* nodeHash)
 {
@@ -537,7 +567,11 @@ void inserirNodeHashListaHash(LISTA_HASHC* listaHash, NODE_HASHC* nodeHash)
 	listaHash->numElementos++;
 }
 
-//ordenar (alfabeticamente) marcas
+/**
+* @brief Funcao responsavel por ordenar (alfabeticamente) por marcas a LISTA_HASHC
+* @param listaHash : recebe um ponteiro LISTA_HASCH
+* @return VOID
+*/
 void ordenarMarcasHashCarrosAlfabeticamente(LISTA_HASHC* listaHash)
 {
 	if (!listaHash)
@@ -585,7 +619,12 @@ void ordenarMarcasHashCarrosAlfabeticamente(LISTA_HASHC* listaHash)
 	printf("HASH ORDENADA COM SUCESSO\n");
 }
 
-//ordenar (alfabeticamente) modelo
+
+/**
+* @brief Funcao responsavel por ordenar (alfabeticamente) pelo modelo do carro dentro da marca
+* @param listaHash : recebe um ponteiro LISTA_HASCH
+* @return VOID
+*/
 void ordenarModeloHashCarrosAlfabeticamente(LISTA_HASHC* listaHash)
 {
 	if (!listaHash)
@@ -635,6 +674,11 @@ void ordenarModeloHashCarrosAlfabeticamente(LISTA_HASHC* listaHash)
 	printf("HASH ORDENADA COM SUCESSO\n");
 }
 
+/**
+* @brief Funcao responsavel por ordenar (alfabeticamente) pela matricula do carro
+* @param listaHash : recebe um ponteiro LISTA_HASCH com a lista de carros
+* @return VOID
+*/
 void ordenarMatriculaHashCarrosAlfabeticamente(LISTA_HASHC* listaHash)
 {
 	if (!listaHash)
@@ -684,7 +728,12 @@ void ordenarMatriculaHashCarrosAlfabeticamente(LISTA_HASHC* listaHash)
 	printf("HASH ORDENADA COM SUCESSO\n");
 }
 
-//devolver o carro encontrado pelo ID
+/**
+* @brief Funcao responsavel por encontrar se o carro atraves do codVeiculo na LISTA_HASHC
+* @param codVeiculo : recebe um inteiro com o codigo de veiculo para ser verificado
+* @param listaHashCarros : recebe a LISTA_HASHC 
+* @return nodeCarro:  ponteiro NODE_CARRO para o carro que foi encontrado
+*/
 NODE_CARRO* procuraCarroPorID(int codVeiculo, LISTA_HASHC* listaHashCarros)
 {
 	if (!codVeiculo)
@@ -718,6 +767,13 @@ NODE_CARRO* procuraCarroPorID(int codVeiculo, LISTA_HASHC* listaHashCarros)
 
 }
 
+/**
+* @brief Funcao responsavel por calcular a maior velocidade media de todas as marcas presentes na LISTA_HASHC e apresentar o resultado
+* @param listaHashCarros : recebe um ponteiro para a LISTA_HASHC
+* @param listaPassagens : recebe um ponteiro para a PASSAGEM_LISTA
+* @param listaDistancias : recebe um ponteiro para a DISTANCIAS_LISTA
+* @return VOID
+*/
 void maiorVelocidadeMediaMarca(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias)
 {
 	if (!listaHashCarros || !listaPassagens || !listaDistancias)
@@ -805,7 +861,12 @@ void maiorVelocidadeMediaMarca(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* lis
 		printf("Nenhuma marca com dados válidos.\n");
 }
 
-// 16. Determinar qual a marca de automóvel mais comum?
+
+/**
+* @brief Funcao responsavel por calcular qual e a marca com mais automoveis e apresentar a mesma
+* @param listaHashCarros : recebe um ponteiro para a LISTA_HASHC
+* @return VOID
+*/
 void marcaMaisComum(LISTA_HASHC* listaHashCarros)
 {
 	// Verificação da existência da Hash

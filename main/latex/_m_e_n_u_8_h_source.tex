@@ -1,0 +1,25 @@
+\doxysection{MENU.\+H}
+\hypertarget{_m_e_n_u_8_h_source}{}\label{_m_e_n_u_8_h_source}\mbox{\hyperlink{_m_e_n_u_8_h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlista_sensor}{listaSensor}}\ \mbox{\hyperlink{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}{LISTA\_SENSOR}};}
+\DoxyCodeLine{00005\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdistancia_lista}{distanciaLista}}\ \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\_LISTA}};}
+\DoxyCodeLine{00006\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structpassagem_lista}{passagemLista}}\ \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\_LISTA}};}
+\DoxyCodeLine{00007\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlista_carro}{listaCarro}}\ \mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\_CARRO}};}
+\DoxyCodeLine{00008\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_lista_donos}{ListaDonos}}\ \mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\_DONOS}};}
+\DoxyCodeLine{00009\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlista_hash_carros}{listaHashCarros}}\ \mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\_HASHC}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{//prototipagem}}
+\DoxyCodeLine{00013\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_m_e_n_u_8_h_a2ca60f32fa15f01c2ab033aa4837f21f}{verificarNumero}}(\textcolor{keywordtype}{int}\ max);}
+\DoxyCodeLine{00014\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_m_e_n_u_8_h_a8938f4ea95d62656fe147851fbe9d307}{menuPrincipal}}(\mbox{\hyperlink{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}{LISTA\_SENSOR}}*\ \mbox{\hyperlink{structlista_sensor}{listaSensor}},\ \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\_LISTA}}*\ listaDistancias,\ \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\_LISTA}}*\ listaPassagem,\ \mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\_CARRO}}*\ \mbox{\hyperlink{structlista_carro}{listaCarro}},\ \mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\_DONOS}}*\ listaDonos);}
+\DoxyCodeLine{00015\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_m_e_n_u_8_h_a11b1c2cad6bda42112214a10801764d9}{menuDistancias}}(\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\_LISTA}}*\ listaDistancias);}
+\DoxyCodeLine{00016\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_m_e_n_u_8_h_a2b4290faf94f8949eaa4029f5fd8b5cf}{menuPassagens}}(\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\_LISTA}}*\ listaPassagens,\ \mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\_HASHC}}*\ \mbox{\hyperlink{structlista_hash_carros}{listaHashCarros}},\ \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\_LISTA}}*\ listaDistancias);}
+\DoxyCodeLine{00017\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_m_e_n_u_8_h_a2a81c5a825a5a1bc3ce518785495d8c6}{menuSensores}}(\mbox{\hyperlink{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}{LISTA\_SENSOR}}*\ listaSensores);}
+\DoxyCodeLine{00018\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_m_e_n_u_8_h_a71e0b9c54ff2871b912fe23bb874f239}{menuCarros}}(\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\_HASHC}}*\ hashCarros,\ \mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\_DONOS}}*\ listaDonos,\ \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\_LISTA}}*\ listaPassagens,\ \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\_LISTA}}*\ listaDistancias);}
+\DoxyCodeLine{00019\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_m_e_n_u_8_h_ac4556db67e8f989bd80acd3403e54e16}{menuDonos}}(\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\_DONOS}}*\ listaDonos,\ \mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\_HASHC}}*\ hashCarro,\ \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\_LISTA}}*\ listaPassagens,\ \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\_LISTA}}*\ listaDistancias);}
+\DoxyCodeLine{00020\ }
+
+\end{DoxyCode}

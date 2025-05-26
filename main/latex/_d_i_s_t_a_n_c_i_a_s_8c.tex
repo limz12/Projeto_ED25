@@ -1,0 +1,182 @@
+\doxysection{DISTANCIAS.\+c File Reference}
+\hypertarget{_d_i_s_t_a_n_c_i_a_s_8c}{}\label{_d_i_s_t_a_n_c_i_a_s_8c}\index{DISTANCIAS.c@{DISTANCIAS.c}}
+
+
+Implementacao das funcoes respetivas as distancias.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$malloc.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$locale.\+h$>$}\newline
+{\ttfamily \#include "{}DISTANCIAS.\+H"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8c_a189851605483abf7c8ac80ac4c333c23}{criar\+Lista\+Distancias}} ()
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por criar uma lista que ira conter distancias. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8_h_a353f6bbc501ea1af8843852c41ef45c1}{DISTANCIAS\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8c_aabea5be103131b001cfc4f2ce24618a5}{criar\+Node\+Distancias}} ()
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por alocar memoria para um node que contem todos os dados de uma respetiva distancia. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8c_a92ba107be74bc93a318121a4edfd6075}{carregar\+Distancia}} (\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por ler o ficheiro "{}distancias.\+txt"{}, e inserir cada distancia presente no ficheiro na estrutura da lista de distancias. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8c_a1901706ad927ac7e47c4fce97d7a847a}{adicionar\+Lista}} (\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista, \mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8_h_a353f6bbc501ea1af8843852c41ef45c1}{DISTANCIAS\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}node)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por receber um \doxylink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\+\_\+\+CARRO} e adiciona-\/lo a uma lista de carros. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8c_a32a8e4fb792e4142bc3c3ab6909b47d1}{mostrar\+Lista\+DISTANCIA}} (\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por listar todos as distancias presentes na Lista de distancias. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8c_aaa056e513239a03a413ea9684cc359cb}{libertar\+Node\+Distancia}} (\mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8_h_a353f6bbc501ea1af8843852c41ef45c1}{DISTANCIAS\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}node)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por receber um \doxylink{_d_i_s_t_a_n_c_i_a_s_8_h_a353f6bbc501ea1af8843852c41ef45c1}{DISTANCIAS\+\_\+\+NODE} e destruir esse mesmo nó, libertando toda a memoria e os dados que possui. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8c_a4ad9da12254d638f241b996628c35dc9}{libertar\+Lista\+Distancia}} (\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por libertar a memoria alocada de toda a lista de distancias e todo o seu conteudo. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8c_a98d08abb63adf4ca20a9d3a3ef975197}{distancia\+Entre\+Sensor}} (int sensor1, int sensor2, \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por determinar a distancia entre dois sensores (em FLOAT) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementacao das funcoes respetivas as distancias. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{_d_i_s_t_a_n_c_i_a_s_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_d_i_s_t_a_n_c_i_a_s_8c_a1901706ad927ac7e47c4fce97d7a847a}\index{DISTANCIAS.c@{DISTANCIAS.c}!adicionarLista@{adicionarLista}}
+\index{adicionarLista@{adicionarLista}!DISTANCIAS.c@{DISTANCIAS.c}}
+\doxysubsubsection{\texorpdfstring{adicionarLista()}{adicionarLista()}}
+{\footnotesize\ttfamily \label{_d_i_s_t_a_n_c_i_a_s_8c_a1901706ad927ac7e47c4fce97d7a847a} 
+void adicionar\+Lista (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{\mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8_h_a353f6bbc501ea1af8843852c41ef45c1}{DISTANCIAS\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+
+
+
+Funcao responsavel por receber um \doxylink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\+\_\+\+CARRO} e adiciona-\/lo a uma lista de carros. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro para a \doxylink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA} para onde a distancia vai ser "{}armazenada"{} \\
+\hline
+{\em node} & \+: Recebe o \doxylink{_d_i_s_t_a_n_c_i_a_s_8_h_a353f6bbc501ea1af8843852c41ef45c1}{DISTANCIAS\+\_\+\+NODE} que vai ser inserido no parametro de entrada lista \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
+\Hypertarget{_d_i_s_t_a_n_c_i_a_s_8c_a92ba107be74bc93a318121a4edfd6075}\index{DISTANCIAS.c@{DISTANCIAS.c}!carregarDistancia@{carregarDistancia}}
+\index{carregarDistancia@{carregarDistancia}!DISTANCIAS.c@{DISTANCIAS.c}}
+\doxysubsubsection{\texorpdfstring{carregarDistancia()}{carregarDistancia()}}
+{\footnotesize\ttfamily \label{_d_i_s_t_a_n_c_i_a_s_8c_a92ba107be74bc93a318121a4edfd6075} 
+void carregar\+Distancia (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+
+
+
+Funcao responsavel por ler o ficheiro "{}distancias.\+txt"{}, e inserir cada distancia presente no ficheiro na estrutura da lista de distancias. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro de uma \doxylink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
+\Hypertarget{_d_i_s_t_a_n_c_i_a_s_8c_a189851605483abf7c8ac80ac4c333c23}\index{DISTANCIAS.c@{DISTANCIAS.c}!criarListaDistancias@{criarListaDistancias}}
+\index{criarListaDistancias@{criarListaDistancias}!DISTANCIAS.c@{DISTANCIAS.c}}
+\doxysubsubsection{\texorpdfstring{criarListaDistancias()}{criarListaDistancias()}}
+{\footnotesize\ttfamily \label{_d_i_s_t_a_n_c_i_a_s_8c_a189851605483abf7c8ac80ac4c333c23} 
+\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*} criar\+Lista\+Distancias (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Funcao responsavel por criar uma lista que ira conter distancias. 
+
+\begin{DoxyReturn}{Returns}
+ponteiro para uma \doxylink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}, que e o resultado da alocacao de memoria da estrutura \doxylink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA} 
+\end{DoxyReturn}
+\Hypertarget{_d_i_s_t_a_n_c_i_a_s_8c_aabea5be103131b001cfc4f2ce24618a5}\index{DISTANCIAS.c@{DISTANCIAS.c}!criarNodeDistancias@{criarNodeDistancias}}
+\index{criarNodeDistancias@{criarNodeDistancias}!DISTANCIAS.c@{DISTANCIAS.c}}
+\doxysubsubsection{\texorpdfstring{criarNodeDistancias()}{criarNodeDistancias()}}
+{\footnotesize\ttfamily \label{_d_i_s_t_a_n_c_i_a_s_8c_aabea5be103131b001cfc4f2ce24618a5} 
+\mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8_h_a353f6bbc501ea1af8843852c41ef45c1}{DISTANCIAS\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*} criar\+Node\+Distancias (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Funcao responsavel por alocar memoria para um node que contem todos os dados de uma respetiva distancia. 
+
+\begin{DoxyReturn}{Returns}
+retorna um ponteiro para um \doxylink{_d_i_s_t_a_n_c_i_a_s_8_h_a353f6bbc501ea1af8843852c41ef45c1}{DISTANCIAS\+\_\+\+NODE}, com todos os valores da estrutura nulos 
+\end{DoxyReturn}
+\Hypertarget{_d_i_s_t_a_n_c_i_a_s_8c_a98d08abb63adf4ca20a9d3a3ef975197}\index{DISTANCIAS.c@{DISTANCIAS.c}!distanciaEntreSensor@{distanciaEntreSensor}}
+\index{distanciaEntreSensor@{distanciaEntreSensor}!DISTANCIAS.c@{DISTANCIAS.c}}
+\doxysubsubsection{\texorpdfstring{distanciaEntreSensor()}{distanciaEntreSensor()}}
+{\footnotesize\ttfamily \label{_d_i_s_t_a_n_c_i_a_s_8c_a98d08abb63adf4ca20a9d3a3ef975197} 
+float distancia\+Entre\+Sensor (\begin{DoxyParamCaption}\item[{int}]{sensor1}{, }\item[{int}]{sensor2}{, }\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
+
+
+
+Funcao responsavel por determinar a distancia entre dois sensores (em FLOAT) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensor1} & \+: Recebe um inteiro com o número que identifica o sensor de entrada/saída \\
+\hline
+{\em sensor2} & \+: Recebe um inteiro com o número que identifica o sensor de saída/entrada \\
+\hline
+{\em lista\+Distancias} & \+: Recebe um ponteiro de uma \doxylink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NULL se o sensor1 ou o sensor2 ou a lista\+Distancias nao existirem 
+\end{DoxyReturn}
+\Hypertarget{_d_i_s_t_a_n_c_i_a_s_8c_a4ad9da12254d638f241b996628c35dc9}\index{DISTANCIAS.c@{DISTANCIAS.c}!libertarListaDistancia@{libertarListaDistancia}}
+\index{libertarListaDistancia@{libertarListaDistancia}!DISTANCIAS.c@{DISTANCIAS.c}}
+\doxysubsubsection{\texorpdfstring{libertarListaDistancia()}{libertarListaDistancia()}}
+{\footnotesize\ttfamily \label{_d_i_s_t_a_n_c_i_a_s_8c_a4ad9da12254d638f241b996628c35dc9} 
+void libertar\+Lista\+Distancia (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+
+
+
+Funcao responsavel por libertar a memoria alocada de toda a lista de distancias e todo o seu conteudo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro de uma \doxylink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA} para ser destruida \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
+\Hypertarget{_d_i_s_t_a_n_c_i_a_s_8c_aaa056e513239a03a413ea9684cc359cb}\index{DISTANCIAS.c@{DISTANCIAS.c}!libertarNodeDistancia@{libertarNodeDistancia}}
+\index{libertarNodeDistancia@{libertarNodeDistancia}!DISTANCIAS.c@{DISTANCIAS.c}}
+\doxysubsubsection{\texorpdfstring{libertarNodeDistancia()}{libertarNodeDistancia()}}
+{\footnotesize\ttfamily \label{_d_i_s_t_a_n_c_i_a_s_8c_aaa056e513239a03a413ea9684cc359cb} 
+void libertar\+Node\+Distancia (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_d_i_s_t_a_n_c_i_a_s_8_h_a353f6bbc501ea1af8843852c41ef45c1}{DISTANCIAS\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+
+
+
+Funcao responsavel por receber um \doxylink{_d_i_s_t_a_n_c_i_a_s_8_h_a353f6bbc501ea1af8843852c41ef45c1}{DISTANCIAS\+\_\+\+NODE} e destruir esse mesmo nó, libertando toda a memoria e os dados que possui. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & \+: Recebe um ponteiro \doxylink{_d_i_s_t_a_n_c_i_a_s_8_h_a353f6bbc501ea1af8843852c41ef45c1}{DISTANCIAS\+\_\+\+NODE} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NULL se o node inserido nao existir 
+\end{DoxyReturn}
+\Hypertarget{_d_i_s_t_a_n_c_i_a_s_8c_a32a8e4fb792e4142bc3c3ab6909b47d1}\index{DISTANCIAS.c@{DISTANCIAS.c}!mostrarListaDISTANCIA@{mostrarListaDISTANCIA}}
+\index{mostrarListaDISTANCIA@{mostrarListaDISTANCIA}!DISTANCIAS.c@{DISTANCIAS.c}}
+\doxysubsubsection{\texorpdfstring{mostrarListaDISTANCIA()}{mostrarListaDISTANCIA()}}
+{\footnotesize\ttfamily \label{_d_i_s_t_a_n_c_i_a_s_8c_a32a8e4fb792e4142bc3c3ab6909b47d1} 
+void mostrar\+Lista\+DISTANCIA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+
+
+
+Funcao responsavel por listar todos as distancias presentes na Lista de distancias. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro de uma \doxylink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
