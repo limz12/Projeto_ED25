@@ -374,7 +374,7 @@ void velocidadeMediaPorCodigoPostal(LISTA_DONOS* listaDonos, LISTA_HASHC* listaH
 					{
 						contadorCarros++;
 
-						// Resetar valores antes do cálculo
+						
 						nodeCarro->info->totalKMPercorridos = 0.0f;
 						nodeCarro->info->totalMinutosPercorridos = 0;
 
@@ -433,7 +433,7 @@ void velocidadeMediaPorCodigoPostal(LISTA_DONOS* listaDonos, LISTA_HASHC* listaH
 	else
 	{
 		printf("Donos encontrados: %d\n", donosEncontrados);
-		printf("Nenhum dado de viagem válido encontrado.\n");
+		printf("Nenhum dado de viagem valido encontrado.\n");
 	}
 	printf("****************************************************\n");
 }

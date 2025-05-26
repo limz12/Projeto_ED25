@@ -219,6 +219,7 @@ void registarPassagem(PASSAGEM_LISTA* lista)
 			else
 			{
 				printf("ERRO! O SENSOR NAO E VALIDO\n");
+				return;
 			}
 
 		}
@@ -245,6 +246,7 @@ void registarPassagem(PASSAGEM_LISTA* lista)
 			if (node->info->tipoRegisto > 1 || node->info->tipoRegisto < 0)
 			{
 				printf("ERRO! OPCAO INVALIDA\n");
+				return;
 			}
 			else
 			{
@@ -262,6 +264,7 @@ void registarPassagem(PASSAGEM_LISTA* lista)
 		else
 		{
 			printf("ERRO! INSERCAO REJEITADA. DADOS INVALIDOS\n");
+			return;
 		}
 		int flag2 = 0;
 
