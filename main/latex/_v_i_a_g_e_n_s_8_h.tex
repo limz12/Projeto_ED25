@@ -1,0 +1,76 @@
+\doxysection{VIAGENS.\+H File Reference}
+\hypertarget{_v_i_a_g_e_n_s_8_h}{}\label{_v_i_a_g_e_n_s_8_h}\index{VIAGENS.H@{VIAGENS.H}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}carros.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structnode_viagem}{node\+Viagem}}
+\item 
+struct \mbox{\hyperlink{struct_l_i_s_t_a___v_i_a_g_e_n_s}{LISTA\+\_\+\+VIAGENS}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structnode_viagem}{node\+Viagem}} \mbox{\hyperlink{_v_i_a_g_e_n_s_8_h_a4a33895ada63dc8093088d85b7a1740a}{NODE\+\_\+\+VIAGENS}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_l_i_s_t_a___v_i_a_g_e_n_s}{LISTA\+\_\+\+VIAGENS}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_v_i_a_g_e_n_s_8_h_a34005c65b634ff6a35c80ead7c63de13}{criar\+Lista\+Viagens}} ()
+\item 
+\mbox{\hyperlink{_v_i_a_g_e_n_s_8_h_a4a33895ada63dc8093088d85b7a1740a}{NODE\+\_\+\+VIAGENS}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_v_i_a_g_e_n_s_8_h_add1d0326b66baf6372b3507727c0371e}{criar\+Node\+Viagens}} ()
+\item 
+int \mbox{\hyperlink{_v_i_a_g_e_n_s_8_h_a49c9d9efee063a30295a8950b8179175}{existe\+Carro\+Lista\+Viagens}} (\mbox{\hyperlink{struct_l_i_s_t_a___v_i_a_g_e_n_s}{LISTA\+\_\+\+VIAGENS}} \texorpdfstring{$\ast$}{*}lista\+Viagens, int cod\+Carro)
+\item 
+void \mbox{\hyperlink{_v_i_a_g_e_n_s_8_h_af17c2c8b71d1d143db39567eedb17eec}{adicionar\+Node\+Lista\+Viagens}} (\mbox{\hyperlink{_v_i_a_g_e_n_s_8_h_a4a33895ada63dc8093088d85b7a1740a}{NODE\+\_\+\+VIAGENS}} \texorpdfstring{$\ast$}{*}node\+Viagens, \mbox{\hyperlink{struct_l_i_s_t_a___v_i_a_g_e_n_s}{LISTA\+\_\+\+VIAGENS}} \texorpdfstring{$\ast$}{*}lista\+Viagens)
+\item 
+void \mbox{\hyperlink{_v_i_a_g_e_n_s_8_h_a0faf13e23f6c139478c26960b8382262}{free\+Lista\+Viagens}} (\mbox{\hyperlink{struct_l_i_s_t_a___v_i_a_g_e_n_s}{LISTA\+\_\+\+VIAGENS}} \texorpdfstring{$\ast$}{*}lista\+Viagens)
+\end{DoxyCompactItemize}
+
+
+\label{doc-typedef-members}
+\Hypertarget{_v_i_a_g_e_n_s_8_h_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{_v_i_a_g_e_n_s_8_h_a4a33895ada63dc8093088d85b7a1740a}\index{VIAGENS.H@{VIAGENS.H}!NODE\_VIAGENS@{NODE\_VIAGENS}}
+\index{NODE\_VIAGENS@{NODE\_VIAGENS}!VIAGENS.H@{VIAGENS.H}}
+\doxysubsubsection{\texorpdfstring{NODE\_VIAGENS}{NODE\_VIAGENS}}
+{\footnotesize\ttfamily \label{_v_i_a_g_e_n_s_8_h_a4a33895ada63dc8093088d85b7a1740a} 
+typedef struct \mbox{\hyperlink{structnode_viagem}{node\+Viagem}} \mbox{\hyperlink{_v_i_a_g_e_n_s_8_h_a4a33895ada63dc8093088d85b7a1740a}{NODE\+\_\+\+VIAGENS}}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{_v_i_a_g_e_n_s_8_h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_v_i_a_g_e_n_s_8_h_af17c2c8b71d1d143db39567eedb17eec}\index{VIAGENS.H@{VIAGENS.H}!adicionarNodeListaViagens@{adicionarNodeListaViagens}}
+\index{adicionarNodeListaViagens@{adicionarNodeListaViagens}!VIAGENS.H@{VIAGENS.H}}
+\doxysubsubsection{\texorpdfstring{adicionarNodeListaViagens()}{adicionarNodeListaViagens()}}
+{\footnotesize\ttfamily \label{_v_i_a_g_e_n_s_8_h_af17c2c8b71d1d143db39567eedb17eec} 
+void adicionar\+Node\+Lista\+Viagens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_v_i_a_g_e_n_s_8_h_a4a33895ada63dc8093088d85b7a1740a}{NODE\+\_\+\+VIAGENS}} \texorpdfstring{$\ast$}{*}}]{node\+Viagens}{, }\item[{\mbox{\hyperlink{struct_l_i_s_t_a___v_i_a_g_e_n_s}{LISTA\+\_\+\+VIAGENS}} \texorpdfstring{$\ast$}{*}}]{lista\+Viagens}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_v_i_a_g_e_n_s_8_h_a34005c65b634ff6a35c80ead7c63de13}\index{VIAGENS.H@{VIAGENS.H}!criarListaViagens@{criarListaViagens}}
+\index{criarListaViagens@{criarListaViagens}!VIAGENS.H@{VIAGENS.H}}
+\doxysubsubsection{\texorpdfstring{criarListaViagens()}{criarListaViagens()}}
+{\footnotesize\ttfamily \label{_v_i_a_g_e_n_s_8_h_a34005c65b634ff6a35c80ead7c63de13} 
+\mbox{\hyperlink{struct_l_i_s_t_a___v_i_a_g_e_n_s}{LISTA\+\_\+\+VIAGENS}} \texorpdfstring{$\ast$}{*} criar\+Lista\+Viagens (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_v_i_a_g_e_n_s_8_h_add1d0326b66baf6372b3507727c0371e}\index{VIAGENS.H@{VIAGENS.H}!criarNodeViagens@{criarNodeViagens}}
+\index{criarNodeViagens@{criarNodeViagens}!VIAGENS.H@{VIAGENS.H}}
+\doxysubsubsection{\texorpdfstring{criarNodeViagens()}{criarNodeViagens()}}
+{\footnotesize\ttfamily \label{_v_i_a_g_e_n_s_8_h_add1d0326b66baf6372b3507727c0371e} 
+\mbox{\hyperlink{_v_i_a_g_e_n_s_8_h_a4a33895ada63dc8093088d85b7a1740a}{NODE\+\_\+\+VIAGENS}} \texorpdfstring{$\ast$}{*} criar\+Node\+Viagens (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_v_i_a_g_e_n_s_8_h_a49c9d9efee063a30295a8950b8179175}\index{VIAGENS.H@{VIAGENS.H}!existeCarroListaViagens@{existeCarroListaViagens}}
+\index{existeCarroListaViagens@{existeCarroListaViagens}!VIAGENS.H@{VIAGENS.H}}
+\doxysubsubsection{\texorpdfstring{existeCarroListaViagens()}{existeCarroListaViagens()}}
+{\footnotesize\ttfamily \label{_v_i_a_g_e_n_s_8_h_a49c9d9efee063a30295a8950b8179175} 
+int existe\+Carro\+Lista\+Viagens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_i_s_t_a___v_i_a_g_e_n_s}{LISTA\+\_\+\+VIAGENS}} \texorpdfstring{$\ast$}{*}}]{lista\+Viagens}{, }\item[{int}]{cod\+Carro}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_v_i_a_g_e_n_s_8_h_a0faf13e23f6c139478c26960b8382262}\index{VIAGENS.H@{VIAGENS.H}!freeListaViagens@{freeListaViagens}}
+\index{freeListaViagens@{freeListaViagens}!VIAGENS.H@{VIAGENS.H}}
+\doxysubsubsection{\texorpdfstring{freeListaViagens()}{freeListaViagens()}}
+{\footnotesize\ttfamily \label{_v_i_a_g_e_n_s_8_h_a0faf13e23f6c139478c26960b8382262} 
+void free\+Lista\+Viagens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_i_s_t_a___v_i_a_g_e_n_s}{LISTA\+\_\+\+VIAGENS}} \texorpdfstring{$\ast$}{*}}]{lista\+Viagens}{}\end{DoxyParamCaption})}
+

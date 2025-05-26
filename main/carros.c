@@ -732,7 +732,7 @@ void ordenarMatriculaHashCarrosAlfabeticamente(LISTA_HASHC* listaHash)
 * @brief Funcao responsavel por encontrar se o carro atraves do codVeiculo na LISTA_HASHC
 * @param codVeiculo : recebe um inteiro com o codigo de veiculo para ser verificado
 * @param listaHashCarros : recebe a LISTA_HASHC 
-* @return o ponteiro para o NODE_CARRO encontrado
+* @return nodeCarro:  ponteiro NODE_CARRO para o carro que foi encontrado
 */
 NODE_CARRO* procuraCarroPorID(int codVeiculo, LISTA_HASHC* listaHashCarros)
 {
@@ -767,6 +767,13 @@ NODE_CARRO* procuraCarroPorID(int codVeiculo, LISTA_HASHC* listaHashCarros)
 
 }
 
+/**
+* @brief Funcao responsavel por calcular a maior velocidade media de todas as marcas presentes na LISTA_HASHC e apresentar o resultado
+* @param listaHashCarros : recebe um ponteiro para a LISTA_HASHC
+* @param listaPassagens : recebe um ponteiro para a PASSAGEM_LISTA
+* @param listaDistancias : recebe um ponteiro para a DISTANCIAS_LISTA
+* @return VOID
+*/
 void maiorVelocidadeMediaMarca(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias)
 {
 	if (!listaHashCarros || !listaPassagens || !listaDistancias)
@@ -854,7 +861,12 @@ void maiorVelocidadeMediaMarca(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* lis
 		printf("Nenhuma marca com dados válidos.\n");
 }
 
-// 16. Determinar qual a marca de automóvel mais comum?
+
+/**
+* @brief Funcao responsavel por calcular qual e a marca com mais automoveis e apresentar a mesma
+* @param listaHashCarros : recebe um ponteiro para a LISTA_HASHC
+* @return VOID
+*/
 void marcaMaisComum(LISTA_HASHC* listaHashCarros)
 {
 	// Verificação da existência da Hash
