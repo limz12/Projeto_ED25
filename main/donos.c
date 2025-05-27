@@ -130,10 +130,19 @@ void registarDonos(LISTA_DONOS* lista) {
 	printf("Codigo postal:\n");
 	scanf("%s", &novoNode->info->codpost);
 	
-	//adiciona o elemento criado a lista
-	adicionarListaDonos(lista, novoNode);
-	system("cls");
-	printf("Dono adicionado com sucesso!\n");
+	int existeDono = verificarDONOexiste(novoNode->info->numCont, lista);
+	if (existeDono == 0) // se o dono nao existe
+	{
+		//adiciona o elemento criado a lista
+		adicionarListaDonos(lista, novoNode);
+		system("cls");
+		printf("Dono adicionado com sucesso!\n");
+	}
+	else
+	{
+		printf("ERRO! O DONO JA EXISTE, DADOS FORAM REJEITADOS! \n");
+	}
+	
 }
 
 //vai avancar para o donoCorreto (pagina)

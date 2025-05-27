@@ -1,14 +1,22 @@
+/**
+ * @file carros.h
+ * @brief Definicao das Estruturas relacionadas com os carros e prototipagem das funcoes utilizadas no carros.c
+ */
+
 // CONSTANTES
 #define MAX_CHAR_STR 20
 #define MAX_CHAR_MATRICULA 8
-
 
 //dar o alias LISTA_DONOS, ao ListaDonos e resolver os problemas (typedef, para atribuir o outro nome)
 typedef struct ListaDonos LISTA_DONOS;
 typedef struct passagemLista PASSAGEM_LISTA;
 typedef struct distanciaLista DISTANCIAS_LISTA;
 typedef struct listaHashCarros LISTA_HASHC;
-// ESTRUTURAS DO CARRO
+
+/**
+* @struct carro
+* @brief Estrutura que representa um carro
+*/
 typedef struct carro
 {
 	char matricula[MAX_CHAR_MATRICULA + 1];
@@ -23,34 +31,48 @@ typedef struct carro
 	float velocidadeMediaKM;
 }CARRO;
 
-// NODE DO CARRO
+/**
+* @struct nodecarro
+* @brief Estrutura que serve de node e contem o ponteiro do carro e do proximo
+*/
 typedef struct nodecarro
 {
 	CARRO* info;
 	struct nodecarro* next;
 }NODE_CARRO;
 
-// LISTA CARRO
+/**
+* @struct listaCarro
+* @brief Estrutura serve como lista para o conjunto dos NODE_CARRO
+*/
 typedef struct listaCarro
 {
 	NODE_CARRO* header; // ponteiro para o primeiro NO
-	NODE_CARRO* ultimo_node; // ponteiro para o último NO
+	NODE_CARRO* ultimo_node; // ponteiro para o Ãºltimo NO
 	int num_elem;
 }LISTA_CARRO;
 
 //***************** HASHING *****************
-//criar o NODE do hashing
 
+
+
+/**
+* @struct nodeHash
+* @brief Estrutura que serve de Hashing, sendo a chave a Marca do respetivo carro e contem um ponteiro para o proximo nodeHash
+*/
 typedef struct nodeHash
 {
-	char chave[MAX_CHAR_STR];
+	char chave[MAX_CHAR_STR]; // marca do carro
 	float totalKm_marca;
 	float minutosTotalPercorrido;
 	struct nodeHash* next;
 	LISTA_CARRO* listaCarros;
 }NODE_HASHC;
 
-//criar a listaHashing
+/**
+* @struct listaHashCarros
+* @brief Estrutura que serve de Lista para os nodeHash
+*/
 typedef struct listaHashCarros
 {
 	NODE_HASHC* header;//ponteiro para o inicio da lista
@@ -68,7 +90,6 @@ void criarCarroUtilizador(LISTA_CARRO* lista, LISTA_DONOS* listaDonos);
 void mostrarListaCarro(LISTA_CARRO* lista);
 int verificarDONOexiste(int idDono, LISTA_DONOS* listaDonos);
 void ligarCarroDono(NODE_CARRO* novo_elem, LISTA_DONOS* listaDonos);
-
 // ***************** HASHING **********************
 LISTA_HASHC* criarListaHashCarro();
 NODE_HASHC* criarNodeHashCarro();
@@ -83,3 +104,4 @@ NODE_CARRO* procuraCarroPorID(int codVeiculo, LISTA_HASHC* listaHashCarros);
 void maiorVelocidadeMediaMarca(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias);
 void marcaMaisComum(LISTA_HASHC* listaHashCarros);
 NODE_CARRO* avancarAte(NODE_CARRO* lista, int pos);
+int verificarMatriculaExiste(char* matricula, LISTA_CARRO* listaCarro);

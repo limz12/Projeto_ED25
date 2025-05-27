@@ -1,0 +1,77 @@
+\doxysection{PASSAGEM.\+H}
+\hypertarget{_p_a_s_s_a_g_e_m_8_h_source}{}\label{_p_a_s_s_a_g_e_m_8_h_source}\mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\ \ \ \ \#include\ <stdlib.h>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlista_carro}{listaCarro}}\ \mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\_CARRO}};}
+\DoxyCodeLine{00005\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlista_hash_carros}{listaHashCarros}}\ \mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\_HASHC}};}
+\DoxyCodeLine{00006\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structpassagem_lista}{passagemLista}}\ \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\_LISTA}};}
+\DoxyCodeLine{00007\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdistancia_lista}{distanciaLista}}\ \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\_LISTA}};}
+\DoxyCodeLine{00008\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcarro}{carro}}\ \mbox{\hyperlink{carros_8h_aa7cb4dee2a5859378aa6efba21babe07}{CARRO}};}
+\DoxyCodeLine{00009\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnodecarro}{nodecarro}}\ \mbox{\hyperlink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\_CARRO}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//para\ os\ dias\ em\ que\ o\ carro\ passou\ pelo\ sensor}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_d_a_t_a_a877121f58b6f445922f8c5e32d7cf08f}{dia}};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_d_a_t_a_a8115b57d1279496efb56612c70e5c3f6}{mes}};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_d_a_t_a_a4067b8e06f2da4792b24feed5179c1b3}{ano}};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//para\ a\ hora\ em\ que\ o\ carro\ passou\ no\ sensor}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_d_a_t_a_a754f6741688fef7d5661b5040185a29d}{hora}};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_d_a_t_a_ac94e6c28accfbd6a3122bfef38848470}{minuto}};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_d_a_t_a_af9231a971226e61d4bf75dcb4bec0385}{segundo}};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_d_a_t_a_a7e9a53bc6196211d3cd17969a67dee2f}{milisegundo}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \}\mbox{\hyperlink{struct_d_a_t_a}{DATA}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_p_a_s_s_a_g_e_m_ad04fd2543fd9770e8d5d7f532eb9d354}{idSensor}};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_p_a_s_s_a_g_e_m_a617d93c6a088a052ca48b42fd2f48ad6}{codVeiculo}};}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{struct_d_a_t_a}{DATA}}*\ \mbox{\hyperlink{struct_p_a_s_s_a_g_e_m_a47fc4a94aae6256bec5cb07e9cb5e0d4}{data}};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_p_a_s_s_a_g_e_m_a89a29cbd92cc86caae374d5f481d6f46}{tipoRegisto}};\ \textcolor{comment}{//\ \ atributo\ “tipo\ de\ registo”\ contem\ um\ de\ 2\ valores:\ 0\ =\ entrada,\ 1\ =\ saída.}}
+\DoxyCodeLine{00031\ \ \ \ \ }
+\DoxyCodeLine{00032\ \}\mbox{\hyperlink{struct_p_a_s_s_a_g_e_m}{PASSAGEM}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnode_passagem}{nodePassagem}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{struct_p_a_s_s_a_g_e_m}{PASSAGEM}}*\ \mbox{\hyperlink{structnode_passagem_ae8b8b0f5cd223bf9056f9bd503eccbcc}{info}};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structnode_passagem}{nodePassagem}}*\ \mbox{\hyperlink{structnode_passagem_a88960f40b644d22147abb44b5bab31a5}{next}};}
+\DoxyCodeLine{00038\ \}\mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145}{PASSAGEM\_NODE}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structpassagem_lista}{passagemLista}}}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145}{PASSAGEM\_NODE}}*\ \mbox{\hyperlink{structpassagem_lista_a9ddf52d8856594465e4ce0b4ad8e28fa}{header}};}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145}{PASSAGEM\_NODE}}*\ \mbox{\hyperlink{structpassagem_lista_a24f347386e76d099a1ebe9add0d7d381}{ultimoNode}};}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structpassagem_lista_a236df7f900586082a10d1a8d32d87fb0}{numElementos}};}
+\DoxyCodeLine{00045\ \}\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\_LISTA}};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{comment}{//prototiopagem}}
+\DoxyCodeLine{00049\ \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\_LISTA}}*\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a94ce03fca35890f22f9c306d218161ac}{criarListaPassagem}}();}
+\DoxyCodeLine{00050\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145}{PASSAGEM\_NODE}}*\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a3fa68fd7f1cac6385e730a797682772c}{criarNodePassagem}}();}
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a8e8aac50453fc7d17bcb045f5ce17043}{carregarPassagem}}(\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\_LISTA}}*\ lista);}
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ae828fce3d0386420773bae5fe62f782f}{adicionarListaPassagem}}(\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\_LISTA}}*\ lista,\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145}{PASSAGEM\_NODE}}*\ node);}
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a5c38694a17572988846337e8c5b69339}{mostrarListaPassagem}}(\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\_LISTA}}*\ lista);}
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ac79b75c5b6effbed01d8ca0fc2f7c4c5}{libertarNodePassagem}}(\mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145}{PASSAGEM\_NODE}}*\ node);}
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a22d7daaac035f082382ca706b2458755}{libertarListaPassagem}}(\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\_LISTA}}*\ lista);}
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a902e296249ad458282cfb77ad462225e}{registarPassagem}}(\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\_LISTA}}*\ lista);}
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ab8759ac9fc09bfea9f97f9ffd5b14693}{verificarNodeDadosPassagem}}(\mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145}{PASSAGEM\_NODE}}*\ node);}
+\DoxyCodeLine{00058\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a2ed3f82a251dd763d9f5d22c05d40452}{carrosCircularamduranteX}}(\mbox{\hyperlink{struct_p_a_s_s_a_g_e_m}{PASSAGEM}}*\ listaPassagem,\ \mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\_HASHC}}*\ listaCarros);}
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_abe7a06733e45798e2742b9b71faa44e3}{checkPeriodoX}}(\mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145}{PASSAGEM\_NODE}}*\ \mbox{\hyperlink{structnode_passagem}{nodePassagem}},\ \mbox{\hyperlink{struct_d_a_t_a}{DATA}}*\ periodoInicial,\ \mbox{\hyperlink{struct_d_a_t_a}{DATA}}*\ periodoFinal);}
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a31c0df8dcab2f968a1fcaa34087d9995}{maiorMatricula}}(\textcolor{keywordtype}{int}\ pCarro,\ \textcolor{keywordtype}{int}\ sCarro,\ \mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\_HASHC}}*\ listaHashCarro);}
+\DoxyCodeLine{00061\ \mbox{\hyperlink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\_CARRO}}*\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_acaa8334fbd69d8db664c2c4dacee5afa}{procurarPorId}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\_HASHC}}*\ listaHash);}
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_aa9e461a2315142e353507c9c5e84f28c}{totalKmCarroDuranteX}}(\mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\_CARRO}}*\ \mbox{\hyperlink{structlista_hash_carros}{listaHashCarros}},\ \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\_LISTA}}*\ listaPassagem,\ \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\_LISTA}}*\ listaDistancias);}
+\DoxyCodeLine{00063\ \mbox{\hyperlink{carros_8h_aa7cb4dee2a5859378aa6efba21babe07}{CARRO}}*\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a10f082c5507fb3146faa264706a2b69e}{retornaCarro}}(\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\_HASHC}}*\ listaHash,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ace5321ac4b25117c99699b71aae6bb2d}{compararCarros}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ b);}
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a47531b8671658ec559161501c336c23d}{calculoDistancia}}(\mbox{\hyperlink{struct_d_a_t_a}{DATA}}*\ dataEntrada,\ \mbox{\hyperlink{struct_d_a_t_a}{DATA}}*\ dataSaida);}
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad7799199595bd90288471e0ef61c8bca}{infracoesDuranteX}}(\mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\_CARRO}}*\ \mbox{\hyperlink{structlista_hash_carros}{listaHashCarros}},\ \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\_LISTA}}*\ listaPassagem,\ \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\_LISTA}}*\ listaDistancias);}
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ace5321ac4b25117c99699b71aae6bb2d}{compararCarros}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ b);}
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a939dac288a918ccf0349306ff58fbc60}{totalKmMarcaDuranteX}}(\mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\_CARRO}}*\ \mbox{\hyperlink{structlista_hash_carros}{listaHashCarros}},\ \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\_LISTA}}*\ listaPassagem,\ \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\_LISTA}}*\ listaDistancias);}
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a0285e22c35562600339187c5747b242f}{ordenarListaMarcasPorKm}}(\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\_HASHC}}*\ lista);\(\backslash\)}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad7799199595bd90288471e0ef61c8bca}{infracoesDuranteX}}(\mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\_CARRO}}*\ \mbox{\hyperlink{structlista_hash_carros}{listaHashCarros}},\ \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\_LISTA}}*\ listaPassagem,\ \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\_LISTA}}*\ listaDistancias);}
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a95f1fdc93ed3ef6d5284188811f0cf84}{totalinfracoesDuranteX}}(\mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\_CARRO}}*\ \mbox{\hyperlink{structlista_hash_carros}{listaHashCarros}},\ \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\_LISTA}}*\ listaPassagem,\ \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\_LISTA}}*\ listaDistancias);}
+
+\end{DoxyCode}

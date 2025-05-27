@@ -188,3 +188,351 @@ int inicializarED(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, 
 	return 1;
 	
 }
+
+//EXPORTAÇÔES EM CSV
+void exportar_csv_DONOS(LISTA_DONOS* lista)
+{
+	// Cria nó auxiliar para percorrer a lista
+	NODE_DONOS* aux = lista->primeiro;
+
+	// Ponteiro para percorrer o ficheiro em modo Write ("w")
+	FILE* f_csv = fopen("donos.csv", "w");
+
+	// Cabeçalho de cada coluna
+	fputs("Numero de Contribuinte, Nome, Codigo Postal\n", f_csv);
+
+	// Percorre a lista até ao último nó
+	while (aux)
+	{
+		// Preenche linha a linha, com a informação de nó em nó
+		fprintf(f_csv, "%d, %s, %s\n", aux->info->numCont, aux->info->nome, aux->info->codpost);
+
+		aux = aux->next;
+	}
+	
+	// Fim do preenchimento do ficheiro
+	fclose(f_csv);
+
+	printf("Ficheiro donos.csv exportado com sucesso!\n");
+}
+
+void exportar_csv_SENSORES(LISTA_SENSOR* listaSensor)
+{
+	// Cria nó auxiliar para percorrer a lista
+	NODE_SENSOR* aux = listaSensor->header;
+
+	// Ponteiro para percorrer o ficheiro em modo Write ("w")
+	FILE* f_csv = fopen("sensores.csv", "w");
+
+	// Cabeçalho de cada coluna
+	fputs("Codigo do Sensor; Designacao; Latitude; Longitude \n", f_csv);
+
+	// Percorre a lista até ao último nó
+	while (aux)
+	{
+		// Preenche linha a linha, com a informação de nó em nó
+		fprintf(f_csv, "%d; %s; %s; %s\n", aux->info->codSensor, aux->info->designacao, aux->info->infoLatitude, aux->info->infoLongitude);
+
+		aux = aux->next;
+	}
+
+	// Fim do preenchimento do ficheiro
+	fclose(f_csv);
+
+	printf("Ficheiro sensores.csv exportado com sucesso!\n");
+}
+
+void exportar_csv_DISTANCIAS(DISTANCIAS_LISTA* listaDistancias)
+{
+	// Cria nó auxiliar para percorrer a lista
+	DISTANCIAS_NODE* aux = listaDistancias->header;
+
+	// Ponteiro para percorrer o ficheiro em modo Write ("w")
+	FILE* f_csv = fopen("distancias.csv", "w");
+
+	// Cabeçalho de cada coluna
+	fputs("Codigo do Sensor 1, Codigo do Sensor 2, Distancia\n", f_csv);
+
+	// Percorre a lista até ao último nó
+	while (aux)
+	{	
+		// Preenche linha a linha, com a informação de nó em nó
+		fprintf(f_csv, "%d, %d, %f\n", aux->info->codSensor1, aux->info->codSensor2, aux->info->distanciaPercorrida);
+
+		aux = aux->next;
+	}
+
+	// Fim do preenchimento do ficheiro
+	fclose(f_csv);
+
+	printf("Ficheiro distancias.csv exportado com sucesso!\n");
+}
+
+void exportar_csv_CARROS(LISTA_HASHC* listaHash)
+{
+	// Cria nó auxiliar para percorrer a Hash
+	NODE_HASHC* aux_hash = listaHash->header;
+
+	// Ponteiro para percorrer o ficheiro em modo Write ("w")
+	FILE* f_csv = fopen("carros.csv", "w");
+
+	// Cabeçalho de cada coluna
+	fputs("Matricula, Marca, Modelo, Ano, Dono, Codigo do Veiculo\n", f_csv);
+
+	// Percorre a Hash até ao último nó
+	while (aux_hash)
+	{
+		// Cria nó auxiliar para percorrer a lista dentro de cada nó da Hash
+		NODE_CARRO* aux = aux_hash->listaCarros->header;
+
+		// Percorre a lista até ao último nó
+		while (aux)
+		{
+			// Preenche linha a linha, com a informação de nó em nó
+			fprintf(f_csv, "%s, %s, %s, %d, %d, %d\n", aux->info->matricula,
+				aux->info->marca, aux->info->modelo, aux->info->ano, 
+				aux->info->dono, aux->info->codVeiculo);
+		
+			aux = aux->next;
+		}
+
+		aux_hash = aux_hash->next;
+	}
+
+	// Fim do preenchimento do ficheiro
+	fclose(f_csv);
+
+	printf("Ficheiro carros.csv exportado com sucesso!\n");
+}
+
+void exportar_csv_PASSAGENS(PASSAGEM_LISTA* listaPassagem)
+{
+	// Cria nó auxiliar para percorrer a lista
+	PASSAGEM_NODE* aux = listaPassagem->header;
+
+	// Ponteiro para percorrer o ficheiro em modo Write ("w")
+	FILE* f_csv = fopen("passagem.csv", "w");
+
+	// Cabeçalho de cada coluna
+	fputs("ID do Sensor, Codigo do Veiculo, Data, Tipo de Registo\n", f_csv);
+
+	// Percorre a lista até ao último nó
+	while (aux)
+	{
+		// Preenche linha a linha, com a informação de nó em nó
+		fprintf(f_csv, "%d, %d, %d-%d-%d %d:%d:%d.%d, %d\n", aux->info->idSensor,
+			aux->info->codVeiculo, aux->info->data->dia, aux->info->data->mes, 
+			aux->info->data->ano, aux->info->data->hora, aux->info->data->minuto,
+			aux->info->data->segundo, aux->info->data->milisegundo, aux->info->tipoRegisto);
+
+		aux = aux->next;
+	}
+
+	// Fim do preenchimento do ficheiro
+	fclose(f_csv);
+
+	printf("Ficheiro passagem.csv exportado com sucesso!\n");
+}
+
+//EXPORTACOES EM XML
+
+void exportar_xml_DONOS(LISTA_DONOS* listaDonos)
+{
+	if (!listaDonos)
+	{
+		printf("ERRO! A lista DONOS nao existe\n");
+		return;
+	}
+	//criar um ficheiro
+	FILE* fich = fopen("donos.xml", "w");
+	if (!fich)
+	{
+		printf("Erro ao criar o ficheiro donos.xml");
+		return;
+	}
+
+	//cabecalho do xml
+	fprintf(fich, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+	fprintf(fich, "<DONOS>\n");
+	//percorrer a lista donos
+	NODE_DONOS* nodeDonos = listaDonos->primeiro;
+
+	while (nodeDonos)
+	{
+		fprintf(fich, "  <Registo>\n");
+		fprintf(fich, "    <numContribuinte>%d</numContribuinte>\n", nodeDonos->info->numCont);
+		fprintf(fich, "    <nome>%s</nome>\n", nodeDonos->info->nome);
+		fprintf(fich, "    <codPostal>%s</codPostal>\n", nodeDonos->info->codpost);
+		fprintf(fich, "  </Registo>\n");
+
+		nodeDonos = nodeDonos->next;
+	}
+
+	fprintf(fich, "</DONOS>\n");
+	fclose(fich);
+	printf("ED DONOS exportada com sucesso!\n");
+}
+
+void exportar_xml_SENSORES(LISTA_SENSOR* listaSensor)
+{
+	if (!listaSensor)
+	{
+		printf("ERRO! A lista sensor nao existe \n");
+		return;
+	}
+	
+	//criar um ficheiro
+	FILE* fich = fopen("sensores.xml", "w");
+	if (!fich)
+	{
+		printf("Erro ao criar ficheiro!\n");
+		return;
+	}
+	fprintf(fich, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+	fprintf(fich, "<Sensores>\n");
+
+	//ponteiro para os sensores
+	NODE_SENSOR* nodeSensor = listaSensor->header;
+	while (nodeSensor)
+	{
+		fprintf(fich, "  <Sensor>\n");
+		fprintf(fich, "    <codSensor>%d</codSensor>\n", nodeSensor->info->codSensor);
+		fprintf(fich, "    <Designacao>%s</Designacao>\n", nodeSensor->info->designacao);
+		fprintf(fich, "    <Latitude>%s</Latitude>\n", nodeSensor->info->infoLatitude);
+		fprintf(fich, "    <Longitude>%s</Longitude>\n", nodeSensor->info->infoLongitude);
+		fprintf(fich, "  </Sensor>\n");
+
+		nodeSensor = nodeSensor->next;
+	}
+
+	fprintf(fich, "</Sensores>\n");
+	fclose(fich);
+
+	printf("ED Sensores exportada com sucesso!\n");
+}
+
+void exportar_xml_DISTANCIAS(DISTANCIAS_LISTA* listaDistancias)
+{
+	if (!listaDistancias)
+	{
+		printf("A lista Distancias nao existe");
+		return;
+	}
+
+	//criar ficheiro
+	FILE* fichDist = fopen("distancias.xml", "w");
+	if (!fichDist)
+	{
+		printf("Erro ao criar o ficheiro\n");
+		return;
+	}
+
+	fprintf(fichDist, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+	fprintf(fichDist, "<Distancias>\n");
+
+	DISTANCIAS_NODE* node = listaDistancias->header;
+
+	while (node)
+	{
+		fprintf(fichDist, "  <Distancia>\n");
+		fprintf(fichDist, "    <codSensor1>%d</codSensor1>\n", node->info->codSensor1);
+		fprintf(fichDist, "    <codSensor2>%d</codSensor2>\n", node->info->codSensor2);
+		fprintf(fichDist, "    <distancia>%.3f</distancia>\n", node->info->distanciaPercorrida);
+		fprintf(fichDist, "  </Distancia>\n");
+
+
+		node = node->next;
+	}
+
+	fprintf(fichDist, "</Distancias>\n");
+
+	fclose(fichDist);
+	printf("ED Distancias exportada com sucesso!\n");
+}
+
+void exportar_xml_PASSAGENS(PASSAGEM_LISTA* listaPassagens)
+{
+	if (!listaPassagens)
+	{
+		printf("ERRO! lista passagens nao existe\n");
+		return;
+	}
+	//criar o ficheiro
+	FILE* f = fopen("passagens.xml", "w");
+	if (!f)
+	{
+		printf("Erro a criar o ficheiro!");
+		return;
+	}
+	fprintf(f, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+	fprintf(f, "<Registos>\n");
+
+
+	//percorrer a lista
+	PASSAGEM_NODE* node = listaPassagens->header;
+	while (node)
+	{
+		fprintf(f, "  <Registo>\n");
+		fprintf(f, "    <idSensor>%d</idSensor>\n", node->info->idSensor);
+		fprintf(f, "    <codVeiculo>%d</codVeiculo>\n", node->info->codVeiculo);
+		fprintf(f, "    <data>%d-%d-%d %d:%d</data>\n", node->info->data->dia, node->info->data->mes, node->info->data->ano, node->info->data->hora, node->info->data->minuto);
+		fprintf(f, "    <TipoRegisto>%d</TipoRegisto>\n", node->info->tipoRegisto);
+		fprintf(f, "  </Registo>\n");
+		
+		
+		node = node->next;
+	}
+
+	fprintf(f, "</Registos>\n");
+	fclose(f);
+	printf("ED Passagens  exportada com sucesso!\n");
+}
+
+void exportar_xml_CARROS(LISTA_HASHC* listaHashCarros)
+{
+	if (!listaHashCarros)
+	{
+		printf("ERRO! A lista Carros nao existe\n");
+		return;
+	}
+
+	FILE* fichCarros = fopen("carros.xml", "w");
+	if (!fichCarros)
+	{
+		printf("Erro a criar o ficheiro!\n");
+		return;
+	}
+
+	fprintf(fichCarros, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+	fprintf(fichCarros, "<Veiculos>\n");
+
+
+	//nodeHash
+	NODE_HASHC* nodeHash = listaHashCarros->header;
+	while (nodeHash)
+	{
+		//percorrer a lista dos carros do nodeHash
+		NODE_CARRO* nodeCarro = nodeHash->listaCarros->header;
+		while (nodeCarro)
+		{
+			fprintf(fichCarros, "  <Veiculo>\n");
+			fprintf(fichCarros, "    <matricula>%s</matricula>\n", nodeCarro->info->matricula);
+			fprintf(fichCarros, "    <marca>%s</marca>\n", nodeCarro->info->marca);
+			fprintf(fichCarros, "    <modelo>%s</modelo>\n", nodeCarro->info->modelo);
+			fprintf(fichCarros, "    <ano>%d</ano>\n", nodeCarro->info->ano);
+			fprintf(fichCarros, "    <dono>%d</dono>\n", nodeCarro->info->dono);
+			fprintf(fichCarros, "    <codVeiculo>%d</codVeiculo>\n", nodeCarro->info->codVeiculo);
+			fprintf(fichCarros, "  </Veiculo>\n");
+
+
+			nodeCarro = nodeCarro->next;
+		}
+		nodeHash = nodeHash->next;
+	}
+
+	fprintf(fichCarros, "</Veiculos>\n");
+	fclose(fichCarros);
+	printf("ED carros exportada com sucesso!\n");
+}
+
+
