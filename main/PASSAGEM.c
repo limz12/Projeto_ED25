@@ -775,9 +775,17 @@ void totalKmCarroDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPas
 		//dar reset ao aux
 		aux = listaViagens->header;
 		troca = 0;
+		//
+		salto: 
 		//so troca se existir um proximo node
-		while (aux->next!= NULL)
+		while (aux != NULL)
 		{
+			//quando o proximo e nulo, chegamos ao fim nao vai comparar com mais nenhum, NULL para sair do ciclo
+			if (aux->next == NULL)
+			{
+				aux = NULL;
+				goto salto; // serve para saltar do while
+			}
 			//verificar se o atual e menor que o seguinte
 			if (aux->totalKm < aux->next->totalKm)
 			{
@@ -795,7 +803,7 @@ void totalKmCarroDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPas
 			}
 			aux = aux->next;
 		}
-	} while (troca); // percorre sempre uma ultima vez a lista se nao existirem trocas, a lista esta ordenada
+	} while (troca == 1); // percorre sempre uma ultima vez a lista se nao existirem trocas, a lista esta ordenada
 	
 	//print da listaViagens
 	aux = listaViagens->header;

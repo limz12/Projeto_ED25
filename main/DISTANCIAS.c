@@ -102,7 +102,7 @@ void carregarDistancia(DISTANCIAS_LISTA* lista)
 }
 
 /**
-* @brief Funcao responsavel por receber um NODE_CARRO e adiciona-lo a uma lista de carros
+* @brief Funcao responsavel por receber um DISTANCIAS_NODE e adiciona-lo a uma lista de distancias
 * @param lista : Recebe um ponteiro para a DISTANCIAS_LISTA para onde a distancia vai ser "armazenada"
 * @param node : Recebe o DISTANCIAS_NODE que vai ser inserido no parametro de entrada lista
 * @return VOID
@@ -163,7 +163,7 @@ void mostrarListaDISTANCIA(DISTANCIAS_LISTA* lista)
 }
 
 /**
-* @brief Funcao responsavel por receber um DISTANCIAS_NODE e destruir esse mesmo nó, libertando toda a memoria e os dados que possui
+* @brief Funcao responsavel por receber um DISTANCIAS_NODE e destruir esse mesmo no, libertando toda a memoria e os dados que possui
 * @param node : Recebe um ponteiro DISTANCIAS_NODE
 * @return NULL se o node inserido nao existir
 */
