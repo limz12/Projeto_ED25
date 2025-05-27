@@ -11,6 +11,9 @@
 #include "DISTANCIAS.H"
 #include "PASSAGEM.H"
 
+//******* TESTE
+#define CARROS_POR_PAGINA 20
+
 LISTA_CARRO* criarListaCarro()
 {
 	// Alocação de memória da lista de Carros
@@ -256,6 +259,23 @@ void criarCarroUtilizador(LISTA_HASHC* hashCarro, LISTA_DONOS* listaDonos)
 	
 }
 
+
+
+// Avança para o no correto, por exemplo da display dos 20 primeiros nodes,
+// na proxima pagina avanca ate esses 20 e comeca o display apartir dai , 
+// para nao existir repeticao dos dados
+NODE_CARRO* avancarAte(NODE_CARRO* lista, int pos) {
+	int i = 0;
+	NODE_CARRO* atual = lista;
+	while (atual && i < pos) {
+		atual = atual->next;
+		i++;
+	}
+	return atual;
+}
+
+
+
 void mostrarListaCarro(LISTA_CARRO* lista)
 {
 	// Validação da existência da lista de carros
@@ -264,25 +284,54 @@ void mostrarListaCarro(LISTA_CARRO* lista)
 		printf("ERRO! A lista nao existe.\n");
 		return;
 	}
-
-	// Criação de um elemento auxiliar para percorrer a lista
-	NODE_CARRO* aux = lista->header;
-
-	// Cabeçalho da lista
-	printf("**************************************************************\n");
-	printf("|                        LISTA CARROS                        |\n");
-	printf("**************************************************************\n");
-	printf("\nMatricula\tMarca\t\tModelo\t\tAno\t\tID_Dono\t\tCodigo_Veiculo\n\n");
+	int total = lista->num_elem; 
+	int paginaAtual = 0; // variavel que guarda o numero da pagina atual
+	int totalPaginas = (total + CARROS_POR_PAGINA - 1) / CARROS_POR_PAGINA; //calculo do max de paginas possiveis (relacionado com o tamanho da lista do carro)
+	char opcao[10];
 	
-	// Ciclo para percorrer a lista até ao fim
-	while (aux)
-	{
-		printf("%s\t%s\t\t%s\t\t%d\t\t%d\t\t%d\n", aux->info->matricula, aux->info->marca, aux->info->modelo, aux->info->ano, aux->info->dono, aux->info->codVeiculo);
-		aux = aux->next;
-	}
+	while (1) {
+        // cabecalho
+        printf("Pagina %d de %d (Total de carros: %d)\n", paginaAtual + 1, totalPaginas, total);
+        printf("----------------------------------------------------------------------------------------\n");
+        printf("Matricula\tMarca\t\tModelo\t\tAno\tDono\t\tCod. Veiculo\n");
+        printf("----------------------------------------------------------------------------------------\n");
 
-	// Fim da Lista
-	printf("**************************************************************\n");
+        // mostrar 20 carros por pagina
+        NODE_CARRO* atual = avancarAte(lista->header, paginaAtual * CARROS_POR_PAGINA);
+        int contador = 0;
+		 //apresentar os primeiros 20 carros da lista
+        while (atual && contador < CARROS_POR_PAGINA) {
+            CARRO* c = atual->info;
+            printf("%-10s\t%-10s\t%-10s\t%d\t%d\t\t%d\n", c->matricula, c->marca, c->modelo, c->ano, c->dono, c->codVeiculo);
+
+            atual = atual->next;
+            contador++;
+        }
+
+        // opcoes 
+        printf("--------------------------------------------------------------------------\n");
+        printf("[N] Proxima pagina | [P] Pagina anterior | [S] Sair desta marca\nEscolha: ");
+        fgets(opcao, sizeof(opcao), stdin);
+        opcao[0] = toupper(opcao[0]); // para ter a certeza que se o user meter minuscula passa o input para Maiusucla
+
+        if (opcao[0] == 'N') {
+            if (paginaAtual < totalPaginas - 1)
+                paginaAtual++;
+            else {
+                printf("Ja esta na ultima pagina. ENTER para continuar...\n");
+                getchar();
+            }
+        } else if (opcao[0] == 'P') {
+            if (paginaAtual > 0)
+                paginaAtual--;
+            else {
+                printf("Ja esta na primeira pagina.ENTER para continuar...\n");
+                getchar();
+            }
+        } else if (opcao[0] == 'S') {
+            break;
+        }
+    }
 }
 
 void freeListaHashCarro(LISTA_HASHC* listaHashCarro)
@@ -356,6 +405,11 @@ int verificarDONOexiste(int idDono, LISTA_DONOS* listaDonos)
 }
 
 //***************** HASHING ************************
+
+//TESTES PAGINACAO
+
+
+
 LISTA_HASHC* criarListaHashCarro()
 {
 	//alocar memoria para a lista hash

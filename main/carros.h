@@ -82,3 +82,4 @@ void ordenarMatriculaHashCarrosAlfabeticamente(LISTA_HASHC* listaHash);
 NODE_CARRO* procuraCarroPorID(int codVeiculo, LISTA_HASHC* listaHashCarros);
 void maiorVelocidadeMediaMarca(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias);
 void marcaMaisComum(LISTA_HASHC* listaHashCarros);
+NODE_CARRO* avancarAte(NODE_CARRO* lista, int pos);
