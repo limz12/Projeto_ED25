@@ -11,6 +11,8 @@ var carros_8c =
     [ "freeListaHashCarro", "carros_8c.html#a8578af03eb6c79130dfafbfed7d6f088", null ],
     [ "freeNodeCarro", "carros_8c.html#a09f1dae778235302be0197bb6cd46780", null ],
     [ "inserirNodeHashListaHash", "carros_8c.html#a38959630a3c2faea5e0c3149cde922c7", null ],
+    [ "maiorVelocidadeMediaMarca", "carros_8c.html#aeec6de01a3992845b14f76140af46e92", null ],
+    [ "marcaMaisComum", "carros_8c.html#ad7d5de0b51f3f669aefb0d78f3d23e4b", null ],
     [ "mostrarHashCarros", "carros_8c.html#a3a35c26e33d3c866b7eb80e4d37b0181", null ],
     [ "mostrarListaCarro", "carros_8c.html#a0884c11787e0807519d5eca57f987cf6", null ],
     [ "ordenarMarcasHashCarrosAlfabeticamente", "carros_8c.html#a174e6db3fccffb6b2e1a8b17bf3cb11c", null ],
