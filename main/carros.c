@@ -259,14 +259,12 @@ void criarCarroUtilizador(LISTA_HASHC* hashCarro, LISTA_DONOS* listaDonos)
 	
 }
 
-
-
 // Avança para o no correto, por exemplo da display dos 20 primeiros nodes,
 // na proxima pagina avanca ate esses 20 e comeca o display apartir dai , 
 // para nao existir repeticao dos dados
-NODE_CARRO* avancarAte(NODE_CARRO* lista, int pos) {
+NODE_CARRO* avancarAte(NODE_CARRO* pertencelista, int pos) {
 	int i = 0;
-	NODE_CARRO* atual = lista;
+	NODE_CARRO* atual = pertencelista;
 	while (atual && i < pos) {
 		atual = atual->next;
 		i++;
@@ -329,6 +327,7 @@ void mostrarListaCarro(LISTA_CARRO* lista)
                 getchar();
             }
         } else if (opcao[0] == 'S') {
+			system("cls");
             break;
         }
     }
@@ -405,9 +404,6 @@ int verificarDONOexiste(int idDono, LISTA_DONOS* listaDonos)
 }
 
 //***************** HASHING ************************
-
-//TESTES PAGINACAO
-
 
 
 LISTA_HASHC* criarListaHashCarro()
