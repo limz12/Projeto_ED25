@@ -1,30 +1,30 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-//ESTRUTURA DISTANCIA
-typedef struct 
-{
-	int codSensor1;
-	int codSensor2;
-	float distanciaPercorrida;
-}DISTANCIAS;
+	//ESTRUTURA DISTANCIA
+	typedef struct 
+	{
+		int codSensor1;
+		int codSensor2;
+		float distanciaPercorrida;
+	}DISTANCIAS;
 
-//NO da distancias
-typedef struct nodeDistancia
-{
-	DISTANCIAS* info;
-	struct nodeDistancia* next;
-}DISTANCIAS_NODE;
+	//NO da distancias
+	typedef struct nodeDistancia
+	{
+		DISTANCIAS* info;
+		struct nodeDistancia* next;
+	}DISTANCIAS_NODE;
 
-typedef struct distanciaLista
-{
-	//aponta para o primeiro no
-	DISTANCIAS_NODE* header;
-	//aponta par o ultimo no
-	DISTANCIAS_NODE* ultimoNode;
-	int numelementos;
+	typedef struct distanciaLista
+	{
+		//aponta para o primeiro no
+		DISTANCIAS_NODE* header;
+		//aponta par o ultimo no
+		DISTANCIAS_NODE* ultimoNode;
+		int numelementos;
 
-}DISTANCIAS_LISTA;
+	}DISTANCIAS_LISTA;
 
 //prototipagem
 DISTANCIAS_LISTA* criarListaDistancias();

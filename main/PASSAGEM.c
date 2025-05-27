@@ -6,6 +6,7 @@
 #include <time.h>
 
 #define MAX_ARRAY_CARROS 100000
+#define PASSAGENS_POR_PAGINA 20
 
 #include "PASSAGEM.H"
 #include "DISTANCIAS.H"
@@ -115,6 +116,18 @@ void adicionarListaPassagem(PASSAGEM_LISTA* lista, PASSAGEM_NODE* node)
 	}
 }
 
+// Avança para o no correto, por exemplo da display dos 20 primeiros nodes,
+// na proxima pagina avanca ate esses 20 e comeca o display apartir dai , 
+// para nao existir repeticao dos dados
+PASSAGEM_NODE* avancarAtePassagem(PASSAGEM_NODE* passagemNode, int pos) {
+	int i = 0;
+	while (passagemNode && i < pos) {
+		passagemNode = passagemNode->next;
+		i++;
+	}
+	return passagemNode;
+}
+
 void mostrarListaPassagem(PASSAGEM_LISTA* lista)
 {
 	//verificar se a lista existe
@@ -124,17 +137,58 @@ void mostrarListaPassagem(PASSAGEM_LISTA* lista)
 		return;
 	}
 
-	//criar um node auxiliar para percorrer toda a lista
-	PASSAGEM_NODE* aux = lista->header;
-	printf("***********************\n");
-	printf("\t LISTA PASSAGENS\n");
-	printf("***********************\n");
-	printf("ID_SENSOR\tCOD_VEICULO\tDATA\tTIPO_REGISTO");
+	int total = lista->numElementos;
+	int paginaAtual = 0;
+	int totalPaginas = (total + PASSAGENS_POR_PAGINA - 1) / PASSAGENS_POR_PAGINA;
+	char opcao[10];
 
-	while (aux != NULL)
-	{
-		printf("%d\t%d\t%d-%d-%d %d:%d:%d.%d\t%d\n",aux->info->idSensor,aux->info->codVeiculo, aux->info->data->dia, aux->info->data->mes, aux->info->data->ano, aux->info->data->hora, aux->info->data->minuto, aux->info->data->segundo, aux->info->data->milisegundo, aux->info->tipoRegisto);
-		aux = aux->next;
+	while (1) {
+		system("cls");
+		printf("*************************************************\n");
+		printf("|\t\tLISTA DE PASSAGENS\t\t|\n");
+		printf("*************************************************\n");
+		printf("Pagina %d de %d (Total: %d passagens)\n", paginaAtual + 1, totalPaginas, total);
+		printf("-------------------------------------------------------------\n");
+		printf("ID_SENSOR\tCOD_VEICULO\tDATA\t\t\tTIPO_REGISTO\n");
+		printf("-------------------------------------------------------------\n");
+
+		PASSAGEM_NODE* atual = avancarAtePassagem(lista->header, paginaAtual * PASSAGENS_POR_PAGINA);
+		int contador = 0;
+
+		while (atual && contador < PASSAGENS_POR_PAGINA) {
+			PASSAGEM* p = atual->info;
+			DATA* d = p->data;
+
+			printf("%-10d\t%-12d\t%02d-%02d-%04d\t%02d:%02d:%02d.%03d\t%d\n",p->idSensor,p->codVeiculo,d->dia, d->mes, d->ano,d->hora, d->minuto, d->segundo, d->milisegundo,p->tipoRegisto);
+			atual = atual->next;
+			contador++;
+		}
+
+		printf("-------------------------------------------------------------\n");
+		printf("[N] Proxima pagina | [P] Pagina anterior | [S] Sair\nEscolha: ");
+		fgets(opcao, sizeof(opcao), stdin);
+		opcao[0] = toupper(opcao[0]);
+
+		if (opcao[0] == 'N') {
+			if (paginaAtual < totalPaginas - 1)
+				paginaAtual++;
+			else {
+				printf("Ja esta na ultima pagina. Pressione ENTER...\n");
+				getchar();
+			}
+		}
+		else if (opcao[0] == 'P') {
+			if (paginaAtual > 0)
+				paginaAtual--;
+			else {
+				printf("Ja esta na primeira pagina. Pressione ENTER...\n");
+				getchar();
+			}
+		}
+		else if (opcao[0] == 'S') {
+			system("cls");
+			break;
+		}
 	}
 }
 
@@ -219,6 +273,7 @@ void registarPassagem(PASSAGEM_LISTA* lista)
 			else
 			{
 				printf("ERRO! O SENSOR NAO E VALIDO\n");
+				return;
 			}
 
 		}
@@ -245,6 +300,7 @@ void registarPassagem(PASSAGEM_LISTA* lista)
 			if (node->info->tipoRegisto > 1 || node->info->tipoRegisto < 0)
 			{
 				printf("ERRO! OPCAO INVALIDA\n");
+				return;
 			}
 			else
 			{
@@ -262,6 +318,7 @@ void registarPassagem(PASSAGEM_LISTA* lista)
 		else
 		{
 			printf("ERRO! INSERCAO REJEITADA. DADOS INVALIDOS\n");
+			return;
 		}
 		int flag2 = 0;
 

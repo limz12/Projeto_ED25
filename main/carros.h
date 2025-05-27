@@ -48,7 +48,7 @@ typedef struct nodecarro
 typedef struct listaCarro
 {
 	NODE_CARRO* header; // ponteiro para o primeiro NO
-	NODE_CARRO* ultimo_node; // ponteiro para o último NO
+	NODE_CARRO* ultimo_node; // ponteiro para o Ãºltimo NO
 	int num_elem;
 }LISTA_CARRO;
 
@@ -103,4 +103,5 @@ void ordenarMatriculaHashCarrosAlfabeticamente(LISTA_HASHC* listaHash);
 NODE_CARRO* procuraCarroPorID(int codVeiculo, LISTA_HASHC* listaHashCarros);
 void maiorVelocidadeMediaMarca(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias);
 void marcaMaisComum(LISTA_HASHC* listaHashCarros);
+NODE_CARRO* avancarAte(NODE_CARRO* lista, int pos);
 int verificarMatriculaExiste(char* matricula, LISTA_CARRO* listaCarro);
