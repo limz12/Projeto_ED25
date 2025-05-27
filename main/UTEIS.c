@@ -1,3 +1,9 @@
+/**
+ * @file UTEIS.c
+ * @brief Implementacao das funcoes uteis.
+ */
+
+// BIBLIOTECAS
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
@@ -8,10 +14,14 @@
 #include "UTEIS.H"
 #include "carros.h"
 #include "donos.h"
-// FALTA MEMORIA OCUPADA POR : DISTANCIA     PASSAGEM
 
-//determinar a memoria ocupada por toda a estrutura de dados
-int calcularTamanhoEDSensor(LISTA_SENSOR *lista)
+
+/**
+* @brief Funcao responsavel por determinar a memoria ocupada pela estrutura de dados LISTA_SENSOR
+* @param lista : Recebe um ponteiro LISTA_SENSOR
+* @return tamanho : retorna a variavel inteira, que corresponde ao tamanho da estrutura em MB
+*/
+int calcularTamanhoEDSensor(LISTA_SENSOR* lista)
 {
 	if (!lista)
 	{
@@ -32,6 +42,11 @@ int calcularTamanhoEDSensor(LISTA_SENSOR *lista)
 	return tamanho;
 }
 
+/**
+* @brief Funcao responsavel por determinar a memoria ocupada pela estrutura de dados DISTANCIAS_LISTA
+* @param lista : Recebe um ponteiro DISTANCIAS_LISTA
+* @return tamanho : retorna a variavel inteira, que corresponde ao tamanho da estrutura em MB
+*/
 int calcularTamanhoEDDistancia(DISTANCIAS_LISTA* lista)
 {
 	if (!lista)
@@ -53,6 +68,11 @@ int calcularTamanhoEDDistancia(DISTANCIAS_LISTA* lista)
 	return tamanho;
 }
 
+/**
+* @brief Funcao responsavel por determinar a memoria ocupada pela estrutura de dados PASSAGEM_LISTA
+* @param lista : Recebe um ponteiro PASSAGEM_LISTA
+* @return tamanho : retorna a variavel inteira, que corresponde ao tamanho da estrutura em MB
+*/
 int calcularTamanhoEDPassagem(PASSAGEM_LISTA* lista)
 {
 	if (!lista)
@@ -74,6 +94,11 @@ int calcularTamanhoEDPassagem(PASSAGEM_LISTA* lista)
 	return tamanho;
 }
 
+/**
+* @brief Funcao responsavel por determinar a memoria ocupada pela estrutura de dados LISTA_HASHC
+* @param lista : Recebe um ponteiro LISTA_HASHC
+* @return tamanho : retorna a variavel inteira, que corresponde ao tamanho da estrutura em MB
+*/
 int calcularTamanhoEDCarro(LISTA_HASHC* listaHash) //CALCULAR O TAMANHO DE TODA A LISTAHASH
 {
 	if (!listaHash)
@@ -114,23 +139,15 @@ int calcularTamanhoEDCarro(LISTA_HASHC* listaHash) //CALCULAR O TAMANHO DE TODA 
 		}		
 		nodeHash = nodeHash->next;
 	}
-	/*
-	//calcular o ultimo node que sobrou
-	//adicionar tamanho do nodeHash
-	tamanho += sizeof(nodeHash);
-	//adicionar o tamanho da listaCarros do nodeHash
-	tamanho += sizeof(nodeHash->listaCarros);
-	//percorrer todos os carros da lista e adicionar o tamanho
-	NODE_CARRO* nodeCarro = nodeHash->listaCarros->header;
-	while (nodeCarro)
-	{
-		tamanho += sizeof(nodeCarro);
-		nodeCarro = nodeCarro->next;
-	}
-	*/
+	
 	return tamanho;
 }
 
+/**
+* @brief Funcao responsavel por determinar a memoria ocupada pela estrutura de dados LISTA_DONOS
+* @param lista : Recebe um ponteiro LISTA_DONOS
+* @return tamanho : retorna a variavel inteira, que corresponde ao tamanho da estrutura em MB
+*/
 int calcularTamanhoEDDonos(LISTA_DONOS* lista)
 {
 	if (!lista)
@@ -152,9 +169,10 @@ int calcularTamanhoEDDonos(LISTA_DONOS* lista)
 	return tamanho;
 }
 
-//FALTA FAZER CARROS E DONOS
-
-//JUNTAR NUMA UNICA FUNCAO QUE SOMA TODOS OS RETURNS E DEVOLVE O TOTAL (BYTES)
+/**
+* @brief Funcao responsavel por apresentar todas as funçoes anteriores que calculam o tamanho de todas as estruturas de dados (em MegaBytes)
+* @return VOID
+*/
 void memoriaTotalOcupadaED(LISTA_SENSOR* listaS, DISTANCIAS_LISTA* listaD, PASSAGEM_LISTA* listaP, LISTA_HASHC* listaHashCarro, LISTA_DONOS* listaDonos)
 {
 	int memTotal = calcularTamanhoEDSensor(listaS);
@@ -166,7 +184,10 @@ void memoriaTotalOcupadaED(LISTA_SENSOR* listaS, DISTANCIAS_LISTA* listaD, PASSA
 	printf("A Estrutura de dados ocupa %.2f MB\n", (double)memTotal*0.000001);
 }
 
-//vai inicializar a estrutura de dados, ler os ficheiros / criar listas e carregar todas as informacoes dos respetivos ficheiros
+/**
+* @brief Funcao responsavel por inicializar a estrutura de dados, ler os ficheiros / criar listas e carregar todas as informacoes dos respetivos ficheiros
+* @return 1 : retorna 1 se carregar todos os ficheiros
+*/
 int inicializarED(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaHashCarros,LISTA_DONOS* listaDonos)
 {
 	//tenho que retornar o enderco da LISTA de cada ficheiro carregado
@@ -189,7 +210,11 @@ int inicializarED(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, 
 	
 }
 
-//EXPORTAÇÔES EM CSV
+/**
+* @brief Funcao responsavel por exportar a lista de Donos em CSV
+* @param lista : Recebe um ponteiro LISTA_DONOS
+* @return VOID
+*/
 void exportar_csv_DONOS(LISTA_DONOS* lista)
 {
 	// Cria nó auxiliar para percorrer a lista
@@ -216,6 +241,11 @@ void exportar_csv_DONOS(LISTA_DONOS* lista)
 	printf("Ficheiro donos.csv exportado com sucesso!\n");
 }
 
+/**
+* @brief Funcao responsavel por exportar a lista de Sensores em CSV
+* @param lista : Recebe um ponteiro LISTA_SENSOR
+* @return VOID
+*/
 void exportar_csv_SENSORES(LISTA_SENSOR* listaSensor)
 {
 	// Cria nó auxiliar para percorrer a lista
@@ -242,6 +272,11 @@ void exportar_csv_SENSORES(LISTA_SENSOR* listaSensor)
 	printf("Ficheiro sensores.csv exportado com sucesso!\n");
 }
 
+/**
+* @brief Funcao responsavel por exportar a lista de Distancias em CSV
+* @param lista : Recebe um ponteiro DISTANCIAS_LISTA
+* @return VOID
+*/
 void exportar_csv_DISTANCIAS(DISTANCIAS_LISTA* listaDistancias)
 {
 	// Cria nó auxiliar para percorrer a lista
@@ -268,6 +303,11 @@ void exportar_csv_DISTANCIAS(DISTANCIAS_LISTA* listaDistancias)
 	printf("Ficheiro distancias.csv exportado com sucesso!\n");
 }
 
+/**
+* @brief Funcao responsavel por exportar a lista de Carros em CSV
+* @param lista : Recebe um ponteiro LISTA_HASHC
+* @return VOID
+*/
 void exportar_csv_CARROS(LISTA_HASHC* listaHash)
 {
 	// Cria nó auxiliar para percorrer a Hash
@@ -305,6 +345,11 @@ void exportar_csv_CARROS(LISTA_HASHC* listaHash)
 	printf("Ficheiro carros.csv exportado com sucesso!\n");
 }
 
+/**
+* @brief Funcao responsavel por exportar a lista de Passagens em CSV
+* @param lista : Recebe um ponteiro PASSAGEM_LISTA
+* @return VOID
+*/
 void exportar_csv_PASSAGENS(PASSAGEM_LISTA* listaPassagem)
 {
 	// Cria nó auxiliar para percorrer a lista
@@ -334,8 +379,11 @@ void exportar_csv_PASSAGENS(PASSAGEM_LISTA* listaPassagem)
 	printf("Ficheiro passagem.csv exportado com sucesso!\n");
 }
 
-//EXPORTACOES EM XML
-
+/**
+* @brief Funcao responsavel por exportar a lista de Donos em XML
+* @param lista : Recebe um ponteiro LISTA_DONOS
+* @return VOID
+*/
 void exportar_xml_DONOS(LISTA_DONOS* listaDonos)
 {
 	if (!listaDonos)
@@ -373,6 +421,11 @@ void exportar_xml_DONOS(LISTA_DONOS* listaDonos)
 	printf("ED DONOS exportada com sucesso!\n");
 }
 
+/**
+* @brief Funcao responsavel por exportar a lista de Sensores em XML
+* @param lista : Recebe um ponteiro LISTA_SENSOR
+* @return VOID
+*/
 void exportar_xml_SENSORES(LISTA_SENSOR* listaSensor)
 {
 	if (!listaSensor)
@@ -411,6 +464,11 @@ void exportar_xml_SENSORES(LISTA_SENSOR* listaSensor)
 	printf("ED Sensores exportada com sucesso!\n");
 }
 
+/**
+* @brief Funcao responsavel por exportar a lista de Distancias em XML
+* @param lista : Recebe um ponteiro DISTANCIAS_LISTA
+* @return VOID
+*/
 void exportar_xml_DISTANCIAS(DISTANCIAS_LISTA* listaDistancias)
 {
 	if (!listaDistancias)
@@ -450,6 +508,11 @@ void exportar_xml_DISTANCIAS(DISTANCIAS_LISTA* listaDistancias)
 	printf("ED Distancias exportada com sucesso!\n");
 }
 
+/**
+* @brief Funcao responsavel por exportar a lista de Passagens em XML
+* @param lista : Recebe um ponteiro PASSAGEM_LISTA
+* @return VOID
+*/
 void exportar_xml_PASSAGENS(PASSAGEM_LISTA* listaPassagens)
 {
 	if (!listaPassagens)
@@ -488,6 +551,11 @@ void exportar_xml_PASSAGENS(PASSAGEM_LISTA* listaPassagens)
 	printf("ED Passagens  exportada com sucesso!\n");
 }
 
+/**
+* @brief Funcao responsavel por exportar a lista de Carros em XML
+* @param lista : Recebe um ponteiro LISTA_HASHC
+* @return VOID
+*/
 void exportar_xml_CARROS(LISTA_HASHC* listaHashCarros)
 {
 	if (!listaHashCarros)
@@ -534,5 +602,3 @@ void exportar_xml_CARROS(LISTA_HASHC* listaHashCarros)
 	fclose(fichCarros);
 	printf("ED carros exportada com sucesso!\n");
 }
-
-
