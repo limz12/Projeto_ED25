@@ -223,7 +223,7 @@ void libertarListaDistancia(DISTANCIAS_LISTA* lista)
 * @param sensor1 : Recebe um inteiro com o número que identifica o sensor de entrada/saída
 * @param sensor2 : Recebe um inteiro com o número que identifica o sensor de saída/entrada
 * @param listaDistancias : Recebe um ponteiro de uma DISTANCIAS_LISTA
-* @return NULL se o sensor1 ou o sensor2 ou a listaDistancias nao existirem
+* @return nodeDistancias->info->distanciaPercorrida : guarda a distancia entre os dois sensores na DISTANCIAS_LISTA
 */
 float distanciaEntreSensor(int sensor1, int sensor2, DISTANCIAS_LISTA* listaDistancias)
 {
