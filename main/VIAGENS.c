@@ -1,9 +1,20 @@
+/**
+ * @file VIAGENS.c
+ * @brief Implementacao das funcoes respetivas a viagens.
+ */
+
+
+// BIBLIOTECAS
 #include <stdlib.h>
 #include <stdio.h>
 
 #include "VIAGENS.H"
 
-//funcao para criar a lista Viagens
+
+/**
+* @brief Funcao responsavel por criar uma lista que ira conter viagens
+* @return ponteiro para uma LISTA_VIAGENS, que e o resultado da alocacao de memoria da estrutura LISTA_VIAGENS
+*/
 LISTA_VIAGENS* criarListaViagens()
 {
 	//alocar memoria
@@ -13,7 +24,10 @@ LISTA_VIAGENS* criarListaViagens()
 	return listaViagens;
 }
 
-//funcao para criar o node da lista Viagens
+/**
+* @brief Funcao responsavel por alocar memoria para um node que contem todos os dados de uma respetiva viagem
+* @return retorna um ponteiro para um NODE_VIAGENS, com todos os valores da estrutura nulos
+*/
 NODE_VIAGENS* criarNodeViagens()
 {
 	//alocar mem
@@ -59,7 +73,12 @@ int existeCarroListaViagens(LISTA_VIAGENS* listaViagens, int codCarro)
 	return 0;
 }
 
-//adiciona o nodeViagem na Lista Viagem
+/**
+* @brief Funcao responsavel por receber um NODE_VIAGENS e adiciona-lo a uma lista de viagens
+* @param listaViagens : Recebe um ponteiro para a PASSAGEM_LISTA para onde a viagem vai ser "armazenada"
+* @param nodeViagens : Recebe o NODE_VIAGENS que vai ser inserido no parametro de entrada lista
+* @return VOID
+*/
 void adicionarNodeListaViagens(NODE_VIAGENS* nodeViagens, LISTA_VIAGENS* listaViagens)
 {
 	if (!nodeViagens || !listaViagens)
@@ -81,7 +100,11 @@ void adicionarNodeListaViagens(NODE_VIAGENS* nodeViagens, LISTA_VIAGENS* listaVi
 
 }
 
-//remover da memoria a Lista Viagens
+/**
+* @brief Funcao responsavel por libertar a memoria alocada de toda a lista de viagens e todo o seu conteudo
+* @param listaViagens : Recebe um ponteiro de uma LISTA_VIAGENS para ser destruida
+* @return VOID
+*/
 void freeListaViagens(LISTA_VIAGENS* listaViagens)
 {
 	if (!listaViagens) {
