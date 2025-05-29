@@ -1,5 +1,8 @@
-	#include <stdlib.h>
-#include <stdio.h>
+/**
+ * @file PASSAGEM.H
+ * @brief Definicao das Estruturas relacionadas com as passagens e prototipagem das funcoes utilizadas no PASSAGEM.c
+ */
+
 
 typedef struct listaCarro LISTA_CARRO;
 typedef struct listaHashCarros LISTA_HASHC;
@@ -8,6 +11,11 @@ typedef struct distanciaLista DISTANCIAS_LISTA;
 typedef struct carro CARRO;
 typedef struct nodecarro NODE_CARRO;
 
+
+/**
+* @struct data
+* @brief Estrutura que representa uma data
+*/
 typedef struct
 {
 	//para os dias em que o carro passou pelo sensor
@@ -22,21 +30,33 @@ typedef struct
 
 }DATA;
 
+/**
+* @struct passagem
+* @brief Estrutura que representa uma passagem
+*/
 typedef struct
 {
 	int idSensor;
 	int codVeiculo;
 	DATA* data;
-	int tipoRegisto; //  atributo “tipo de registo” contem um de 2 valores: 0 = entrada, 1 = saída.
+	int tipoRegisto; //  atributo "tipo de registo" contem um de 2 valores: 0 = entrada, 1 = saída.
 	
 }PASSAGEM;
 
+/**
+* @struct nodePassagem
+* @brief Estrutura que serve de node e contem o ponteiro da passagem e do proximo
+*/
 typedef struct nodePassagem
 {
 	PASSAGEM* info;
 	struct nodePassagem* next;
 }PASSAGEM_NODE;
 
+/**
+* @struct passagemLista
+* @brief Estrutura serve como lista para o conjunto dos PASSAGEM_NODE
+*/
 typedef struct passagemLista
 {
 	PASSAGEM_NODE* header;
@@ -45,7 +65,7 @@ typedef struct passagemLista
 }PASSAGEM_LISTA;
 
 
-//prototiopagem
+// PROTOTIPAGEM
 PASSAGEM_LISTA* criarListaPassagem();
 PASSAGEM_NODE* criarNodePassagem();
 void carregarPassagem(PASSAGEM_LISTA* lista);

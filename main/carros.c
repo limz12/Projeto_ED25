@@ -319,7 +319,6 @@ void criarCarroUtilizador(LISTA_HASHC* hashCarro, LISTA_DONOS* listaDonos)
 /**
 * @brief Funcao responsavel por listar todos os carros presentes na Lista de carros
 * @param lista : Recebe um ponteiro de uma LISTA_CARRO, que ja contem todos os carros pertencentes uma determinada marca
-* 
 * @return VOID
 */
 void mostrarListaCarro(LISTA_CARRO* lista)

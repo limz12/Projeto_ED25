@@ -1,3 +1,10 @@
+/**
+ * @file carros.c
+ * @brief Implementacao das funcoes respetivas aos carros.
+ */
+
+
+// BIBLIOTECAS
 #include <stdlib.h>
 #include <stdio.h>
 #include <malloc.h>
@@ -5,11 +12,14 @@
 #include <locale.h>
 #include <time.h>
 
-#define MAX_ARRAY_CARROS 100000
-
 #include "PASSAGEM.H"
 #include "DISTANCIAS.H"
 #include "VIAGENS.H"
+
+
+// CONSTANTES
+#define MAX_ARRAY_CARROS 100000
+
 
 //VARIAVEL GLOBAL PARA PODER USAR NO COMPARAR CARROS()
 LISTA_HASHC* listaParaComparar = NULL;

@@ -26,7 +26,13 @@ NODE_VIAGENS* criarNodeViagens()
 	return nodeViagens;
 }
 
-//verificar se o determinado carro existe na lista, return 1 se existe | return 0 se nao existe
+/**
+* @brief Funcao responsavel por verificar se o determinado carro existe na lista
+* @param codCarro : Recebe um inteiro que e o identificador do carro
+* @param listaViagens : Recebe um ponteiro de uma listaViagens
+* @return 1 : se carro existe
+* @return 0 : se carro nao existe
+*/
 int existeCarroListaViagens(LISTA_VIAGENS* listaViagens, int codCarro)
 {
 	if (!listaViagens || !codCarro)
