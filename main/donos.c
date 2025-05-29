@@ -375,7 +375,7 @@ void maiorVelocidadeMediaDonos(LISTA_DONOS* listaDonos, LISTA_HASHC* listaHashCa
 				NODE_CARRO* carro = procuraCarroPorID(entrada->codVeiculo, listaHashCarros);
 				if (carro)
 				{
-					if (km > 0 && minutos > 0) // evitar viagens e kilometros negativos
+					if (minutos > 0) // evitar viagens e kilometros negativos
 					{
 						carro->info->totalKMPercorridos += km;
 						carro->info->totalMinutosPercorridos += minutos;
