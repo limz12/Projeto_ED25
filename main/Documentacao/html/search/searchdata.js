@@ -1,12 +1,9 @@
 var indexSectionsWithContent =
 {
-  0: "acdefhilmnoprstuv",
+  0: "acdefilmnoprstuv",
   1: "cdlnps",
-  2: "cdmpsuv",
-  3: "acdefilmoprtv",
-  4: "acdehilmnpstuv",
-  5: "cdlnp",
-  6: "m"
+  2: "cdmpuv",
+  3: "acdefilmoprtv"
 };
 
 var indexSectionNames =
@@ -14,10 +11,7 @@ var indexSectionNames =
   0: "all",
   1: "classes",
   2: "files",
-  3: "functions",
-  4: "variables",
-  5: "typedefs",
-  6: "defines"
+  3: "functions"
 };
 
 var indexSectionLabels =
@@ -25,9 +19,6 @@ var indexSectionLabels =
   0: "All",
   1: "Classes",
   2: "Files",
-  3: "Functions",
-  4: "Variables",
-  5: "Typedefs",
-  6: "Macros"
+  3: "Functions"
 };
 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Projeto_ED_25: carros.c File Reference</title>
+<title>ProjetoED_25: carros.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Projeto_ED_25
+   <div id="projectname">ProjetoED_25
    </div>
-   <div id="projectbrief">CCUT(Portagens com custo para o utilizador)</div>
+   <div id="projectbrief">CCUT</div>
   </td>
  </tr>
  </tbody>
@@ -105,39 +105,57 @@ $(function(){initNavTree('carros_8c.html','',''); });
 <code>#include &quot;<a class="el" href="_d_i_s_t_a_n_c_i_a_s_8_h_source.html">DISTANCIAS.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_p_a_s_s_a_g_e_m_8_h_source.html">PASSAGEM.H</a>&quot;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a7228b13c011ded5d1e18d02cbbad1f92" id="r_a7228b13c011ded5d1e18d02cbbad1f92"><td class="memItemLeft" align="right" valign="top"><a id="a7228b13c011ded5d1e18d02cbbad1f92" name="a7228b13c011ded5d1e18d02cbbad1f92"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CARROS_POR_PAGINA</b>&#160;&#160;&#160;20</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a87914afb98468a8027a038619281508c" id="r_a87914afb98468a8027a038619281508c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="carros_8h.html#ae9182ba349415547fcce84e3810cd6ca">LISTA_CARRO</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87914afb98468a8027a038619281508c">criarListaCarro</a> ()</td></tr>
+<tr class="memitem:a87914afb98468a8027a038619281508c" id="r_a87914afb98468a8027a038619281508c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlista_carro.html">LISTA_CARRO</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87914afb98468a8027a038619281508c">criarListaCarro</a> ()</td></tr>
 <tr class="memdesc:a87914afb98468a8027a038619281508c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por criar uma lista que ira conter carros.  <br /></td></tr>
-<tr class="memitem:a353ae4d813a06a1ddae26ff7dfc7af9f" id="r_a353ae4d813a06a1ddae26ff7dfc7af9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="carros_8h.html#a2dc16118eb08f54132d3bc105c3b6eaf">NODE_CARRO</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a353ae4d813a06a1ddae26ff7dfc7af9f">criarNodeCarro</a> ()</td></tr>
+<tr class="memitem:a353ae4d813a06a1ddae26ff7dfc7af9f" id="r_a353ae4d813a06a1ddae26ff7dfc7af9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnodecarro.html">NODE_CARRO</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a353ae4d813a06a1ddae26ff7dfc7af9f">criarNodeCarro</a> ()</td></tr>
 <tr class="memdesc:a353ae4d813a06a1ddae26ff7dfc7af9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por alocar memoria para um node que contem todos os dados de um respetivo carro.  <br /></td></tr>
-<tr class="memitem:a09f1dae778235302be0197bb6cd46780" id="r_a09f1dae778235302be0197bb6cd46780"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09f1dae778235302be0197bb6cd46780">freeNodeCarro</a> (<a class="el" href="carros_8h.html#a2dc16118eb08f54132d3bc105c3b6eaf">NODE_CARRO</a> *node)</td></tr>
-<tr class="memdesc:a09f1dae778235302be0197bb6cd46780"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por receber um <a class="el" href="carros_8h.html#a2dc16118eb08f54132d3bc105c3b6eaf">NODE_CARRO</a> e destruir libertando toda a memoria e os dados que possui.  <br /></td></tr>
-<tr class="memitem:a4dddb250bc7768f41e57e899641941b1" id="r_a4dddb250bc7768f41e57e899641941b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4dddb250bc7768f41e57e899641941b1">carregarDadosCarro</a> (<a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>)</td></tr>
+<tr class="memitem:a09f1dae778235302be0197bb6cd46780" id="r_a09f1dae778235302be0197bb6cd46780"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09f1dae778235302be0197bb6cd46780">freeNodeCarro</a> (<a class="el" href="structnodecarro.html">NODE_CARRO</a> *node)</td></tr>
+<tr class="memdesc:a09f1dae778235302be0197bb6cd46780"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por receber um NODE_CARRO e destruir libertando toda a memoria e os dados que possui.  <br /></td></tr>
+<tr class="memitem:a4dddb250bc7768f41e57e899641941b1" id="r_a4dddb250bc7768f41e57e899641941b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4dddb250bc7768f41e57e899641941b1">carregarDadosCarro</a> (<a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>)</td></tr>
 <tr class="memdesc:a4dddb250bc7768f41e57e899641941b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por ler o ficheiro "carros.txt", e inserir cada carro presente no ficheiro na estrutura da lista de carros.  <br /></td></tr>
-<tr class="memitem:ae3cdf5844f7c1b93c77849459a8229e4" id="r_ae3cdf5844f7c1b93c77849459a8229e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3cdf5844f7c1b93c77849459a8229e4">addListaCarro</a> (<a class="el" href="carros_8h.html#ae9182ba349415547fcce84e3810cd6ca">LISTA_CARRO</a> *lista, <a class="el" href="carros_8h.html#a2dc16118eb08f54132d3bc105c3b6eaf">NODE_CARRO</a> *node)</td></tr>
-<tr class="memdesc:ae3cdf5844f7c1b93c77849459a8229e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por receber um <a class="el" href="carros_8h.html#a2dc16118eb08f54132d3bc105c3b6eaf">NODE_CARRO</a> e adiciona-lo a uma lista de carros.  <br /></td></tr>
-<tr class="memitem:afd901457e0719dca5377fb3536255913" id="r_afd901457e0719dca5377fb3536255913"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd901457e0719dca5377fb3536255913">criarCarroUtilizador</a> (<a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *hashCarro, <a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *listaDonos)</td></tr>
+<tr class="memitem:ae3cdf5844f7c1b93c77849459a8229e4" id="r_ae3cdf5844f7c1b93c77849459a8229e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3cdf5844f7c1b93c77849459a8229e4">addListaCarro</a> (<a class="el" href="structlista_carro.html">LISTA_CARRO</a> *lista, <a class="el" href="structnodecarro.html">NODE_CARRO</a> *node)</td></tr>
+<tr class="memdesc:ae3cdf5844f7c1b93c77849459a8229e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por receber um NODE_CARRO e adiciona-lo a uma lista de carros.  <br /></td></tr>
+<tr class="memitem:afd901457e0719dca5377fb3536255913" id="r_afd901457e0719dca5377fb3536255913"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd901457e0719dca5377fb3536255913">criarCarroUtilizador</a> (<a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *hashCarro, <a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *listaDonos)</td></tr>
 <tr class="memdesc:afd901457e0719dca5377fb3536255913"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por criar e adicionar um novo carro a pedido do utilizador.  <br /></td></tr>
-<tr class="memitem:a0884c11787e0807519d5eca57f987cf6" id="r_a0884c11787e0807519d5eca57f987cf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0884c11787e0807519d5eca57f987cf6">mostrarListaCarro</a> (<a class="el" href="carros_8h.html#ae9182ba349415547fcce84e3810cd6ca">LISTA_CARRO</a> *lista)</td></tr>
+<tr class="memitem:af65594052c5ec3bc46146219faf2adf3" id="r_af65594052c5ec3bc46146219faf2adf3"><td class="memItemLeft" align="right" valign="top"><a id="af65594052c5ec3bc46146219faf2adf3" name="af65594052c5ec3bc46146219faf2adf3"></a>
+<a class="el" href="structnodecarro.html">NODE_CARRO</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>avancarAte</b> (<a class="el" href="structnodecarro.html">NODE_CARRO</a> *pertencelista, int pos)</td></tr>
+<tr class="memitem:a0884c11787e0807519d5eca57f987cf6" id="r_a0884c11787e0807519d5eca57f987cf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0884c11787e0807519d5eca57f987cf6">mostrarListaCarro</a> (<a class="el" href="structlista_carro.html">LISTA_CARRO</a> *lista)</td></tr>
 <tr class="memdesc:a0884c11787e0807519d5eca57f987cf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por listar todos os carros presentes na Lista de carros.  <br /></td></tr>
-<tr class="memitem:a8578af03eb6c79130dfafbfed7d6f088" id="r_a8578af03eb6c79130dfafbfed7d6f088"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8578af03eb6c79130dfafbfed7d6f088">freeListaHashCarro</a> (<a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *listaHashCarro)</td></tr>
+<tr class="memitem:a8578af03eb6c79130dfafbfed7d6f088" id="r_a8578af03eb6c79130dfafbfed7d6f088"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8578af03eb6c79130dfafbfed7d6f088">freeListaHashCarro</a> (<a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *listaHashCarro)</td></tr>
 <tr class="memdesc:a8578af03eb6c79130dfafbfed7d6f088"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por libertar a memoria alocada de toda a listaHash e todo o seu conteudo.  <br /></td></tr>
-<tr class="memitem:af8b20e5ba37df98a5d860699f86a9d5f" id="r_af8b20e5ba37df98a5d860699f86a9d5f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8b20e5ba37df98a5d860699f86a9d5f">verificarDONOexiste</a> (int idDono, <a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *listaDonos)</td></tr>
+<tr class="memitem:af8b20e5ba37df98a5d860699f86a9d5f" id="r_af8b20e5ba37df98a5d860699f86a9d5f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8b20e5ba37df98a5d860699f86a9d5f">verificarDONOexiste</a> (int idDono, <a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *listaDonos)</td></tr>
 <tr class="memdesc:af8b20e5ba37df98a5d860699f86a9d5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por percorrer a lista de donos pelo ID e verificar se o dono ja existe.  <br /></td></tr>
-<tr class="memitem:a4772b0df8036e2e5d9487863271f71b8" id="r_a4772b0df8036e2e5d9487863271f71b8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4772b0df8036e2e5d9487863271f71b8">verificarMatriculaExiste</a> (char *matricula, <a class="el" href="carros_8h.html#ae9182ba349415547fcce84e3810cd6ca">LISTA_CARRO</a> *<a class="el" href="structlista_carro.html">listaCarro</a>)</td></tr>
+<tr class="memitem:a4772b0df8036e2e5d9487863271f71b8" id="r_a4772b0df8036e2e5d9487863271f71b8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4772b0df8036e2e5d9487863271f71b8">verificarMatriculaExiste</a> (char *matricula, <a class="el" href="structlista_carro.html">LISTA_CARRO</a> *<a class="el" href="structlista_carro.html">listaCarro</a>)</td></tr>
 <tr class="memdesc:a4772b0df8036e2e5d9487863271f71b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por percorrer a lista de carros e verificar se a matricula ja pertence a algum carro.  <br /></td></tr>
-<tr class="memitem:afe92d060877745414115c38b971ed2be" id="r_afe92d060877745414115c38b971ed2be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe92d060877745414115c38b971ed2be">criarListaHashCarro</a> ()</td></tr>
-<tr class="memitem:a3a3cc0c5541b809c07d9f11e7dfaf8c3" id="r_a3a3cc0c5541b809c07d9f11e7dfaf8c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="carros_8h.html#a8d239dcc4730dc2266cc45adc800c288">NODE_HASHC</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a3cc0c5541b809c07d9f11e7dfaf8c3">criarNodeHashCarro</a> ()</td></tr>
-<tr class="memitem:ae0eba5dd9931788784f18ff8a893db05" id="r_ae0eba5dd9931788784f18ff8a893db05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0eba5dd9931788784f18ff8a893db05">adicionarInfoNodeHash</a> (<a class="el" href="carros_8h.html#a8d239dcc4730dc2266cc45adc800c288">NODE_HASHC</a> *<a class="el" href="structnode_hash.html">nodeHash</a>, <a class="el" href="carros_8h.html#a2dc16118eb08f54132d3bc105c3b6eaf">NODE_CARRO</a> *nodeCarro)</td></tr>
-<tr class="memitem:a3a35c26e33d3c866b7eb80e4d37b0181" id="r_a3a35c26e33d3c866b7eb80e4d37b0181"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a35c26e33d3c866b7eb80e4d37b0181">mostrarHashCarros</a> (<a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *listaHash)</td></tr>
-<tr class="memitem:a38959630a3c2faea5e0c3149cde922c7" id="r_a38959630a3c2faea5e0c3149cde922c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38959630a3c2faea5e0c3149cde922c7">inserirNodeHashListaHash</a> (<a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *listaHash, <a class="el" href="carros_8h.html#a8d239dcc4730dc2266cc45adc800c288">NODE_HASHC</a> *<a class="el" href="structnode_hash.html">nodeHash</a>)</td></tr>
-<tr class="memitem:a174e6db3fccffb6b2e1a8b17bf3cb11c" id="r_a174e6db3fccffb6b2e1a8b17bf3cb11c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a174e6db3fccffb6b2e1a8b17bf3cb11c">ordenarMarcasHashCarrosAlfabeticamente</a> (<a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *listaHash)</td></tr>
-<tr class="memitem:a13ef0874d7b22c8fdf424283cfc33bf5" id="r_a13ef0874d7b22c8fdf424283cfc33bf5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13ef0874d7b22c8fdf424283cfc33bf5">ordenarModeloHashCarrosAlfabeticamente</a> (<a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *listaHash)</td></tr>
-<tr class="memitem:a5e9808e30d088e9d9c182dbb37d56cce" id="r_a5e9808e30d088e9d9c182dbb37d56cce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e9808e30d088e9d9c182dbb37d56cce">ordenarMatriculaHashCarrosAlfabeticamente</a> (<a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *listaHash)</td></tr>
-<tr class="memitem:a55c675f4f841e04675d208c4d045f74e" id="r_a55c675f4f841e04675d208c4d045f74e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="carros_8h.html#a2dc16118eb08f54132d3bc105c3b6eaf">NODE_CARRO</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55c675f4f841e04675d208c4d045f74e">procuraCarroPorID</a> (int codVeiculo, <a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>)</td></tr>
-<tr class="memitem:aeec6de01a3992845b14f76140af46e92" id="r_aeec6de01a3992845b14f76140af46e92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeec6de01a3992845b14f76140af46e92">maiorVelocidadeMediaMarca</a> (<a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>, <a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *listaPassagens, <a class="el" href="carros_8h.html#a78ff326904d562e0a6deda02a6b9dd57">DISTANCIAS_LISTA</a> *listaDistancias)</td></tr>
-<tr class="memitem:ad7d5de0b51f3f669aefb0d78f3d23e4b" id="r_ad7d5de0b51f3f669aefb0d78f3d23e4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7d5de0b51f3f669aefb0d78f3d23e4b">marcaMaisComum</a> (<a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>)</td></tr>
+<tr class="memitem:afe92d060877745414115c38b971ed2be" id="r_afe92d060877745414115c38b971ed2be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe92d060877745414115c38b971ed2be">criarListaHashCarro</a> ()</td></tr>
+<tr class="memdesc:afe92d060877745414115c38b971ed2be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por criar uma Lista hash que vai armazenar os nodes hash organizados por marcas.  <br /></td></tr>
+<tr class="memitem:a3a3cc0c5541b809c07d9f11e7dfaf8c3" id="r_a3a3cc0c5541b809c07d9f11e7dfaf8c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnode_hash.html">NODE_HASHC</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a3cc0c5541b809c07d9f11e7dfaf8c3">criarNodeHashCarro</a> ()</td></tr>
+<tr class="memdesc:a3a3cc0c5541b809c07d9f11e7dfaf8c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por criar um node hash, que possui uma chave "Marca dos carros"e a lista com os respetivos carros da mesma marca.  <br /></td></tr>
+<tr class="memitem:ae0eba5dd9931788784f18ff8a893db05" id="r_ae0eba5dd9931788784f18ff8a893db05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0eba5dd9931788784f18ff8a893db05">adicionarInfoNodeHash</a> (<a class="el" href="structnode_hash.html">NODE_HASHC</a> *<a class="el" href="structnode_hash.html">nodeHash</a>, <a class="el" href="structnodecarro.html">NODE_CARRO</a> *nodeCarro)</td></tr>
+<tr class="memdesc:ae0eba5dd9931788784f18ff8a893db05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por percorrer preencher o <a class="el" href="structnode_hash.html" title="Estrutura que serve de Hashing, sendo a chave a Marca do respetivo carro e contem um ponteiro para o ...">nodeHash</a>, com a respetiva chave e adicionar o carro a sua lista carros.  <br /></td></tr>
+<tr class="memitem:a3a35c26e33d3c866b7eb80e4d37b0181" id="r_a3a35c26e33d3c866b7eb80e4d37b0181"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a35c26e33d3c866b7eb80e4d37b0181">mostrarHashCarros</a> (<a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *listaHash)</td></tr>
+<tr class="memdesc:a3a35c26e33d3c866b7eb80e4d37b0181"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por listar todo o conteudo da LISTA_HASHC.  <br /></td></tr>
+<tr class="memitem:a38959630a3c2faea5e0c3149cde922c7" id="r_a38959630a3c2faea5e0c3149cde922c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38959630a3c2faea5e0c3149cde922c7">inserirNodeHashListaHash</a> (<a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *listaHash, <a class="el" href="structnode_hash.html">NODE_HASHC</a> *<a class="el" href="structnode_hash.html">nodeHash</a>)</td></tr>
+<tr class="memdesc:a38959630a3c2faea5e0c3149cde922c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por inserir um NODE_HASHC na LISTA_HASHC.  <br /></td></tr>
+<tr class="memitem:a174e6db3fccffb6b2e1a8b17bf3cb11c" id="r_a174e6db3fccffb6b2e1a8b17bf3cb11c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a174e6db3fccffb6b2e1a8b17bf3cb11c">ordenarMarcasHashCarrosAlfabeticamente</a> (<a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *listaHash)</td></tr>
+<tr class="memdesc:a174e6db3fccffb6b2e1a8b17bf3cb11c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por ordenar (alfabeticamente) por marcas a LISTA_HASHC.  <br /></td></tr>
+<tr class="memitem:a13ef0874d7b22c8fdf424283cfc33bf5" id="r_a13ef0874d7b22c8fdf424283cfc33bf5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13ef0874d7b22c8fdf424283cfc33bf5">ordenarModeloHashCarrosAlfabeticamente</a> (<a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *listaHash)</td></tr>
+<tr class="memdesc:a13ef0874d7b22c8fdf424283cfc33bf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por ordenar (alfabeticamente) pelo modelo do carro dentro da marca.  <br /></td></tr>
+<tr class="memitem:a5e9808e30d088e9d9c182dbb37d56cce" id="r_a5e9808e30d088e9d9c182dbb37d56cce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e9808e30d088e9d9c182dbb37d56cce">ordenarMatriculaHashCarrosAlfabeticamente</a> (<a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *listaHash)</td></tr>
+<tr class="memdesc:a5e9808e30d088e9d9c182dbb37d56cce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por ordenar (alfabeticamente) pela matricula do carro.  <br /></td></tr>
+<tr class="memitem:a55c675f4f841e04675d208c4d045f74e" id="r_a55c675f4f841e04675d208c4d045f74e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnodecarro.html">NODE_CARRO</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55c675f4f841e04675d208c4d045f74e">procuraCarroPorID</a> (int codVeiculo, <a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>)</td></tr>
+<tr class="memdesc:a55c675f4f841e04675d208c4d045f74e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por encontrar se o carro atraves do codVeiculo na LISTA_HASHC.  <br /></td></tr>
+<tr class="memitem:aeec6de01a3992845b14f76140af46e92" id="r_aeec6de01a3992845b14f76140af46e92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeec6de01a3992845b14f76140af46e92">maiorVelocidadeMediaMarca</a> (<a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>, <a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *listaPassagens, <a class="el" href="structdistancia_lista.html">DISTANCIAS_LISTA</a> *listaDistancias)</td></tr>
+<tr class="memdesc:aeec6de01a3992845b14f76140af46e92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por calcular a maior velocidade media de todas as marcas presentes na LISTA_HASHC e apresentar o resultado.  <br /></td></tr>
+<tr class="memitem:ad7d5de0b51f3f669aefb0d78f3d23e4b" id="r_ad7d5de0b51f3f669aefb0d78f3d23e4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7d5de0b51f3f669aefb0d78f3d23e4b">marcaMaisComum</a> (<a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>)</td></tr>
+<tr class="memdesc:ad7d5de0b51f3f669aefb0d78f3d23e4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por calcular qual e a marca com mais automoveis e apresentar a mesma.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementacao das funcoes respetivas aos carros. </p>
@@ -151,21 +169,21 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void addListaCarro </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ae9182ba349415547fcce84e3810cd6ca">LISTA_CARRO</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structlista_carro.html">LISTA_CARRO</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a2dc16118eb08f54132d3bc105c3b6eaf">NODE_CARRO</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="structnodecarro.html">NODE_CARRO</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Funcao responsavel por receber um <a class="el" href="carros_8h.html#a2dc16118eb08f54132d3bc105c3b6eaf">NODE_CARRO</a> e adiciona-lo a uma lista de carros. </p>
+<p>Funcao responsavel por receber um NODE_CARRO e adiciona-lo a uma lista de carros. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro para a <a class="el" href="carros_8h.html#ae9182ba349415547fcce84e3810cd6ca">LISTA_CARRO</a> para onde o carro vai ser "armazenado" </td></tr>
-    <tr><td class="paramname">node</td><td>: Recebe o <a class="el" href="carros_8h.html#a2dc16118eb08f54132d3bc105c3b6eaf">NODE_CARRO</a> que vai ser inserido no parametro de entrada lista </td></tr>
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro para a LISTA_CARRO para onde o carro vai ser "armazenado" </td></tr>
+    <tr><td class="paramname">node</td><td>: Recebe o NODE_CARRO que vai ser inserido no parametro de entrada lista </td></tr>
   </table>
   </dd>
 </dl>
@@ -182,15 +200,25 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void adicionarInfoNodeHash </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a8d239dcc4730dc2266cc45adc800c288">NODE_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>nodeHash</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structnode_hash.html">NODE_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>nodeHash</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a2dc16118eb08f54132d3bc105c3b6eaf">NODE_CARRO</a> *</td>          <td class="paramname"><span class="paramname"><em>nodeCarro</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="structnodecarro.html">NODE_CARRO</a> *</td>          <td class="paramname"><span class="paramname"><em>nodeCarro</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por percorrer preencher o <a class="el" href="structnode_hash.html" title="Estrutura que serve de Hashing, sendo a chave a Marca do respetivo carro e contem um ponteiro para o ...">nodeHash</a>, com a respetiva chave e adicionar o carro a sua lista carros. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structnode_hash.html" title="Estrutura que serve de Hashing, sendo a chave a Marca do respetivo carro e contem um ponteiro para o ...">nodeHash</a></td><td>: recebe um ponteiro NODE_HASHC em vai ser inserido o carro </td></tr>
+    <tr><td class="paramname">nodeCarro</td><td>: Recebe um ponteiro NODE_CARRO com um carro preenchido para ser inserido na respetiva hash </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -203,7 +231,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void carregarDadosCarro </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarros</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarros</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -212,7 +240,7 @@ Functions</h2></td></tr>
 <p>Funcao responsavel por ler o ficheiro "carros.txt", e inserir cada carro presente no ficheiro na estrutura da lista de carros. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="structlista_hash_carros.html">listaHashCarros</a></td><td>: Recebe um ponteiro de uma <a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> </td></tr>
+    <tr><td class="paramname"><a class="el" href="structlista_hash_carros.html" title="Estrutura que serve de Lista para os nodeHash.">listaHashCarros</a></td><td>: Recebe um ponteiro de uma LISTA_HASHC </td></tr>
   </table>
   </dd>
 </dl>
@@ -229,12 +257,12 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void criarCarroUtilizador </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>hashCarro</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>hashCarro</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDonos</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDonos</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -242,8 +270,8 @@ Functions</h2></td></tr>
 <p>Funcao responsavel por criar e adicionar um novo carro a pedido do utilizador. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">hashCarro</td><td>: Recebe um ponteiro de uma <a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a>, que ja contem todos os carros organizados por marca </td></tr>
-    <tr><td class="paramname">listaDonos</td><td>: Recebe um ponteiro de uma <a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> com todos os donos para fazer verificacoes se os donos a que os carros estao associados existem </td></tr>
+    <tr><td class="paramname">hashCarro</td><td>: Recebe um ponteiro de uma LISTA_HASHC, que ja contem todos os carros organizados por marca </td></tr>
+    <tr><td class="paramname">listaDonos</td><td>: Recebe um ponteiro de uma LISTA_DONOS com todos os donos para fazer verificacoes se os donos a que os carros estao associados existem </td></tr>
   </table>
   </dd>
 </dl>
@@ -258,7 +286,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="carros_8h.html#ae9182ba349415547fcce84e3810cd6ca">LISTA_CARRO</a> * criarListaCarro </td>
+          <td class="memname"><a class="el" href="structlista_carro.html">LISTA_CARRO</a> * criarListaCarro </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -267,7 +295,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Funcao responsavel por criar uma lista que ira conter carros. </p>
-<dl class="section return"><dt>Returns</dt><dd>ponteiro para uma Lista_Carro, que e o resultado da alocacao de memoria da estrutura <a class="el" href="carros_8h.html#ae9182ba349415547fcce84e3810cd6ca">LISTA_CARRO</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>ponteiro para uma Lista_Carro, que e o resultado da alocacao de memoria da estrutura LISTA_CARRO </dd></dl>
 
 </div>
 </div>
@@ -278,13 +306,16 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> * criarListaHashCarro </td>
+          <td class="memname"><a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> * criarListaHashCarro </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por criar uma Lista hash que vai armazenar os nodes hash organizados por marcas. </p>
+<dl class="section return"><dt>Returns</dt><dd>retorna um ponteiro LISTA_HASH vazia </dd></dl>
 
 </div>
 </div>
@@ -295,7 +326,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="carros_8h.html#a2dc16118eb08f54132d3bc105c3b6eaf">NODE_CARRO</a> * criarNodeCarro </td>
+          <td class="memname"><a class="el" href="structnodecarro.html">NODE_CARRO</a> * criarNodeCarro </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -304,7 +335,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Funcao responsavel por alocar memoria para um node que contem todos os dados de um respetivo carro. </p>
-<dl class="section return"><dt>Returns</dt><dd>retorna um ponteiro para um <a class="el" href="carros_8h.html#a2dc16118eb08f54132d3bc105c3b6eaf">NODE_CARRO</a>, com todos os valores da estrutura nulos </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>retorna um ponteiro para um NODE_CARRO, com todos os valores da estrutura nulos </dd></dl>
 
 </div>
 </div>
@@ -315,13 +346,16 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="carros_8h.html#a8d239dcc4730dc2266cc45adc800c288">NODE_HASHC</a> * criarNodeHashCarro </td>
+          <td class="memname"><a class="el" href="structnode_hash.html">NODE_HASHC</a> * criarNodeHashCarro </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por criar um node hash, que possui uma chave "Marca dos carros"e a lista com os respetivos carros da mesma marca. </p>
+<dl class="section return"><dt>Returns</dt><dd>existe : Retorna um ponteiro para um NODE_HASHC vazio </dd></dl>
 
 </div>
 </div>
@@ -334,7 +368,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void freeListaHashCarro </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarro</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarro</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -343,7 +377,7 @@ Functions</h2></td></tr>
 <p>Funcao responsavel por libertar a memoria alocada de toda a listaHash e todo o seu conteudo. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ListaHashCarro</td><td>: Recebe um ponteiro de uma <a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> para ser destruida </td></tr>
+    <tr><td class="paramname">ListaHashCarro</td><td>: Recebe um ponteiro de uma LISTA_HASHC para ser destruida </td></tr>
   </table>
   </dd>
 </dl>
@@ -360,16 +394,16 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int freeNodeCarro </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a2dc16118eb08f54132d3bc105c3b6eaf">NODE_CARRO</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structnodecarro.html">NODE_CARRO</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Funcao responsavel por receber um <a class="el" href="carros_8h.html#a2dc16118eb08f54132d3bc105c3b6eaf">NODE_CARRO</a> e destruir libertando toda a memoria e os dados que possui. </p>
+<p>Funcao responsavel por receber um NODE_CARRO e destruir libertando toda a memoria e os dados que possui. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">node</td><td>: Recebe um ponteiro <a class="el" href="carros_8h.html#a2dc16118eb08f54132d3bc105c3b6eaf">NODE_CARRO</a> </td></tr>
+    <tr><td class="paramname">node</td><td>: Recebe um ponteiro NODE_CARRO </td></tr>
   </table>
   </dd>
 </dl>
@@ -386,15 +420,25 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void inserirNodeHashListaHash </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHash</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHash</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a8d239dcc4730dc2266cc45adc800c288">NODE_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>nodeHash</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="structnode_hash.html">NODE_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>nodeHash</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por inserir um NODE_HASHC na LISTA_HASHC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">listaHash</td><td>: recebe um ponteiro LISTA_HASCH </td></tr>
+    <tr><td class="paramname"><a class="el" href="structnode_hash.html" title="Estrutura que serve de Hashing, sendo a chave a Marca do respetivo carro e contem um ponteiro para o ...">nodeHash</a></td><td>: recebe um ponteiro NODE_HASHC que vai ser inserido na LISTA_HASCH </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -407,20 +451,31 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void maiorVelocidadeMediaMarca </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarros</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarros</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaPassagens</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaPassagens</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a78ff326904d562e0a6deda02a6b9dd57">DISTANCIAS_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDistancias</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="structdistancia_lista.html">DISTANCIAS_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDistancias</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por calcular a maior velocidade media de todas as marcas presentes na LISTA_HASHC e apresentar o resultado. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structlista_hash_carros.html" title="Estrutura que serve de Lista para os nodeHash.">listaHashCarros</a></td><td>: recebe um ponteiro para a LISTA_HASHC </td></tr>
+    <tr><td class="paramname">listaPassagens</td><td>: recebe um ponteiro para a PASSAGEM_LISTA </td></tr>
+    <tr><td class="paramname">listaDistancias</td><td>: recebe um ponteiro para a DISTANCIAS_LISTA </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -433,11 +488,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void marcaMaisComum </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarros</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarros</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por calcular qual e a marca com mais automoveis e apresentar a mesma. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structlista_hash_carros.html" title="Estrutura que serve de Lista para os nodeHash.">listaHashCarros</a></td><td>: recebe um ponteiro para a LISTA_HASHC </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -450,11 +514,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void mostrarHashCarros </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHash</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHash</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por listar todo o conteudo da LISTA_HASHC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">listaHash</td><td>: recebe um ponteiro LISTA_HASCH com todos os NODE_HASHC e os carros agrupados por marca </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -467,7 +540,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void mostrarListaCarro </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ae9182ba349415547fcce84e3810cd6ca">LISTA_CARRO</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structlista_carro.html">LISTA_CARRO</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -476,7 +549,7 @@ Functions</h2></td></tr>
 <p>Funcao responsavel por listar todos os carros presentes na Lista de carros. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro de uma <a class="el" href="carros_8h.html#ae9182ba349415547fcce84e3810cd6ca">LISTA_CARRO</a>, que ja contem todos os carros pertencentes uma determinada marca</td></tr>
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro de uma LISTA_CARRO, que ja contem todos os carros pertencentes uma determinada marca </td></tr>
   </table>
   </dd>
 </dl>
@@ -493,11 +566,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void ordenarMarcasHashCarrosAlfabeticamente </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHash</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHash</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por ordenar (alfabeticamente) por marcas a LISTA_HASHC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">listaHash</td><td>: recebe um ponteiro LISTA_HASCH </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -510,11 +592,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void ordenarMatriculaHashCarrosAlfabeticamente </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHash</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHash</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por ordenar (alfabeticamente) pela matricula do carro. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">listaHash</td><td>: recebe um ponteiro LISTA_HASCH com a lista de carros </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -527,11 +618,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void ordenarModeloHashCarrosAlfabeticamente </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHash</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHash</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por ordenar (alfabeticamente) pelo modelo do carro dentro da marca. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">listaHash</td><td>: recebe um ponteiro LISTA_HASCH </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -542,17 +642,27 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="carros_8h.html#a2dc16118eb08f54132d3bc105c3b6eaf">NODE_CARRO</a> * procuraCarroPorID </td>
+          <td class="memname"><a class="el" href="structnodecarro.html">NODE_CARRO</a> * procuraCarroPorID </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>codVeiculo</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarros</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarros</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por encontrar se o carro atraves do codVeiculo na LISTA_HASHC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codVeiculo</td><td>: recebe um inteiro com o codigo de veiculo para ser verificado </td></tr>
+    <tr><td class="paramname"><a class="el" href="structlista_hash_carros.html" title="Estrutura que serve de Lista para os nodeHash.">listaHashCarros</a></td><td>: recebe a LISTA_HASHC </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nodeCarro: ponteiro NODE_CARRO para o carro que foi encontrado </dd></dl>
 
 </div>
 </div>
@@ -570,7 +680,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDonos</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDonos</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -579,7 +689,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">idDono</td><td>: Recebe um inteiro que e o numero de contribuinte do dono </td></tr>
-    <tr><td class="paramname">listaDonos</td><td>: Recebe um ponteiro de uma <a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> com todos os donos para fazer verificacoes se o dono com o numero de contribuinte existe </td></tr>
+    <tr><td class="paramname">listaDonos</td><td>: Recebe um ponteiro de uma LISTA_DONOS com todos os donos para fazer verificacoes se o dono com o numero de contribuinte existe </td></tr>
   </table>
   </dd>
 </dl>
@@ -603,7 +713,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ae9182ba349415547fcce84e3810cd6ca">LISTA_CARRO</a> *</td>          <td class="paramname"><span class="paramname"><em>listaCarro</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="structlista_carro.html">LISTA_CARRO</a> *</td>          <td class="paramname"><span class="paramname"><em>listaCarro</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -612,7 +722,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">matricula</td><td>: Recebe um char que e a matricula que se pretende verificar </td></tr>
-    <tr><td class="paramname"><a class="el" href="structlista_carro.html">listaCarro</a></td><td>: Recebe um ponteiro de uma LISTA_CARROS com todos os carros da mesma marca </td></tr>
+    <tr><td class="paramname"><a class="el" href="structlista_carro.html" title="Estrutura serve como lista para o conjunto dos NODE_CARRO.">listaCarro</a></td><td>: Recebe um ponteiro de uma LISTA_CARROS com todos os carros da mesma marca </td></tr>
   </table>
   </dd>
 </dl>

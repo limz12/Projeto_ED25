@@ -14,51 +14,60 @@ Implementacao das funcoes respetivas aos carros.
 {\ttfamily \#include "{}donos.\+h"{}}\newline
 {\ttfamily \#include "{}DISTANCIAS.\+H"{}}\newline
 {\ttfamily \#include "{}PASSAGEM.\+H"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{carros_8c_a7228b13c011ded5d1e18d02cbbad1f92}\label{carros_8c_a7228b13c011ded5d1e18d02cbbad1f92} 
+\#define {\bfseries CARROS\+\_\+\+POR\+\_\+\+PAGINA}~20
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{carros_8c_a87914afb98468a8027a038619281508c}{criar\+Lista\+Carro}} ()
+\mbox{\hyperlink{structlista_carro}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{carros_8c_a87914afb98468a8027a038619281508c}{criar\+Lista\+Carro}} ()
 \begin{DoxyCompactList}\small\item\em Funcao responsavel por criar uma lista que ira conter carros. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{carros_8c_a353ae4d813a06a1ddae26ff7dfc7af9f}{criar\+Node\+Carro}} ()
+\mbox{\hyperlink{structnodecarro}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{carros_8c_a353ae4d813a06a1ddae26ff7dfc7af9f}{criar\+Node\+Carro}} ()
 \begin{DoxyCompactList}\small\item\em Funcao responsavel por alocar memoria para um node que contem todos os dados de um respetivo carro. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{carros_8c_a09f1dae778235302be0197bb6cd46780}{free\+Node\+Carro}} (\mbox{\hyperlink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}node)
-\begin{DoxyCompactList}\small\item\em Funcao responsavel por receber um \doxylink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\+\_\+\+CARRO} e destruir libertando toda a memoria e os dados que possui. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{carros_8c_a4dddb250bc7768f41e57e899641941b1}{carregar\+Dados\+Carro}} (\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}})
+int \mbox{\hyperlink{carros_8c_a09f1dae778235302be0197bb6cd46780}{free\+Node\+Carro}} (\mbox{\hyperlink{structnodecarro}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}node)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por receber um NODE\+\_\+\+CARRO e destruir libertando toda a memoria e os dados que possui. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{carros_8c_a4dddb250bc7768f41e57e899641941b1}{carregar\+Dados\+Carro}} (\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}})
 \begin{DoxyCompactList}\small\item\em Funcao responsavel por ler o ficheiro "{}carros.\+txt"{}, e inserir cada carro presente no ficheiro na estrutura da lista de carros. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{carros_8c_ae3cdf5844f7c1b93c77849459a8229e4}{add\+Lista\+Carro}} (\mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}lista, \mbox{\hyperlink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}node)
-\begin{DoxyCompactList}\small\item\em Funcao responsavel por receber um \doxylink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\+\_\+\+CARRO} e adiciona-\/lo a uma lista de carros. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{carros_8c_afd901457e0719dca5377fb3536255913}{criar\+Carro\+Utilizador}} (\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}hash\+Carro, \mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista\+Donos)
+void \mbox{\hyperlink{carros_8c_ae3cdf5844f7c1b93c77849459a8229e4}{add\+Lista\+Carro}} (\mbox{\hyperlink{structlista_carro}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}lista, \mbox{\hyperlink{structnodecarro}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}node)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por receber um NODE\+\_\+\+CARRO e adiciona-\/lo a uma lista de carros. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{carros_8c_afd901457e0719dca5377fb3536255913}{criar\+Carro\+Utilizador}} (\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}hash\+Carro, \mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista\+Donos)
 \begin{DoxyCompactList}\small\item\em Funcao responsavel por criar e adicionar um novo carro a pedido do utilizador. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{carros_8c_a0884c11787e0807519d5eca57f987cf6}{mostrar\+Lista\+Carro}} (\mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}lista)
+\Hypertarget{carros_8c_af65594052c5ec3bc46146219faf2adf3}\label{carros_8c_af65594052c5ec3bc46146219faf2adf3} 
+\mbox{\hyperlink{structnodecarro}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*} {\bfseries avancar\+Ate} (\mbox{\hyperlink{structnodecarro}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}pertencelista, int pos)
+\item 
+void \mbox{\hyperlink{carros_8c_a0884c11787e0807519d5eca57f987cf6}{mostrar\+Lista\+Carro}} (\mbox{\hyperlink{structlista_carro}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}lista)
 \begin{DoxyCompactList}\small\item\em Funcao responsavel por listar todos os carros presentes na Lista de carros. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{carros_8c_a8578af03eb6c79130dfafbfed7d6f088}{free\+Lista\+Hash\+Carro}} (\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash\+Carro)
+void \mbox{\hyperlink{carros_8c_a8578af03eb6c79130dfafbfed7d6f088}{free\+Lista\+Hash\+Carro}} (\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash\+Carro)
 \begin{DoxyCompactList}\small\item\em Funcao responsavel por libertar a memoria alocada de toda a lista\+Hash e todo o seu conteudo. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{carros_8c_af8b20e5ba37df98a5d860699f86a9d5f}{verificar\+DONOexiste}} (int id\+Dono, \mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista\+Donos)
+int \mbox{\hyperlink{carros_8c_af8b20e5ba37df98a5d860699f86a9d5f}{verificar\+DONOexiste}} (int id\+Dono, \mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista\+Donos)
 \begin{DoxyCompactList}\small\item\em Funcao responsavel por percorrer a lista de donos pelo ID e verificar se o dono ja existe. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{carros_8c_a4772b0df8036e2e5d9487863271f71b8}{verificar\+Matricula\+Existe}} (char \texorpdfstring{$\ast$}{*}matricula, \mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_carro}{lista\+Carro}})
+int \mbox{\hyperlink{carros_8c_a4772b0df8036e2e5d9487863271f71b8}{verificar\+Matricula\+Existe}} (char \texorpdfstring{$\ast$}{*}matricula, \mbox{\hyperlink{structlista_carro}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_carro}{lista\+Carro}})
 \begin{DoxyCompactList}\small\item\em Funcao responsavel por percorrer a lista de carros e verificar se a matricula ja pertence a algum carro. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{carros_8c_afe92d060877745414115c38b971ed2be}{criar\+Lista\+Hash\+Carro}} ()
-\item 
-\mbox{\hyperlink{carros_8h_a8d239dcc4730dc2266cc45adc800c288}{NODE\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{carros_8c_a3a3cc0c5541b809c07d9f11e7dfaf8c3}{criar\+Node\+Hash\+Carro}} ()
-\item 
-void \mbox{\hyperlink{carros_8c_ae0eba5dd9931788784f18ff8a893db05}{adicionar\+Info\+Node\+Hash}} (\mbox{\hyperlink{carros_8h_a8d239dcc4730dc2266cc45adc800c288}{NODE\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structnode_hash}{node\+Hash}}, \mbox{\hyperlink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}node\+Carro)
-\item 
-void \mbox{\hyperlink{carros_8c_a3a35c26e33d3c866b7eb80e4d37b0181}{mostrar\+Hash\+Carros}} (\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash)
-\item 
-void \mbox{\hyperlink{carros_8c_a38959630a3c2faea5e0c3149cde922c7}{inserir\+Node\+Hash\+Lista\+Hash}} (\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash, \mbox{\hyperlink{carros_8h_a8d239dcc4730dc2266cc45adc800c288}{NODE\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structnode_hash}{node\+Hash}})
-\item 
-void \mbox{\hyperlink{carros_8c_a174e6db3fccffb6b2e1a8b17bf3cb11c}{ordenar\+Marcas\+Hash\+Carros\+Alfabeticamente}} (\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash)
-\item 
-void \mbox{\hyperlink{carros_8c_a13ef0874d7b22c8fdf424283cfc33bf5}{ordenar\+Modelo\+Hash\+Carros\+Alfabeticamente}} (\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash)
-\item 
-void \mbox{\hyperlink{carros_8c_a5e9808e30d088e9d9c182dbb37d56cce}{ordenar\+Matricula\+Hash\+Carros\+Alfabeticamente}} (\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash)
-\item 
-\mbox{\hyperlink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{carros_8c_a55c675f4f841e04675d208c4d045f74e}{procura\+Carro\+Por\+ID}} (int cod\+Veiculo, \mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}})
-\item 
-void \mbox{\hyperlink{carros_8c_aeec6de01a3992845b14f76140af46e92}{maior\+Velocidade\+Media\+Marca}} (\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}}, \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagens, \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
-\item 
-void \mbox{\hyperlink{carros_8c_ad7d5de0b51f3f669aefb0d78f3d23e4b}{marca\+Mais\+Comum}} (\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}})
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{carros_8c_afe92d060877745414115c38b971ed2be}{criar\+Lista\+Hash\+Carro}} ()
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por criar uma Lista hash que vai armazenar os nodes hash organizados por marcas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structnode_hash}{NODE\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{carros_8c_a3a3cc0c5541b809c07d9f11e7dfaf8c3}{criar\+Node\+Hash\+Carro}} ()
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por criar um node hash, que possui uma chave "{}\+Marca dos carros"{}e a lista com os respetivos carros da mesma marca. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{carros_8c_ae0eba5dd9931788784f18ff8a893db05}{adicionar\+Info\+Node\+Hash}} (\mbox{\hyperlink{structnode_hash}{NODE\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structnode_hash}{node\+Hash}}, \mbox{\hyperlink{structnodecarro}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}node\+Carro)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por percorrer preencher o \doxylink{structnode_hash}{node\+Hash}, com a respetiva chave e adicionar o carro a sua lista carros. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{carros_8c_a3a35c26e33d3c866b7eb80e4d37b0181}{mostrar\+Hash\+Carros}} (\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por listar todo o conteudo da LISTA\+\_\+\+HASHC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{carros_8c_a38959630a3c2faea5e0c3149cde922c7}{inserir\+Node\+Hash\+Lista\+Hash}} (\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash, \mbox{\hyperlink{structnode_hash}{NODE\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structnode_hash}{node\+Hash}})
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por inserir um NODE\+\_\+\+HASHC na LISTA\+\_\+\+HASHC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{carros_8c_a174e6db3fccffb6b2e1a8b17bf3cb11c}{ordenar\+Marcas\+Hash\+Carros\+Alfabeticamente}} (\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por ordenar (alfabeticamente) por marcas a LISTA\+\_\+\+HASHC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{carros_8c_a13ef0874d7b22c8fdf424283cfc33bf5}{ordenar\+Modelo\+Hash\+Carros\+Alfabeticamente}} (\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por ordenar (alfabeticamente) pelo modelo do carro dentro da marca. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{carros_8c_a5e9808e30d088e9d9c182dbb37d56cce}{ordenar\+Matricula\+Hash\+Carros\+Alfabeticamente}} (\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por ordenar (alfabeticamente) pela matricula do carro. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structnodecarro}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{carros_8c_a55c675f4f841e04675d208c4d045f74e}{procura\+Carro\+Por\+ID}} (int cod\+Veiculo, \mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}})
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por encontrar se o carro atraves do cod\+Veiculo na LISTA\+\_\+\+HASHC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{carros_8c_aeec6de01a3992845b14f76140af46e92}{maior\+Velocidade\+Media\+Marca}} (\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}}, \mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagens, \mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por calcular a maior velocidade media de todas as marcas presentes na LISTA\+\_\+\+HASHC e apresentar o resultado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{carros_8c_ad7d5de0b51f3f669aefb0d78f3d23e4b}{marca\+Mais\+Comum}} (\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}})
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por calcular qual e a marca com mais automoveis e apresentar a mesma. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -73,17 +82,17 @@ Implementacao das funcoes respetivas aos carros.
 \index{addListaCarro@{addListaCarro}!carros.c@{carros.c}}
 \doxysubsubsection{\texorpdfstring{addListaCarro()}{addListaCarro()}}
 {\footnotesize\ttfamily \label{carros_8c_ae3cdf5844f7c1b93c77849459a8229e4} 
-void add\+Lista\+Carro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{\mbox{\hyperlink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+void add\+Lista\+Carro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_carro}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{\mbox{\hyperlink{structnodecarro}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
 
 
 
-Funcao responsavel por receber um \doxylink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\+\_\+\+CARRO} e adiciona-\/lo a uma lista de carros. 
+Funcao responsavel por receber um NODE\+\_\+\+CARRO e adiciona-\/lo a uma lista de carros. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em lista} & \+: Recebe um ponteiro para a \doxylink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\+\_\+\+CARRO} para onde o carro vai ser "{}armazenado"{} \\
+{\em lista} & \+: Recebe um ponteiro para a LISTA\+\_\+\+CARRO para onde o carro vai ser "{}armazenado"{} \\
 \hline
-{\em node} & \+: Recebe o \doxylink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\+\_\+\+CARRO} que vai ser inserido no parametro de entrada lista \\
+{\em node} & \+: Recebe o NODE\+\_\+\+CARRO que vai ser inserido no parametro de entrada lista \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -93,13 +102,27 @@ VOID
 \index{adicionarInfoNodeHash@{adicionarInfoNodeHash}!carros.c@{carros.c}}
 \doxysubsubsection{\texorpdfstring{adicionarInfoNodeHash()}{adicionarInfoNodeHash()}}
 {\footnotesize\ttfamily \label{carros_8c_ae0eba5dd9931788784f18ff8a893db05} 
-void adicionar\+Info\+Node\+Hash (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a8d239dcc4730dc2266cc45adc800c288}{NODE\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{node\+Hash}{, }\item[{\mbox{\hyperlink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}}]{node\+Carro}{}\end{DoxyParamCaption})}
+void adicionar\+Info\+Node\+Hash (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnode_hash}{NODE\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{node\+Hash}{, }\item[{\mbox{\hyperlink{structnodecarro}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}}]{node\+Carro}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por percorrer preencher o \doxylink{structnode_hash}{node\+Hash}, com a respetiva chave e adicionar o carro a sua lista carros. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{structnode_hash}{node\+Hash}} & \+: recebe um ponteiro NODE\+\_\+\+HASHC em vai ser inserido o carro \\
+\hline
+{\em node\+Carro} & \+: Recebe um ponteiro NODE\+\_\+\+CARRO com um carro preenchido para ser inserido na respetiva hash \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{carros_8c_a4dddb250bc7768f41e57e899641941b1}\index{carros.c@{carros.c}!carregarDadosCarro@{carregarDadosCarro}}
 \index{carregarDadosCarro@{carregarDadosCarro}!carros.c@{carros.c}}
 \doxysubsubsection{\texorpdfstring{carregarDadosCarro()}{carregarDadosCarro()}}
 {\footnotesize\ttfamily \label{carros_8c_a4dddb250bc7768f41e57e899641941b1} 
-void carregar\+Dados\+Carro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{}\end{DoxyParamCaption})}
+void carregar\+Dados\+Carro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{}\end{DoxyParamCaption})}
 
 
 
@@ -107,7 +130,7 @@ Funcao responsavel por ler o ficheiro "{}carros.\+txt"{}, e inserir cada carro p
 
 
 \begin{DoxyParams}{Parameters}
-{\em \doxylink{structlista_hash_carros}{lista\+Hash\+Carros}} & \+: Recebe um ponteiro de uma \doxylink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC} \\
+{\em \doxylink{structlista_hash_carros}{lista\+Hash\+Carros}} & \+: Recebe um ponteiro de uma LISTA\+\_\+\+HASHC \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -117,7 +140,7 @@ VOID
 \index{criarCarroUtilizador@{criarCarroUtilizador}!carros.c@{carros.c}}
 \doxysubsubsection{\texorpdfstring{criarCarroUtilizador()}{criarCarroUtilizador()}}
 {\footnotesize\ttfamily \label{carros_8c_afd901457e0719dca5377fb3536255913} 
-void criar\+Carro\+Utilizador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{hash\+Carro}{, }\item[{\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista\+Donos}{}\end{DoxyParamCaption})}
+void criar\+Carro\+Utilizador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{hash\+Carro}{, }\item[{\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista\+Donos}{}\end{DoxyParamCaption})}
 
 
 
@@ -125,9 +148,9 @@ Funcao responsavel por criar e adicionar um novo carro a pedido do utilizador.
 
 
 \begin{DoxyParams}{Parameters}
-{\em hash\+Carro} & \+: Recebe um ponteiro de uma \doxylink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}, que ja contem todos os carros organizados por marca \\
+{\em hash\+Carro} & \+: Recebe um ponteiro de uma LISTA\+\_\+\+HASHC, que ja contem todos os carros organizados por marca \\
 \hline
-{\em lista\+Donos} & \+: Recebe um ponteiro de uma \doxylink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS} com todos os donos para fazer verificacoes se os donos a que os carros estao associados existem \\
+{\em lista\+Donos} & \+: Recebe um ponteiro de uma LISTA\+\_\+\+DONOS com todos os donos para fazer verificacoes se os donos a que os carros estao associados existem \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -137,45 +160,59 @@ VOID
 \index{criarListaCarro@{criarListaCarro}!carros.c@{carros.c}}
 \doxysubsubsection{\texorpdfstring{criarListaCarro()}{criarListaCarro()}}
 {\footnotesize\ttfamily \label{carros_8c_a87914afb98468a8027a038619281508c} 
-\mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*} criar\+Lista\+Carro (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+\mbox{\hyperlink{structlista_carro}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*} criar\+Lista\+Carro (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
 Funcao responsavel por criar uma lista que ira conter carros. 
 
 \begin{DoxyReturn}{Returns}
-ponteiro para uma Lista\+\_\+\+Carro, que e o resultado da alocacao de memoria da estrutura \doxylink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\+\_\+\+CARRO} 
+ponteiro para uma Lista\+\_\+\+Carro, que e o resultado da alocacao de memoria da estrutura LISTA\+\_\+\+CARRO 
 \end{DoxyReturn}
 \Hypertarget{carros_8c_afe92d060877745414115c38b971ed2be}\index{carros.c@{carros.c}!criarListaHashCarro@{criarListaHashCarro}}
 \index{criarListaHashCarro@{criarListaHashCarro}!carros.c@{carros.c}}
 \doxysubsubsection{\texorpdfstring{criarListaHashCarro()}{criarListaHashCarro()}}
 {\footnotesize\ttfamily \label{carros_8c_afe92d060877745414115c38b971ed2be} 
-\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*} criar\+Lista\+Hash\+Carro (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*} criar\+Lista\+Hash\+Carro (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por criar uma Lista hash que vai armazenar os nodes hash organizados por marcas. 
+
+\begin{DoxyReturn}{Returns}
+retorna um ponteiro LISTA\+\_\+\+HASH vazia 
+\end{DoxyReturn}
 \Hypertarget{carros_8c_a353ae4d813a06a1ddae26ff7dfc7af9f}\index{carros.c@{carros.c}!criarNodeCarro@{criarNodeCarro}}
 \index{criarNodeCarro@{criarNodeCarro}!carros.c@{carros.c}}
 \doxysubsubsection{\texorpdfstring{criarNodeCarro()}{criarNodeCarro()}}
 {\footnotesize\ttfamily \label{carros_8c_a353ae4d813a06a1ddae26ff7dfc7af9f} 
-\mbox{\hyperlink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*} criar\+Node\+Carro (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+\mbox{\hyperlink{structnodecarro}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*} criar\+Node\+Carro (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
 Funcao responsavel por alocar memoria para um node que contem todos os dados de um respetivo carro. 
 
 \begin{DoxyReturn}{Returns}
-retorna um ponteiro para um \doxylink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\+\_\+\+CARRO}, com todos os valores da estrutura nulos 
+retorna um ponteiro para um NODE\+\_\+\+CARRO, com todos os valores da estrutura nulos 
 \end{DoxyReturn}
 \Hypertarget{carros_8c_a3a3cc0c5541b809c07d9f11e7dfaf8c3}\index{carros.c@{carros.c}!criarNodeHashCarro@{criarNodeHashCarro}}
 \index{criarNodeHashCarro@{criarNodeHashCarro}!carros.c@{carros.c}}
 \doxysubsubsection{\texorpdfstring{criarNodeHashCarro()}{criarNodeHashCarro()}}
 {\footnotesize\ttfamily \label{carros_8c_a3a3cc0c5541b809c07d9f11e7dfaf8c3} 
-\mbox{\hyperlink{carros_8h_a8d239dcc4730dc2266cc45adc800c288}{NODE\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*} criar\+Node\+Hash\+Carro (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+\mbox{\hyperlink{structnode_hash}{NODE\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*} criar\+Node\+Hash\+Carro (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por criar um node hash, que possui uma chave "{}\+Marca dos carros"{}e a lista com os respetivos carros da mesma marca. 
+
+\begin{DoxyReturn}{Returns}
+existe \+: Retorna um ponteiro para um NODE\+\_\+\+HASHC vazio 
+\end{DoxyReturn}
 \Hypertarget{carros_8c_a8578af03eb6c79130dfafbfed7d6f088}\index{carros.c@{carros.c}!freeListaHashCarro@{freeListaHashCarro}}
 \index{freeListaHashCarro@{freeListaHashCarro}!carros.c@{carros.c}}
 \doxysubsubsection{\texorpdfstring{freeListaHashCarro()}{freeListaHashCarro()}}
 {\footnotesize\ttfamily \label{carros_8c_a8578af03eb6c79130dfafbfed7d6f088} 
-void free\+Lista\+Hash\+Carro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carro}{}\end{DoxyParamCaption})}
+void free\+Lista\+Hash\+Carro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carro}{}\end{DoxyParamCaption})}
 
 
 
@@ -183,7 +220,7 @@ Funcao responsavel por libertar a memoria alocada de toda a lista\+Hash e todo o
 
 
 \begin{DoxyParams}{Parameters}
-{\em Lista\+Hash\+Carro} & \+: Recebe um ponteiro de uma \doxylink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC} para ser destruida \\
+{\em Lista\+Hash\+Carro} & \+: Recebe um ponteiro de uma LISTA\+\_\+\+HASHC para ser destruida \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -193,15 +230,15 @@ VOID
 \index{freeNodeCarro@{freeNodeCarro}!carros.c@{carros.c}}
 \doxysubsubsection{\texorpdfstring{freeNodeCarro()}{freeNodeCarro()}}
 {\footnotesize\ttfamily \label{carros_8c_a09f1dae778235302be0197bb6cd46780} 
-int free\+Node\+Carro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+int free\+Node\+Carro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnodecarro}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
 
 
 
-Funcao responsavel por receber um \doxylink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\+\_\+\+CARRO} e destruir libertando toda a memoria e os dados que possui. 
+Funcao responsavel por receber um NODE\+\_\+\+CARRO e destruir libertando toda a memoria e os dados que possui. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em node} & \+: Recebe um ponteiro \doxylink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\+\_\+\+CARRO} \\
+{\em node} & \+: Recebe um ponteiro NODE\+\_\+\+CARRO \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -211,31 +248,85 @@ NULL se o node inserido nao existir
 \index{inserirNodeHashListaHash@{inserirNodeHashListaHash}!carros.c@{carros.c}}
 \doxysubsubsection{\texorpdfstring{inserirNodeHashListaHash()}{inserirNodeHashListaHash()}}
 {\footnotesize\ttfamily \label{carros_8c_a38959630a3c2faea5e0c3149cde922c7} 
-void inserir\+Node\+Hash\+Lista\+Hash (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash}{, }\item[{\mbox{\hyperlink{carros_8h_a8d239dcc4730dc2266cc45adc800c288}{NODE\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{node\+Hash}{}\end{DoxyParamCaption})}
+void inserir\+Node\+Hash\+Lista\+Hash (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash}{, }\item[{\mbox{\hyperlink{structnode_hash}{NODE\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{node\+Hash}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por inserir um NODE\+\_\+\+HASHC na LISTA\+\_\+\+HASHC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Hash} & \+: recebe um ponteiro LISTA\+\_\+\+HASCH \\
+\hline
+{\em \doxylink{structnode_hash}{node\+Hash}} & \+: recebe um ponteiro NODE\+\_\+\+HASHC que vai ser inserido na LISTA\+\_\+\+HASCH \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{carros_8c_aeec6de01a3992845b14f76140af46e92}\index{carros.c@{carros.c}!maiorVelocidadeMediaMarca@{maiorVelocidadeMediaMarca}}
 \index{maiorVelocidadeMediaMarca@{maiorVelocidadeMediaMarca}!carros.c@{carros.c}}
 \doxysubsubsection{\texorpdfstring{maiorVelocidadeMediaMarca()}{maiorVelocidadeMediaMarca()}}
 {\footnotesize\ttfamily \label{carros_8c_aeec6de01a3992845b14f76140af46e92} 
-void maior\+Velocidade\+Media\+Marca (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{, }\item[{\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagens}{, }\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
+void maior\+Velocidade\+Media\+Marca (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{, }\item[{\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagens}{, }\item[{\mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por calcular a maior velocidade media de todas as marcas presentes na LISTA\+\_\+\+HASHC e apresentar o resultado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{structlista_hash_carros}{lista\+Hash\+Carros}} & \+: recebe um ponteiro para a LISTA\+\_\+\+HASHC \\
+\hline
+{\em lista\+Passagens} & \+: recebe um ponteiro para a PASSAGEM\+\_\+\+LISTA \\
+\hline
+{\em lista\+Distancias} & \+: recebe um ponteiro para a DISTANCIAS\+\_\+\+LISTA \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{carros_8c_ad7d5de0b51f3f669aefb0d78f3d23e4b}\index{carros.c@{carros.c}!marcaMaisComum@{marcaMaisComum}}
 \index{marcaMaisComum@{marcaMaisComum}!carros.c@{carros.c}}
 \doxysubsubsection{\texorpdfstring{marcaMaisComum()}{marcaMaisComum()}}
 {\footnotesize\ttfamily \label{carros_8c_ad7d5de0b51f3f669aefb0d78f3d23e4b} 
-void marca\+Mais\+Comum (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{}\end{DoxyParamCaption})}
+void marca\+Mais\+Comum (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por calcular qual e a marca com mais automoveis e apresentar a mesma. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{structlista_hash_carros}{lista\+Hash\+Carros}} & \+: recebe um ponteiro para a LISTA\+\_\+\+HASHC \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{carros_8c_a3a35c26e33d3c866b7eb80e4d37b0181}\index{carros.c@{carros.c}!mostrarHashCarros@{mostrarHashCarros}}
 \index{mostrarHashCarros@{mostrarHashCarros}!carros.c@{carros.c}}
 \doxysubsubsection{\texorpdfstring{mostrarHashCarros()}{mostrarHashCarros()}}
 {\footnotesize\ttfamily \label{carros_8c_a3a35c26e33d3c866b7eb80e4d37b0181} 
-void mostrar\+Hash\+Carros (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash}{}\end{DoxyParamCaption})}
+void mostrar\+Hash\+Carros (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por listar todo o conteudo da LISTA\+\_\+\+HASHC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Hash} & \+: recebe um ponteiro LISTA\+\_\+\+HASCH com todos os NODE\+\_\+\+HASHC e os carros agrupados por marca \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{carros_8c_a0884c11787e0807519d5eca57f987cf6}\index{carros.c@{carros.c}!mostrarListaCarro@{mostrarListaCarro}}
 \index{mostrarListaCarro@{mostrarListaCarro}!carros.c@{carros.c}}
 \doxysubsubsection{\texorpdfstring{mostrarListaCarro()}{mostrarListaCarro()}}
 {\footnotesize\ttfamily \label{carros_8c_a0884c11787e0807519d5eca57f987cf6} 
-void mostrar\+Lista\+Carro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+void mostrar\+Lista\+Carro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_carro}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
 
 
 
@@ -243,7 +334,7 @@ Funcao responsavel por listar todos os carros presentes na Lista de carros.
 
 
 \begin{DoxyParams}{Parameters}
-{\em lista} & \+: Recebe um ponteiro de uma \doxylink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\+\_\+\+CARRO}, que ja contem todos os carros pertencentes uma determinada marca\\
+{\em lista} & \+: Recebe um ponteiro de uma LISTA\+\_\+\+CARRO, que ja contem todos os carros pertencentes uma determinada marca \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -253,31 +344,81 @@ VOID
 \index{ordenarMarcasHashCarrosAlfabeticamente@{ordenarMarcasHashCarrosAlfabeticamente}!carros.c@{carros.c}}
 \doxysubsubsection{\texorpdfstring{ordenarMarcasHashCarrosAlfabeticamente()}{ordenarMarcasHashCarrosAlfabeticamente()}}
 {\footnotesize\ttfamily \label{carros_8c_a174e6db3fccffb6b2e1a8b17bf3cb11c} 
-void ordenar\+Marcas\+Hash\+Carros\+Alfabeticamente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash}{}\end{DoxyParamCaption})}
+void ordenar\+Marcas\+Hash\+Carros\+Alfabeticamente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por ordenar (alfabeticamente) por marcas a LISTA\+\_\+\+HASHC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Hash} & \+: recebe um ponteiro LISTA\+\_\+\+HASCH \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{carros_8c_a5e9808e30d088e9d9c182dbb37d56cce}\index{carros.c@{carros.c}!ordenarMatriculaHashCarrosAlfabeticamente@{ordenarMatriculaHashCarrosAlfabeticamente}}
 \index{ordenarMatriculaHashCarrosAlfabeticamente@{ordenarMatriculaHashCarrosAlfabeticamente}!carros.c@{carros.c}}
 \doxysubsubsection{\texorpdfstring{ordenarMatriculaHashCarrosAlfabeticamente()}{ordenarMatriculaHashCarrosAlfabeticamente()}}
 {\footnotesize\ttfamily \label{carros_8c_a5e9808e30d088e9d9c182dbb37d56cce} 
-void ordenar\+Matricula\+Hash\+Carros\+Alfabeticamente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash}{}\end{DoxyParamCaption})}
+void ordenar\+Matricula\+Hash\+Carros\+Alfabeticamente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por ordenar (alfabeticamente) pela matricula do carro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Hash} & \+: recebe um ponteiro LISTA\+\_\+\+HASCH com a lista de carros \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{carros_8c_a13ef0874d7b22c8fdf424283cfc33bf5}\index{carros.c@{carros.c}!ordenarModeloHashCarrosAlfabeticamente@{ordenarModeloHashCarrosAlfabeticamente}}
 \index{ordenarModeloHashCarrosAlfabeticamente@{ordenarModeloHashCarrosAlfabeticamente}!carros.c@{carros.c}}
 \doxysubsubsection{\texorpdfstring{ordenarModeloHashCarrosAlfabeticamente()}{ordenarModeloHashCarrosAlfabeticamente()}}
 {\footnotesize\ttfamily \label{carros_8c_a13ef0874d7b22c8fdf424283cfc33bf5} 
-void ordenar\+Modelo\+Hash\+Carros\+Alfabeticamente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash}{}\end{DoxyParamCaption})}
+void ordenar\+Modelo\+Hash\+Carros\+Alfabeticamente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por ordenar (alfabeticamente) pelo modelo do carro dentro da marca. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Hash} & \+: recebe um ponteiro LISTA\+\_\+\+HASCH \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{carros_8c_a55c675f4f841e04675d208c4d045f74e}\index{carros.c@{carros.c}!procuraCarroPorID@{procuraCarroPorID}}
 \index{procuraCarroPorID@{procuraCarroPorID}!carros.c@{carros.c}}
 \doxysubsubsection{\texorpdfstring{procuraCarroPorID()}{procuraCarroPorID()}}
 {\footnotesize\ttfamily \label{carros_8c_a55c675f4f841e04675d208c4d045f74e} 
-\mbox{\hyperlink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*} procura\+Carro\+Por\+ID (\begin{DoxyParamCaption}\item[{int}]{cod\+Veiculo}{, }\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{}\end{DoxyParamCaption})}
+\mbox{\hyperlink{structnodecarro}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*} procura\+Carro\+Por\+ID (\begin{DoxyParamCaption}\item[{int}]{cod\+Veiculo}{, }\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por encontrar se o carro atraves do cod\+Veiculo na LISTA\+\_\+\+HASHC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cod\+Veiculo} & \+: recebe um inteiro com o codigo de veiculo para ser verificado \\
+\hline
+{\em \doxylink{structlista_hash_carros}{lista\+Hash\+Carros}} & \+: recebe a LISTA\+\_\+\+HASHC \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+node\+Carro\+: ponteiro NODE\+\_\+\+CARRO para o carro que foi encontrado 
+\end{DoxyReturn}
 \Hypertarget{carros_8c_af8b20e5ba37df98a5d860699f86a9d5f}\index{carros.c@{carros.c}!verificarDONOexiste@{verificarDONOexiste}}
 \index{verificarDONOexiste@{verificarDONOexiste}!carros.c@{carros.c}}
 \doxysubsubsection{\texorpdfstring{verificarDONOexiste()}{verificarDONOexiste()}}
 {\footnotesize\ttfamily \label{carros_8c_af8b20e5ba37df98a5d860699f86a9d5f} 
-int verificar\+DONOexiste (\begin{DoxyParamCaption}\item[{int}]{id\+Dono}{, }\item[{\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista\+Donos}{}\end{DoxyParamCaption})}
+int verificar\+DONOexiste (\begin{DoxyParamCaption}\item[{int}]{id\+Dono}{, }\item[{\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista\+Donos}{}\end{DoxyParamCaption})}
 
 
 
@@ -287,7 +428,7 @@ Funcao responsavel por percorrer a lista de donos pelo ID e verificar se o dono 
 \begin{DoxyParams}{Parameters}
 {\em id\+Dono} & \+: Recebe um inteiro que e o numero de contribuinte do dono \\
 \hline
-{\em lista\+Donos} & \+: Recebe um ponteiro de uma \doxylink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS} com todos os donos para fazer verificacoes se o dono com o numero de contribuinte existe \\
+{\em lista\+Donos} & \+: Recebe um ponteiro de uma LISTA\+\_\+\+DONOS com todos os donos para fazer verificacoes se o dono com o numero de contribuinte existe \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -299,7 +440,7 @@ Funcao responsavel por percorrer a lista de donos pelo ID e verificar se o dono 
 \index{verificarMatriculaExiste@{verificarMatriculaExiste}!carros.c@{carros.c}}
 \doxysubsubsection{\texorpdfstring{verificarMatriculaExiste()}{verificarMatriculaExiste()}}
 {\footnotesize\ttfamily \label{carros_8c_a4772b0df8036e2e5d9487863271f71b8} 
-int verificar\+Matricula\+Existe (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{matricula}{, }\item[{\mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}}]{lista\+Carro}{}\end{DoxyParamCaption})}
+int verificar\+Matricula\+Existe (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{matricula}{, }\item[{\mbox{\hyperlink{structlista_carro}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}}]{lista\+Carro}{}\end{DoxyParamCaption})}
 
 
 

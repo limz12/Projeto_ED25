@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Projeto_ED_25: VIAGENS.H Source File</title>
+<title>ProjetoED_25: VIAGENS.H Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Projeto_ED_25
+   <div id="projectname">ProjetoED_25
    </div>
-   <div id="projectbrief">CCUT(Portagens com custo para o utilizador)</div>
+   <div id="projectbrief">CCUT</div>
   </td>
  </tr>
  </tbody>
@@ -92,54 +92,47 @@ $(function(){initNavTree('_v_i_a_g_e_n_s_8_h_source.html','',''); });
   <div class="headertitle"><div class="title">VIAGENS.H</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_v_i_a_g_e_n_s_8_h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="carros_8h.html">carros.h</a>&quot;</span></div>
+<a href="_v_i_a_g_e_n_s_8_h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="structnode_viagem.html">    6</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structnode_viagem.html">nodeViagem</a></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="structnode_viagem.html#a1270a910e05feec5d501091e3281debb">    8</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structnode_viagem.html#a1270a910e05feec5d501091e3281debb">totalKm</a>; <span class="comment">// vai armazenar todos os km percorridos em viagem do carro</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="structnode_viagem.html#ae653049b96941b5dc4d965cc8c8a2e13">    9</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structnode_viagem.html#ae653049b96941b5dc4d965cc8c8a2e13">totalInfracoes</a>; <span class="comment">// vai armazenar as infracoes cometidas pelo carro</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="structnode_viagem.html#a4825b8963281cf26187a0a3a0327bb7c">   10</a></span>    <a class="code hl_typedef" href="carros_8h.html#aa7cb4dee2a5859378aa6efba21babe07">CARRO</a>* <a class="code hl_variable" href="structnode_viagem.html#a4825b8963281cf26187a0a3a0327bb7c">carro</a>;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structnode_viagem.html#a52e02b454d954c10a46ac2fd530d09f4">   11</a></span>    <span class="keywordtype">long</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structnode_viagem.html#a52e02b454d954c10a46ac2fd530d09f4">milisegundosPercorridos</a>; <span class="comment">//vai armazenar o tempo em MS durante o periodo X que o carro viajou</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structnode_viagem.html#a358b5d698d489658f21c9b0c47e348f4">   12</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structnode_viagem.html">nodeViagem</a>* <a class="code hl_variable" href="structnode_viagem.html#a358b5d698d489658f21c9b0c47e348f4">next</a>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="_v_i_a_g_e_n_s_8_h.html#a4a33895ada63dc8093088d85b7a1740a">   13</a></span>}<a class="code hl_typedef" href="_v_i_a_g_e_n_s_8_h.html#a4a33895ada63dc8093088d85b7a1740a">NODE_VIAGENS</a>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> <span class="comment">// BIBLIOTECAS</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="carros_8h.html">carros.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structnode_viagem.html">   15</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structnode_viagem.html">nodeViagem</a></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">float</span> totalKm; <span class="comment">// vai armazenar todos os km percorridos em viagem do carro</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">int</span> totalInfracoes; <span class="comment">// vai armazenar as infracoes cometidas pelo carro</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    CARRO* carro;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">long</span> <span class="keywordtype">int</span> milisegundosPercorridos; <span class="comment">//vai armazenar o tempo em MS durante o periodo X que o carro viajou</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structnode_viagem.html">nodeViagem</a>* next;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}NODE_VIAGENS;</div>
 </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">//lista que vai conter nodesViagens</span></div>
-<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">   16</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html#a1fe592c83f7745100246aac44fd15452">   18</a></span>    <a class="code hl_typedef" href="_v_i_a_g_e_n_s_8_h.html#a4a33895ada63dc8093088d85b7a1740a">NODE_VIAGENS</a>* <a class="code hl_variable" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html#a1fe592c83f7745100246aac44fd15452">header</a>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html#ae60452d0c3414c4fe591e4873124c48f">   19</a></span>    <a class="code hl_typedef" href="_v_i_a_g_e_n_s_8_h.html#a4a33895ada63dc8093088d85b7a1740a">NODE_VIAGENS</a>* <a class="code hl_variable" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html#ae60452d0c3414c4fe591e4873124c48f">ultimoNode</a>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}<a class="code hl_struct" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">LISTA_VIAGENS</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">   28</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    NODE_VIAGENS* header;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    NODE_VIAGENS* ultimoNode;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}<a class="code hl_struct" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">LISTA_VIAGENS</a>;</div>
 </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">//prototipagens</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><a class="code hl_struct" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">LISTA_VIAGENS</a>* <a class="code hl_function" href="_v_i_a_g_e_n_s_8_h.html#a34005c65b634ff6a35c80ead7c63de13">criarListaViagens</a>();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><a class="code hl_typedef" href="_v_i_a_g_e_n_s_8_h.html#a4a33895ada63dc8093088d85b7a1740a">NODE_VIAGENS</a>* <a class="code hl_function" href="_v_i_a_g_e_n_s_8_h.html#add1d0326b66baf6372b3507727c0371e">criarNodeViagens</a>();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keywordtype">int</span> <a class="code hl_function" href="_v_i_a_g_e_n_s_8_h.html#a49c9d9efee063a30295a8950b8179175">existeCarroListaViagens</a>(<a class="code hl_struct" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">LISTA_VIAGENS</a>* listaViagens, <span class="keywordtype">int</span> codCarro);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keywordtype">void</span> <a class="code hl_function" href="_v_i_a_g_e_n_s_8_h.html#af17c2c8b71d1d143db39567eedb17eec">adicionarNodeListaViagens</a>(<a class="code hl_typedef" href="_v_i_a_g_e_n_s_8_h.html#a4a33895ada63dc8093088d85b7a1740a">NODE_VIAGENS</a>* nodeViagens, <a class="code hl_struct" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">LISTA_VIAGENS</a>* listaViagens);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">void</span> <a class="code hl_function" href="_v_i_a_g_e_n_s_8_h.html#a0faf13e23f6c139478c26960b8382262">freeListaViagens</a>(<a class="code hl_struct" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">LISTA_VIAGENS</a>* listaViagens);</div>
-<div class="ttc" id="a_v_i_a_g_e_n_s_8_h_html_a0faf13e23f6c139478c26960b8382262"><div class="ttname"><a href="_v_i_a_g_e_n_s_8_h.html#a0faf13e23f6c139478c26960b8382262">freeListaViagens</a></div><div class="ttdeci">void freeListaViagens(LISTA_VIAGENS *listaViagens)</div><div class="ttdef"><b>Definition</b> VIAGENS.c:79</div></div>
-<div class="ttc" id="a_v_i_a_g_e_n_s_8_h_html_a34005c65b634ff6a35c80ead7c63de13"><div class="ttname"><a href="_v_i_a_g_e_n_s_8_h.html#a34005c65b634ff6a35c80ead7c63de13">criarListaViagens</a></div><div class="ttdeci">LISTA_VIAGENS * criarListaViagens()</div><div class="ttdef"><b>Definition</b> VIAGENS.c:7</div></div>
-<div class="ttc" id="a_v_i_a_g_e_n_s_8_h_html_a49c9d9efee063a30295a8950b8179175"><div class="ttname"><a href="_v_i_a_g_e_n_s_8_h.html#a49c9d9efee063a30295a8950b8179175">existeCarroListaViagens</a></div><div class="ttdeci">int existeCarroListaViagens(LISTA_VIAGENS *listaViagens, int codCarro)</div><div class="ttdef"><b>Definition</b> VIAGENS.c:30</div></div>
-<div class="ttc" id="a_v_i_a_g_e_n_s_8_h_html_a4a33895ada63dc8093088d85b7a1740a"><div class="ttname"><a href="_v_i_a_g_e_n_s_8_h.html#a4a33895ada63dc8093088d85b7a1740a">NODE_VIAGENS</a></div><div class="ttdeci">struct nodeViagem NODE_VIAGENS</div></div>
-<div class="ttc" id="a_v_i_a_g_e_n_s_8_h_html_add1d0326b66baf6372b3507727c0371e"><div class="ttname"><a href="_v_i_a_g_e_n_s_8_h.html#add1d0326b66baf6372b3507727c0371e">criarNodeViagens</a></div><div class="ttdeci">NODE_VIAGENS * criarNodeViagens()</div><div class="ttdef"><b>Definition</b> VIAGENS.c:17</div></div>
-<div class="ttc" id="a_v_i_a_g_e_n_s_8_h_html_af17c2c8b71d1d143db39567eedb17eec"><div class="ttname"><a href="_v_i_a_g_e_n_s_8_h.html#af17c2c8b71d1d143db39567eedb17eec">adicionarNodeListaViagens</a></div><div class="ttdeci">void adicionarNodeListaViagens(NODE_VIAGENS *nodeViagens, LISTA_VIAGENS *listaViagens)</div><div class="ttdef"><b>Definition</b> VIAGENS.c:57</div></div>
-<div class="ttc" id="acarros_8h_html"><div class="ttname"><a href="carros_8h.html">carros.h</a></div></div>
-<div class="ttc" id="acarros_8h_html_aa7cb4dee2a5859378aa6efba21babe07"><div class="ttname"><a href="carros_8h.html#aa7cb4dee2a5859378aa6efba21babe07">CARRO</a></div><div class="ttdeci">struct carro CARRO</div></div>
-<div class="ttc" id="astruct_l_i_s_t_a___v_i_a_g_e_n_s_html"><div class="ttname"><a href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">LISTA_VIAGENS</a></div><div class="ttdef"><b>Definition</b> VIAGENS.H:17</div></div>
-<div class="ttc" id="astruct_l_i_s_t_a___v_i_a_g_e_n_s_html_a1fe592c83f7745100246aac44fd15452"><div class="ttname"><a href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html#a1fe592c83f7745100246aac44fd15452">LISTA_VIAGENS::header</a></div><div class="ttdeci">NODE_VIAGENS * header</div><div class="ttdef"><b>Definition</b> VIAGENS.H:18</div></div>
-<div class="ttc" id="astruct_l_i_s_t_a___v_i_a_g_e_n_s_html_ae60452d0c3414c4fe591e4873124c48f"><div class="ttname"><a href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html#ae60452d0c3414c4fe591e4873124c48f">LISTA_VIAGENS::ultimoNode</a></div><div class="ttdeci">NODE_VIAGENS * ultimoNode</div><div class="ttdef"><b>Definition</b> VIAGENS.H:19</div></div>
-<div class="ttc" id="astructnode_viagem_html"><div class="ttname"><a href="structnode_viagem.html">nodeViagem</a></div><div class="ttdef"><b>Definition</b> VIAGENS.H:7</div></div>
-<div class="ttc" id="astructnode_viagem_html_a1270a910e05feec5d501091e3281debb"><div class="ttname"><a href="structnode_viagem.html#a1270a910e05feec5d501091e3281debb">nodeViagem::totalKm</a></div><div class="ttdeci">float totalKm</div><div class="ttdef"><b>Definition</b> VIAGENS.H:8</div></div>
-<div class="ttc" id="astructnode_viagem_html_a358b5d698d489658f21c9b0c47e348f4"><div class="ttname"><a href="structnode_viagem.html#a358b5d698d489658f21c9b0c47e348f4">nodeViagem::next</a></div><div class="ttdeci">struct nodeViagem * next</div><div class="ttdef"><b>Definition</b> VIAGENS.H:12</div></div>
-<div class="ttc" id="astructnode_viagem_html_a4825b8963281cf26187a0a3a0327bb7c"><div class="ttname"><a href="structnode_viagem.html#a4825b8963281cf26187a0a3a0327bb7c">nodeViagem::carro</a></div><div class="ttdeci">CARRO * carro</div><div class="ttdef"><b>Definition</b> VIAGENS.H:10</div></div>
-<div class="ttc" id="astructnode_viagem_html_a52e02b454d954c10a46ac2fd530d09f4"><div class="ttname"><a href="structnode_viagem.html#a52e02b454d954c10a46ac2fd530d09f4">nodeViagem::milisegundosPercorridos</a></div><div class="ttdeci">long int milisegundosPercorridos</div><div class="ttdef"><b>Definition</b> VIAGENS.H:11</div></div>
-<div class="ttc" id="astructnode_viagem_html_ae653049b96941b5dc4d965cc8c8a2e13"><div class="ttname"><a href="structnode_viagem.html#ae653049b96941b5dc4d965cc8c8a2e13">nodeViagem::totalInfracoes</a></div><div class="ttdeci">int totalInfracoes</div><div class="ttdef"><b>Definition</b> VIAGENS.H:9</div></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">// PROTOTIPAGEM</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><a class="code hl_struct" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">LISTA_VIAGENS</a>* <a class="code hl_function" href="_v_i_a_g_e_n_s_8_h.html#a34005c65b634ff6a35c80ead7c63de13">criarListaViagens</a>();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>NODE_VIAGENS* <a class="code hl_function" href="_v_i_a_g_e_n_s_8_h.html#add1d0326b66baf6372b3507727c0371e">criarNodeViagens</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">int</span> <a class="code hl_function" href="_v_i_a_g_e_n_s_8_h.html#a49c9d9efee063a30295a8950b8179175">existeCarroListaViagens</a>(<a class="code hl_struct" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">LISTA_VIAGENS</a>* listaViagens, <span class="keywordtype">int</span> codCarro);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keywordtype">void</span> <a class="code hl_function" href="_v_i_a_g_e_n_s_8_h.html#af17c2c8b71d1d143db39567eedb17eec">adicionarNodeListaViagens</a>(NODE_VIAGENS* nodeViagens, <a class="code hl_struct" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">LISTA_VIAGENS</a>* listaViagens);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keywordtype">void</span> <a class="code hl_function" href="_v_i_a_g_e_n_s_8_h.html#a0faf13e23f6c139478c26960b8382262">freeListaViagens</a>(<a class="code hl_struct" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">LISTA_VIAGENS</a>* listaViagens);</div>
+<div class="ttc" id="a_v_i_a_g_e_n_s_8_h_html_a0faf13e23f6c139478c26960b8382262"><div class="ttname"><a href="_v_i_a_g_e_n_s_8_h.html#a0faf13e23f6c139478c26960b8382262">freeListaViagens</a></div><div class="ttdeci">void freeListaViagens(LISTA_VIAGENS *listaViagens)</div><div class="ttdoc">Funcao responsavel por libertar a memoria alocada de toda a lista de viagens e todo o seu conteudo.</div><div class="ttdef"><b>Definition</b> VIAGENS.c:108</div></div>
+<div class="ttc" id="a_v_i_a_g_e_n_s_8_h_html_a34005c65b634ff6a35c80ead7c63de13"><div class="ttname"><a href="_v_i_a_g_e_n_s_8_h.html#a34005c65b634ff6a35c80ead7c63de13">criarListaViagens</a></div><div class="ttdeci">LISTA_VIAGENS * criarListaViagens()</div><div class="ttdoc">Funcao responsavel por criar uma lista que ira conter viagens.</div><div class="ttdef"><b>Definition</b> VIAGENS.c:18</div></div>
+<div class="ttc" id="a_v_i_a_g_e_n_s_8_h_html_a49c9d9efee063a30295a8950b8179175"><div class="ttname"><a href="_v_i_a_g_e_n_s_8_h.html#a49c9d9efee063a30295a8950b8179175">existeCarroListaViagens</a></div><div class="ttdeci">int existeCarroListaViagens(LISTA_VIAGENS *listaViagens, int codCarro)</div><div class="ttdoc">Funcao responsavel por verificar se o determinado carro existe na lista.</div><div class="ttdef"><b>Definition</b> VIAGENS.c:50</div></div>
+<div class="ttc" id="a_v_i_a_g_e_n_s_8_h_html_add1d0326b66baf6372b3507727c0371e"><div class="ttname"><a href="_v_i_a_g_e_n_s_8_h.html#add1d0326b66baf6372b3507727c0371e">criarNodeViagens</a></div><div class="ttdeci">NODE_VIAGENS * criarNodeViagens()</div><div class="ttdoc">Funcao responsavel por alocar memoria para um node que contem todos os dados de uma respetiva viagem.</div><div class="ttdef"><b>Definition</b> VIAGENS.c:31</div></div>
+<div class="ttc" id="a_v_i_a_g_e_n_s_8_h_html_af17c2c8b71d1d143db39567eedb17eec"><div class="ttname"><a href="_v_i_a_g_e_n_s_8_h.html#af17c2c8b71d1d143db39567eedb17eec">adicionarNodeListaViagens</a></div><div class="ttdeci">void adicionarNodeListaViagens(NODE_VIAGENS *nodeViagens, LISTA_VIAGENS *listaViagens)</div><div class="ttdoc">Funcao responsavel por receber um NODE_VIAGENS e adiciona-lo a uma lista de viagens.</div><div class="ttdef"><b>Definition</b> VIAGENS.c:82</div></div>
+<div class="ttc" id="acarros_8h_html"><div class="ttname"><a href="carros_8h.html">carros.h</a></div><div class="ttdoc">Definicao das Estruturas relacionadas com os carros e prototipagem das funcoes utilizadas no carros....</div></div>
+<div class="ttc" id="astruct_l_i_s_t_a___v_i_a_g_e_n_s_html"><div class="ttname"><a href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">LISTA_VIAGENS</a></div><div class="ttdef"><b>Definition</b> VIAGENS.H:29</div></div>
+<div class="ttc" id="astructnode_viagem_html"><div class="ttname"><a href="structnode_viagem.html">nodeViagem</a></div><div class="ttdoc">Estrutura que serve de node, contem o conteudo da viagem e o ponteiro do proximo.</div><div class="ttdef"><b>Definition</b> VIAGENS.H:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

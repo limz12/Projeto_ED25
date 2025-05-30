@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['segundo_0',['segundo',['../struct_d_a_t_a.html#af9231a971226e61d4bf75dcb4bec0385',1,'DATA']]],
-  ['sensor_1',['SENSOR',['../struct_s_e_n_s_o_r.html',1,'']]],
-  ['sensores_2ec_2',['SENSORES.c',['../_s_e_n_s_o_r_e_s_8c.html',1,'']]],
-  ['sensores_2eh_3',['SENSORES.H',['../_s_e_n_s_o_r_e_s_8_h.html',1,'']]]
+  ['totalinfracoesdurantex_0',['totalinfracoesDuranteX',['../_p_a_s_s_a_g_e_m_8_h.html#a95f1fdc93ed3ef6d5284188811f0cf84',1,'PASSAGEM.c']]],
+  ['totalkmcarrodurantex_1',['totalKmCarroDuranteX',['../_p_a_s_s_a_g_e_m_8_h.html#aa9e461a2315142e353507c9c5e84f28c',1,'PASSAGEM.c']]]
 ];

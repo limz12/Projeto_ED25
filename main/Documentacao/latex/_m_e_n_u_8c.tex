@@ -1,5 +1,10 @@
 \doxysection{MENU.\+c File Reference}
 \hypertarget{_m_e_n_u_8c}{}\label{_m_e_n_u_8c}\index{MENU.c@{MENU.c}}
+
+
+Implementacao das funcoes respetivas aos menus.  
+
+
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$ctype.\+h$>$}\newline
@@ -13,21 +18,26 @@
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{_m_e_n_u_8c_a2ca60f32fa15f01c2ab033aa4837f21f}{verificar\+Numero}} (int max)
-\item 
-int \mbox{\hyperlink{_m_e_n_u_8c_a5b0ec24cdd6485348f4e075bef9a85fa}{menu\+Principal}} (\mbox{\hyperlink{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_sensor}{lista\+Sensor}}, \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias, \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagem, \mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash\+Carro, \mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista\+Donos)
-\item 
-void \mbox{\hyperlink{_m_e_n_u_8c_a11b1c2cad6bda42112214a10801764d9}{menu\+Distancias}} (\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
-\item 
-void \mbox{\hyperlink{_m_e_n_u_8c_a217fbd5f842703f8fbde59d4091b7e06}{menu\+Passagens}} (\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagens, \mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}}, \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
-\item 
-void \mbox{\hyperlink{_m_e_n_u_8c_a2a81c5a825a5a1bc3ce518785495d8c6}{menu\+Sensores}} (\mbox{\hyperlink{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}lista\+Sensores)
-\item 
-void \mbox{\hyperlink{_m_e_n_u_8c_a71e0b9c54ff2871b912fe23bb874f239}{menu\+Carros}} (\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}hash\+Carros, \mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista\+Donos, \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagens, \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
-\item 
-void \mbox{\hyperlink{_m_e_n_u_8c_ac4556db67e8f989bd80acd3403e54e16}{menu\+Donos}} (\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista\+Donos, \mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}hash\+Carro, \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagens, \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
-\item 
-void \mbox{\hyperlink{_m_e_n_u_8c_a81d12ba9ad59a40cce21e6c7c297b845}{menu\+Guardar\+EDFicheiro}} (\mbox{\hyperlink{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_sensor}{lista\+Sensor}}, \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias, \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagem, \mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}}, \mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista\+Donos)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por fazer a validação das escolhas dos menus. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_m_e_n_u_8c_a5b0ec24cdd6485348f4e075bef9a85fa}{menu\+Principal}} (\mbox{\hyperlink{structlista_sensor}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_sensor}{lista\+Sensor}}, \mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias, \mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagem, \mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash\+Carro, \mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista\+Donos)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por criar o menu principal do programa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_m_e_n_u_8c_a11b1c2cad6bda42112214a10801764d9}{menu\+Distancias}} (\mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por criar o menu das distancias. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_m_e_n_u_8c_a217fbd5f842703f8fbde59d4091b7e06}{menu\+Passagens}} (\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagens, \mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}}, \mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por criar o menu das passagens. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_m_e_n_u_8c_a2a81c5a825a5a1bc3ce518785495d8c6}{menu\+Sensores}} (\mbox{\hyperlink{structlista_sensor}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}lista\+Sensores)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por criar o menu dos sensores. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_m_e_n_u_8c_a71e0b9c54ff2871b912fe23bb874f239}{menu\+Carros}} (\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}hash\+Carros, \mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista\+Donos, \mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagens, \mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por criar o menu dos carros. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_m_e_n_u_8c_ac4556db67e8f989bd80acd3403e54e16}{menu\+Donos}} (\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista\+Donos, \mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}hash\+Carro, \mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagens, \mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por criar o menu dos donos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_m_e_n_u_8c_a81d12ba9ad59a40cce21e6c7c297b845}{menu\+Guardar\+EDFicheiro}} (\mbox{\hyperlink{structlista_sensor}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_sensor}{lista\+Sensor}}, \mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias, \mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagem, \mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}}, \mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista\+Donos)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por criar o menu das exportacoes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementacao das funcoes respetivas aos menus. 
+
 
 
 \label{doc-func-members}
@@ -37,47 +47,108 @@ void \mbox{\hyperlink{_m_e_n_u_8c_a81d12ba9ad59a40cce21e6c7c297b845}{menu\+Guard
 \index{menuCarros@{menuCarros}!MENU.c@{MENU.c}}
 \doxysubsubsection{\texorpdfstring{menuCarros()}{menuCarros()}}
 {\footnotesize\ttfamily \label{_m_e_n_u_8c_a71e0b9c54ff2871b912fe23bb874f239} 
-void menu\+Carros (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{hash\+Carros}{, }\item[{\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista\+Donos}{, }\item[{\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagens}{, }\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
+void menu\+Carros (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{hash\+Carros}{, }\item[{\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista\+Donos}{, }\item[{\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagens}{, }\item[{\mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por criar o menu dos carros. 
+
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_m_e_n_u_8c_a11b1c2cad6bda42112214a10801764d9}\index{MENU.c@{MENU.c}!menuDistancias@{menuDistancias}}
 \index{menuDistancias@{menuDistancias}!MENU.c@{MENU.c}}
 \doxysubsubsection{\texorpdfstring{menuDistancias()}{menuDistancias()}}
 {\footnotesize\ttfamily \label{_m_e_n_u_8c_a11b1c2cad6bda42112214a10801764d9} 
-void menu\+Distancias (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
+void menu\+Distancias (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por criar o menu das distancias. 
+
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_m_e_n_u_8c_ac4556db67e8f989bd80acd3403e54e16}\index{MENU.c@{MENU.c}!menuDonos@{menuDonos}}
 \index{menuDonos@{menuDonos}!MENU.c@{MENU.c}}
 \doxysubsubsection{\texorpdfstring{menuDonos()}{menuDonos()}}
 {\footnotesize\ttfamily \label{_m_e_n_u_8c_ac4556db67e8f989bd80acd3403e54e16} 
-void menu\+Donos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista\+Donos}{, }\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{hash\+Carro}{, }\item[{\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagens}{, }\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
+void menu\+Donos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista\+Donos}{, }\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{hash\+Carro}{, }\item[{\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagens}{, }\item[{\mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por criar o menu dos donos. 
+
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_m_e_n_u_8c_a81d12ba9ad59a40cce21e6c7c297b845}\index{MENU.c@{MENU.c}!menuGuardarEDFicheiro@{menuGuardarEDFicheiro}}
 \index{menuGuardarEDFicheiro@{menuGuardarEDFicheiro}!MENU.c@{MENU.c}}
 \doxysubsubsection{\texorpdfstring{menuGuardarEDFicheiro()}{menuGuardarEDFicheiro()}}
 {\footnotesize\ttfamily \label{_m_e_n_u_8c_a81d12ba9ad59a40cce21e6c7c297b845} 
-void menu\+Guardar\+EDFicheiro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}}]{lista\+Sensor}{, }\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{, }\item[{\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagem}{, }\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{, }\item[{\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista\+Donos}{}\end{DoxyParamCaption})}
+void menu\+Guardar\+EDFicheiro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_sensor}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}}]{lista\+Sensor}{, }\item[{\mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{, }\item[{\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagem}{, }\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{, }\item[{\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista\+Donos}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por criar o menu das exportacoes. 
+
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_m_e_n_u_8c_a217fbd5f842703f8fbde59d4091b7e06}\index{MENU.c@{MENU.c}!menuPassagens@{menuPassagens}}
 \index{menuPassagens@{menuPassagens}!MENU.c@{MENU.c}}
 \doxysubsubsection{\texorpdfstring{menuPassagens()}{menuPassagens()}}
 {\footnotesize\ttfamily \label{_m_e_n_u_8c_a217fbd5f842703f8fbde59d4091b7e06} 
-void menu\+Passagens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagens}{, }\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{, }\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
+void menu\+Passagens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagens}{, }\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{, }\item[{\mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por criar o menu das passagens. 
+
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_m_e_n_u_8c_a5b0ec24cdd6485348f4e075bef9a85fa}\index{MENU.c@{MENU.c}!menuPrincipal@{menuPrincipal}}
 \index{menuPrincipal@{menuPrincipal}!MENU.c@{MENU.c}}
 \doxysubsubsection{\texorpdfstring{menuPrincipal()}{menuPrincipal()}}
 {\footnotesize\ttfamily \label{_m_e_n_u_8c_a5b0ec24cdd6485348f4e075bef9a85fa} 
-int menu\+Principal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}}]{lista\+Sensor}{, }\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{, }\item[{\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagem}{, }\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carro}{, }\item[{\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista\+Donos}{}\end{DoxyParamCaption})}
+int menu\+Principal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_sensor}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}}]{lista\+Sensor}{, }\item[{\mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{, }\item[{\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagem}{, }\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carro}{, }\item[{\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista\+Donos}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por criar o menu principal do programa. 
+
+\begin{DoxyReturn}{Returns}
+escolha \+: retorna a opcao, se for um inteiro dentro dos limites das escolhas possiveis 
+\end{DoxyReturn}
 \Hypertarget{_m_e_n_u_8c_a2a81c5a825a5a1bc3ce518785495d8c6}\index{MENU.c@{MENU.c}!menuSensores@{menuSensores}}
 \index{menuSensores@{menuSensores}!MENU.c@{MENU.c}}
 \doxysubsubsection{\texorpdfstring{menuSensores()}{menuSensores()}}
 {\footnotesize\ttfamily \label{_m_e_n_u_8c_a2a81c5a825a5a1bc3ce518785495d8c6} 
-void menu\+Sensores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}}]{lista\+Sensores}{}\end{DoxyParamCaption})}
+void menu\+Sensores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_sensor}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}}]{lista\+Sensores}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por criar o menu dos sensores. 
+
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_m_e_n_u_8c_a2ca60f32fa15f01c2ab033aa4837f21f}\index{MENU.c@{MENU.c}!verificarNumero@{verificarNumero}}
 \index{verificarNumero@{verificarNumero}!MENU.c@{MENU.c}}
 \doxysubsubsection{\texorpdfstring{verificarNumero()}{verificarNumero()}}
 {\footnotesize\ttfamily \label{_m_e_n_u_8c_a2ca60f32fa15f01c2ab033aa4837f21f} 
 int verificar\+Numero (\begin{DoxyParamCaption}\item[{int}]{max}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por fazer a validação das escolhas dos menus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max} & \+: Recebe um inteiro, que corresponde ao limite maximo das escolhas possiveis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+escolha \+: retorna a opcao, se for um inteiro dentro dos limites das escolhas possiveis 
+\end{DoxyReturn}

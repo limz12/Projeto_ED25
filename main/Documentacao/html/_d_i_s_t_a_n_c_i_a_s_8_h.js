@@ -1,9 +1,8 @@
 var _d_i_s_t_a_n_c_i_a_s_8_h =
 [
-    [ "DISTANCIAS", "struct_d_i_s_t_a_n_c_i_a_s.html", "struct_d_i_s_t_a_n_c_i_a_s" ],
-    [ "nodeDistancia", "structnode_distancia.html", "structnode_distancia" ],
-    [ "distanciaLista", "structdistancia_lista.html", "structdistancia_lista" ],
-    [ "DISTANCIAS_NODE", "_d_i_s_t_a_n_c_i_a_s_8_h.html#a353f6bbc501ea1af8843852c41ef45c1", null ],
+    [ "distancia", "structdistancia.html", null ],
+    [ "nodeDistancia", "structnode_distancia.html", null ],
+    [ "distanciaLista", "structdistancia_lista.html", null ],
     [ "adicionarLista", "_d_i_s_t_a_n_c_i_a_s_8_h.html#a1901706ad927ac7e47c4fce97d7a847a", null ],
     [ "carregarDistancia", "_d_i_s_t_a_n_c_i_a_s_8_h.html#a92ba107be74bc93a318121a4edfd6075", null ],
     [ "criarListaDistancias", "_d_i_s_t_a_n_c_i_a_s_8_h.html#a189851605483abf7c8ac80ac4c333c23", null ],

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Projeto_ED_25: UTEIS.c File Reference</title>
+<title>ProjetoED_25: UTEIS.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Projeto_ED_25
+   <div id="projectname">ProjetoED_25
    </div>
-   <div id="projectbrief">CCUT(Portagens com custo para o utilizador)</div>
+   <div id="projectbrief">CCUT</div>
   </td>
  </tr>
  </tbody>
@@ -92,10 +92,13 @@ $(function(){initNavTree('_u_t_e_i_s_8c.html','',''); });
   <div class="headertitle"><div class="title">UTEIS.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementacao das funcoes uteis.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;time.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="_s_e_n_s_o_r_e_s_8_h_source.html">SENSORES.H</a>&quot;</code><br />
+<code>#include &quot;SENSORES.H&quot;</code><br />
 <code>#include &quot;<a class="el" href="_d_i_s_t_a_n_c_i_a_s_8_h_source.html">DISTANCIAS.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_p_a_s_s_a_g_e_m_8_h_source.html">PASSAGEM.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_u_t_e_i_s_8_h_source.html">UTEIS.H</a>&quot;</code><br />
@@ -104,25 +107,44 @@ $(function(){initNavTree('_u_t_e_i_s_8c.html','',''); });
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa52986f66adc3c54a9cb446eb5dcdd37" id="r_aa52986f66adc3c54a9cb446eb5dcdd37"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa52986f66adc3c54a9cb446eb5dcdd37">calcularTamanhoEDSensor</a> (<a class="el" href="donos_8h.html#a1fdaac5ff6c774fac36deb20437ba7dd">LISTA_SENSOR</a> *lista)</td></tr>
-<tr class="memitem:a5d728b7fc700245272f4af338a4af287" id="r_a5d728b7fc700245272f4af338a4af287"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d728b7fc700245272f4af338a4af287">calcularTamanhoEDDistancia</a> (<a class="el" href="carros_8h.html#a78ff326904d562e0a6deda02a6b9dd57">DISTANCIAS_LISTA</a> *lista)</td></tr>
-<tr class="memitem:ac458550ccb12559c11a6d767610b0bd3" id="r_ac458550ccb12559c11a6d767610b0bd3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac458550ccb12559c11a6d767610b0bd3">calcularTamanhoEDPassagem</a> (<a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *lista)</td></tr>
-<tr class="memitem:afa1d05d7e51d0dd7c3ba63d31c89eaef" id="r_afa1d05d7e51d0dd7c3ba63d31c89eaef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa1d05d7e51d0dd7c3ba63d31c89eaef">calcularTamanhoEDCarro</a> (<a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *listaHash)</td></tr>
-<tr class="memitem:a70411dd36b877969a466ed212d111829" id="r_a70411dd36b877969a466ed212d111829"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70411dd36b877969a466ed212d111829">calcularTamanhoEDDonos</a> (<a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *lista)</td></tr>
-<tr class="memitem:aae4620fbcf365e699f2cbe84e8d9deab" id="r_aae4620fbcf365e699f2cbe84e8d9deab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae4620fbcf365e699f2cbe84e8d9deab">memoriaTotalOcupadaED</a> (<a class="el" href="donos_8h.html#a1fdaac5ff6c774fac36deb20437ba7dd">LISTA_SENSOR</a> *listaS, <a class="el" href="carros_8h.html#a78ff326904d562e0a6deda02a6b9dd57">DISTANCIAS_LISTA</a> *listaD, <a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *listaP, <a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *listaHashCarro, <a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *listaDonos)</td></tr>
-<tr class="memitem:a0f1eba6c25f5924c9f4cd9a21c6d6c2b" id="r_a0f1eba6c25f5924c9f4cd9a21c6d6c2b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f1eba6c25f5924c9f4cd9a21c6d6c2b">inicializarED</a> (<a class="el" href="donos_8h.html#a1fdaac5ff6c774fac36deb20437ba7dd">LISTA_SENSOR</a> *<a class="el" href="structlista_sensor.html">listaSensor</a>, <a class="el" href="carros_8h.html#a78ff326904d562e0a6deda02a6b9dd57">DISTANCIAS_LISTA</a> *listaDistancias, <a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *listaPassagem, <a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>, <a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *listaDonos)</td></tr>
-<tr class="memitem:aae4b46bd96240d481c45f2120bc31f73" id="r_aae4b46bd96240d481c45f2120bc31f73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae4b46bd96240d481c45f2120bc31f73">exportar_csv_DONOS</a> (<a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *lista)</td></tr>
-<tr class="memitem:af91847a19359d9c26818633df4e8ae8f" id="r_af91847a19359d9c26818633df4e8ae8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af91847a19359d9c26818633df4e8ae8f">exportar_csv_SENSORES</a> (<a class="el" href="donos_8h.html#a1fdaac5ff6c774fac36deb20437ba7dd">LISTA_SENSOR</a> *<a class="el" href="structlista_sensor.html">listaSensor</a>)</td></tr>
-<tr class="memitem:a24c9385c63f6b30a99bd08d03824869b" id="r_a24c9385c63f6b30a99bd08d03824869b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24c9385c63f6b30a99bd08d03824869b">exportar_csv_DISTANCIAS</a> (<a class="el" href="carros_8h.html#a78ff326904d562e0a6deda02a6b9dd57">DISTANCIAS_LISTA</a> *listaDistancias)</td></tr>
-<tr class="memitem:abd589ace39d17e47425ceeb255731743" id="r_abd589ace39d17e47425ceeb255731743"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd589ace39d17e47425ceeb255731743">exportar_csv_CARROS</a> (<a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *listaHash)</td></tr>
-<tr class="memitem:ad21e611f40b34c52dea949dd476e3677" id="r_ad21e611f40b34c52dea949dd476e3677"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad21e611f40b34c52dea949dd476e3677">exportar_csv_PASSAGENS</a> (<a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *listaPassagem)</td></tr>
-<tr class="memitem:aa78ba80cfdc33f7ba2410bafc1c765f1" id="r_aa78ba80cfdc33f7ba2410bafc1c765f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa78ba80cfdc33f7ba2410bafc1c765f1">exportar_xml_DONOS</a> (<a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *listaDonos)</td></tr>
-<tr class="memitem:a32b0c41175e95e41f583c3f6c51f21e0" id="r_a32b0c41175e95e41f583c3f6c51f21e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32b0c41175e95e41f583c3f6c51f21e0">exportar_xml_SENSORES</a> (<a class="el" href="donos_8h.html#a1fdaac5ff6c774fac36deb20437ba7dd">LISTA_SENSOR</a> *<a class="el" href="structlista_sensor.html">listaSensor</a>)</td></tr>
-<tr class="memitem:ab423d1aa5d0368b0e690e7774e542c55" id="r_ab423d1aa5d0368b0e690e7774e542c55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab423d1aa5d0368b0e690e7774e542c55">exportar_xml_DISTANCIAS</a> (<a class="el" href="carros_8h.html#a78ff326904d562e0a6deda02a6b9dd57">DISTANCIAS_LISTA</a> *listaDistancias)</td></tr>
-<tr class="memitem:ae0e7e1dc10ebcf665fb1feada68edd06" id="r_ae0e7e1dc10ebcf665fb1feada68edd06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0e7e1dc10ebcf665fb1feada68edd06">exportar_xml_PASSAGENS</a> (<a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *listaPassagens)</td></tr>
-<tr class="memitem:a2d8646fe624151c8a8e2f65c4cb2585d" id="r_a2d8646fe624151c8a8e2f65c4cb2585d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d8646fe624151c8a8e2f65c4cb2585d">exportar_xml_CARROS</a> (<a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>)</td></tr>
+<tr class="memitem:aa52986f66adc3c54a9cb446eb5dcdd37" id="r_aa52986f66adc3c54a9cb446eb5dcdd37"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa52986f66adc3c54a9cb446eb5dcdd37">calcularTamanhoEDSensor</a> (<a class="el" href="structlista_sensor.html">LISTA_SENSOR</a> *lista)</td></tr>
+<tr class="memdesc:aa52986f66adc3c54a9cb446eb5dcdd37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por determinar a memoria ocupada pela estrutura de dados LISTA_SENSOR.  <br /></td></tr>
+<tr class="memitem:a5d728b7fc700245272f4af338a4af287" id="r_a5d728b7fc700245272f4af338a4af287"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d728b7fc700245272f4af338a4af287">calcularTamanhoEDDistancia</a> (<a class="el" href="structdistancia_lista.html">DISTANCIAS_LISTA</a> *lista)</td></tr>
+<tr class="memdesc:a5d728b7fc700245272f4af338a4af287"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por determinar a memoria ocupada pela estrutura de dados DISTANCIAS_LISTA.  <br /></td></tr>
+<tr class="memitem:ac458550ccb12559c11a6d767610b0bd3" id="r_ac458550ccb12559c11a6d767610b0bd3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac458550ccb12559c11a6d767610b0bd3">calcularTamanhoEDPassagem</a> (<a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *lista)</td></tr>
+<tr class="memdesc:ac458550ccb12559c11a6d767610b0bd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por determinar a memoria ocupada pela estrutura de dados PASSAGEM_LISTA.  <br /></td></tr>
+<tr class="memitem:afa1d05d7e51d0dd7c3ba63d31c89eaef" id="r_afa1d05d7e51d0dd7c3ba63d31c89eaef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa1d05d7e51d0dd7c3ba63d31c89eaef">calcularTamanhoEDCarro</a> (<a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *listaHash)</td></tr>
+<tr class="memdesc:afa1d05d7e51d0dd7c3ba63d31c89eaef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por determinar a memoria ocupada pela estrutura de dados LISTA_HASHC.  <br /></td></tr>
+<tr class="memitem:a70411dd36b877969a466ed212d111829" id="r_a70411dd36b877969a466ed212d111829"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70411dd36b877969a466ed212d111829">calcularTamanhoEDDonos</a> (<a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *lista)</td></tr>
+<tr class="memdesc:a70411dd36b877969a466ed212d111829"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por determinar a memoria ocupada pela estrutura de dados LISTA_DONOS.  <br /></td></tr>
+<tr class="memitem:aae4620fbcf365e699f2cbe84e8d9deab" id="r_aae4620fbcf365e699f2cbe84e8d9deab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae4620fbcf365e699f2cbe84e8d9deab">memoriaTotalOcupadaED</a> (<a class="el" href="structlista_sensor.html">LISTA_SENSOR</a> *listaS, <a class="el" href="structdistancia_lista.html">DISTANCIAS_LISTA</a> *listaD, <a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *listaP, <a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *listaHashCarro, <a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *listaDonos)</td></tr>
+<tr class="memdesc:aae4620fbcf365e699f2cbe84e8d9deab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por apresentar todas as funçoes anteriores que calculam o tamanho de todas as estruturas de dados (em MegaBytes)  <br /></td></tr>
+<tr class="memitem:a0f1eba6c25f5924c9f4cd9a21c6d6c2b" id="r_a0f1eba6c25f5924c9f4cd9a21c6d6c2b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f1eba6c25f5924c9f4cd9a21c6d6c2b">inicializarED</a> (<a class="el" href="structlista_sensor.html">LISTA_SENSOR</a> *<a class="el" href="structlista_sensor.html">listaSensor</a>, <a class="el" href="structdistancia_lista.html">DISTANCIAS_LISTA</a> *listaDistancias, <a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *listaPassagem, <a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>, <a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *listaDonos)</td></tr>
+<tr class="memdesc:a0f1eba6c25f5924c9f4cd9a21c6d6c2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por inicializar a estrutura de dados, ler os ficheiros / criar listas e carregar todas as informacoes dos respetivos ficheiros.  <br /></td></tr>
+<tr class="memitem:aae4b46bd96240d481c45f2120bc31f73" id="r_aae4b46bd96240d481c45f2120bc31f73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae4b46bd96240d481c45f2120bc31f73">exportar_csv_DONOS</a> (<a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *lista)</td></tr>
+<tr class="memdesc:aae4b46bd96240d481c45f2120bc31f73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por exportar a lista de <a class="el" href="struct_donos.html" title="Estrutura que representa uma Donos.">Donos</a> em CSV.  <br /></td></tr>
+<tr class="memitem:af91847a19359d9c26818633df4e8ae8f" id="r_af91847a19359d9c26818633df4e8ae8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af91847a19359d9c26818633df4e8ae8f">exportar_csv_SENSORES</a> (<a class="el" href="structlista_sensor.html">LISTA_SENSOR</a> *<a class="el" href="structlista_sensor.html">listaSensor</a>)</td></tr>
+<tr class="memdesc:af91847a19359d9c26818633df4e8ae8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por exportar a lista de Sensores em CSV.  <br /></td></tr>
+<tr class="memitem:a24c9385c63f6b30a99bd08d03824869b" id="r_a24c9385c63f6b30a99bd08d03824869b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24c9385c63f6b30a99bd08d03824869b">exportar_csv_DISTANCIAS</a> (<a class="el" href="structdistancia_lista.html">DISTANCIAS_LISTA</a> *listaDistancias)</td></tr>
+<tr class="memdesc:a24c9385c63f6b30a99bd08d03824869b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por exportar a lista de Distancias em CSV.  <br /></td></tr>
+<tr class="memitem:abd589ace39d17e47425ceeb255731743" id="r_abd589ace39d17e47425ceeb255731743"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd589ace39d17e47425ceeb255731743">exportar_csv_CARROS</a> (<a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *listaHash)</td></tr>
+<tr class="memdesc:abd589ace39d17e47425ceeb255731743"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por exportar a lista de Carros em CSV.  <br /></td></tr>
+<tr class="memitem:ad21e611f40b34c52dea949dd476e3677" id="r_ad21e611f40b34c52dea949dd476e3677"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad21e611f40b34c52dea949dd476e3677">exportar_csv_PASSAGENS</a> (<a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *listaPassagem)</td></tr>
+<tr class="memdesc:ad21e611f40b34c52dea949dd476e3677"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por exportar a lista de Passagens em CSV.  <br /></td></tr>
+<tr class="memitem:aa78ba80cfdc33f7ba2410bafc1c765f1" id="r_aa78ba80cfdc33f7ba2410bafc1c765f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa78ba80cfdc33f7ba2410bafc1c765f1">exportar_xml_DONOS</a> (<a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *listaDonos)</td></tr>
+<tr class="memdesc:aa78ba80cfdc33f7ba2410bafc1c765f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por exportar a lista de <a class="el" href="struct_donos.html" title="Estrutura que representa uma Donos.">Donos</a> em XML.  <br /></td></tr>
+<tr class="memitem:a32b0c41175e95e41f583c3f6c51f21e0" id="r_a32b0c41175e95e41f583c3f6c51f21e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32b0c41175e95e41f583c3f6c51f21e0">exportar_xml_SENSORES</a> (<a class="el" href="structlista_sensor.html">LISTA_SENSOR</a> *<a class="el" href="structlista_sensor.html">listaSensor</a>)</td></tr>
+<tr class="memdesc:a32b0c41175e95e41f583c3f6c51f21e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por exportar a lista de Sensores em XML.  <br /></td></tr>
+<tr class="memitem:ab423d1aa5d0368b0e690e7774e542c55" id="r_ab423d1aa5d0368b0e690e7774e542c55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab423d1aa5d0368b0e690e7774e542c55">exportar_xml_DISTANCIAS</a> (<a class="el" href="structdistancia_lista.html">DISTANCIAS_LISTA</a> *listaDistancias)</td></tr>
+<tr class="memdesc:ab423d1aa5d0368b0e690e7774e542c55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por exportar a lista de Distancias em XML.  <br /></td></tr>
+<tr class="memitem:ae0e7e1dc10ebcf665fb1feada68edd06" id="r_ae0e7e1dc10ebcf665fb1feada68edd06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0e7e1dc10ebcf665fb1feada68edd06">exportar_xml_PASSAGENS</a> (<a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *listaPassagens)</td></tr>
+<tr class="memdesc:ae0e7e1dc10ebcf665fb1feada68edd06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por exportar a lista de Passagens em XML.  <br /></td></tr>
+<tr class="memitem:a2d8646fe624151c8a8e2f65c4cb2585d" id="r_a2d8646fe624151c8a8e2f65c4cb2585d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d8646fe624151c8a8e2f65c4cb2585d">exportar_xml_CARROS</a> (<a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>)</td></tr>
+<tr class="memdesc:a2d8646fe624151c8a8e2f65c4cb2585d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por exportar a lista de Carros em XML.  <br /></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementacao das funcoes uteis. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="afa1d05d7e51d0dd7c3ba63d31c89eaef" name="afa1d05d7e51d0dd7c3ba63d31c89eaef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afa1d05d7e51d0dd7c3ba63d31c89eaef">&#9670;&#160;</a></span>calcularTamanhoEDCarro()</h2>
 
@@ -132,11 +154,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int calcularTamanhoEDCarro </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHash</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHash</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por determinar a memoria ocupada pela estrutura de dados LISTA_HASHC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro LISTA_HASHC </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>tamanho : retorna a variavel inteira, que corresponde ao tamanho da estrutura em MB </dd></dl>
 
 </div>
 </div>
@@ -149,11 +180,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int calcularTamanhoEDDistancia </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a78ff326904d562e0a6deda02a6b9dd57">DISTANCIAS_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structdistancia_lista.html">DISTANCIAS_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por determinar a memoria ocupada pela estrutura de dados DISTANCIAS_LISTA. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro DISTANCIAS_LISTA </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>tamanho : retorna a variavel inteira, que corresponde ao tamanho da estrutura em MB </dd></dl>
 
 </div>
 </div>
@@ -166,11 +206,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int calcularTamanhoEDDonos </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por determinar a memoria ocupada pela estrutura de dados LISTA_DONOS. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro LISTA_DONOS </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>tamanho : retorna a variavel inteira, que corresponde ao tamanho da estrutura em MB </dd></dl>
 
 </div>
 </div>
@@ -183,11 +232,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int calcularTamanhoEDPassagem </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por determinar a memoria ocupada pela estrutura de dados PASSAGEM_LISTA. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro PASSAGEM_LISTA </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>tamanho : retorna a variavel inteira, que corresponde ao tamanho da estrutura em MB </dd></dl>
 
 </div>
 </div>
@@ -200,11 +258,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int calcularTamanhoEDSensor </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="donos_8h.html#a1fdaac5ff6c774fac36deb20437ba7dd">LISTA_SENSOR</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structlista_sensor.html">LISTA_SENSOR</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por determinar a memoria ocupada pela estrutura de dados LISTA_SENSOR. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro LISTA_SENSOR </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>tamanho : retorna a variavel inteira, que corresponde ao tamanho da estrutura em MB </dd></dl>
 
 </div>
 </div>
@@ -217,11 +284,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void exportar_csv_CARROS </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHash</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHash</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por exportar a lista de Carros em CSV. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro LISTA_HASHC </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -234,11 +310,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void exportar_csv_DISTANCIAS </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a78ff326904d562e0a6deda02a6b9dd57">DISTANCIAS_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDistancias</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structdistancia_lista.html">DISTANCIAS_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDistancias</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por exportar a lista de Distancias em CSV. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro DISTANCIAS_LISTA </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -251,11 +336,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void exportar_csv_DONOS </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por exportar a lista de <a class="el" href="struct_donos.html" title="Estrutura que representa uma Donos.">Donos</a> em CSV. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro LISTA_DONOS </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -268,11 +362,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void exportar_csv_PASSAGENS </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaPassagem</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaPassagem</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por exportar a lista de Passagens em CSV. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro PASSAGEM_LISTA </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -285,11 +388,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void exportar_csv_SENSORES </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="donos_8h.html#a1fdaac5ff6c774fac36deb20437ba7dd">LISTA_SENSOR</a> *</td>          <td class="paramname"><span class="paramname"><em>listaSensor</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structlista_sensor.html">LISTA_SENSOR</a> *</td>          <td class="paramname"><span class="paramname"><em>listaSensor</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por exportar a lista de Sensores em CSV. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro LISTA_SENSOR </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -302,11 +414,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void exportar_xml_CARROS </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarros</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarros</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por exportar a lista de Carros em XML. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro LISTA_HASHC </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -319,11 +440,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void exportar_xml_DISTANCIAS </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a78ff326904d562e0a6deda02a6b9dd57">DISTANCIAS_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDistancias</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structdistancia_lista.html">DISTANCIAS_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDistancias</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por exportar a lista de Distancias em XML. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro DISTANCIAS_LISTA </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -336,11 +466,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void exportar_xml_DONOS </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDonos</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDonos</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por exportar a lista de <a class="el" href="struct_donos.html" title="Estrutura que representa uma Donos.">Donos</a> em XML. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro LISTA_DONOS </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -353,11 +492,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void exportar_xml_PASSAGENS </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaPassagens</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaPassagens</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por exportar a lista de Passagens em XML. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro PASSAGEM_LISTA </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -370,11 +518,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void exportar_xml_SENSORES </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="donos_8h.html#a1fdaac5ff6c774fac36deb20437ba7dd">LISTA_SENSOR</a> *</td>          <td class="paramname"><span class="paramname"><em>listaSensor</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structlista_sensor.html">LISTA_SENSOR</a> *</td>          <td class="paramname"><span class="paramname"><em>listaSensor</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por exportar a lista de Sensores em XML. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro LISTA_SENSOR </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -387,30 +544,33 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int inicializarED </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="donos_8h.html#a1fdaac5ff6c774fac36deb20437ba7dd">LISTA_SENSOR</a> *</td>          <td class="paramname"><span class="paramname"><em>listaSensor</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structlista_sensor.html">LISTA_SENSOR</a> *</td>          <td class="paramname"><span class="paramname"><em>listaSensor</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a78ff326904d562e0a6deda02a6b9dd57">DISTANCIAS_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDistancias</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structdistancia_lista.html">DISTANCIAS_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDistancias</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaPassagem</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaPassagem</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarros</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarros</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDonos</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDonos</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por inicializar a estrutura de dados, ler os ficheiros / criar listas e carregar todas as informacoes dos respetivos ficheiros. </p>
+<dl class="section return"><dt>Returns</dt><dd>1 : retorna 1 se carregar todos os ficheiros </dd></dl>
 
 </div>
 </div>
@@ -423,30 +583,33 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void memoriaTotalOcupadaED </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="donos_8h.html#a1fdaac5ff6c774fac36deb20437ba7dd">LISTA_SENSOR</a> *</td>          <td class="paramname"><span class="paramname"><em>listaS</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structlista_sensor.html">LISTA_SENSOR</a> *</td>          <td class="paramname"><span class="paramname"><em>listaS</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a78ff326904d562e0a6deda02a6b9dd57">DISTANCIAS_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaD</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structdistancia_lista.html">DISTANCIAS_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaD</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaP</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaP</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarro</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarro</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDonos</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDonos</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por apresentar todas as funçoes anteriores que calculam o tamanho de todas as estruturas de dados (em MegaBytes) </p>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>

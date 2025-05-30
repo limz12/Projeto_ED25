@@ -1,5 +1,10 @@
 \doxysection{UTEIS.\+c File Reference}
 \hypertarget{_u_t_e_i_s_8c}{}\label{_u_t_e_i_s_8c}\index{UTEIS.c@{UTEIS.c}}
+
+
+Implementacao das funcoes uteis.  
+
+
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$time.\+h$>$}\newline
@@ -12,40 +17,45 @@
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{_u_t_e_i_s_8c_aa52986f66adc3c54a9cb446eb5dcdd37}{calcular\+Tamanho\+EDSensor}} (\mbox{\hyperlink{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}lista)
-\item 
-int \mbox{\hyperlink{_u_t_e_i_s_8c_a5d728b7fc700245272f4af338a4af287}{calcular\+Tamanho\+EDDistancia}} (\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista)
-\item 
-int \mbox{\hyperlink{_u_t_e_i_s_8c_ac458550ccb12559c11a6d767610b0bd3}{calcular\+Tamanho\+EDPassagem}} (\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista)
-\item 
-int \mbox{\hyperlink{_u_t_e_i_s_8c_afa1d05d7e51d0dd7c3ba63d31c89eaef}{calcular\+Tamanho\+EDCarro}} (\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash)
-\item 
-int \mbox{\hyperlink{_u_t_e_i_s_8c_a70411dd36b877969a466ed212d111829}{calcular\+Tamanho\+EDDonos}} (\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista)
-\item 
-void \mbox{\hyperlink{_u_t_e_i_s_8c_aae4620fbcf365e699f2cbe84e8d9deab}{memoria\+Total\+Ocupada\+ED}} (\mbox{\hyperlink{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}listaS, \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}listaD, \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}listaP, \mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash\+Carro, \mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista\+Donos)
-\item 
-int \mbox{\hyperlink{_u_t_e_i_s_8c_a0f1eba6c25f5924c9f4cd9a21c6d6c2b}{inicializar\+ED}} (\mbox{\hyperlink{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_sensor}{lista\+Sensor}}, \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias, \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagem, \mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}}, \mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista\+Donos)
-\item 
-void \mbox{\hyperlink{_u_t_e_i_s_8c_aae4b46bd96240d481c45f2120bc31f73}{exportar\+\_\+csv\+\_\+\+DONOS}} (\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista)
-\item 
-void \mbox{\hyperlink{_u_t_e_i_s_8c_af91847a19359d9c26818633df4e8ae8f}{exportar\+\_\+csv\+\_\+\+SENSORES}} (\mbox{\hyperlink{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_sensor}{lista\+Sensor}})
-\item 
-void \mbox{\hyperlink{_u_t_e_i_s_8c_a24c9385c63f6b30a99bd08d03824869b}{exportar\+\_\+csv\+\_\+\+DISTANCIAS}} (\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
-\item 
-void \mbox{\hyperlink{_u_t_e_i_s_8c_abd589ace39d17e47425ceeb255731743}{exportar\+\_\+csv\+\_\+\+CARROS}} (\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash)
-\item 
-void \mbox{\hyperlink{_u_t_e_i_s_8c_ad21e611f40b34c52dea949dd476e3677}{exportar\+\_\+csv\+\_\+\+PASSAGENS}} (\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagem)
-\item 
-void \mbox{\hyperlink{_u_t_e_i_s_8c_aa78ba80cfdc33f7ba2410bafc1c765f1}{exportar\+\_\+xml\+\_\+\+DONOS}} (\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista\+Donos)
-\item 
-void \mbox{\hyperlink{_u_t_e_i_s_8c_a32b0c41175e95e41f583c3f6c51f21e0}{exportar\+\_\+xml\+\_\+\+SENSORES}} (\mbox{\hyperlink{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_sensor}{lista\+Sensor}})
-\item 
-void \mbox{\hyperlink{_u_t_e_i_s_8c_ab423d1aa5d0368b0e690e7774e542c55}{exportar\+\_\+xml\+\_\+\+DISTANCIAS}} (\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
-\item 
-void \mbox{\hyperlink{_u_t_e_i_s_8c_ae0e7e1dc10ebcf665fb1feada68edd06}{exportar\+\_\+xml\+\_\+\+PASSAGENS}} (\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagens)
-\item 
-void \mbox{\hyperlink{_u_t_e_i_s_8c_a2d8646fe624151c8a8e2f65c4cb2585d}{exportar\+\_\+xml\+\_\+\+CARROS}} (\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}})
-\end{DoxyCompactItemize}
+int \mbox{\hyperlink{_u_t_e_i_s_8c_aa52986f66adc3c54a9cb446eb5dcdd37}{calcular\+Tamanho\+EDSensor}} (\mbox{\hyperlink{structlista_sensor}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por determinar a memoria ocupada pela estrutura de dados LISTA\+\_\+\+SENSOR. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_u_t_e_i_s_8c_a5d728b7fc700245272f4af338a4af287}{calcular\+Tamanho\+EDDistancia}} (\mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por determinar a memoria ocupada pela estrutura de dados DISTANCIAS\+\_\+\+LISTA. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_u_t_e_i_s_8c_ac458550ccb12559c11a6d767610b0bd3}{calcular\+Tamanho\+EDPassagem}} (\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por determinar a memoria ocupada pela estrutura de dados PASSAGEM\+\_\+\+LISTA. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_u_t_e_i_s_8c_afa1d05d7e51d0dd7c3ba63d31c89eaef}{calcular\+Tamanho\+EDCarro}} (\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por determinar a memoria ocupada pela estrutura de dados LISTA\+\_\+\+HASHC. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_u_t_e_i_s_8c_a70411dd36b877969a466ed212d111829}{calcular\+Tamanho\+EDDonos}} (\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por determinar a memoria ocupada pela estrutura de dados LISTA\+\_\+\+DONOS. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_t_e_i_s_8c_aae4620fbcf365e699f2cbe84e8d9deab}{memoria\+Total\+Ocupada\+ED}} (\mbox{\hyperlink{structlista_sensor}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}listaS, \mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}listaD, \mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}listaP, \mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash\+Carro, \mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista\+Donos)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por apresentar todas as funçoes anteriores que calculam o tamanho de todas as estruturas de dados (em Mega\+Bytes) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_u_t_e_i_s_8c_a0f1eba6c25f5924c9f4cd9a21c6d6c2b}{inicializar\+ED}} (\mbox{\hyperlink{structlista_sensor}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_sensor}{lista\+Sensor}}, \mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias, \mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagem, \mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}}, \mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista\+Donos)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por inicializar a estrutura de dados, ler os ficheiros / criar listas e carregar todas as informacoes dos respetivos ficheiros. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_t_e_i_s_8c_aae4b46bd96240d481c45f2120bc31f73}{exportar\+\_\+csv\+\_\+\+DONOS}} (\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por exportar a lista de \doxylink{struct_donos}{Donos} em CSV. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_t_e_i_s_8c_af91847a19359d9c26818633df4e8ae8f}{exportar\+\_\+csv\+\_\+\+SENSORES}} (\mbox{\hyperlink{structlista_sensor}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_sensor}{lista\+Sensor}})
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por exportar a lista de Sensores em CSV. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_t_e_i_s_8c_a24c9385c63f6b30a99bd08d03824869b}{exportar\+\_\+csv\+\_\+\+DISTANCIAS}} (\mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por exportar a lista de Distancias em CSV. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_t_e_i_s_8c_abd589ace39d17e47425ceeb255731743}{exportar\+\_\+csv\+\_\+\+CARROS}} (\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por exportar a lista de Carros em CSV. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_t_e_i_s_8c_ad21e611f40b34c52dea949dd476e3677}{exportar\+\_\+csv\+\_\+\+PASSAGENS}} (\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagem)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por exportar a lista de Passagens em CSV. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_t_e_i_s_8c_aa78ba80cfdc33f7ba2410bafc1c765f1}{exportar\+\_\+xml\+\_\+\+DONOS}} (\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista\+Donos)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por exportar a lista de \doxylink{struct_donos}{Donos} em XML. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_t_e_i_s_8c_a32b0c41175e95e41f583c3f6c51f21e0}{exportar\+\_\+xml\+\_\+\+SENSORES}} (\mbox{\hyperlink{structlista_sensor}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_sensor}{lista\+Sensor}})
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por exportar a lista de Sensores em XML. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_t_e_i_s_8c_ab423d1aa5d0368b0e690e7774e542c55}{exportar\+\_\+xml\+\_\+\+DISTANCIAS}} (\mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por exportar a lista de Distancias em XML. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_t_e_i_s_8c_ae0e7e1dc10ebcf665fb1feada68edd06}{exportar\+\_\+xml\+\_\+\+PASSAGENS}} (\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagens)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por exportar a lista de Passagens em XML. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_u_t_e_i_s_8c_a2d8646fe624151c8a8e2f65c4cb2585d}{exportar\+\_\+xml\+\_\+\+CARROS}} (\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}})
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por exportar a lista de Carros em XML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementacao das funcoes uteis. 
+
 
 
 \label{doc-func-members}
@@ -55,101 +65,295 @@ void \mbox{\hyperlink{_u_t_e_i_s_8c_a2d8646fe624151c8a8e2f65c4cb2585d}{exportar\
 \index{calcularTamanhoEDCarro@{calcularTamanhoEDCarro}!UTEIS.c@{UTEIS.c}}
 \doxysubsubsection{\texorpdfstring{calcularTamanhoEDCarro()}{calcularTamanhoEDCarro()}}
 {\footnotesize\ttfamily \label{_u_t_e_i_s_8c_afa1d05d7e51d0dd7c3ba63d31c89eaef} 
-int calcular\+Tamanho\+EDCarro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash}{}\end{DoxyParamCaption})}
+int calcular\+Tamanho\+EDCarro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por determinar a memoria ocupada pela estrutura de dados LISTA\+\_\+\+HASHC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro LISTA\+\_\+\+HASHC \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+tamanho \+: retorna a variavel inteira, que corresponde ao tamanho da estrutura em MB 
+\end{DoxyReturn}
 \Hypertarget{_u_t_e_i_s_8c_a5d728b7fc700245272f4af338a4af287}\index{UTEIS.c@{UTEIS.c}!calcularTamanhoEDDistancia@{calcularTamanhoEDDistancia}}
 \index{calcularTamanhoEDDistancia@{calcularTamanhoEDDistancia}!UTEIS.c@{UTEIS.c}}
 \doxysubsubsection{\texorpdfstring{calcularTamanhoEDDistancia()}{calcularTamanhoEDDistancia()}}
 {\footnotesize\ttfamily \label{_u_t_e_i_s_8c_a5d728b7fc700245272f4af338a4af287} 
-int calcular\+Tamanho\+EDDistancia (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+int calcular\+Tamanho\+EDDistancia (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por determinar a memoria ocupada pela estrutura de dados DISTANCIAS\+\_\+\+LISTA. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro DISTANCIAS\+\_\+\+LISTA \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+tamanho \+: retorna a variavel inteira, que corresponde ao tamanho da estrutura em MB 
+\end{DoxyReturn}
 \Hypertarget{_u_t_e_i_s_8c_a70411dd36b877969a466ed212d111829}\index{UTEIS.c@{UTEIS.c}!calcularTamanhoEDDonos@{calcularTamanhoEDDonos}}
 \index{calcularTamanhoEDDonos@{calcularTamanhoEDDonos}!UTEIS.c@{UTEIS.c}}
 \doxysubsubsection{\texorpdfstring{calcularTamanhoEDDonos()}{calcularTamanhoEDDonos()}}
 {\footnotesize\ttfamily \label{_u_t_e_i_s_8c_a70411dd36b877969a466ed212d111829} 
-int calcular\+Tamanho\+EDDonos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+int calcular\+Tamanho\+EDDonos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por determinar a memoria ocupada pela estrutura de dados LISTA\+\_\+\+DONOS. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro LISTA\+\_\+\+DONOS \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+tamanho \+: retorna a variavel inteira, que corresponde ao tamanho da estrutura em MB 
+\end{DoxyReturn}
 \Hypertarget{_u_t_e_i_s_8c_ac458550ccb12559c11a6d767610b0bd3}\index{UTEIS.c@{UTEIS.c}!calcularTamanhoEDPassagem@{calcularTamanhoEDPassagem}}
 \index{calcularTamanhoEDPassagem@{calcularTamanhoEDPassagem}!UTEIS.c@{UTEIS.c}}
 \doxysubsubsection{\texorpdfstring{calcularTamanhoEDPassagem()}{calcularTamanhoEDPassagem()}}
 {\footnotesize\ttfamily \label{_u_t_e_i_s_8c_ac458550ccb12559c11a6d767610b0bd3} 
-int calcular\+Tamanho\+EDPassagem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+int calcular\+Tamanho\+EDPassagem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por determinar a memoria ocupada pela estrutura de dados PASSAGEM\+\_\+\+LISTA. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro PASSAGEM\+\_\+\+LISTA \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+tamanho \+: retorna a variavel inteira, que corresponde ao tamanho da estrutura em MB 
+\end{DoxyReturn}
 \Hypertarget{_u_t_e_i_s_8c_aa52986f66adc3c54a9cb446eb5dcdd37}\index{UTEIS.c@{UTEIS.c}!calcularTamanhoEDSensor@{calcularTamanhoEDSensor}}
 \index{calcularTamanhoEDSensor@{calcularTamanhoEDSensor}!UTEIS.c@{UTEIS.c}}
 \doxysubsubsection{\texorpdfstring{calcularTamanhoEDSensor()}{calcularTamanhoEDSensor()}}
 {\footnotesize\ttfamily \label{_u_t_e_i_s_8c_aa52986f66adc3c54a9cb446eb5dcdd37} 
-int calcular\+Tamanho\+EDSensor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+int calcular\+Tamanho\+EDSensor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_sensor}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por determinar a memoria ocupada pela estrutura de dados LISTA\+\_\+\+SENSOR. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro LISTA\+\_\+\+SENSOR \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+tamanho \+: retorna a variavel inteira, que corresponde ao tamanho da estrutura em MB 
+\end{DoxyReturn}
 \Hypertarget{_u_t_e_i_s_8c_abd589ace39d17e47425ceeb255731743}\index{UTEIS.c@{UTEIS.c}!exportar\_csv\_CARROS@{exportar\_csv\_CARROS}}
 \index{exportar\_csv\_CARROS@{exportar\_csv\_CARROS}!UTEIS.c@{UTEIS.c}}
 \doxysubsubsection{\texorpdfstring{exportar\_csv\_CARROS()}{exportar\_csv\_CARROS()}}
 {\footnotesize\ttfamily \label{_u_t_e_i_s_8c_abd589ace39d17e47425ceeb255731743} 
-void exportar\+\_\+csv\+\_\+\+CARROS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash}{}\end{DoxyParamCaption})}
+void exportar\+\_\+csv\+\_\+\+CARROS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por exportar a lista de Carros em CSV. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro LISTA\+\_\+\+HASHC \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_u_t_e_i_s_8c_a24c9385c63f6b30a99bd08d03824869b}\index{UTEIS.c@{UTEIS.c}!exportar\_csv\_DISTANCIAS@{exportar\_csv\_DISTANCIAS}}
 \index{exportar\_csv\_DISTANCIAS@{exportar\_csv\_DISTANCIAS}!UTEIS.c@{UTEIS.c}}
 \doxysubsubsection{\texorpdfstring{exportar\_csv\_DISTANCIAS()}{exportar\_csv\_DISTANCIAS()}}
 {\footnotesize\ttfamily \label{_u_t_e_i_s_8c_a24c9385c63f6b30a99bd08d03824869b} 
-void exportar\+\_\+csv\+\_\+\+DISTANCIAS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
+void exportar\+\_\+csv\+\_\+\+DISTANCIAS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por exportar a lista de Distancias em CSV. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro DISTANCIAS\+\_\+\+LISTA \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_u_t_e_i_s_8c_aae4b46bd96240d481c45f2120bc31f73}\index{UTEIS.c@{UTEIS.c}!exportar\_csv\_DONOS@{exportar\_csv\_DONOS}}
 \index{exportar\_csv\_DONOS@{exportar\_csv\_DONOS}!UTEIS.c@{UTEIS.c}}
 \doxysubsubsection{\texorpdfstring{exportar\_csv\_DONOS()}{exportar\_csv\_DONOS()}}
 {\footnotesize\ttfamily \label{_u_t_e_i_s_8c_aae4b46bd96240d481c45f2120bc31f73} 
-void exportar\+\_\+csv\+\_\+\+DONOS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+void exportar\+\_\+csv\+\_\+\+DONOS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por exportar a lista de \doxylink{struct_donos}{Donos} em CSV. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro LISTA\+\_\+\+DONOS \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_u_t_e_i_s_8c_ad21e611f40b34c52dea949dd476e3677}\index{UTEIS.c@{UTEIS.c}!exportar\_csv\_PASSAGENS@{exportar\_csv\_PASSAGENS}}
 \index{exportar\_csv\_PASSAGENS@{exportar\_csv\_PASSAGENS}!UTEIS.c@{UTEIS.c}}
 \doxysubsubsection{\texorpdfstring{exportar\_csv\_PASSAGENS()}{exportar\_csv\_PASSAGENS()}}
 {\footnotesize\ttfamily \label{_u_t_e_i_s_8c_ad21e611f40b34c52dea949dd476e3677} 
-void exportar\+\_\+csv\+\_\+\+PASSAGENS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagem}{}\end{DoxyParamCaption})}
+void exportar\+\_\+csv\+\_\+\+PASSAGENS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagem}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por exportar a lista de Passagens em CSV. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro PASSAGEM\+\_\+\+LISTA \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_u_t_e_i_s_8c_af91847a19359d9c26818633df4e8ae8f}\index{UTEIS.c@{UTEIS.c}!exportar\_csv\_SENSORES@{exportar\_csv\_SENSORES}}
 \index{exportar\_csv\_SENSORES@{exportar\_csv\_SENSORES}!UTEIS.c@{UTEIS.c}}
 \doxysubsubsection{\texorpdfstring{exportar\_csv\_SENSORES()}{exportar\_csv\_SENSORES()}}
 {\footnotesize\ttfamily \label{_u_t_e_i_s_8c_af91847a19359d9c26818633df4e8ae8f} 
-void exportar\+\_\+csv\+\_\+\+SENSORES (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}}]{lista\+Sensor}{}\end{DoxyParamCaption})}
+void exportar\+\_\+csv\+\_\+\+SENSORES (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_sensor}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}}]{lista\+Sensor}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por exportar a lista de Sensores em CSV. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro LISTA\+\_\+\+SENSOR \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_u_t_e_i_s_8c_a2d8646fe624151c8a8e2f65c4cb2585d}\index{UTEIS.c@{UTEIS.c}!exportar\_xml\_CARROS@{exportar\_xml\_CARROS}}
 \index{exportar\_xml\_CARROS@{exportar\_xml\_CARROS}!UTEIS.c@{UTEIS.c}}
 \doxysubsubsection{\texorpdfstring{exportar\_xml\_CARROS()}{exportar\_xml\_CARROS()}}
 {\footnotesize\ttfamily \label{_u_t_e_i_s_8c_a2d8646fe624151c8a8e2f65c4cb2585d} 
-void exportar\+\_\+xml\+\_\+\+CARROS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{}\end{DoxyParamCaption})}
+void exportar\+\_\+xml\+\_\+\+CARROS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por exportar a lista de Carros em XML. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro LISTA\+\_\+\+HASHC \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_u_t_e_i_s_8c_ab423d1aa5d0368b0e690e7774e542c55}\index{UTEIS.c@{UTEIS.c}!exportar\_xml\_DISTANCIAS@{exportar\_xml\_DISTANCIAS}}
 \index{exportar\_xml\_DISTANCIAS@{exportar\_xml\_DISTANCIAS}!UTEIS.c@{UTEIS.c}}
 \doxysubsubsection{\texorpdfstring{exportar\_xml\_DISTANCIAS()}{exportar\_xml\_DISTANCIAS()}}
 {\footnotesize\ttfamily \label{_u_t_e_i_s_8c_ab423d1aa5d0368b0e690e7774e542c55} 
-void exportar\+\_\+xml\+\_\+\+DISTANCIAS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
+void exportar\+\_\+xml\+\_\+\+DISTANCIAS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por exportar a lista de Distancias em XML. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro DISTANCIAS\+\_\+\+LISTA \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_u_t_e_i_s_8c_aa78ba80cfdc33f7ba2410bafc1c765f1}\index{UTEIS.c@{UTEIS.c}!exportar\_xml\_DONOS@{exportar\_xml\_DONOS}}
 \index{exportar\_xml\_DONOS@{exportar\_xml\_DONOS}!UTEIS.c@{UTEIS.c}}
 \doxysubsubsection{\texorpdfstring{exportar\_xml\_DONOS()}{exportar\_xml\_DONOS()}}
 {\footnotesize\ttfamily \label{_u_t_e_i_s_8c_aa78ba80cfdc33f7ba2410bafc1c765f1} 
-void exportar\+\_\+xml\+\_\+\+DONOS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista\+Donos}{}\end{DoxyParamCaption})}
+void exportar\+\_\+xml\+\_\+\+DONOS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista\+Donos}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por exportar a lista de \doxylink{struct_donos}{Donos} em XML. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro LISTA\+\_\+\+DONOS \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_u_t_e_i_s_8c_ae0e7e1dc10ebcf665fb1feada68edd06}\index{UTEIS.c@{UTEIS.c}!exportar\_xml\_PASSAGENS@{exportar\_xml\_PASSAGENS}}
 \index{exportar\_xml\_PASSAGENS@{exportar\_xml\_PASSAGENS}!UTEIS.c@{UTEIS.c}}
 \doxysubsubsection{\texorpdfstring{exportar\_xml\_PASSAGENS()}{exportar\_xml\_PASSAGENS()}}
 {\footnotesize\ttfamily \label{_u_t_e_i_s_8c_ae0e7e1dc10ebcf665fb1feada68edd06} 
-void exportar\+\_\+xml\+\_\+\+PASSAGENS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagens}{}\end{DoxyParamCaption})}
+void exportar\+\_\+xml\+\_\+\+PASSAGENS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagens}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por exportar a lista de Passagens em XML. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro PASSAGEM\+\_\+\+LISTA \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_u_t_e_i_s_8c_a32b0c41175e95e41f583c3f6c51f21e0}\index{UTEIS.c@{UTEIS.c}!exportar\_xml\_SENSORES@{exportar\_xml\_SENSORES}}
 \index{exportar\_xml\_SENSORES@{exportar\_xml\_SENSORES}!UTEIS.c@{UTEIS.c}}
 \doxysubsubsection{\texorpdfstring{exportar\_xml\_SENSORES()}{exportar\_xml\_SENSORES()}}
 {\footnotesize\ttfamily \label{_u_t_e_i_s_8c_a32b0c41175e95e41f583c3f6c51f21e0} 
-void exportar\+\_\+xml\+\_\+\+SENSORES (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}}]{lista\+Sensor}{}\end{DoxyParamCaption})}
+void exportar\+\_\+xml\+\_\+\+SENSORES (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_sensor}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}}]{lista\+Sensor}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por exportar a lista de Sensores em XML. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro LISTA\+\_\+\+SENSOR \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_u_t_e_i_s_8c_a0f1eba6c25f5924c9f4cd9a21c6d6c2b}\index{UTEIS.c@{UTEIS.c}!inicializarED@{inicializarED}}
 \index{inicializarED@{inicializarED}!UTEIS.c@{UTEIS.c}}
 \doxysubsubsection{\texorpdfstring{inicializarED()}{inicializarED()}}
 {\footnotesize\ttfamily \label{_u_t_e_i_s_8c_a0f1eba6c25f5924c9f4cd9a21c6d6c2b} 
-int inicializar\+ED (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}}]{lista\+Sensor}{, }\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{, }\item[{\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagem}{, }\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{, }\item[{\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista\+Donos}{}\end{DoxyParamCaption})}
+int inicializar\+ED (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_sensor}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}}]{lista\+Sensor}{, }\item[{\mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{, }\item[{\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagem}{, }\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{, }\item[{\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista\+Donos}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por inicializar a estrutura de dados, ler os ficheiros / criar listas e carregar todas as informacoes dos respetivos ficheiros. 
+
+\begin{DoxyReturn}{Returns}
+1 \+: retorna 1 se carregar todos os ficheiros 
+\end{DoxyReturn}
 \Hypertarget{_u_t_e_i_s_8c_aae4620fbcf365e699f2cbe84e8d9deab}\index{UTEIS.c@{UTEIS.c}!memoriaTotalOcupadaED@{memoriaTotalOcupadaED}}
 \index{memoriaTotalOcupadaED@{memoriaTotalOcupadaED}!UTEIS.c@{UTEIS.c}}
 \doxysubsubsection{\texorpdfstring{memoriaTotalOcupadaED()}{memoriaTotalOcupadaED()}}
 {\footnotesize\ttfamily \label{_u_t_e_i_s_8c_aae4620fbcf365e699f2cbe84e8d9deab} 
-void memoria\+Total\+Ocupada\+ED (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}}]{listaS}{, }\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{listaD}{, }\item[{\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{listaP}{, }\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carro}{, }\item[{\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista\+Donos}{}\end{DoxyParamCaption})}
+void memoria\+Total\+Ocupada\+ED (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_sensor}{LISTA\+\_\+\+SENSOR}} \texorpdfstring{$\ast$}{*}}]{listaS}{, }\item[{\mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{listaD}{, }\item[{\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{listaP}{, }\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carro}{, }\item[{\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista\+Donos}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por apresentar todas as funçoes anteriores que calculam o tamanho de todas as estruturas de dados (em Mega\+Bytes) 
+
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}

@@ -2,57 +2,35 @@
 \hypertarget{structnode_hash}{}\label{structnode_hash}\index{nodeHash@{nodeHash}}
 
 
+Estrutura que serve de Hashing, sendo a chave a Marca do respetivo carro e contem um ponteiro para o proximo \doxylink{structnode_hash}{node\+Hash}.  
+
+
+
+
 {\ttfamily \#include $<$carros.\+h$>$}
 
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-char \mbox{\hyperlink{structnode_hash_af9b3ac68e5f1f0cfff64089ff4770f3a}{chave}} \mbox{[}\mbox{\hyperlink{carros_8h_a8910f21a3ae0f2a1841c1facd6e39cff}{MAX\+\_\+\+CHAR\+\_\+\+STR}}\mbox{]}
+\Hypertarget{structnode_hash_af9b3ac68e5f1f0cfff64089ff4770f3a}\label{structnode_hash_af9b3ac68e5f1f0cfff64089ff4770f3a} 
+char {\bfseries chave} \mbox{[}MAX\+\_\+\+CHAR\+\_\+\+STR\mbox{]}
 \item 
-float \mbox{\hyperlink{structnode_hash_a2cbc1d49718f13be832b5638f2c1d8f2}{total\+Km\+\_\+marca}}
+\Hypertarget{structnode_hash_a2cbc1d49718f13be832b5638f2c1d8f2}\label{structnode_hash_a2cbc1d49718f13be832b5638f2c1d8f2} 
+float {\bfseries total\+Km\+\_\+marca}
 \item 
-float \mbox{\hyperlink{structnode_hash_a675fef8e358366042acd44555e30f510}{minutos\+Total\+Percorrido}}
+\Hypertarget{structnode_hash_a675fef8e358366042acd44555e30f510}\label{structnode_hash_a675fef8e358366042acd44555e30f510} 
+float {\bfseries minutos\+Total\+Percorrido}
 \item 
-struct \mbox{\hyperlink{structnode_hash}{node\+Hash}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structnode_hash_a0684504c247ad29d915e258298f8831b}{next}}
+\Hypertarget{structnode_hash_a0684504c247ad29d915e258298f8831b}\label{structnode_hash_a0684504c247ad29d915e258298f8831b} 
+struct \mbox{\hyperlink{structnode_hash}{node\+Hash}} \texorpdfstring{$\ast$}{*} {\bfseries next}
 \item 
-\mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structnode_hash_ade8a10dd6fc510876c2fac8f30c42342}{lista\+Carros}}
+\Hypertarget{structnode_hash_ade8a10dd6fc510876c2fac8f30c42342}\label{structnode_hash_ade8a10dd6fc510876c2fac8f30c42342} 
+\mbox{\hyperlink{structlista_carro}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*} {\bfseries lista\+Carros}
 \end{DoxyCompactItemize}
 
 
-\label{doc-variable-members}
-\Hypertarget{structnode_hash_doc-variable-members}
-\doxysubsection{Member Data Documentation}
-\Hypertarget{structnode_hash_af9b3ac68e5f1f0cfff64089ff4770f3a}\index{nodeHash@{nodeHash}!chave@{chave}}
-\index{chave@{chave}!nodeHash@{nodeHash}}
-\doxysubsubsection{\texorpdfstring{chave}{chave}}
-{\footnotesize\ttfamily \label{structnode_hash_af9b3ac68e5f1f0cfff64089ff4770f3a} 
-char node\+Hash\+::chave\mbox{[}\mbox{\hyperlink{carros_8h_a8910f21a3ae0f2a1841c1facd6e39cff}{MAX\+\_\+\+CHAR\+\_\+\+STR}}\mbox{]}}
-
-\Hypertarget{structnode_hash_ade8a10dd6fc510876c2fac8f30c42342}\index{nodeHash@{nodeHash}!listaCarros@{listaCarros}}
-\index{listaCarros@{listaCarros}!nodeHash@{nodeHash}}
-\doxysubsubsection{\texorpdfstring{listaCarros}{listaCarros}}
-{\footnotesize\ttfamily \label{structnode_hash_ade8a10dd6fc510876c2fac8f30c42342} 
-\mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\+\_\+\+CARRO}}\texorpdfstring{$\ast$}{*} node\+Hash\+::lista\+Carros}
-
-\Hypertarget{structnode_hash_a675fef8e358366042acd44555e30f510}\index{nodeHash@{nodeHash}!minutosTotalPercorrido@{minutosTotalPercorrido}}
-\index{minutosTotalPercorrido@{minutosTotalPercorrido}!nodeHash@{nodeHash}}
-\doxysubsubsection{\texorpdfstring{minutosTotalPercorrido}{minutosTotalPercorrido}}
-{\footnotesize\ttfamily \label{structnode_hash_a675fef8e358366042acd44555e30f510} 
-float node\+Hash\+::minutos\+Total\+Percorrido}
-
-\Hypertarget{structnode_hash_a0684504c247ad29d915e258298f8831b}\index{nodeHash@{nodeHash}!next@{next}}
-\index{next@{next}!nodeHash@{nodeHash}}
-\doxysubsubsection{\texorpdfstring{next}{next}}
-{\footnotesize\ttfamily \label{structnode_hash_a0684504c247ad29d915e258298f8831b} 
-struct \mbox{\hyperlink{structnode_hash}{node\+Hash}}\texorpdfstring{$\ast$}{*} node\+Hash\+::next}
-
-\Hypertarget{structnode_hash_a2cbc1d49718f13be832b5638f2c1d8f2}\index{nodeHash@{nodeHash}!totalKm\_marca@{totalKm\_marca}}
-\index{totalKm\_marca@{totalKm\_marca}!nodeHash@{nodeHash}}
-\doxysubsubsection{\texorpdfstring{totalKm\_marca}{totalKm\_marca}}
-{\footnotesize\ttfamily \label{structnode_hash_a2cbc1d49718f13be832b5638f2c1d8f2} 
-float node\+Hash\+::total\+Km\+\_\+marca}
-
-
+\doxysubsection{Detailed Description}
+Estrutura que serve de Hashing, sendo a chave a Marca do respetivo carro e contem um ponteiro para o proximo \doxylink{structnode_hash}{node\+Hash}. 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

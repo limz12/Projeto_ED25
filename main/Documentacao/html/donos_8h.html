@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Projeto_ED_25: donos.h File Reference</title>
+<title>ProjetoED_25: donos.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Projeto_ED_25
+   <div id="projectname">ProjetoED_25
    </div>
-   <div id="projectbrief">CCUT(Portagens com custo para o utilizador)</div>
+   <div id="projectbrief">CCUT</div>
   </td>
  </tr>
  </tbody>
@@ -92,133 +92,73 @@ $(function(){initNavTree('donos_8h.html','',''); });
   <div class="headertitle"><div class="title">donos.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;string.h&gt;</code><br />
-<code>#include &lt;malloc.h&gt;</code><br />
-<code>#include &lt;locale.h&gt;</code><br />
-</div>
+
+<p>Definicao das Estruturas relacionadas com os donos e prototipagem das funcoes utilizadas no <a class="el" href="donos_8c.html" title="Implementacao das funcoes respetivas aos donos.">donos.c</a>.  
+<a href="#details">More...</a></p>
+
 <p><a href="donos_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:Donos" id="r_Donos"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_donos.html">Donos</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura que representa uma <a class="el" href="struct_donos.html" title="Estrutura que representa uma Donos.">Donos</a>.  <a href="struct_donos.html#details">More...</a><br /></td></tr>
 <tr class="memitem:nodeDonos" id="r_nodeDonos"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnode_donos.html">nodeDonos</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura que serve de node e contem o ponteiro do Dono e do proximo node.  <a href="structnode_donos.html#details">More...</a><br /></td></tr>
 <tr class="memitem:ListaDonos" id="r_ListaDonos"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_lista_donos.html">ListaDonos</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura serve como lista para o conjunto dos NODE_DONOS.  <a href="struct_lista_donos.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a3f149a13497804b072db1f93beeba67d" id="r_a3f149a13497804b072db1f93beeba67d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f149a13497804b072db1f93beeba67d">MAX_NOME_SIZE</a>&#160;&#160;&#160;60</td></tr>
-<tr class="memitem:a23ffb91c36390384f1fef7e71a2615e7" id="r_a23ffb91c36390384f1fef7e71a2615e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23ffb91c36390384f1fef7e71a2615e7">MAX_CODPOST_SIZE</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memitem:a3f149a13497804b072db1f93beeba67d" id="r_a3f149a13497804b072db1f93beeba67d"><td class="memItemLeft" align="right" valign="top"><a id="a3f149a13497804b072db1f93beeba67d" name="a3f149a13497804b072db1f93beeba67d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_NOME_SIZE</b>&#160;&#160;&#160;60</td></tr>
+<tr class="memitem:a23ffb91c36390384f1fef7e71a2615e7" id="r_a23ffb91c36390384f1fef7e71a2615e7"><td class="memItemLeft" align="right" valign="top"><a id="a23ffb91c36390384f1fef7e71a2615e7" name="a23ffb91c36390384f1fef7e71a2615e7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_CODPOST_SIZE</b>&#160;&#160;&#160;10</td></tr>
+<tr class="memitem:a85d58c783e14b7cf720376abceee33f2" id="r_a85d58c783e14b7cf720376abceee33f2"><td class="memItemLeft" align="right" valign="top"><a id="a85d58c783e14b7cf720376abceee33f2" name="a85d58c783e14b7cf720376abceee33f2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DONOS_POR_PAGINA</b>&#160;&#160;&#160;20</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a1fdaac5ff6c774fac36deb20437ba7dd" id="r_a1fdaac5ff6c774fac36deb20437ba7dd"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structlista_sensor.html">listaSensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fdaac5ff6c774fac36deb20437ba7dd">LISTA_SENSOR</a></td></tr>
-<tr class="memitem:a0f69177d224e50430a5291811f769f11" id="r_a0f69177d224e50430a5291811f769f11"><td class="memItemLeft" align="right" valign="top">typedef struct Donos&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f69177d224e50430a5291811f769f11">Donos</a></td></tr>
-<tr class="memitem:a2eb00590d029458a80ccc49862389cc0" id="r_a2eb00590d029458a80ccc49862389cc0"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structnode_donos.html">nodeDonos</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2eb00590d029458a80ccc49862389cc0">NODE_DONOS</a></td></tr>
-<tr class="memitem:ab0ea3db15aeb9e477e79d54357ffbf57" id="r_ab0ea3db15aeb9e477e79d54357ffbf57"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_lista_donos.html">ListaDonos</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a></td></tr>
+<tr class="memitem:a1fdaac5ff6c774fac36deb20437ba7dd" id="r_a1fdaac5ff6c774fac36deb20437ba7dd"><td class="memItemLeft" align="right" valign="top"><a id="a1fdaac5ff6c774fac36deb20437ba7dd" name="a1fdaac5ff6c774fac36deb20437ba7dd"></a>
+typedef struct <a class="el" href="structlista_sensor.html">listaSensor</a>&#160;</td><td class="memItemRight" valign="bottom"><b>LISTA_SENSOR</b></td></tr>
+<tr class="memitem:a0f69177d224e50430a5291811f769f11" id="r_a0f69177d224e50430a5291811f769f11"><td class="memItemLeft" align="right" valign="top"><a id="a0f69177d224e50430a5291811f769f11" name="a0f69177d224e50430a5291811f769f11"></a>
+typedef struct Donos&#160;</td><td class="memItemRight" valign="bottom"><b>Donos</b></td></tr>
+<tr class="memitem:a2eb00590d029458a80ccc49862389cc0" id="r_a2eb00590d029458a80ccc49862389cc0"><td class="memItemLeft" align="right" valign="top"><a id="a2eb00590d029458a80ccc49862389cc0" name="a2eb00590d029458a80ccc49862389cc0"></a>
+typedef struct <a class="el" href="structnode_donos.html">nodeDonos</a>&#160;</td><td class="memItemRight" valign="bottom"><b>NODE_DONOS</b></td></tr>
+<tr class="memitem:ab0ea3db15aeb9e477e79d54357ffbf57" id="r_ab0ea3db15aeb9e477e79d54357ffbf57"><td class="memItemLeft" align="right" valign="top"><a id="ab0ea3db15aeb9e477e79d54357ffbf57" name="ab0ea3db15aeb9e477e79d54357ffbf57"></a>
+typedef struct <a class="el" href="struct_lista_donos.html">ListaDonos</a>&#160;</td><td class="memItemRight" valign="bottom"><b>LISTA_DONOS</b></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aabcba3cfc14a3febd291d4ce187c863c" id="r_aabcba3cfc14a3febd291d4ce187c863c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aabcba3cfc14a3febd291d4ce187c863c">criarListaDonos</a> ()</td></tr>
-<tr class="memitem:a367f2d6058c4e0a1e02bb14b5317b19c" id="r_a367f2d6058c4e0a1e02bb14b5317b19c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a2eb00590d029458a80ccc49862389cc0">NODE_DONOS</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a367f2d6058c4e0a1e02bb14b5317b19c">criarNodeDonos</a> ()</td></tr>
-<tr class="memitem:ae8aad768f886211e6abaf670f45e545b" id="r_ae8aad768f886211e6abaf670f45e545b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8aad768f886211e6abaf670f45e545b">freeNodeDonos</a> (<a class="el" href="#a2eb00590d029458a80ccc49862389cc0">NODE_DONOS</a> *node)</td></tr>
-<tr class="memitem:aa32588be37898014318619da3b82a5f4" id="r_aa32588be37898014318619da3b82a5f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa32588be37898014318619da3b82a5f4">carregarDadosDonos</a> (<a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *lista)</td></tr>
-<tr class="memitem:a63ce8f02d04fe4adb1b477c5ce61ba6a" id="r_a63ce8f02d04fe4adb1b477c5ce61ba6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63ce8f02d04fe4adb1b477c5ce61ba6a">adicionarListaDonos</a> (<a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *lista, <a class="el" href="#a2eb00590d029458a80ccc49862389cc0">NODE_DONOS</a> *node)</td></tr>
-<tr class="memitem:afb3347b88085fa5fdf2c4f216c3d65e2" id="r_afb3347b88085fa5fdf2c4f216c3d65e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb3347b88085fa5fdf2c4f216c3d65e2">registarDonos</a> (<a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *lista)</td></tr>
-<tr class="memitem:ae8f0853f45bd6641eb4a5f15c0971e13" id="r_ae8f0853f45bd6641eb4a5f15c0971e13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8f0853f45bd6641eb4a5f15c0971e13">listarDonos</a> (<a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *lista)</td></tr>
-<tr class="memitem:af6ca096787a93f6311e7ffe54a7dcb6c" id="r_af6ca096787a93f6311e7ffe54a7dcb6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6ca096787a93f6311e7ffe54a7dcb6c">freeListaDonos</a> (<a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *lista)</td></tr>
-<tr class="memitem:a0aefec6d48da3e56ff5ddb3e89f8af04" id="r_a0aefec6d48da3e56ff5ddb3e89f8af04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0aefec6d48da3e56ff5ddb3e89f8af04">ordenarListaDonosAlfabeticamente</a> (<a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *lista)</td></tr>
-<tr class="memitem:a8e5f02814356085244246c8507855434" id="r_a8e5f02814356085244246c8507855434"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e5f02814356085244246c8507855434">ordenarListaDonosContribuinte</a> (<a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *lista)</td></tr>
-<tr class="memitem:a54275117c6ed7e32ff5238b801607759" id="r_a54275117c6ed7e32ff5238b801607759"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54275117c6ed7e32ff5238b801607759">maiorVelocidadeMediaDonos</a> (<a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *listaDnos, <a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>, <a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *listaPassagens, <a class="el" href="carros_8h.html#a78ff326904d562e0a6deda02a6b9dd57">DISTANCIAS_LISTA</a> *listaDistancias)</td></tr>
+<tr class="memitem:aabcba3cfc14a3febd291d4ce187c863c" id="r_aabcba3cfc14a3febd291d4ce187c863c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aabcba3cfc14a3febd291d4ce187c863c">criarListaDonos</a> ()</td></tr>
+<tr class="memdesc:aabcba3cfc14a3febd291d4ce187c863c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por criar uma lista que ira conter donos.  <br /></td></tr>
+<tr class="memitem:a367f2d6058c4e0a1e02bb14b5317b19c" id="r_a367f2d6058c4e0a1e02bb14b5317b19c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnode_donos.html">NODE_DONOS</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a367f2d6058c4e0a1e02bb14b5317b19c">criarNodeDonos</a> ()</td></tr>
+<tr class="memdesc:a367f2d6058c4e0a1e02bb14b5317b19c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por alocar memoria para um node que contem todos os dados de um respetiv dono.  <br /></td></tr>
+<tr class="memitem:ae8aad768f886211e6abaf670f45e545b" id="r_ae8aad768f886211e6abaf670f45e545b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8aad768f886211e6abaf670f45e545b">freeNodeDonos</a> (<a class="el" href="structnode_donos.html">NODE_DONOS</a> *node)</td></tr>
+<tr class="memdesc:ae8aad768f886211e6abaf670f45e545b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por receber um NODE_DONOS e destruir esse mesmo no, libertando toda a memoria e os dados que possui.  <br /></td></tr>
+<tr class="memitem:aa32588be37898014318619da3b82a5f4" id="r_aa32588be37898014318619da3b82a5f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa32588be37898014318619da3b82a5f4">carregarDadosDonos</a> (<a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *lista)</td></tr>
+<tr class="memdesc:aa32588be37898014318619da3b82a5f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por ler o ficheiro "donos.txt", e inserir cada dono presente no ficheiro na estrutura da lista de donos.  <br /></td></tr>
+<tr class="memitem:a63ce8f02d04fe4adb1b477c5ce61ba6a" id="r_a63ce8f02d04fe4adb1b477c5ce61ba6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63ce8f02d04fe4adb1b477c5ce61ba6a">adicionarListaDonos</a> (<a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *lista, <a class="el" href="structnode_donos.html">NODE_DONOS</a> *node)</td></tr>
+<tr class="memdesc:a63ce8f02d04fe4adb1b477c5ce61ba6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por receber um NODE_DONOS e adiciona-lo a uma lista de donos.  <br /></td></tr>
+<tr class="memitem:afb3347b88085fa5fdf2c4f216c3d65e2" id="r_afb3347b88085fa5fdf2c4f216c3d65e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb3347b88085fa5fdf2c4f216c3d65e2">registarDonos</a> (<a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *lista)</td></tr>
+<tr class="memdesc:afb3347b88085fa5fdf2c4f216c3d65e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por adicionar um novo dono, a uma lista de donos, pelo utilizador.  <br /></td></tr>
+<tr class="memitem:ae8f0853f45bd6641eb4a5f15c0971e13" id="r_ae8f0853f45bd6641eb4a5f15c0971e13"><td class="memItemLeft" align="right" valign="top"><a id="ae8f0853f45bd6641eb4a5f15c0971e13" name="ae8f0853f45bd6641eb4a5f15c0971e13"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>listarDonos</b> (<a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *lista)</td></tr>
+<tr class="memitem:af6ca096787a93f6311e7ffe54a7dcb6c" id="r_af6ca096787a93f6311e7ffe54a7dcb6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6ca096787a93f6311e7ffe54a7dcb6c">freeListaDonos</a> (<a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *lista)</td></tr>
+<tr class="memdesc:af6ca096787a93f6311e7ffe54a7dcb6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por libertar a memoria alocada de toda a lista de donos e todo o seu conteudo.  <br /></td></tr>
+<tr class="memitem:a0aefec6d48da3e56ff5ddb3e89f8af04" id="r_a0aefec6d48da3e56ff5ddb3e89f8af04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0aefec6d48da3e56ff5ddb3e89f8af04">ordenarListaDonosAlfabeticamente</a> (<a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *lista)</td></tr>
+<tr class="memdesc:a0aefec6d48da3e56ff5ddb3e89f8af04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por ordenar (alfabeticamente) a lista de donos pelo nome de todos os condutores.  <br /></td></tr>
+<tr class="memitem:a8e5f02814356085244246c8507855434" id="r_a8e5f02814356085244246c8507855434"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e5f02814356085244246c8507855434">ordenarListaDonosContribuinte</a> (<a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *lista)</td></tr>
+<tr class="memdesc:a8e5f02814356085244246c8507855434"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por ordenar (por ordem crescente) a lista de donos pelo numero de contribuinte de todos os condutores.  <br /></td></tr>
+<tr class="memitem:a54275117c6ed7e32ff5238b801607759" id="r_a54275117c6ed7e32ff5238b801607759"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54275117c6ed7e32ff5238b801607759">maiorVelocidadeMediaDonos</a> (<a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *listaDnos, <a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>, <a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *listaPassagens, <a class="el" href="structdistancia_lista.html">DISTANCIAS_LISTA</a> *listaDistancias)</td></tr>
+<tr class="memdesc:a54275117c6ed7e32ff5238b801607759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por calcular e apresentar a maior velocidade média de um condutor (de todas as passagem)  <br /></td></tr>
+<tr class="memitem:a6cbec0abd4edec4e93a00b7f7162439c" id="r_a6cbec0abd4edec4e93a00b7f7162439c"><td class="memItemLeft" align="right" valign="top"><a id="a6cbec0abd4edec4e93a00b7f7162439c" name="a6cbec0abd4edec4e93a00b7f7162439c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>velocidadeMediaPorCodigoPostal</b> (<a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *listaDonos, <a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>, <a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *listaPassagens, <a class="el" href="structdistancia_lista.html">DISTANCIAS_LISTA</a> *listaDistancias, const char *codigoPostal)</td></tr>
+<tr class="memitem:a106a74695dc0a2a8804cf8962b3ee1f5" id="r_a106a74695dc0a2a8804cf8962b3ee1f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnode_donos.html">NODE_DONOS</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a106a74695dc0a2a8804cf8962b3ee1f5">avancarAteDono</a> (<a class="el" href="structnode_donos.html">NODE_DONOS</a> *nodeDono, int pos)</td></tr>
+<tr class="memdesc:a106a74695dc0a2a8804cf8962b3ee1f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por listar todos os donos presentes na Lista de donos.  <br /></td></tr>
 </table>
-<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
-<a id="a23ffb91c36390384f1fef7e71a2615e7" name="a23ffb91c36390384f1fef7e71a2615e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23ffb91c36390384f1fef7e71a2615e7">&#9670;&#160;</a></span>MAX_CODPOST_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MAX_CODPOST_SIZE&#160;&#160;&#160;10</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3f149a13497804b072db1f93beeba67d" name="a3f149a13497804b072db1f93beeba67d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f149a13497804b072db1f93beeba67d">&#9670;&#160;</a></span>MAX_NOME_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MAX_NOME_SIZE&#160;&#160;&#160;60</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
-<a id="a0f69177d224e50430a5291811f769f11" name="a0f69177d224e50430a5291811f769f11"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f69177d224e50430a5291811f769f11">&#9670;&#160;</a></span>Donos</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct Donos Donos</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab0ea3db15aeb9e477e79d54357ffbf57" name="ab0ea3db15aeb9e477e79d54357ffbf57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0ea3db15aeb9e477e79d54357ffbf57">&#9670;&#160;</a></span>LISTA_DONOS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="struct_lista_donos.html">ListaDonos</a> <a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1fdaac5ff6c774fac36deb20437ba7dd" name="a1fdaac5ff6c774fac36deb20437ba7dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1fdaac5ff6c774fac36deb20437ba7dd">&#9670;&#160;</a></span>LISTA_SENSOR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structlista_sensor.html">listaSensor</a> <a class="el" href="#a1fdaac5ff6c774fac36deb20437ba7dd">LISTA_SENSOR</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2eb00590d029458a80ccc49862389cc0" name="a2eb00590d029458a80ccc49862389cc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2eb00590d029458a80ccc49862389cc0">&#9670;&#160;</a></span>NODE_DONOS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structnode_donos.html">nodeDonos</a> <a class="el" href="#a2eb00590d029458a80ccc49862389cc0">NODE_DONOS</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Definicao das Estruturas relacionadas com os donos e prototipagem das funcoes utilizadas no <a class="el" href="donos_8c.html" title="Implementacao das funcoes respetivas aos donos.">donos.c</a>. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a63ce8f02d04fe4adb1b477c5ce61ba6a" name="a63ce8f02d04fe4adb1b477c5ce61ba6a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a63ce8f02d04fe4adb1b477c5ce61ba6a">&#9670;&#160;</a></span>adicionarListaDonos()</h2>
 
@@ -228,15 +168,55 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void adicionarListaDonos </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span>, </td>
+          <td class="paramtype"><a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#a2eb00590d029458a80ccc49862389cc0">NODE_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="structnode_donos.html">NODE_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por receber um NODE_DONOS e adiciona-lo a uma lista de donos. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro para a LISTA_DONOS para onde o dono vai ser "armazenado" </td></tr>
+    <tr><td class="paramname">node</td><td>: Recebe o NODE_DONOS que vai ser inserido no parametro de entrada lista </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
+
+</div>
+</div>
+<a id="a106a74695dc0a2a8804cf8962b3ee1f5" name="a106a74695dc0a2a8804cf8962b3ee1f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a106a74695dc0a2a8804cf8962b3ee1f5">&#9670;&#160;</a></span>avancarAteDono()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structnode_donos.html">NODE_DONOS</a> * avancarAteDono </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structnode_donos.html">NODE_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>nodeDono</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>pos</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcao responsavel por listar todos os donos presentes na Lista de donos. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro de uma LISTA_DONOS </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -249,11 +229,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void carregarDadosDonos </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por ler o ficheiro "donos.txt", e inserir cada dono presente no ficheiro na estrutura da lista de donos. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro de uma LISTA_DONOS </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -264,13 +253,16 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> * criarListaDonos </td>
+          <td class="memname"><a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> * criarListaDonos </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por criar uma lista que ira conter donos. </p>
+<dl class="section return"><dt>Returns</dt><dd>ponteiro para uma LISTA_DONOS, que e o resultado da alocacao de memoria da estrutura LISTA_DONOS </dd></dl>
 
 </div>
 </div>
@@ -281,13 +273,16 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a2eb00590d029458a80ccc49862389cc0">NODE_DONOS</a> * criarNodeDonos </td>
+          <td class="memname"><a class="el" href="structnode_donos.html">NODE_DONOS</a> * criarNodeDonos </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por alocar memoria para um node que contem todos os dados de um respetiv dono. </p>
+<dl class="section return"><dt>Returns</dt><dd>retorna um ponteiro para um NODE_DONOS, com todos os valores da estrutura nulos </dd></dl>
 
 </div>
 </div>
@@ -300,11 +295,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void freeListaDonos </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por libertar a memoria alocada de toda a lista de donos e todo o seu conteudo. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro de uma LISTA_DONOS para ser destruida </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -317,28 +321,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int freeNodeDonos </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a2eb00590d029458a80ccc49862389cc0">NODE_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structnode_donos.html">NODE_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="ae8f0853f45bd6641eb4a5f15c0971e13" name="ae8f0853f45bd6641eb4a5f15c0971e13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8f0853f45bd6641eb4a5f15c0971e13">&#9670;&#160;</a></span>listarDonos()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void listarDonos </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Funcao responsavel por receber um NODE_DONOS e destruir esse mesmo no, libertando toda a memoria e os dados que possui. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>: Recebe um ponteiro NODE_DONOS </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NULL se o node inserido nao existir </dd></dl>
 
 </div>
 </div>
@@ -351,25 +347,34 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void maiorVelocidadeMediaDonos </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDnos</em></span>, </td>
+          <td class="paramtype"><a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDonos</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarros</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarros</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaPassagens</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaPassagens</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a78ff326904d562e0a6deda02a6b9dd57">DISTANCIAS_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDistancias</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="structdistancia_lista.html">DISTANCIAS_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDistancias</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por calcular e apresentar a maior velocidade média de um condutor (de todas as passagem) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro de uma LISTA_DONOS </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -382,11 +387,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void ordenarListaDonosAlfabeticamente </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por ordenar (alfabeticamente) a lista de donos pelo nome de todos os condutores. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro de uma LISTA_DONOS </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -399,11 +413,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void ordenarListaDonosContribuinte </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por ordenar (por ordem crescente) a lista de donos pelo numero de contribuinte de todos os condutores. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro de uma LISTA_DONOS </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -416,11 +439,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void registarDonos </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ab0ea3db15aeb9e477e79d54357ffbf57">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_lista_donos.html">LISTA_DONOS</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por adicionar um novo dono, a uma lista de donos, pelo utilizador. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro para a LISTA_DONOS para onde o dono vai ser "armazenado" </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>

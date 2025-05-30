@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['ordenarlistadonosalfabeticamente_0',['ordenarListaDonosAlfabeticamente',['../donos_8c.html#a0aefec6d48da3e56ff5ddb3e89f8af04',1,'ordenarListaDonosAlfabeticamente(LISTA_DONOS *lista):&#160;donos.c'],['../donos_8h.html#a0aefec6d48da3e56ff5ddb3e89f8af04',1,'ordenarListaDonosAlfabeticamente(LISTA_DONOS *lista):&#160;donos.c']]],
-  ['ordenarlistadonoscontribuinte_1',['ordenarListaDonosContribuinte',['../donos_8c.html#a8e5f02814356085244246c8507855434',1,'ordenarListaDonosContribuinte(LISTA_DONOS *lista):&#160;donos.c'],['../donos_8h.html#a8e5f02814356085244246c8507855434',1,'ordenarListaDonosContribuinte(LISTA_DONOS *lista):&#160;donos.c']]],
-  ['ordenarlistamarcasporkm_2',['ordenarListaMarcasPorKm',['../_p_a_s_s_a_g_e_m_8c.html#a0285e22c35562600339187c5747b242f',1,'ordenarListaMarcasPorKm(LISTA_HASHC *lista):&#160;PASSAGEM.c'],['../_p_a_s_s_a_g_e_m_8_h.html#a0285e22c35562600339187c5747b242f',1,'ordenarListaMarcasPorKm(LISTA_HASHC *lista):&#160;PASSAGEM.c']]],
-  ['ordenarmarcashashcarrosalfabeticamente_3',['ordenarMarcasHashCarrosAlfabeticamente',['../carros_8c.html#a174e6db3fccffb6b2e1a8b17bf3cb11c',1,'ordenarMarcasHashCarrosAlfabeticamente(LISTA_HASHC *listaHash):&#160;carros.c'],['../carros_8h.html#a174e6db3fccffb6b2e1a8b17bf3cb11c',1,'ordenarMarcasHashCarrosAlfabeticamente(LISTA_HASHC *listaHash):&#160;carros.c']]],
-  ['ordenarmatriculahashcarrosalfabeticamente_4',['ordenarMatriculaHashCarrosAlfabeticamente',['../carros_8c.html#a5e9808e30d088e9d9c182dbb37d56cce',1,'ordenarMatriculaHashCarrosAlfabeticamente(LISTA_HASHC *listaHash):&#160;carros.c'],['../carros_8h.html#a5e9808e30d088e9d9c182dbb37d56cce',1,'ordenarMatriculaHashCarrosAlfabeticamente(LISTA_HASHC *listaHash):&#160;carros.c']]],
-  ['ordenarmodelohashcarrosalfabeticamente_5',['ordenarModeloHashCarrosAlfabeticamente',['../carros_8c.html#a13ef0874d7b22c8fdf424283cfc33bf5',1,'ordenarModeloHashCarrosAlfabeticamente(LISTA_HASHC *listaHash):&#160;carros.c'],['../carros_8h.html#a13ef0874d7b22c8fdf424283cfc33bf5',1,'ordenarModeloHashCarrosAlfabeticamente(LISTA_HASHC *listaHash):&#160;carros.c']]]
+  ['passagem_0',['PASSAGEM',['../struct_p_a_s_s_a_g_e_m.html',1,'']]],
+  ['passagem_1',['passagem',['../structpassagem.html',1,'']]],
+  ['passagem_2eh_2',['PASSAGEM.H',['../_p_a_s_s_a_g_e_m_8_h.html',1,'']]],
+  ['passagemlista_3',['passagemLista',['../structpassagem_lista.html',1,'']]],
+  ['procuracarroporid_4',['procuraCarroPorID',['../carros_8c.html#a55c675f4f841e04675d208c4d045f74e',1,'procuraCarroPorID(int codVeiculo, LISTA_HASHC *listaHashCarros):&#160;carros.c'],['../carros_8h.html#a55c675f4f841e04675d208c4d045f74e',1,'procuraCarroPorID(int codVeiculo, LISTA_HASHC *listaHashCarros):&#160;carros.c']]]
 ];

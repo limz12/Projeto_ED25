@@ -1,7 +1,10 @@
 \doxysection{PASSAGEM.\+H File Reference}
 \hypertarget{_p_a_s_s_a_g_e_m_8_h}{}\label{_p_a_s_s_a_g_e_m_8_h}\index{PASSAGEM.H@{PASSAGEM.H}}
-{\ttfamily \#include $<$stdlib.\+h$>$}\newline
-{\ttfamily \#include $<$stdio.\+h$>$}\newline
+
+
+Definicao das Estruturas relacionadas com as passagens e prototipagem das funcoes utilizadas no PASSAGEM.\+c.  
+
+
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -10,69 +13,68 @@ struct \mbox{\hyperlink{struct_d_a_t_a}{DATA}}
 struct \mbox{\hyperlink{struct_p_a_s_s_a_g_e_m}{PASSAGEM}}
 \item 
 struct \mbox{\hyperlink{structnode_passagem}{node\+Passagem}}
-\item 
+\begin{DoxyCompactList}\small\item\em Estrutura que serve de node e contem o ponteiro da passagem e do proximo. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structpassagem_lista}{passagem\+Lista}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Estrutura serve como lista para o conjunto dos PASSAGEM\+\_\+\+NODE. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-typedef struct \mbox{\hyperlink{structnode_passagem}{node\+Passagem}} \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145}{PASSAGEM\+\_\+\+NODE}}
+\Hypertarget{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145}\label{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145} 
+typedef struct \mbox{\hyperlink{structnode_passagem}{node\+Passagem}} {\bfseries PASSAGEM\+\_\+\+NODE}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a94ce03fca35890f22f9c306d218161ac}{criar\+Lista\+Passagem}} ()
+\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a94ce03fca35890f22f9c306d218161ac}{criar\+Lista\+Passagem}} ()
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por criar uma lista que ira conter passagens. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structnode_passagem}{PASSAGEM\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a3fa68fd7f1cac6385e730a797682772c}{criar\+Node\+Passagem}} ()
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por alocar memoria para um node que contem todos os dados de uma respetiva passagem. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a8e8aac50453fc7d17bcb045f5ce17043}{carregar\+Passagem}} (\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por ler o ficheiro "{}passagem.\+txt"{}, e inserir cada passagem presente no ficheiro na estrutura da lista de passagens. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ae828fce3d0386420773bae5fe62f782f}{adicionar\+Lista\+Passagem}} (\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista, \mbox{\hyperlink{structnode_passagem}{PASSAGEM\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}node)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por receber um PASSAGEM\+\_\+\+NODE e adiciona-\/lo a uma lista de passagens. \end{DoxyCompactList}\item 
+\Hypertarget{_p_a_s_s_a_g_e_m_8_h_a5c38694a17572988846337e8c5b69339}\label{_p_a_s_s_a_g_e_m_8_h_a5c38694a17572988846337e8c5b69339} 
+void {\bfseries mostrar\+Lista\+Passagem} (\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista)
 \item 
-\mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145}{PASSAGEM\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a3fa68fd7f1cac6385e730a797682772c}{criar\+Node\+Passagem}} ()
+void \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ac79b75c5b6effbed01d8ca0fc2f7c4c5}{libertar\+Node\+Passagem}} (\mbox{\hyperlink{structnode_passagem}{PASSAGEM\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}node)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por receber um PASSAGEM\+\_\+\+NODE e destruir libertando toda a memoria e os dados que possui. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a22d7daaac035f082382ca706b2458755}{libertar\+Lista\+Passagem}} (\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por libertar a memoria alocada de toda a lista de passagens e todo o seu conteudo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a902e296249ad458282cfb77ad462225e}{registar\+Passagem}} (\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por registar uma passagem manualmente (pelo utilizador) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ab8759ac9fc09bfea9f97f9ffd5b14693}{verificar\+Node\+Dados\+Passagem}} (\mbox{\hyperlink{structnode_passagem}{PASSAGEM\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}node)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por verificar se a data no node de uma lista estão dentro de limites válidos definidos. \end{DoxyCompactList}\item 
+\Hypertarget{_p_a_s_s_a_g_e_m_8_h_a2ed3f82a251dd763d9f5d22c05d40452}\label{_p_a_s_s_a_g_e_m_8_h_a2ed3f82a251dd763d9f5d22c05d40452} 
+void {\bfseries carros\+CircularamduranteX} (\mbox{\hyperlink{struct_p_a_s_s_a_g_e_m}{PASSAGEM}} \texorpdfstring{$\ast$}{*}lista\+Passagem, \mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Carros)
 \item 
-void \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a8e8aac50453fc7d17bcb045f5ce17043}{carregar\+Passagem}} (\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista)
+int \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_abe7a06733e45798e2742b9b71faa44e3}{check\+PeriodoX}} (\mbox{\hyperlink{structnode_passagem}{PASSAGEM\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structnode_passagem}{node\+Passagem}}, \mbox{\hyperlink{struct_d_a_t_a}{DATA}} \texorpdfstring{$\ast$}{*}periodo\+Inicial, \mbox{\hyperlink{struct_d_a_t_a}{DATA}} \texorpdfstring{$\ast$}{*}periodo\+Final)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por verificar se esta entre o tempo X e Y. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a31c0df8dcab2f968a1fcaa34087d9995}{maior\+Matricula}} (int p\+Carro, int s\+Carro, \mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash\+Carro)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por verificar se a seguinte matricula e maior (por IDCARRO) \end{DoxyCompactList}\item 
+\Hypertarget{_p_a_s_s_a_g_e_m_8_h_acaa8334fbd69d8db664c2c4dacee5afa}\label{_p_a_s_s_a_g_e_m_8_h_acaa8334fbd69d8db664c2c4dacee5afa} 
+\mbox{\hyperlink{structnodecarro}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*} {\bfseries procurar\+Por\+Id} (int id, \mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash)
 \item 
-void \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ae828fce3d0386420773bae5fe62f782f}{adicionar\+Lista\+Passagem}} (\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista, \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145}{PASSAGEM\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}node)
-\item 
-void \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a5c38694a17572988846337e8c5b69339}{mostrar\+Lista\+Passagem}} (\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista)
-\item 
-void \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ac79b75c5b6effbed01d8ca0fc2f7c4c5}{libertar\+Node\+Passagem}} (\mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145}{PASSAGEM\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}node)
-\item 
-void \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a22d7daaac035f082382ca706b2458755}{libertar\+Lista\+Passagem}} (\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista)
-\item 
-void \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a902e296249ad458282cfb77ad462225e}{registar\+Passagem}} (\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista)
-\item 
-int \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ab8759ac9fc09bfea9f97f9ffd5b14693}{verificar\+Node\+Dados\+Passagem}} (\mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145}{PASSAGEM\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}node)
-\item 
-void \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a2ed3f82a251dd763d9f5d22c05d40452}{carros\+CircularamduranteX}} (\mbox{\hyperlink{struct_p_a_s_s_a_g_e_m}{PASSAGEM}} \texorpdfstring{$\ast$}{*}lista\+Passagem, \mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Carros)
-\item 
-int \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_abe7a06733e45798e2742b9b71faa44e3}{check\+PeriodoX}} (\mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145}{PASSAGEM\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structnode_passagem}{node\+Passagem}}, \mbox{\hyperlink{struct_d_a_t_a}{DATA}} \texorpdfstring{$\ast$}{*}periodo\+Inicial, \mbox{\hyperlink{struct_d_a_t_a}{DATA}} \texorpdfstring{$\ast$}{*}periodo\+Final)
-\item 
-int \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a31c0df8dcab2f968a1fcaa34087d9995}{maior\+Matricula}} (int p\+Carro, int s\+Carro, \mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash\+Carro)
-\item 
-\mbox{\hyperlink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_acaa8334fbd69d8db664c2c4dacee5afa}{procurar\+Por\+Id}} (int id, \mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash)
-\item 
-void \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_aa9e461a2315142e353507c9c5e84f28c}{total\+Km\+Carro\+DuranteX}} (\mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}}, \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagem, \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
-\item 
-\mbox{\hyperlink{carros_8h_aa7cb4dee2a5859378aa6efba21babe07}{CARRO}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a10f082c5507fb3146faa264706a2b69e}{retorna\+Carro}} (\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash, int id)
-\item 
+void \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_aa9e461a2315142e353507c9c5e84f28c}{total\+Km\+Carro\+DuranteX}} (\mbox{\hyperlink{structlista_carro}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}}, \mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagem, \mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por listar ordenadamente, por total de km percorridos por carro, todos os carros pertencentes a um periodo x. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcarro}{CARRO}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a10f082c5507fb3146faa264706a2b69e}{retorna\+Carro}} (\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista\+Hash, int id)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por procurar e devolver um carro na lista\+Hash de carros. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ace5321ac4b25117c99699b71aae6bb2d}{comparar\+Carros}} (const void \texorpdfstring{$\ast$}{*}a, const void \texorpdfstring{$\ast$}{*}b)
-\item 
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por comparar dois carros com base na matricula/código do veículo. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a47531b8671658ec559161501c336c23d}{calculo\+Distancia}} (\mbox{\hyperlink{struct_d_a_t_a}{DATA}} \texorpdfstring{$\ast$}{*}data\+Entrada, \mbox{\hyperlink{struct_d_a_t_a}{DATA}} \texorpdfstring{$\ast$}{*}data\+Saida)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por calcular o tempo que o carro demorou a fazer a viagem, em milisegudos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad7799199595bd90288471e0ef61c8bca}{infracoes\+DuranteX}} (\mbox{\hyperlink{structlista_carro}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}}, \mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagem, \mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por listar ordenadamente, por ordem decresente de velocidade media, todos os carros com infracoes pertencentes a um periodo x. \end{DoxyCompactList}\item 
+\Hypertarget{_p_a_s_s_a_g_e_m_8_h_a939dac288a918ccf0349306ff58fbc60}\label{_p_a_s_s_a_g_e_m_8_h_a939dac288a918ccf0349306ff58fbc60} 
+void {\bfseries total\+Km\+Marca\+DuranteX} (\mbox{\hyperlink{structlista_carro}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}}, \mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagem, \mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
 \item 
-void \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad7799199595bd90288471e0ef61c8bca}{infracoes\+DuranteX}} (\mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}}, \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagem, \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
-\item 
-void \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a939dac288a918ccf0349306ff58fbc60}{total\+Km\+Marca\+DuranteX}} (\mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}}, \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagem, \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
-\item 
-void \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a0285e22c35562600339187c5747b242f}{ordenar\+Lista\+Marcas\+Por\+Km}} (\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista)
-\item 
-void \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a95f1fdc93ed3ef6d5284188811f0cf84}{totalinfracoes\+DuranteX}} (\mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}}, \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagem, \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a0285e22c35562600339187c5747b242f}{ordenar\+Lista\+Marcas\+Por\+Km}} (\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por ordenar a lista de carros, por ordem decresente de total de km\textquotesingle{}s por marca. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_a95f1fdc93ed3ef6d5284188811f0cf84}{totalinfracoes\+DuranteX}} (\mbox{\hyperlink{structlista_carro}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}}, \mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagem, \mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por listar ordenadamente, por ordem decresente de total de infracoes por carro, todos os carros com infracoes pertencentes a um periodo x. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\label{doc-typedef-members}
-\Hypertarget{_p_a_s_s_a_g_e_m_8_h_doc-typedef-members}
-\doxysubsection{Typedef Documentation}
-\Hypertarget{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145}\index{PASSAGEM.H@{PASSAGEM.H}!PASSAGEM\_NODE@{PASSAGEM\_NODE}}
-\index{PASSAGEM\_NODE@{PASSAGEM\_NODE}!PASSAGEM.H@{PASSAGEM.H}}
-\doxysubsubsection{\texorpdfstring{PASSAGEM\_NODE}{PASSAGEM\_NODE}}
-{\footnotesize\ttfamily \label{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145} 
-typedef struct \mbox{\hyperlink{structnode_passagem}{node\+Passagem}} \mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145}{PASSAGEM\+\_\+\+NODE}}}
+\doxysubsection{Detailed Description}
+Definicao das Estruturas relacionadas com as passagens e prototipagem das funcoes utilizadas no PASSAGEM.\+c. 
 
 
 
@@ -83,125 +85,263 @@ typedef struct \mbox{\hyperlink{structnode_passagem}{node\+Passagem}} \mbox{\hyp
 \index{adicionarListaPassagem@{adicionarListaPassagem}!PASSAGEM.H@{PASSAGEM.H}}
 \doxysubsubsection{\texorpdfstring{adicionarListaPassagem()}{adicionarListaPassagem()}}
 {\footnotesize\ttfamily \label{_p_a_s_s_a_g_e_m_8_h_ae828fce3d0386420773bae5fe62f782f} 
-void adicionar\+Lista\+Passagem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{\mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145}{PASSAGEM\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+void adicionar\+Lista\+Passagem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{\mbox{\hyperlink{structnode_passagem}{PASSAGEM\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por receber um PASSAGEM\+\_\+\+NODE e adiciona-\/lo a uma lista de passagens. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro para a PASSAGEM\+\_\+\+LISTA para onde a passagem vai ser "{}armazenada"{} \\
+\hline
+{\em node} & \+: Recebe o PASSAGEM\+\_\+\+NODE que vai ser inserido no parametro de entrada lista \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_p_a_s_s_a_g_e_m_8_h_a47531b8671658ec559161501c336c23d}\index{PASSAGEM.H@{PASSAGEM.H}!calculoDistancia@{calculoDistancia}}
 \index{calculoDistancia@{calculoDistancia}!PASSAGEM.H@{PASSAGEM.H}}
 \doxysubsubsection{\texorpdfstring{calculoDistancia()}{calculoDistancia()}}
 {\footnotesize\ttfamily \label{_p_a_s_s_a_g_e_m_8_h_a47531b8671658ec559161501c336c23d} 
 int calculo\+Distancia (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_a_t_a}{DATA}} \texorpdfstring{$\ast$}{*}}]{data\+Entrada}{, }\item[{\mbox{\hyperlink{struct_d_a_t_a}{DATA}} \texorpdfstring{$\ast$}{*}}]{data\+Saida}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por calcular o tempo que o carro demorou a fazer a viagem, em milisegudos. 
+
+\begin{DoxyReturn}{Returns}
+tempo\+Viagem\+MS \+: retorna o tempo que o carro demorou a fazer viagem 
+\end{DoxyReturn}
 \Hypertarget{_p_a_s_s_a_g_e_m_8_h_a8e8aac50453fc7d17bcb045f5ce17043}\index{PASSAGEM.H@{PASSAGEM.H}!carregarPassagem@{carregarPassagem}}
 \index{carregarPassagem@{carregarPassagem}!PASSAGEM.H@{PASSAGEM.H}}
 \doxysubsubsection{\texorpdfstring{carregarPassagem()}{carregarPassagem()}}
 {\footnotesize\ttfamily \label{_p_a_s_s_a_g_e_m_8_h_a8e8aac50453fc7d17bcb045f5ce17043} 
-void carregar\+Passagem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+void carregar\+Passagem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
 
-\Hypertarget{_p_a_s_s_a_g_e_m_8_h_a2ed3f82a251dd763d9f5d22c05d40452}\index{PASSAGEM.H@{PASSAGEM.H}!carrosCircularamduranteX@{carrosCircularamduranteX}}
-\index{carrosCircularamduranteX@{carrosCircularamduranteX}!PASSAGEM.H@{PASSAGEM.H}}
-\doxysubsubsection{\texorpdfstring{carrosCircularamduranteX()}{carrosCircularamduranteX()}}
-{\footnotesize\ttfamily \label{_p_a_s_s_a_g_e_m_8_h_a2ed3f82a251dd763d9f5d22c05d40452} 
-void carros\+CircularamduranteX (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_a_s_s_a_g_e_m}{PASSAGEM}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagem}{, }\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Carros}{}\end{DoxyParamCaption})}
 
+
+Funcao responsavel por ler o ficheiro "{}passagem.\+txt"{}, e inserir cada passagem presente no ficheiro na estrutura da lista de passagens. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro de uma PASSAGEM\+\_\+\+LISTA \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_p_a_s_s_a_g_e_m_8_h_abe7a06733e45798e2742b9b71faa44e3}\index{PASSAGEM.H@{PASSAGEM.H}!checkPeriodoX@{checkPeriodoX}}
 \index{checkPeriodoX@{checkPeriodoX}!PASSAGEM.H@{PASSAGEM.H}}
 \doxysubsubsection{\texorpdfstring{checkPeriodoX()}{checkPeriodoX()}}
 {\footnotesize\ttfamily \label{_p_a_s_s_a_g_e_m_8_h_abe7a06733e45798e2742b9b71faa44e3} 
-int check\+PeriodoX (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145}{PASSAGEM\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}}]{node\+Passagem}{, }\item[{\mbox{\hyperlink{struct_d_a_t_a}{DATA}} \texorpdfstring{$\ast$}{*}}]{periodo\+Inicial}{, }\item[{\mbox{\hyperlink{struct_d_a_t_a}{DATA}} \texorpdfstring{$\ast$}{*}}]{periodo\+Final}{}\end{DoxyParamCaption})}
+int check\+PeriodoX (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnode_passagem}{PASSAGEM\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}}]{node\+Passagem}{, }\item[{\mbox{\hyperlink{struct_d_a_t_a}{DATA}} \texorpdfstring{$\ast$}{*}}]{periodo\+Inicial}{, }\item[{\mbox{\hyperlink{struct_d_a_t_a}{DATA}} \texorpdfstring{$\ast$}{*}}]{periodo\+Final}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por verificar se esta entre o tempo X e Y. 
+
+\begin{DoxyReturn}{Returns}
+1 \+: retorna 1 se passou os testes, ou seja, esta dentro do intervalo 
+\end{DoxyReturn}
 \Hypertarget{_p_a_s_s_a_g_e_m_8_h_ace5321ac4b25117c99699b71aae6bb2d}\index{PASSAGEM.H@{PASSAGEM.H}!compararCarros@{compararCarros}}
 \index{compararCarros@{compararCarros}!PASSAGEM.H@{PASSAGEM.H}}
 \doxysubsubsection{\texorpdfstring{compararCarros()}{compararCarros()}}
 {\footnotesize\ttfamily \label{_p_a_s_s_a_g_e_m_8_h_ace5321ac4b25117c99699b71aae6bb2d} 
 int comparar\+Carros (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{const void \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por comparar dois carros com base na matricula/código do veículo. 
+
+\begin{DoxyReturn}{Returns}
+1 \+: retorna 1 se o primeiro carro (a) tiver uma "{}matricula maior"{} que o segundo carro (b) 
+
+0 \+: retorna 0 se ambos os carros são nulos (não existentes) 
+
+-\/1 \+: retorna -\/1 se o segundo carro (b) tiver uma "{}matricula maior"{} que o primeiro carro (a) 
+\end{DoxyReturn}
 \Hypertarget{_p_a_s_s_a_g_e_m_8_h_a94ce03fca35890f22f9c306d218161ac}\index{PASSAGEM.H@{PASSAGEM.H}!criarListaPassagem@{criarListaPassagem}}
 \index{criarListaPassagem@{criarListaPassagem}!PASSAGEM.H@{PASSAGEM.H}}
 \doxysubsubsection{\texorpdfstring{criarListaPassagem()}{criarListaPassagem()}}
 {\footnotesize\ttfamily \label{_p_a_s_s_a_g_e_m_8_h_a94ce03fca35890f22f9c306d218161ac} 
-\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*} criar\+Lista\+Passagem (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*} criar\+Lista\+Passagem (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por criar uma lista que ira conter passagens. 
+
+\begin{DoxyReturn}{Returns}
+ponteiro para uma PASSAGEM\+\_\+\+LISTA, que e o resultado da alocacao de memoria da estrutura PASSAGEM\+\_\+\+LISTA 
+\end{DoxyReturn}
 \Hypertarget{_p_a_s_s_a_g_e_m_8_h_a3fa68fd7f1cac6385e730a797682772c}\index{PASSAGEM.H@{PASSAGEM.H}!criarNodePassagem@{criarNodePassagem}}
 \index{criarNodePassagem@{criarNodePassagem}!PASSAGEM.H@{PASSAGEM.H}}
 \doxysubsubsection{\texorpdfstring{criarNodePassagem()}{criarNodePassagem()}}
 {\footnotesize\ttfamily \label{_p_a_s_s_a_g_e_m_8_h_a3fa68fd7f1cac6385e730a797682772c} 
-\mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145}{PASSAGEM\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*} criar\+Node\+Passagem (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+\mbox{\hyperlink{structnode_passagem}{PASSAGEM\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*} criar\+Node\+Passagem (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por alocar memoria para um node que contem todos os dados de uma respetiva passagem. 
+
+\begin{DoxyReturn}{Returns}
+retorna um ponteiro para um PASSAGEM\+\_\+\+NODE, com todos os valores da estrutura nulos 
+\end{DoxyReturn}
 \Hypertarget{_p_a_s_s_a_g_e_m_8_h_ad7799199595bd90288471e0ef61c8bca}\index{PASSAGEM.H@{PASSAGEM.H}!infracoesDuranteX@{infracoesDuranteX}}
 \index{infracoesDuranteX@{infracoesDuranteX}!PASSAGEM.H@{PASSAGEM.H}}
 \doxysubsubsection{\texorpdfstring{infracoesDuranteX()}{infracoesDuranteX()}}
 {\footnotesize\ttfamily \label{_p_a_s_s_a_g_e_m_8_h_ad7799199595bd90288471e0ef61c8bca} 
-void infracoes\+DuranteX (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{, }\item[{\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagem}{, }\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
+void infracoes\+DuranteX (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_carro}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{, }\item[{\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagem}{, }\item[{\mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por listar ordenadamente, por ordem decresente de velocidade media, todos os carros com infracoes pertencentes a um periodo x. 
+
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_p_a_s_s_a_g_e_m_8_h_a22d7daaac035f082382ca706b2458755}\index{PASSAGEM.H@{PASSAGEM.H}!libertarListaPassagem@{libertarListaPassagem}}
 \index{libertarListaPassagem@{libertarListaPassagem}!PASSAGEM.H@{PASSAGEM.H}}
 \doxysubsubsection{\texorpdfstring{libertarListaPassagem()}{libertarListaPassagem()}}
 {\footnotesize\ttfamily \label{_p_a_s_s_a_g_e_m_8_h_a22d7daaac035f082382ca706b2458755} 
-void libertar\+Lista\+Passagem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+void libertar\+Lista\+Passagem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por libertar a memoria alocada de toda a lista de passagens e todo o seu conteudo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro de uma PASSAGEM\+\_\+\+LISTA para ser destruida \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_p_a_s_s_a_g_e_m_8_h_ac79b75c5b6effbed01d8ca0fc2f7c4c5}\index{PASSAGEM.H@{PASSAGEM.H}!libertarNodePassagem@{libertarNodePassagem}}
 \index{libertarNodePassagem@{libertarNodePassagem}!PASSAGEM.H@{PASSAGEM.H}}
 \doxysubsubsection{\texorpdfstring{libertarNodePassagem()}{libertarNodePassagem()}}
 {\footnotesize\ttfamily \label{_p_a_s_s_a_g_e_m_8_h_ac79b75c5b6effbed01d8ca0fc2f7c4c5} 
-void libertar\+Node\+Passagem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145}{PASSAGEM\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+void libertar\+Node\+Passagem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnode_passagem}{PASSAGEM\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por receber um PASSAGEM\+\_\+\+NODE e destruir libertando toda a memoria e os dados que possui. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & \+: Recebe um ponteiro PASSAGEM\+\_\+\+NODE \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NULL se o node inserido nao existir 
+\end{DoxyReturn}
 \Hypertarget{_p_a_s_s_a_g_e_m_8_h_a31c0df8dcab2f968a1fcaa34087d9995}\index{PASSAGEM.H@{PASSAGEM.H}!maiorMatricula@{maiorMatricula}}
 \index{maiorMatricula@{maiorMatricula}!PASSAGEM.H@{PASSAGEM.H}}
 \doxysubsubsection{\texorpdfstring{maiorMatricula()}{maiorMatricula()}}
 {\footnotesize\ttfamily \label{_p_a_s_s_a_g_e_m_8_h_a31c0df8dcab2f968a1fcaa34087d9995} 
-int maior\+Matricula (\begin{DoxyParamCaption}\item[{int}]{p\+Carro}{, }\item[{int}]{s\+Carro}{, }\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carro}{}\end{DoxyParamCaption})}
+int maior\+Matricula (\begin{DoxyParamCaption}\item[{int}]{p\+Carro}{, }\item[{int}]{s\+Carro}{, }\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carro}{}\end{DoxyParamCaption})}
 
-\Hypertarget{_p_a_s_s_a_g_e_m_8_h_a5c38694a17572988846337e8c5b69339}\index{PASSAGEM.H@{PASSAGEM.H}!mostrarListaPassagem@{mostrarListaPassagem}}
-\index{mostrarListaPassagem@{mostrarListaPassagem}!PASSAGEM.H@{PASSAGEM.H}}
-\doxysubsubsection{\texorpdfstring{mostrarListaPassagem()}{mostrarListaPassagem()}}
-{\footnotesize\ttfamily \label{_p_a_s_s_a_g_e_m_8_h_a5c38694a17572988846337e8c5b69339} 
-void mostrar\+Lista\+Passagem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
 
+
+Funcao responsavel por verificar se a seguinte matricula e maior (por IDCARRO) 
+
+\begin{DoxyReturn}{Returns}
+1 \+: retorna 1 se a primeira matricula for "{}maior"{} que a segunda 
+\end{DoxyReturn}
 \Hypertarget{_p_a_s_s_a_g_e_m_8_h_a0285e22c35562600339187c5747b242f}\index{PASSAGEM.H@{PASSAGEM.H}!ordenarListaMarcasPorKm@{ordenarListaMarcasPorKm}}
 \index{ordenarListaMarcasPorKm@{ordenarListaMarcasPorKm}!PASSAGEM.H@{PASSAGEM.H}}
 \doxysubsubsection{\texorpdfstring{ordenarListaMarcasPorKm()}{ordenarListaMarcasPorKm()}}
 {\footnotesize\ttfamily \label{_p_a_s_s_a_g_e_m_8_h_a0285e22c35562600339187c5747b242f} 
-void ordenar\+Lista\+Marcas\+Por\+Km (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+void ordenar\+Lista\+Marcas\+Por\+Km (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
 
-\Hypertarget{_p_a_s_s_a_g_e_m_8_h_acaa8334fbd69d8db664c2c4dacee5afa}\index{PASSAGEM.H@{PASSAGEM.H}!procurarPorId@{procurarPorId}}
-\index{procurarPorId@{procurarPorId}!PASSAGEM.H@{PASSAGEM.H}}
-\doxysubsubsection{\texorpdfstring{procurarPorId()}{procurarPorId()}}
-{\footnotesize\ttfamily \label{_p_a_s_s_a_g_e_m_8_h_acaa8334fbd69d8db664c2c4dacee5afa} 
-\mbox{\hyperlink{carros_8h_a2dc16118eb08f54132d3bc105c3b6eaf}{NODE\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*} procurar\+Por\+Id (\begin{DoxyParamCaption}\item[{int}]{id}{, }\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash}{}\end{DoxyParamCaption})}
 
+
+Funcao responsavel por ordenar a lista de carros, por ordem decresente de total de km\textquotesingle{}s por marca. 
+
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_p_a_s_s_a_g_e_m_8_h_a902e296249ad458282cfb77ad462225e}\index{PASSAGEM.H@{PASSAGEM.H}!registarPassagem@{registarPassagem}}
 \index{registarPassagem@{registarPassagem}!PASSAGEM.H@{PASSAGEM.H}}
 \doxysubsubsection{\texorpdfstring{registarPassagem()}{registarPassagem()}}
 {\footnotesize\ttfamily \label{_p_a_s_s_a_g_e_m_8_h_a902e296249ad458282cfb77ad462225e} 
-void registar\+Passagem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+void registar\+Passagem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por registar uma passagem manualmente (pelo utilizador) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro de uma PASSAGEM\+\_\+\+LISTA \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_p_a_s_s_a_g_e_m_8_h_a10f082c5507fb3146faa264706a2b69e}\index{PASSAGEM.H@{PASSAGEM.H}!retornaCarro@{retornaCarro}}
 \index{retornaCarro@{retornaCarro}!PASSAGEM.H@{PASSAGEM.H}}
 \doxysubsubsection{\texorpdfstring{retornaCarro()}{retornaCarro()}}
 {\footnotesize\ttfamily \label{_p_a_s_s_a_g_e_m_8_h_a10f082c5507fb3146faa264706a2b69e} 
-\mbox{\hyperlink{carros_8h_aa7cb4dee2a5859378aa6efba21babe07}{CARRO}} \texorpdfstring{$\ast$}{*} retorna\+Carro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash}{, }\item[{int}]{id}{}\end{DoxyParamCaption})}
+\mbox{\hyperlink{structcarro}{CARRO}} \texorpdfstring{$\ast$}{*} retorna\+Carro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash}{, }\item[{int}]{id}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por procurar e devolver um carro na lista\+Hash de carros. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+Hash} & \+: Recebe um ponteiro de uma LISTA\+\_\+\+HASHC \\
+\hline
+{\em id} & \+: Recebe o id a procurar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+node\+Carro\+Encontrado-\/\texorpdfstring{$>$}{>}info \+: retorna o carro com o id especificado 
+\end{DoxyReturn}
 \Hypertarget{_p_a_s_s_a_g_e_m_8_h_a95f1fdc93ed3ef6d5284188811f0cf84}\index{PASSAGEM.H@{PASSAGEM.H}!totalinfracoesDuranteX@{totalinfracoesDuranteX}}
 \index{totalinfracoesDuranteX@{totalinfracoesDuranteX}!PASSAGEM.H@{PASSAGEM.H}}
 \doxysubsubsection{\texorpdfstring{totalinfracoesDuranteX()}{totalinfracoesDuranteX()}}
 {\footnotesize\ttfamily \label{_p_a_s_s_a_g_e_m_8_h_a95f1fdc93ed3ef6d5284188811f0cf84} 
-void totalinfracoes\+DuranteX (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{, }\item[{\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagem}{, }\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
+void totalinfracoes\+DuranteX (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_carro}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{, }\item[{\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagem}{, }\item[{\mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por listar ordenadamente, por ordem decresente de total de infracoes por carro, todos os carros com infracoes pertencentes a um periodo x. 
+
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_p_a_s_s_a_g_e_m_8_h_aa9e461a2315142e353507c9c5e84f28c}\index{PASSAGEM.H@{PASSAGEM.H}!totalKmCarroDuranteX@{totalKmCarroDuranteX}}
 \index{totalKmCarroDuranteX@{totalKmCarroDuranteX}!PASSAGEM.H@{PASSAGEM.H}}
 \doxysubsubsection{\texorpdfstring{totalKmCarroDuranteX()}{totalKmCarroDuranteX()}}
 {\footnotesize\ttfamily \label{_p_a_s_s_a_g_e_m_8_h_aa9e461a2315142e353507c9c5e84f28c} 
-void total\+Km\+Carro\+DuranteX (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{, }\item[{\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagem}{, }\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
+void total\+Km\+Carro\+DuranteX (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlista_carro}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{, }\item[{\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagem}{, }\item[{\mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
 
-\Hypertarget{_p_a_s_s_a_g_e_m_8_h_a939dac288a918ccf0349306ff58fbc60}\index{PASSAGEM.H@{PASSAGEM.H}!totalKmMarcaDuranteX@{totalKmMarcaDuranteX}}
-\index{totalKmMarcaDuranteX@{totalKmMarcaDuranteX}!PASSAGEM.H@{PASSAGEM.H}}
-\doxysubsubsection{\texorpdfstring{totalKmMarcaDuranteX()}{totalKmMarcaDuranteX()}}
-{\footnotesize\ttfamily \label{_p_a_s_s_a_g_e_m_8_h_a939dac288a918ccf0349306ff58fbc60} 
-void total\+Km\+Marca\+DuranteX (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ae9182ba349415547fcce84e3810cd6ca}{LISTA\+\_\+\+CARRO}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{, }\item[{\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagem}{, }\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
 
+
+Funcao responsavel por listar ordenadamente, por total de km percorridos por carro, todos os carros pertencentes a um periodo x. 
+
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{_p_a_s_s_a_g_e_m_8_h_ab8759ac9fc09bfea9f97f9ffd5b14693}\index{PASSAGEM.H@{PASSAGEM.H}!verificarNodeDadosPassagem@{verificarNodeDadosPassagem}}
 \index{verificarNodeDadosPassagem@{verificarNodeDadosPassagem}!PASSAGEM.H@{PASSAGEM.H}}
 \doxysubsubsection{\texorpdfstring{verificarNodeDadosPassagem()}{verificarNodeDadosPassagem()}}
 {\footnotesize\ttfamily \label{_p_a_s_s_a_g_e_m_8_h_ab8759ac9fc09bfea9f97f9ffd5b14693} 
-int verificar\+Node\+Dados\+Passagem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_p_a_s_s_a_g_e_m_8_h_ad4de52d8eb17097f6fd899038b609145}{PASSAGEM\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+int verificar\+Node\+Dados\+Passagem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnode_passagem}{PASSAGEM\+\_\+\+NODE}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por verificar se a data no node de uma lista estão dentro de limites válidos definidos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & \+: Recebe o PASSAGEM\+\_\+\+NODE que vai ser analisado/verificado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}

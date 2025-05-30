@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Projeto_ED_25: VIAGENS.H File Reference</title>
+<title>ProjetoED_25: VIAGENS.H File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Projeto_ED_25
+   <div id="projectname">ProjetoED_25
    </div>
-   <div id="projectbrief">CCUT(Portagens com custo para o utilizador)</div>
+   <div id="projectbrief">CCUT</div>
   </td>
  </tr>
  </tbody>
@@ -92,45 +92,40 @@ $(function(){initNavTree('_v_i_a_g_e_n_s_8_h.html','',''); });
   <div class="headertitle"><div class="title">VIAGENS.H File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="carros_8h_source.html">carros.h</a>&quot;</code><br />
+
+<p>Definicao das Estruturas relacionadas com as viagens e prototipagem das funcoes utilizadas no <a class="el" href="_v_i_a_g_e_n_s_8c.html" title="Implementacao das funcoes respetivas a viagens.">VIAGENS.c</a>.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="carros_8h_source.html">carros.h</a>&quot;</code><br />
 </div>
 <p><a href="_v_i_a_g_e_n_s_8_h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:nodeViagem" id="r_nodeViagem"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnode_viagem.html">nodeViagem</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura que serve de node, contem o conteudo da viagem e o ponteiro do proximo.  <a href="structnode_viagem.html#details">More...</a><br /></td></tr>
 <tr class="memitem:LISTA_5FVIAGENS" id="r_LISTA_5FVIAGENS"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">LISTA_VIAGENS</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a4a33895ada63dc8093088d85b7a1740a" id="r_a4a33895ada63dc8093088d85b7a1740a"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structnode_viagem.html">nodeViagem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a33895ada63dc8093088d85b7a1740a">NODE_VIAGENS</a></td></tr>
+<tr class="memitem:a4a33895ada63dc8093088d85b7a1740a" id="r_a4a33895ada63dc8093088d85b7a1740a"><td class="memItemLeft" align="right" valign="top"><a id="a4a33895ada63dc8093088d85b7a1740a" name="a4a33895ada63dc8093088d85b7a1740a"></a>
+typedef struct <a class="el" href="structnode_viagem.html">nodeViagem</a>&#160;</td><td class="memItemRight" valign="bottom"><b>NODE_VIAGENS</b></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a34005c65b634ff6a35c80ead7c63de13" id="r_a34005c65b634ff6a35c80ead7c63de13"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">LISTA_VIAGENS</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34005c65b634ff6a35c80ead7c63de13">criarListaViagens</a> ()</td></tr>
-<tr class="memitem:add1d0326b66baf6372b3507727c0371e" id="r_add1d0326b66baf6372b3507727c0371e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4a33895ada63dc8093088d85b7a1740a">NODE_VIAGENS</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add1d0326b66baf6372b3507727c0371e">criarNodeViagens</a> ()</td></tr>
+<tr class="memdesc:a34005c65b634ff6a35c80ead7c63de13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por criar uma lista que ira conter viagens.  <br /></td></tr>
+<tr class="memitem:add1d0326b66baf6372b3507727c0371e" id="r_add1d0326b66baf6372b3507727c0371e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnode_viagem.html">NODE_VIAGENS</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add1d0326b66baf6372b3507727c0371e">criarNodeViagens</a> ()</td></tr>
+<tr class="memdesc:add1d0326b66baf6372b3507727c0371e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por alocar memoria para um node que contem todos os dados de uma respetiva viagem.  <br /></td></tr>
 <tr class="memitem:a49c9d9efee063a30295a8950b8179175" id="r_a49c9d9efee063a30295a8950b8179175"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49c9d9efee063a30295a8950b8179175">existeCarroListaViagens</a> (<a class="el" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">LISTA_VIAGENS</a> *listaViagens, int codCarro)</td></tr>
-<tr class="memitem:af17c2c8b71d1d143db39567eedb17eec" id="r_af17c2c8b71d1d143db39567eedb17eec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af17c2c8b71d1d143db39567eedb17eec">adicionarNodeListaViagens</a> (<a class="el" href="#a4a33895ada63dc8093088d85b7a1740a">NODE_VIAGENS</a> *nodeViagens, <a class="el" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">LISTA_VIAGENS</a> *listaViagens)</td></tr>
+<tr class="memdesc:a49c9d9efee063a30295a8950b8179175"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por verificar se o determinado carro existe na lista.  <br /></td></tr>
+<tr class="memitem:af17c2c8b71d1d143db39567eedb17eec" id="r_af17c2c8b71d1d143db39567eedb17eec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af17c2c8b71d1d143db39567eedb17eec">adicionarNodeListaViagens</a> (<a class="el" href="structnode_viagem.html">NODE_VIAGENS</a> *nodeViagens, <a class="el" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">LISTA_VIAGENS</a> *listaViagens)</td></tr>
+<tr class="memdesc:af17c2c8b71d1d143db39567eedb17eec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por receber um NODE_VIAGENS e adiciona-lo a uma lista de viagens.  <br /></td></tr>
 <tr class="memitem:a0faf13e23f6c139478c26960b8382262" id="r_a0faf13e23f6c139478c26960b8382262"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0faf13e23f6c139478c26960b8382262">freeListaViagens</a> (<a class="el" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">LISTA_VIAGENS</a> *listaViagens)</td></tr>
+<tr class="memdesc:a0faf13e23f6c139478c26960b8382262"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por libertar a memoria alocada de toda a lista de viagens e todo o seu conteudo.  <br /></td></tr>
 </table>
-<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
-<a id="a4a33895ada63dc8093088d85b7a1740a" name="a4a33895ada63dc8093088d85b7a1740a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a33895ada63dc8093088d85b7a1740a">&#9670;&#160;</a></span>NODE_VIAGENS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structnode_viagem.html">nodeViagem</a> <a class="el" href="#a4a33895ada63dc8093088d85b7a1740a">NODE_VIAGENS</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Definicao das Estruturas relacionadas com as viagens e prototipagem das funcoes utilizadas no <a class="el" href="_v_i_a_g_e_n_s_8c.html" title="Implementacao das funcoes respetivas a viagens.">VIAGENS.c</a>. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="af17c2c8b71d1d143db39567eedb17eec" name="af17c2c8b71d1d143db39567eedb17eec"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af17c2c8b71d1d143db39567eedb17eec">&#9670;&#160;</a></span>adicionarNodeListaViagens()</h2>
 
@@ -140,7 +135,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void adicionarNodeListaViagens </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a4a33895ada63dc8093088d85b7a1740a">NODE_VIAGENS</a> *</td>          <td class="paramname"><span class="paramname"><em>nodeViagens</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structnode_viagem.html">NODE_VIAGENS</a> *</td>          <td class="paramname"><span class="paramname"><em>nodeViagens</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -149,6 +144,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por receber um NODE_VIAGENS e adiciona-lo a uma lista de viagens. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">listaViagens</td><td>: Recebe um ponteiro para a PASSAGEM_LISTA para onde a viagem vai ser "armazenada" </td></tr>
+    <tr><td class="paramname">nodeViagens</td><td>: Recebe o NODE_VIAGENS que vai ser inserido no parametro de entrada lista </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -167,6 +172,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Funcao responsavel por criar uma lista que ira conter viagens. </p>
+<dl class="section return"><dt>Returns</dt><dd>ponteiro para uma <a class="el" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">LISTA_VIAGENS</a>, que e o resultado da alocacao de memoria da estrutura <a class="el" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">LISTA_VIAGENS</a> </dd></dl>
+
 </div>
 </div>
 <a id="add1d0326b66baf6372b3507727c0371e" name="add1d0326b66baf6372b3507727c0371e"></a>
@@ -176,13 +184,16 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a4a33895ada63dc8093088d85b7a1740a">NODE_VIAGENS</a> * criarNodeViagens </td>
+          <td class="memname"><a class="el" href="structnode_viagem.html">NODE_VIAGENS</a> * criarNodeViagens </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por alocar memoria para um node que contem todos os dados de uma respetiva viagem. </p>
+<dl class="section return"><dt>Returns</dt><dd>retorna um ponteiro para um NODE_VIAGENS, com todos os valores da estrutura nulos </dd></dl>
 
 </div>
 </div>
@@ -205,6 +216,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Funcao responsavel por verificar se o determinado carro existe na lista. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codCarro</td><td>: Recebe um inteiro que e o identificador do carro </td></tr>
+    <tr><td class="paramname">listaViagens</td><td>: Recebe um ponteiro de uma listaViagens </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 : se carro existe </dd>
+<dd>
+0 : se carro nao existe </dd></dl>
+
 </div>
 </div>
 <a id="a0faf13e23f6c139478c26960b8382262" name="a0faf13e23f6c139478c26960b8382262"></a>
@@ -221,6 +244,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por libertar a memoria alocada de toda a lista de viagens e todo o seu conteudo. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">listaViagens</td><td>: Recebe um ponteiro de uma <a class="el" href="struct_l_i_s_t_a___v_i_a_g_e_n_s.html">LISTA_VIAGENS</a> para ser destruida </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>

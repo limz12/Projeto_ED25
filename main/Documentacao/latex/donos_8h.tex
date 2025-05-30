@@ -1,107 +1,81 @@
 \doxysection{donos.\+h File Reference}
 \hypertarget{donos_8h}{}\label{donos_8h}\index{donos.h@{donos.h}}
-{\ttfamily \#include $<$stdlib.\+h$>$}\newline
-{\ttfamily \#include $<$stdio.\+h$>$}\newline
-{\ttfamily \#include $<$string.\+h$>$}\newline
-{\ttfamily \#include $<$malloc.\+h$>$}\newline
-{\ttfamily \#include $<$locale.\+h$>$}\newline
+
+
+Definicao das Estruturas relacionadas com os donos e prototipagem das funcoes utilizadas no \doxylink{donos_8c}{donos.\+c}.  
+
+
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{struct_donos}{Donos}}
-\item 
+\begin{DoxyCompactList}\small\item\em Estrutura que representa uma \doxylink{struct_donos}{Donos}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structnode_donos}{node\+Donos}}
-\item 
+\begin{DoxyCompactList}\small\item\em Estrutura que serve de node e contem o ponteiro do Dono e do proximo node. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_lista_donos}{Lista\+Donos}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Estrutura serve como lista para o conjunto dos NODE\+\_\+\+DONOS. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{donos_8h_a3f149a13497804b072db1f93beeba67d}{MAX\+\_\+\+NOME\+\_\+\+SIZE}}~60
+\Hypertarget{donos_8h_a3f149a13497804b072db1f93beeba67d}\label{donos_8h_a3f149a13497804b072db1f93beeba67d} 
+\#define {\bfseries MAX\+\_\+\+NOME\+\_\+\+SIZE}~60
 \item 
-\#define \mbox{\hyperlink{donos_8h_a23ffb91c36390384f1fef7e71a2615e7}{MAX\+\_\+\+CODPOST\+\_\+\+SIZE}}~10
+\Hypertarget{donos_8h_a23ffb91c36390384f1fef7e71a2615e7}\label{donos_8h_a23ffb91c36390384f1fef7e71a2615e7} 
+\#define {\bfseries MAX\+\_\+\+CODPOST\+\_\+\+SIZE}~10
+\item 
+\Hypertarget{donos_8h_a85d58c783e14b7cf720376abceee33f2}\label{donos_8h_a85d58c783e14b7cf720376abceee33f2} 
+\#define {\bfseries DONOS\+\_\+\+POR\+\_\+\+PAGINA}~20
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-typedef struct \mbox{\hyperlink{structlista_sensor}{lista\+Sensor}} \mbox{\hyperlink{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}{LISTA\+\_\+\+SENSOR}}
+\Hypertarget{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}\label{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd} 
+typedef struct \mbox{\hyperlink{structlista_sensor}{lista\+Sensor}} {\bfseries LISTA\+\_\+\+SENSOR}
 \item 
-typedef struct Donos \mbox{\hyperlink{donos_8h_a0f69177d224e50430a5291811f769f11}{Donos}}
+\Hypertarget{donos_8h_a0f69177d224e50430a5291811f769f11}\label{donos_8h_a0f69177d224e50430a5291811f769f11} 
+typedef struct Donos {\bfseries Donos}
 \item 
-typedef struct \mbox{\hyperlink{structnode_donos}{node\+Donos}} \mbox{\hyperlink{donos_8h_a2eb00590d029458a80ccc49862389cc0}{NODE\+\_\+\+DONOS}}
+\Hypertarget{donos_8h_a2eb00590d029458a80ccc49862389cc0}\label{donos_8h_a2eb00590d029458a80ccc49862389cc0} 
+typedef struct \mbox{\hyperlink{structnode_donos}{node\+Donos}} {\bfseries NODE\+\_\+\+DONOS}
 \item 
-typedef struct \mbox{\hyperlink{struct_lista_donos}{Lista\+Donos}} \mbox{\hyperlink{donos_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}}
+\Hypertarget{donos_8h_ab0ea3db15aeb9e477e79d54357ffbf57}\label{donos_8h_ab0ea3db15aeb9e477e79d54357ffbf57} 
+typedef struct \mbox{\hyperlink{struct_lista_donos}{Lista\+Donos}} {\bfseries LISTA\+\_\+\+DONOS}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{donos_8h_aabcba3cfc14a3febd291d4ce187c863c}{criar\+Lista\+Donos}} ()
+\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{donos_8h_aabcba3cfc14a3febd291d4ce187c863c}{criar\+Lista\+Donos}} ()
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por criar uma lista que ira conter donos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structnode_donos}{NODE\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{donos_8h_a367f2d6058c4e0a1e02bb14b5317b19c}{criar\+Node\+Donos}} ()
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por alocar memoria para um node que contem todos os dados de um respetiv dono. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{donos_8h_ae8aad768f886211e6abaf670f45e545b}{free\+Node\+Donos}} (\mbox{\hyperlink{structnode_donos}{NODE\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}node)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por receber um NODE\+\_\+\+DONOS e destruir esse mesmo no, libertando toda a memoria e os dados que possui. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{donos_8h_aa32588be37898014318619da3b82a5f4}{carregar\+Dados\+Donos}} (\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por ler o ficheiro "{}donos.\+txt"{}, e inserir cada dono presente no ficheiro na estrutura da lista de donos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{donos_8h_a63ce8f02d04fe4adb1b477c5ce61ba6a}{adicionar\+Lista\+Donos}} (\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista, \mbox{\hyperlink{structnode_donos}{NODE\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}node)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por receber um NODE\+\_\+\+DONOS e adiciona-\/lo a uma lista de donos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{donos_8h_afb3347b88085fa5fdf2c4f216c3d65e2}{registar\+Donos}} (\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por adicionar um novo dono, a uma lista de donos, pelo utilizador. \end{DoxyCompactList}\item 
+\Hypertarget{donos_8h_ae8f0853f45bd6641eb4a5f15c0971e13}\label{donos_8h_ae8f0853f45bd6641eb4a5f15c0971e13} 
+void {\bfseries listar\+Donos} (\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista)
 \item 
-\mbox{\hyperlink{donos_8h_a2eb00590d029458a80ccc49862389cc0}{NODE\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{donos_8h_a367f2d6058c4e0a1e02bb14b5317b19c}{criar\+Node\+Donos}} ()
+void \mbox{\hyperlink{donos_8h_af6ca096787a93f6311e7ffe54a7dcb6c}{free\+Lista\+Donos}} (\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por libertar a memoria alocada de toda a lista de donos e todo o seu conteudo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{donos_8h_a0aefec6d48da3e56ff5ddb3e89f8af04}{ordenar\+Lista\+Donos\+Alfabeticamente}} (\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por ordenar (alfabeticamente) a lista de donos pelo nome de todos os condutores. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{donos_8h_a8e5f02814356085244246c8507855434}{ordenar\+Lista\+Donos\+Contribuinte}} (\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por ordenar (por ordem crescente) a lista de donos pelo numero de contribuinte de todos os condutores. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{donos_8h_a54275117c6ed7e32ff5238b801607759}{maior\+Velocidade\+Media\+Donos}} (\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista\+Dnos, \mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}}, \mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagens, \mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por calcular e apresentar a maior velocidade média de um condutor (de todas as passagem) \end{DoxyCompactList}\item 
+\Hypertarget{donos_8h_a6cbec0abd4edec4e93a00b7f7162439c}\label{donos_8h_a6cbec0abd4edec4e93a00b7f7162439c} 
+void {\bfseries velocidade\+Media\+Por\+Codigo\+Postal} (\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista\+Donos, \mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}}, \mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagens, \mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias, const char \texorpdfstring{$\ast$}{*}codigo\+Postal)
 \item 
-int \mbox{\hyperlink{donos_8h_ae8aad768f886211e6abaf670f45e545b}{free\+Node\+Donos}} (\mbox{\hyperlink{donos_8h_a2eb00590d029458a80ccc49862389cc0}{NODE\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}node)
-\item 
-void \mbox{\hyperlink{donos_8h_aa32588be37898014318619da3b82a5f4}{carregar\+Dados\+Donos}} (\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista)
-\item 
-void \mbox{\hyperlink{donos_8h_a63ce8f02d04fe4adb1b477c5ce61ba6a}{adicionar\+Lista\+Donos}} (\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista, \mbox{\hyperlink{donos_8h_a2eb00590d029458a80ccc49862389cc0}{NODE\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}node)
-\item 
-void \mbox{\hyperlink{donos_8h_afb3347b88085fa5fdf2c4f216c3d65e2}{registar\+Donos}} (\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista)
-\item 
-void \mbox{\hyperlink{donos_8h_ae8f0853f45bd6641eb4a5f15c0971e13}{listar\+Donos}} (\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista)
-\item 
-void \mbox{\hyperlink{donos_8h_af6ca096787a93f6311e7ffe54a7dcb6c}{free\+Lista\+Donos}} (\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista)
-\item 
-void \mbox{\hyperlink{donos_8h_a0aefec6d48da3e56ff5ddb3e89f8af04}{ordenar\+Lista\+Donos\+Alfabeticamente}} (\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista)
-\item 
-void \mbox{\hyperlink{donos_8h_a8e5f02814356085244246c8507855434}{ordenar\+Lista\+Donos\+Contribuinte}} (\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista)
-\item 
-void \mbox{\hyperlink{donos_8h_a54275117c6ed7e32ff5238b801607759}{maior\+Velocidade\+Media\+Donos}} (\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}lista\+Dnos, \mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structlista_hash_carros}{lista\+Hash\+Carros}}, \mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Passagens, \mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}lista\+Distancias)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{structnode_donos}{NODE\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{donos_8h_a106a74695dc0a2a8804cf8962b3ee1f5}{avancar\+Ate\+Dono}} (\mbox{\hyperlink{structnode_donos}{NODE\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}node\+Dono, int pos)
+\begin{DoxyCompactList}\small\item\em Funcao responsavel por listar todos os donos presentes na Lista de donos. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\label{doc-define-members}
-\Hypertarget{donos_8h_doc-define-members}
-\doxysubsection{Macro Definition Documentation}
-\Hypertarget{donos_8h_a23ffb91c36390384f1fef7e71a2615e7}\index{donos.h@{donos.h}!MAX\_CODPOST\_SIZE@{MAX\_CODPOST\_SIZE}}
-\index{MAX\_CODPOST\_SIZE@{MAX\_CODPOST\_SIZE}!donos.h@{donos.h}}
-\doxysubsubsection{\texorpdfstring{MAX\_CODPOST\_SIZE}{MAX\_CODPOST\_SIZE}}
-{\footnotesize\ttfamily \label{donos_8h_a23ffb91c36390384f1fef7e71a2615e7} 
-\#define MAX\+\_\+\+CODPOST\+\_\+\+SIZE~10}
-
-\Hypertarget{donos_8h_a3f149a13497804b072db1f93beeba67d}\index{donos.h@{donos.h}!MAX\_NOME\_SIZE@{MAX\_NOME\_SIZE}}
-\index{MAX\_NOME\_SIZE@{MAX\_NOME\_SIZE}!donos.h@{donos.h}}
-\doxysubsubsection{\texorpdfstring{MAX\_NOME\_SIZE}{MAX\_NOME\_SIZE}}
-{\footnotesize\ttfamily \label{donos_8h_a3f149a13497804b072db1f93beeba67d} 
-\#define MAX\+\_\+\+NOME\+\_\+\+SIZE~60}
-
-
-
-\label{doc-typedef-members}
-\Hypertarget{donos_8h_doc-typedef-members}
-\doxysubsection{Typedef Documentation}
-\Hypertarget{donos_8h_a0f69177d224e50430a5291811f769f11}\index{donos.h@{donos.h}!Donos@{Donos}}
-\index{Donos@{Donos}!donos.h@{donos.h}}
-\doxysubsubsection{\texorpdfstring{Donos}{Donos}}
-{\footnotesize\ttfamily \label{donos_8h_a0f69177d224e50430a5291811f769f11} 
-typedef struct Donos Donos}
-
-\Hypertarget{donos_8h_ab0ea3db15aeb9e477e79d54357ffbf57}\index{donos.h@{donos.h}!LISTA\_DONOS@{LISTA\_DONOS}}
-\index{LISTA\_DONOS@{LISTA\_DONOS}!donos.h@{donos.h}}
-\doxysubsubsection{\texorpdfstring{LISTA\_DONOS}{LISTA\_DONOS}}
-{\footnotesize\ttfamily \label{donos_8h_ab0ea3db15aeb9e477e79d54357ffbf57} 
-typedef struct \mbox{\hyperlink{struct_lista_donos}{Lista\+Donos}} \mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}}}
-
-\Hypertarget{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}\index{donos.h@{donos.h}!LISTA\_SENSOR@{LISTA\_SENSOR}}
-\index{LISTA\_SENSOR@{LISTA\_SENSOR}!donos.h@{donos.h}}
-\doxysubsubsection{\texorpdfstring{LISTA\_SENSOR}{LISTA\_SENSOR}}
-{\footnotesize\ttfamily \label{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd} 
-typedef struct \mbox{\hyperlink{structlista_sensor}{lista\+Sensor}} \mbox{\hyperlink{donos_8h_a1fdaac5ff6c774fac36deb20437ba7dd}{LISTA\+\_\+\+SENSOR}}}
-
-\Hypertarget{donos_8h_a2eb00590d029458a80ccc49862389cc0}\index{donos.h@{donos.h}!NODE\_DONOS@{NODE\_DONOS}}
-\index{NODE\_DONOS@{NODE\_DONOS}!donos.h@{donos.h}}
-\doxysubsubsection{\texorpdfstring{NODE\_DONOS}{NODE\_DONOS}}
-{\footnotesize\ttfamily \label{donos_8h_a2eb00590d029458a80ccc49862389cc0} 
-typedef struct \mbox{\hyperlink{structnode_donos}{node\+Donos}} \mbox{\hyperlink{donos_8h_a2eb00590d029458a80ccc49862389cc0}{NODE\+\_\+\+DONOS}}}
+\doxysubsection{Detailed Description}
+Definicao das Estruturas relacionadas com os donos e prototipagem das funcoes utilizadas no \doxylink{donos_8c}{donos.\+c}. 
 
 
 
@@ -112,65 +86,189 @@ typedef struct \mbox{\hyperlink{structnode_donos}{node\+Donos}} \mbox{\hyperlink
 \index{adicionarListaDonos@{adicionarListaDonos}!donos.h@{donos.h}}
 \doxysubsubsection{\texorpdfstring{adicionarListaDonos()}{adicionarListaDonos()}}
 {\footnotesize\ttfamily \label{donos_8h_a63ce8f02d04fe4adb1b477c5ce61ba6a} 
-void adicionar\+Lista\+Donos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{\mbox{\hyperlink{donos_8h_a2eb00590d029458a80ccc49862389cc0}{NODE\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+void adicionar\+Lista\+Donos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{\mbox{\hyperlink{structnode_donos}{NODE\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por receber um NODE\+\_\+\+DONOS e adiciona-\/lo a uma lista de donos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro para a LISTA\+\_\+\+DONOS para onde o dono vai ser "{}armazenado"{} \\
+\hline
+{\em node} & \+: Recebe o NODE\+\_\+\+DONOS que vai ser inserido no parametro de entrada lista \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
+\Hypertarget{donos_8h_a106a74695dc0a2a8804cf8962b3ee1f5}\index{donos.h@{donos.h}!avancarAteDono@{avancarAteDono}}
+\index{avancarAteDono@{avancarAteDono}!donos.h@{donos.h}}
+\doxysubsubsection{\texorpdfstring{avancarAteDono()}{avancarAteDono()}}
+{\footnotesize\ttfamily \label{donos_8h_a106a74695dc0a2a8804cf8962b3ee1f5} 
+\mbox{\hyperlink{structnode_donos}{NODE\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*} avancar\+Ate\+Dono (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnode_donos}{NODE\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{node\+Dono}{, }\item[{int}]{pos}{}\end{DoxyParamCaption})}
+
+
+
+Funcao responsavel por listar todos os donos presentes na Lista de donos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro de uma LISTA\+\_\+\+DONOS \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{donos_8h_aa32588be37898014318619da3b82a5f4}\index{donos.h@{donos.h}!carregarDadosDonos@{carregarDadosDonos}}
 \index{carregarDadosDonos@{carregarDadosDonos}!donos.h@{donos.h}}
 \doxysubsubsection{\texorpdfstring{carregarDadosDonos()}{carregarDadosDonos()}}
 {\footnotesize\ttfamily \label{donos_8h_aa32588be37898014318619da3b82a5f4} 
-void carregar\+Dados\+Donos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+void carregar\+Dados\+Donos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por ler o ficheiro "{}donos.\+txt"{}, e inserir cada dono presente no ficheiro na estrutura da lista de donos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro de uma LISTA\+\_\+\+DONOS \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{donos_8h_aabcba3cfc14a3febd291d4ce187c863c}\index{donos.h@{donos.h}!criarListaDonos@{criarListaDonos}}
 \index{criarListaDonos@{criarListaDonos}!donos.h@{donos.h}}
 \doxysubsubsection{\texorpdfstring{criarListaDonos()}{criarListaDonos()}}
 {\footnotesize\ttfamily \label{donos_8h_aabcba3cfc14a3febd291d4ce187c863c} 
-\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*} criar\+Lista\+Donos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*} criar\+Lista\+Donos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por criar uma lista que ira conter donos. 
+
+\begin{DoxyReturn}{Returns}
+ponteiro para uma LISTA\+\_\+\+DONOS, que e o resultado da alocacao de memoria da estrutura LISTA\+\_\+\+DONOS 
+\end{DoxyReturn}
 \Hypertarget{donos_8h_a367f2d6058c4e0a1e02bb14b5317b19c}\index{donos.h@{donos.h}!criarNodeDonos@{criarNodeDonos}}
 \index{criarNodeDonos@{criarNodeDonos}!donos.h@{donos.h}}
 \doxysubsubsection{\texorpdfstring{criarNodeDonos()}{criarNodeDonos()}}
 {\footnotesize\ttfamily \label{donos_8h_a367f2d6058c4e0a1e02bb14b5317b19c} 
-\mbox{\hyperlink{donos_8h_a2eb00590d029458a80ccc49862389cc0}{NODE\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*} criar\+Node\+Donos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+\mbox{\hyperlink{structnode_donos}{NODE\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*} criar\+Node\+Donos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por alocar memoria para um node que contem todos os dados de um respetiv dono. 
+
+\begin{DoxyReturn}{Returns}
+retorna um ponteiro para um NODE\+\_\+\+DONOS, com todos os valores da estrutura nulos 
+\end{DoxyReturn}
 \Hypertarget{donos_8h_af6ca096787a93f6311e7ffe54a7dcb6c}\index{donos.h@{donos.h}!freeListaDonos@{freeListaDonos}}
 \index{freeListaDonos@{freeListaDonos}!donos.h@{donos.h}}
 \doxysubsubsection{\texorpdfstring{freeListaDonos()}{freeListaDonos()}}
 {\footnotesize\ttfamily \label{donos_8h_af6ca096787a93f6311e7ffe54a7dcb6c} 
-void free\+Lista\+Donos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+void free\+Lista\+Donos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por libertar a memoria alocada de toda a lista de donos e todo o seu conteudo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro de uma LISTA\+\_\+\+DONOS para ser destruida \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{donos_8h_ae8aad768f886211e6abaf670f45e545b}\index{donos.h@{donos.h}!freeNodeDonos@{freeNodeDonos}}
 \index{freeNodeDonos@{freeNodeDonos}!donos.h@{donos.h}}
 \doxysubsubsection{\texorpdfstring{freeNodeDonos()}{freeNodeDonos()}}
 {\footnotesize\ttfamily \label{donos_8h_ae8aad768f886211e6abaf670f45e545b} 
-int free\+Node\+Donos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{donos_8h_a2eb00590d029458a80ccc49862389cc0}{NODE\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+int free\+Node\+Donos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnode_donos}{NODE\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
 
-\Hypertarget{donos_8h_ae8f0853f45bd6641eb4a5f15c0971e13}\index{donos.h@{donos.h}!listarDonos@{listarDonos}}
-\index{listarDonos@{listarDonos}!donos.h@{donos.h}}
-\doxysubsubsection{\texorpdfstring{listarDonos()}{listarDonos()}}
-{\footnotesize\ttfamily \label{donos_8h_ae8f0853f45bd6641eb4a5f15c0971e13} 
-void listar\+Donos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
 
+
+Funcao responsavel por receber um NODE\+\_\+\+DONOS e destruir esse mesmo no, libertando toda a memoria e os dados que possui. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & \+: Recebe um ponteiro NODE\+\_\+\+DONOS \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NULL se o node inserido nao existir 
+\end{DoxyReturn}
 \Hypertarget{donos_8h_a54275117c6ed7e32ff5238b801607759}\index{donos.h@{donos.h}!maiorVelocidadeMediaDonos@{maiorVelocidadeMediaDonos}}
 \index{maiorVelocidadeMediaDonos@{maiorVelocidadeMediaDonos}!donos.h@{donos.h}}
 \doxysubsubsection{\texorpdfstring{maiorVelocidadeMediaDonos()}{maiorVelocidadeMediaDonos()}}
 {\footnotesize\ttfamily \label{donos_8h_a54275117c6ed7e32ff5238b801607759} 
-void maior\+Velocidade\+Media\+Donos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista\+Dnos}{, }\item[{\mbox{\hyperlink{carros_8h_a6429f490d7fc7a807751ba7aa9370bb1}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{, }\item[{\mbox{\hyperlink{carros_8h_ac90fd462fa2f32027ec7ecbf4d47727a}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagens}{, }\item[{\mbox{\hyperlink{carros_8h_a78ff326904d562e0a6deda02a6b9dd57}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
+void maior\+Velocidade\+Media\+Donos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista\+Donos}{, }\item[{\mbox{\hyperlink{structlista_hash_carros}{LISTA\+\_\+\+HASHC}} \texorpdfstring{$\ast$}{*}}]{lista\+Hash\+Carros}{, }\item[{\mbox{\hyperlink{structpassagem_lista}{PASSAGEM\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Passagens}{, }\item[{\mbox{\hyperlink{structdistancia_lista}{DISTANCIAS\+\_\+\+LISTA}} \texorpdfstring{$\ast$}{*}}]{lista\+Distancias}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por calcular e apresentar a maior velocidade média de um condutor (de todas as passagem) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro de uma LISTA\+\_\+\+DONOS \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{donos_8h_a0aefec6d48da3e56ff5ddb3e89f8af04}\index{donos.h@{donos.h}!ordenarListaDonosAlfabeticamente@{ordenarListaDonosAlfabeticamente}}
 \index{ordenarListaDonosAlfabeticamente@{ordenarListaDonosAlfabeticamente}!donos.h@{donos.h}}
 \doxysubsubsection{\texorpdfstring{ordenarListaDonosAlfabeticamente()}{ordenarListaDonosAlfabeticamente()}}
 {\footnotesize\ttfamily \label{donos_8h_a0aefec6d48da3e56ff5ddb3e89f8af04} 
-void ordenar\+Lista\+Donos\+Alfabeticamente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+void ordenar\+Lista\+Donos\+Alfabeticamente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por ordenar (alfabeticamente) a lista de donos pelo nome de todos os condutores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro de uma LISTA\+\_\+\+DONOS \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{donos_8h_a8e5f02814356085244246c8507855434}\index{donos.h@{donos.h}!ordenarListaDonosContribuinte@{ordenarListaDonosContribuinte}}
 \index{ordenarListaDonosContribuinte@{ordenarListaDonosContribuinte}!donos.h@{donos.h}}
 \doxysubsubsection{\texorpdfstring{ordenarListaDonosContribuinte()}{ordenarListaDonosContribuinte()}}
 {\footnotesize\ttfamily \label{donos_8h_a8e5f02814356085244246c8507855434} 
-void ordenar\+Lista\+Donos\+Contribuinte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+void ordenar\+Lista\+Donos\+Contribuinte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por ordenar (por ordem crescente) a lista de donos pelo numero de contribuinte de todos os condutores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro de uma LISTA\+\_\+\+DONOS \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}
 \Hypertarget{donos_8h_afb3347b88085fa5fdf2c4f216c3d65e2}\index{donos.h@{donos.h}!registarDonos@{registarDonos}}
 \index{registarDonos@{registarDonos}!donos.h@{donos.h}}
 \doxysubsubsection{\texorpdfstring{registarDonos()}{registarDonos()}}
 {\footnotesize\ttfamily \label{donos_8h_afb3347b88085fa5fdf2c4f216c3d65e2} 
-void registar\+Donos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{carros_8h_ab0ea3db15aeb9e477e79d54357ffbf57}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+void registar\+Donos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_lista_donos}{LISTA\+\_\+\+DONOS}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
 
+
+
+Funcao responsavel por adicionar um novo dono, a uma lista de donos, pelo utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & \+: Recebe um ponteiro para a LISTA\+\_\+\+DONOS para onde o dono vai ser "{}armazenado"{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+VOID 
+\end{DoxyReturn}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Projeto_ED_25: PASSAGEM.H File Reference</title>
+<title>ProjetoED_25: PASSAGEM.H File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,9 +26,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Projeto_ED_25
+   <div id="projectname">ProjetoED_25
    </div>
-   <div id="projectbrief">CCUT(Portagens com custo para o utilizador)</div>
+   <div id="projectbrief">CCUT</div>
   </td>
  </tr>
  </tbody>
@@ -92,9 +92,10 @@ $(function(){initNavTree('_p_a_s_s_a_g_e_m_8_h.html','',''); });
   <div class="headertitle"><div class="title">PASSAGEM.H File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &lt;stdio.h&gt;</code><br />
-</div>
+
+<p>Definicao das Estruturas relacionadas com as passagens e prototipagem das funcoes utilizadas no PASSAGEM.c.  
+<a href="#details">More...</a></p>
+
 <p><a href="_p_a_s_s_a_g_e_m_8_h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -102,52 +103,63 @@ Classes</h2></td></tr>
 <tr class="memitem:DATA" id="r_DATA"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_d_a_t_a.html">DATA</a></td></tr>
 <tr class="memitem:PASSAGEM" id="r_PASSAGEM"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_p_a_s_s_a_g_e_m.html">PASSAGEM</a></td></tr>
 <tr class="memitem:nodePassagem" id="r_nodePassagem"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnode_passagem.html">nodePassagem</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura que serve de node e contem o ponteiro da passagem e do proximo.  <a href="structnode_passagem.html#details">More...</a><br /></td></tr>
 <tr class="memitem:passagemLista" id="r_passagemLista"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpassagem_lista.html">passagemLista</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura serve como lista para o conjunto dos PASSAGEM_NODE.  <a href="structpassagem_lista.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ad4de52d8eb17097f6fd899038b609145" id="r_ad4de52d8eb17097f6fd899038b609145"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structnode_passagem.html">nodePassagem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4de52d8eb17097f6fd899038b609145">PASSAGEM_NODE</a></td></tr>
+<tr class="memitem:ad4de52d8eb17097f6fd899038b609145" id="r_ad4de52d8eb17097f6fd899038b609145"><td class="memItemLeft" align="right" valign="top"><a id="ad4de52d8eb17097f6fd899038b609145" name="ad4de52d8eb17097f6fd899038b609145"></a>
+typedef struct <a class="el" href="structnode_passagem.html">nodePassagem</a>&#160;</td><td class="memItemRight" valign="bottom"><b>PASSAGEM_NODE</b></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a94ce03fca35890f22f9c306d218161ac" id="r_a94ce03fca35890f22f9c306d218161ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94ce03fca35890f22f9c306d218161ac">criarListaPassagem</a> ()</td></tr>
-<tr class="memitem:a3fa68fd7f1cac6385e730a797682772c" id="r_a3fa68fd7f1cac6385e730a797682772c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ad4de52d8eb17097f6fd899038b609145">PASSAGEM_NODE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fa68fd7f1cac6385e730a797682772c">criarNodePassagem</a> ()</td></tr>
-<tr class="memitem:a8e8aac50453fc7d17bcb045f5ce17043" id="r_a8e8aac50453fc7d17bcb045f5ce17043"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e8aac50453fc7d17bcb045f5ce17043">carregarPassagem</a> (<a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *lista)</td></tr>
-<tr class="memitem:ae828fce3d0386420773bae5fe62f782f" id="r_ae828fce3d0386420773bae5fe62f782f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae828fce3d0386420773bae5fe62f782f">adicionarListaPassagem</a> (<a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *lista, <a class="el" href="#ad4de52d8eb17097f6fd899038b609145">PASSAGEM_NODE</a> *node)</td></tr>
-<tr class="memitem:a5c38694a17572988846337e8c5b69339" id="r_a5c38694a17572988846337e8c5b69339"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c38694a17572988846337e8c5b69339">mostrarListaPassagem</a> (<a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *lista)</td></tr>
-<tr class="memitem:ac79b75c5b6effbed01d8ca0fc2f7c4c5" id="r_ac79b75c5b6effbed01d8ca0fc2f7c4c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac79b75c5b6effbed01d8ca0fc2f7c4c5">libertarNodePassagem</a> (<a class="el" href="#ad4de52d8eb17097f6fd899038b609145">PASSAGEM_NODE</a> *node)</td></tr>
-<tr class="memitem:a22d7daaac035f082382ca706b2458755" id="r_a22d7daaac035f082382ca706b2458755"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22d7daaac035f082382ca706b2458755">libertarListaPassagem</a> (<a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *lista)</td></tr>
-<tr class="memitem:a902e296249ad458282cfb77ad462225e" id="r_a902e296249ad458282cfb77ad462225e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a902e296249ad458282cfb77ad462225e">registarPassagem</a> (<a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *lista)</td></tr>
-<tr class="memitem:ab8759ac9fc09bfea9f97f9ffd5b14693" id="r_ab8759ac9fc09bfea9f97f9ffd5b14693"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8759ac9fc09bfea9f97f9ffd5b14693">verificarNodeDadosPassagem</a> (<a class="el" href="#ad4de52d8eb17097f6fd899038b609145">PASSAGEM_NODE</a> *node)</td></tr>
-<tr class="memitem:a2ed3f82a251dd763d9f5d22c05d40452" id="r_a2ed3f82a251dd763d9f5d22c05d40452"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ed3f82a251dd763d9f5d22c05d40452">carrosCircularamduranteX</a> (<a class="el" href="struct_p_a_s_s_a_g_e_m.html">PASSAGEM</a> *listaPassagem, <a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *listaCarros)</td></tr>
-<tr class="memitem:abe7a06733e45798e2742b9b71faa44e3" id="r_abe7a06733e45798e2742b9b71faa44e3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe7a06733e45798e2742b9b71faa44e3">checkPeriodoX</a> (<a class="el" href="#ad4de52d8eb17097f6fd899038b609145">PASSAGEM_NODE</a> *<a class="el" href="structnode_passagem.html">nodePassagem</a>, <a class="el" href="struct_d_a_t_a.html">DATA</a> *periodoInicial, <a class="el" href="struct_d_a_t_a.html">DATA</a> *periodoFinal)</td></tr>
-<tr class="memitem:a31c0df8dcab2f968a1fcaa34087d9995" id="r_a31c0df8dcab2f968a1fcaa34087d9995"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31c0df8dcab2f968a1fcaa34087d9995">maiorMatricula</a> (int pCarro, int sCarro, <a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *listaHashCarro)</td></tr>
-<tr class="memitem:acaa8334fbd69d8db664c2c4dacee5afa" id="r_acaa8334fbd69d8db664c2c4dacee5afa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="carros_8h.html#a2dc16118eb08f54132d3bc105c3b6eaf">NODE_CARRO</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acaa8334fbd69d8db664c2c4dacee5afa">procurarPorId</a> (int id, <a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *listaHash)</td></tr>
-<tr class="memitem:aa9e461a2315142e353507c9c5e84f28c" id="r_aa9e461a2315142e353507c9c5e84f28c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9e461a2315142e353507c9c5e84f28c">totalKmCarroDuranteX</a> (<a class="el" href="carros_8h.html#ae9182ba349415547fcce84e3810cd6ca">LISTA_CARRO</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>, <a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *listaPassagem, <a class="el" href="carros_8h.html#a78ff326904d562e0a6deda02a6b9dd57">DISTANCIAS_LISTA</a> *listaDistancias)</td></tr>
-<tr class="memitem:a10f082c5507fb3146faa264706a2b69e" id="r_a10f082c5507fb3146faa264706a2b69e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="carros_8h.html#aa7cb4dee2a5859378aa6efba21babe07">CARRO</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10f082c5507fb3146faa264706a2b69e">retornaCarro</a> (<a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *listaHash, int id)</td></tr>
+<tr class="memitem:a94ce03fca35890f22f9c306d218161ac" id="r_a94ce03fca35890f22f9c306d218161ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94ce03fca35890f22f9c306d218161ac">criarListaPassagem</a> ()</td></tr>
+<tr class="memdesc:a94ce03fca35890f22f9c306d218161ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por criar uma lista que ira conter passagens.  <br /></td></tr>
+<tr class="memitem:a3fa68fd7f1cac6385e730a797682772c" id="r_a3fa68fd7f1cac6385e730a797682772c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnode_passagem.html">PASSAGEM_NODE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fa68fd7f1cac6385e730a797682772c">criarNodePassagem</a> ()</td></tr>
+<tr class="memdesc:a3fa68fd7f1cac6385e730a797682772c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por alocar memoria para um node que contem todos os dados de uma respetiva passagem.  <br /></td></tr>
+<tr class="memitem:a8e8aac50453fc7d17bcb045f5ce17043" id="r_a8e8aac50453fc7d17bcb045f5ce17043"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e8aac50453fc7d17bcb045f5ce17043">carregarPassagem</a> (<a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *lista)</td></tr>
+<tr class="memdesc:a8e8aac50453fc7d17bcb045f5ce17043"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por ler o ficheiro "passagem.txt", e inserir cada passagem presente no ficheiro na estrutura da lista de passagens.  <br /></td></tr>
+<tr class="memitem:ae828fce3d0386420773bae5fe62f782f" id="r_ae828fce3d0386420773bae5fe62f782f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae828fce3d0386420773bae5fe62f782f">adicionarListaPassagem</a> (<a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *lista, <a class="el" href="structnode_passagem.html">PASSAGEM_NODE</a> *node)</td></tr>
+<tr class="memdesc:ae828fce3d0386420773bae5fe62f782f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por receber um PASSAGEM_NODE e adiciona-lo a uma lista de passagens.  <br /></td></tr>
+<tr class="memitem:a5c38694a17572988846337e8c5b69339" id="r_a5c38694a17572988846337e8c5b69339"><td class="memItemLeft" align="right" valign="top"><a id="a5c38694a17572988846337e8c5b69339" name="a5c38694a17572988846337e8c5b69339"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>mostrarListaPassagem</b> (<a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *lista)</td></tr>
+<tr class="memitem:ac79b75c5b6effbed01d8ca0fc2f7c4c5" id="r_ac79b75c5b6effbed01d8ca0fc2f7c4c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac79b75c5b6effbed01d8ca0fc2f7c4c5">libertarNodePassagem</a> (<a class="el" href="structnode_passagem.html">PASSAGEM_NODE</a> *node)</td></tr>
+<tr class="memdesc:ac79b75c5b6effbed01d8ca0fc2f7c4c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por receber um PASSAGEM_NODE e destruir libertando toda a memoria e os dados que possui.  <br /></td></tr>
+<tr class="memitem:a22d7daaac035f082382ca706b2458755" id="r_a22d7daaac035f082382ca706b2458755"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22d7daaac035f082382ca706b2458755">libertarListaPassagem</a> (<a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *lista)</td></tr>
+<tr class="memdesc:a22d7daaac035f082382ca706b2458755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por libertar a memoria alocada de toda a lista de passagens e todo o seu conteudo.  <br /></td></tr>
+<tr class="memitem:a902e296249ad458282cfb77ad462225e" id="r_a902e296249ad458282cfb77ad462225e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a902e296249ad458282cfb77ad462225e">registarPassagem</a> (<a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *lista)</td></tr>
+<tr class="memdesc:a902e296249ad458282cfb77ad462225e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por registar uma passagem manualmente (pelo utilizador)  <br /></td></tr>
+<tr class="memitem:ab8759ac9fc09bfea9f97f9ffd5b14693" id="r_ab8759ac9fc09bfea9f97f9ffd5b14693"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8759ac9fc09bfea9f97f9ffd5b14693">verificarNodeDadosPassagem</a> (<a class="el" href="structnode_passagem.html">PASSAGEM_NODE</a> *node)</td></tr>
+<tr class="memdesc:ab8759ac9fc09bfea9f97f9ffd5b14693"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por verificar se a data no node de uma lista estão dentro de limites válidos definidos.  <br /></td></tr>
+<tr class="memitem:a2ed3f82a251dd763d9f5d22c05d40452" id="r_a2ed3f82a251dd763d9f5d22c05d40452"><td class="memItemLeft" align="right" valign="top"><a id="a2ed3f82a251dd763d9f5d22c05d40452" name="a2ed3f82a251dd763d9f5d22c05d40452"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>carrosCircularamduranteX</b> (<a class="el" href="struct_p_a_s_s_a_g_e_m.html">PASSAGEM</a> *listaPassagem, <a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *listaCarros)</td></tr>
+<tr class="memitem:abe7a06733e45798e2742b9b71faa44e3" id="r_abe7a06733e45798e2742b9b71faa44e3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe7a06733e45798e2742b9b71faa44e3">checkPeriodoX</a> (<a class="el" href="structnode_passagem.html">PASSAGEM_NODE</a> *<a class="el" href="structnode_passagem.html">nodePassagem</a>, <a class="el" href="struct_d_a_t_a.html">DATA</a> *periodoInicial, <a class="el" href="struct_d_a_t_a.html">DATA</a> *periodoFinal)</td></tr>
+<tr class="memdesc:abe7a06733e45798e2742b9b71faa44e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por verificar se esta entre o tempo X e Y.  <br /></td></tr>
+<tr class="memitem:a31c0df8dcab2f968a1fcaa34087d9995" id="r_a31c0df8dcab2f968a1fcaa34087d9995"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31c0df8dcab2f968a1fcaa34087d9995">maiorMatricula</a> (int pCarro, int sCarro, <a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *listaHashCarro)</td></tr>
+<tr class="memdesc:a31c0df8dcab2f968a1fcaa34087d9995"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por verificar se a seguinte matricula e maior (por IDCARRO)  <br /></td></tr>
+<tr class="memitem:acaa8334fbd69d8db664c2c4dacee5afa" id="r_acaa8334fbd69d8db664c2c4dacee5afa"><td class="memItemLeft" align="right" valign="top"><a id="acaa8334fbd69d8db664c2c4dacee5afa" name="acaa8334fbd69d8db664c2c4dacee5afa"></a>
+<a class="el" href="structnodecarro.html">NODE_CARRO</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>procurarPorId</b> (int id, <a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *listaHash)</td></tr>
+<tr class="memitem:aa9e461a2315142e353507c9c5e84f28c" id="r_aa9e461a2315142e353507c9c5e84f28c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9e461a2315142e353507c9c5e84f28c">totalKmCarroDuranteX</a> (<a class="el" href="structlista_carro.html">LISTA_CARRO</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>, <a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *listaPassagem, <a class="el" href="structdistancia_lista.html">DISTANCIAS_LISTA</a> *listaDistancias)</td></tr>
+<tr class="memdesc:aa9e461a2315142e353507c9c5e84f28c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por listar ordenadamente, por total de km percorridos por carro, todos os carros pertencentes a um periodo x.  <br /></td></tr>
+<tr class="memitem:a10f082c5507fb3146faa264706a2b69e" id="r_a10f082c5507fb3146faa264706a2b69e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcarro.html">CARRO</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10f082c5507fb3146faa264706a2b69e">retornaCarro</a> (<a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *listaHash, int id)</td></tr>
+<tr class="memdesc:a10f082c5507fb3146faa264706a2b69e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por procurar e devolver um carro na listaHash de carros.  <br /></td></tr>
 <tr class="memitem:ace5321ac4b25117c99699b71aae6bb2d" id="r_ace5321ac4b25117c99699b71aae6bb2d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace5321ac4b25117c99699b71aae6bb2d">compararCarros</a> (const void *a, const void *b)</td></tr>
+<tr class="memdesc:ace5321ac4b25117c99699b71aae6bb2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por comparar dois carros com base na matricula/código do veículo.  <br /></td></tr>
 <tr class="memitem:a47531b8671658ec559161501c336c23d" id="r_a47531b8671658ec559161501c336c23d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47531b8671658ec559161501c336c23d">calculoDistancia</a> (<a class="el" href="struct_d_a_t_a.html">DATA</a> *dataEntrada, <a class="el" href="struct_d_a_t_a.html">DATA</a> *dataSaida)</td></tr>
-<tr class="memitem:ad7799199595bd90288471e0ef61c8bca" id="r_ad7799199595bd90288471e0ef61c8bca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7799199595bd90288471e0ef61c8bca">infracoesDuranteX</a> (<a class="el" href="carros_8h.html#ae9182ba349415547fcce84e3810cd6ca">LISTA_CARRO</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>, <a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *listaPassagem, <a class="el" href="carros_8h.html#a78ff326904d562e0a6deda02a6b9dd57">DISTANCIAS_LISTA</a> *listaDistancias)</td></tr>
-<tr class="memitem:a939dac288a918ccf0349306ff58fbc60" id="r_a939dac288a918ccf0349306ff58fbc60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a939dac288a918ccf0349306ff58fbc60">totalKmMarcaDuranteX</a> (<a class="el" href="carros_8h.html#ae9182ba349415547fcce84e3810cd6ca">LISTA_CARRO</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>, <a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *listaPassagem, <a class="el" href="carros_8h.html#a78ff326904d562e0a6deda02a6b9dd57">DISTANCIAS_LISTA</a> *listaDistancias)</td></tr>
-<tr class="memitem:a0285e22c35562600339187c5747b242f" id="r_a0285e22c35562600339187c5747b242f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0285e22c35562600339187c5747b242f">ordenarListaMarcasPorKm</a> (<a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *lista)</td></tr>
-<tr class="memitem:a95f1fdc93ed3ef6d5284188811f0cf84" id="r_a95f1fdc93ed3ef6d5284188811f0cf84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95f1fdc93ed3ef6d5284188811f0cf84">totalinfracoesDuranteX</a> (<a class="el" href="carros_8h.html#ae9182ba349415547fcce84e3810cd6ca">LISTA_CARRO</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>, <a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *listaPassagem, <a class="el" href="carros_8h.html#a78ff326904d562e0a6deda02a6b9dd57">DISTANCIAS_LISTA</a> *listaDistancias)</td></tr>
+<tr class="memdesc:a47531b8671658ec559161501c336c23d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por calcular o tempo que o carro demorou a fazer a viagem, em milisegudos.  <br /></td></tr>
+<tr class="memitem:ad7799199595bd90288471e0ef61c8bca" id="r_ad7799199595bd90288471e0ef61c8bca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7799199595bd90288471e0ef61c8bca">infracoesDuranteX</a> (<a class="el" href="structlista_carro.html">LISTA_CARRO</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>, <a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *listaPassagem, <a class="el" href="structdistancia_lista.html">DISTANCIAS_LISTA</a> *listaDistancias)</td></tr>
+<tr class="memdesc:ad7799199595bd90288471e0ef61c8bca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por listar ordenadamente, por ordem decresente de velocidade media, todos os carros com infracoes pertencentes a um periodo x.  <br /></td></tr>
+<tr class="memitem:a939dac288a918ccf0349306ff58fbc60" id="r_a939dac288a918ccf0349306ff58fbc60"><td class="memItemLeft" align="right" valign="top"><a id="a939dac288a918ccf0349306ff58fbc60" name="a939dac288a918ccf0349306ff58fbc60"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>totalKmMarcaDuranteX</b> (<a class="el" href="structlista_carro.html">LISTA_CARRO</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>, <a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *listaPassagem, <a class="el" href="structdistancia_lista.html">DISTANCIAS_LISTA</a> *listaDistancias)</td></tr>
+<tr class="memitem:a0285e22c35562600339187c5747b242f" id="r_a0285e22c35562600339187c5747b242f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0285e22c35562600339187c5747b242f">ordenarListaMarcasPorKm</a> (<a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *lista)</td></tr>
+<tr class="memdesc:a0285e22c35562600339187c5747b242f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por ordenar a lista de carros, por ordem decresente de total de km's por marca.  <br /></td></tr>
+<tr class="memitem:a95f1fdc93ed3ef6d5284188811f0cf84" id="r_a95f1fdc93ed3ef6d5284188811f0cf84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95f1fdc93ed3ef6d5284188811f0cf84">totalinfracoesDuranteX</a> (<a class="el" href="structlista_carro.html">LISTA_CARRO</a> *<a class="el" href="structlista_hash_carros.html">listaHashCarros</a>, <a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *listaPassagem, <a class="el" href="structdistancia_lista.html">DISTANCIAS_LISTA</a> *listaDistancias)</td></tr>
+<tr class="memdesc:a95f1fdc93ed3ef6d5284188811f0cf84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao responsavel por listar ordenadamente, por ordem decresente de total de infracoes por carro, todos os carros com infracoes pertencentes a um periodo x.  <br /></td></tr>
 </table>
-<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
-<a id="ad4de52d8eb17097f6fd899038b609145" name="ad4de52d8eb17097f6fd899038b609145"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4de52d8eb17097f6fd899038b609145">&#9670;&#160;</a></span>PASSAGEM_NODE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structnode_passagem.html">nodePassagem</a> <a class="el" href="#ad4de52d8eb17097f6fd899038b609145">PASSAGEM_NODE</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Definicao das Estruturas relacionadas com as passagens e prototipagem das funcoes utilizadas no PASSAGEM.c. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="ae828fce3d0386420773bae5fe62f782f" name="ae828fce3d0386420773bae5fe62f782f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae828fce3d0386420773bae5fe62f782f">&#9670;&#160;</a></span>adicionarListaPassagem()</h2>
 
@@ -157,15 +169,25 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void adicionarListaPassagem </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#ad4de52d8eb17097f6fd899038b609145">PASSAGEM_NODE</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="structnode_passagem.html">PASSAGEM_NODE</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por receber um PASSAGEM_NODE e adiciona-lo a uma lista de passagens. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro para a PASSAGEM_LISTA para onde a passagem vai ser "armazenada" </td></tr>
+    <tr><td class="paramname">node</td><td>: Recebe o PASSAGEM_NODE que vai ser inserido no parametro de entrada lista </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -188,6 +210,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Funcao responsavel por calcular o tempo que o carro demorou a fazer a viagem, em milisegudos. </p>
+<dl class="section return"><dt>Returns</dt><dd>tempoViagemMS : retorna o tempo que o carro demorou a fazer viagem </dd></dl>
+
 </div>
 </div>
 <a id="a8e8aac50453fc7d17bcb045f5ce17043" name="a8e8aac50453fc7d17bcb045f5ce17043"></a>
@@ -199,32 +224,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void carregarPassagem </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a2ed3f82a251dd763d9f5d22c05d40452" name="a2ed3f82a251dd763d9f5d22c05d40452"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ed3f82a251dd763d9f5d22c05d40452">&#9670;&#160;</a></span>carrosCircularamduranteX()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void carrosCircularamduranteX </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_p_a_s_s_a_g_e_m.html">PASSAGEM</a> *</td>          <td class="paramname"><span class="paramname"><em>listaPassagem</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaCarros</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Funcao responsavel por ler o ficheiro "passagem.txt", e inserir cada passagem presente no ficheiro na estrutura da lista de passagens. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro de uma PASSAGEM_LISTA </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -237,7 +250,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int checkPeriodoX </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#ad4de52d8eb17097f6fd899038b609145">PASSAGEM_NODE</a> *</td>          <td class="paramname"><span class="paramname"><em>nodePassagem</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structnode_passagem.html">PASSAGEM_NODE</a> *</td>          <td class="paramname"><span class="paramname"><em>nodePassagem</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -251,6 +264,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por verificar se esta entre o tempo X e Y. </p>
+<dl class="section return"><dt>Returns</dt><dd>1 : retorna 1 se passou os testes, ou seja, esta dentro do intervalo </dd></dl>
 
 </div>
 </div>
@@ -273,6 +289,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Funcao responsavel por comparar dois carros com base na matricula/código do veículo. </p>
+<dl class="section return"><dt>Returns</dt><dd>1 : retorna 1 se o primeiro carro (a) tiver uma "matricula maior" que o segundo carro (b) </dd>
+<dd>
+0 : retorna 0 se ambos os carros são nulos (não existentes) </dd>
+<dd>
+-1 : retorna -1 se o segundo carro (b) tiver uma "matricula maior" que o primeiro carro (a) </dd></dl>
+
 </div>
 </div>
 <a id="a94ce03fca35890f22f9c306d218161ac" name="a94ce03fca35890f22f9c306d218161ac"></a>
@@ -282,13 +305,16 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> * criarListaPassagem </td>
+          <td class="memname"><a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> * criarListaPassagem </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por criar uma lista que ira conter passagens. </p>
+<dl class="section return"><dt>Returns</dt><dd>ponteiro para uma PASSAGEM_LISTA, que e o resultado da alocacao de memoria da estrutura PASSAGEM_LISTA </dd></dl>
 
 </div>
 </div>
@@ -299,13 +325,16 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#ad4de52d8eb17097f6fd899038b609145">PASSAGEM_NODE</a> * criarNodePassagem </td>
+          <td class="memname"><a class="el" href="structnode_passagem.html">PASSAGEM_NODE</a> * criarNodePassagem </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por alocar memoria para um node que contem todos os dados de uma respetiva passagem. </p>
+<dl class="section return"><dt>Returns</dt><dd>retorna um ponteiro para um PASSAGEM_NODE, com todos os valores da estrutura nulos </dd></dl>
 
 </div>
 </div>
@@ -318,20 +347,23 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void infracoesDuranteX </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ae9182ba349415547fcce84e3810cd6ca">LISTA_CARRO</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarros</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structlista_carro.html">LISTA_CARRO</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarros</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaPassagem</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaPassagem</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a78ff326904d562e0a6deda02a6b9dd57">DISTANCIAS_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDistancias</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="structdistancia_lista.html">DISTANCIAS_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDistancias</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por listar ordenadamente, por ordem decresente de velocidade media, todos os carros com infracoes pertencentes a um periodo x. </p>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -344,11 +376,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void libertarListaPassagem </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por libertar a memoria alocada de toda a lista de passagens e todo o seu conteudo. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro de uma PASSAGEM_LISTA para ser destruida </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -361,11 +402,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void libertarNodePassagem </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#ad4de52d8eb17097f6fd899038b609145">PASSAGEM_NODE</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structnode_passagem.html">PASSAGEM_NODE</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por receber um PASSAGEM_NODE e destruir libertando toda a memoria e os dados que possui. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>: Recebe um ponteiro PASSAGEM_NODE </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NULL se o node inserido nao existir </dd></dl>
 
 </div>
 </div>
@@ -388,27 +438,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarro</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarro</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a5c38694a17572988846337e8c5b69339" name="a5c38694a17572988846337e8c5b69339"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c38694a17572988846337e8c5b69339">&#9670;&#160;</a></span>mostrarListaPassagem()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void mostrarListaPassagem </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Funcao responsavel por verificar se a seguinte matricula e maior (por IDCARRO) </p>
+<dl class="section return"><dt>Returns</dt><dd>1 : retorna 1 se a primeira matricula for "maior" que a segunda </dd></dl>
 
 </div>
 </div>
@@ -421,32 +457,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void ordenarListaMarcasPorKm </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="acaa8334fbd69d8db664c2c4dacee5afa" name="acaa8334fbd69d8db664c2c4dacee5afa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acaa8334fbd69d8db664c2c4dacee5afa">&#9670;&#160;</a></span>procurarPorId()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="carros_8h.html#a2dc16118eb08f54132d3bc105c3b6eaf">NODE_CARRO</a> * procurarPorId </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHash</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Funcao responsavel por ordenar a lista de carros, por ordem decresente de total de km's por marca. </p>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -459,11 +477,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void registarPassagem </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>lista</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por registar uma passagem manualmente (pelo utilizador) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lista</td><td>: Recebe um ponteiro de uma PASSAGEM_LISTA </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -474,9 +501,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="carros_8h.html#aa7cb4dee2a5859378aa6efba21babe07">CARRO</a> * retornaCarro </td>
+          <td class="memname"><a class="el" href="structcarro.html">CARRO</a> * retornaCarro </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a6429f490d7fc7a807751ba7aa9370bb1">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHash</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structlista_hash_carros.html">LISTA_HASHC</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHash</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -485,6 +512,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por procurar e devolver um carro na listaHash de carros. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">listaHash</td><td>: Recebe um ponteiro de uma LISTA_HASHC </td></tr>
+    <tr><td class="paramname">id</td><td>: Recebe o id a procurar </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nodeCarroEncontrado-&gt;info : retorna o carro com o id especificado </dd></dl>
 
 </div>
 </div>
@@ -497,20 +534,23 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void totalinfracoesDuranteX </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ae9182ba349415547fcce84e3810cd6ca">LISTA_CARRO</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarros</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structlista_carro.html">LISTA_CARRO</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarros</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaPassagem</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaPassagem</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a78ff326904d562e0a6deda02a6b9dd57">DISTANCIAS_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDistancias</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="structdistancia_lista.html">DISTANCIAS_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDistancias</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por listar ordenadamente, por ordem decresente de total de infracoes por carro, todos os carros com infracoes pertencentes a um periodo x. </p>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -523,46 +563,23 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void totalKmCarroDuranteX </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ae9182ba349415547fcce84e3810cd6ca">LISTA_CARRO</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarros</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structlista_carro.html">LISTA_CARRO</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarros</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaPassagem</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structpassagem_lista.html">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaPassagem</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a78ff326904d562e0a6deda02a6b9dd57">DISTANCIAS_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDistancias</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="structdistancia_lista.html">DISTANCIAS_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDistancias</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a939dac288a918ccf0349306ff58fbc60" name="a939dac288a918ccf0349306ff58fbc60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a939dac288a918ccf0349306ff58fbc60">&#9670;&#160;</a></span>totalKmMarcaDuranteX()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void totalKmMarcaDuranteX </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ae9182ba349415547fcce84e3810cd6ca">LISTA_CARRO</a> *</td>          <td class="paramname"><span class="paramname"><em>listaHashCarros</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#ac90fd462fa2f32027ec7ecbf4d47727a">PASSAGEM_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaPassagem</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="carros_8h.html#a78ff326904d562e0a6deda02a6b9dd57">DISTANCIAS_LISTA</a> *</td>          <td class="paramname"><span class="paramname"><em>listaDistancias</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Funcao responsavel por listar ordenadamente, por total de km percorridos por carro, todos os carros pertencentes a um periodo x. </p>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
@@ -575,11 +592,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int verificarNodeDadosPassagem </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#ad4de52d8eb17097f6fd899038b609145">PASSAGEM_NODE</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structnode_passagem.html">PASSAGEM_NODE</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcao responsavel por verificar se a data no node de uma lista estão dentro de limites válidos definidos. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>: Recebe o PASSAGEM_NODE que vai ser analisado/verificado </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VOID </dd></dl>
 
 </div>
 </div>
