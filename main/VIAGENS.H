@@ -1,8 +1,17 @@
-#include <stdlib.h>
-#include <stdio.h>
+/**
+ * @file VIAGENS.H
+ * @brief Definicao das Estruturas relacionadas com as viagens e prototipagem das funcoes utilizadas no VIAGENS.c
+ */
 
+
+ // BIBLIOTECAS
 #include "carros.h"
 
+
+/**
+* @struct nodeViagem
+* @brief Estrutura que serve de node, contem o conteudo da viagem e o ponteiro do proximo
+*/
 typedef struct nodeViagem
 {
 	float totalKm; // vai armazenar todos os km percorridos em viagem do carro
@@ -12,14 +21,18 @@ typedef struct nodeViagem
 	struct nodeViagem* next;
 }NODE_VIAGENS;
 
-//lista que vai conter nodesViagens
+/**
+* @struct listaviagem
+* @brief Estrutura serve como lista para o conjunto dos NODE_VIAGENS
+*/
 typedef struct
 {
 	NODE_VIAGENS* header;
 	NODE_VIAGENS* ultimoNode;
 }LISTA_VIAGENS;
 
-//prototipagens
+
+// PROTOTIPAGEM
 LISTA_VIAGENS* criarListaViagens();
 NODE_VIAGENS* criarNodeViagens();
 int existeCarroListaViagens(LISTA_VIAGENS* listaViagens, int codCarro);

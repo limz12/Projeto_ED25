@@ -1,8 +1,8 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <malloc.h>
-#include <locale.h>
+/**
+ * @file donos.h
+ * @brief Definicao das Estruturas relacionadas com os donos e prototipagem das funcoes utilizadas no donos.c
+ */
+
 
 typedef struct listaSensor LISTA_SENSOR;
 typedef struct distanciaLista DISTANCIAS_LISTA;
@@ -11,33 +11,42 @@ typedef struct listaCarro LISTA_CARRO;
 typedef struct ListaDonos LISTA_DONOS;
 typedef struct listaHashCarros LISTA_HASHC;
 
+// CONSTANTES
 #define MAX_NOME_SIZE 60
 #define MAX_CODPOST_SIZE 10
 #define DONOS_POR_PAGINA 20 // max de donos por pagina
 
 
-// ESTRUTURAS DO DONO
+ /**
+ * @struct Donos
+ * @brief Estrutura que representa uma Donos
+ */
 typedef struct Donos
 {
     char nome[MAX_NOME_SIZE];
     char codpost[MAX_CODPOST_SIZE];
     int numCont;
-    //struct Donos* prox;  // Ponteiro para o próximo nó da lista
 } Donos;
 
-// NODE DO DONO
+/**
+* @struct nodeDonos
+* @brief Estrutura que serve de node e contem o ponteiro do Dono e do proximo node
+*/
 typedef struct nodeDonos
 {
     Donos* info;
     struct nodeDonos* next;
 } NODE_DONOS;
 
-// LISTA DONO
+/**
+* @struct ListaDonos
+* @brief Estrutura serve como lista para o conjunto dos NODE_DONOS
+*/
 typedef struct ListaDonos
 {
-    NODE_DONOS* primeiro; // Ponteiro para o primeiro nó
-    NODE_DONOS* ultimo; // Ponteiro para o último nó
-	int elem;   // Número de elementos na lista
+    NODE_DONOS* primeiro; // Ponteiro para o primeiro nÃ³
+    NODE_DONOS* ultimo; // Ponteiro para o Ãºltimo nÃ³
+	int elem;   // NÃºmero de elementos na lista
 } LISTA_DONOS;
 
 // PROTOTIPAGEM

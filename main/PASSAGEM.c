@@ -1,3 +1,10 @@
+/**
+ * @file carros.c
+ * @brief Implementacao das funcoes respetivas aos carros.
+ */
+
+
+// BIBLIOTECAS
 #include <stdlib.h>
 #include <stdio.h>
 #include <malloc.h>
@@ -12,10 +19,18 @@
 #include "DISTANCIAS.H"
 #include "VIAGENS.H"
 
+
+// CONSTANTES
+#define MAX_ARRAY_CARROS 100000
+
 //VARIAVEL GLOBAL PARA PODER USAR NO COMPARAR CARROS()
 LISTA_HASHC* listaParaComparar = NULL;
 
-//criar a LISTA PASSAGEM
+
+/**
+* @brief Funcao responsavel por criar uma lista que ira conter passagens
+* @return ponteiro para uma PASSAGEM_LISTA, que e o resultado da alocacao de memoria da estrutura PASSAGEM_LISTA
+*/
 PASSAGEM_LISTA* criarListaPassagem()
 {
 	//alocar memoria para a lista
@@ -34,7 +49,10 @@ PASSAGEM_LISTA* criarListaPassagem()
 	return lista;
 }
 
-//criar o NODE PASSAGEM
+/**
+* @brief Funcao responsavel por alocar memoria para um node que contem todos os dados de uma respetiva passagem
+* @return retorna um ponteiro para um PASSAGEM_NODE, com todos os valores da estrutura nulos
+*/
 PASSAGEM_NODE* criarNodePassagem()
 {
 	//alocar memoria para o node
@@ -55,6 +73,11 @@ PASSAGEM_NODE* criarNodePassagem()
 	return node;
 }
 
+/**
+* @brief Funcao responsavel por ler o ficheiro "passagem.txt", e inserir cada passagem presente no ficheiro na estrutura da lista de passagens
+* @param lista : Recebe um ponteiro de uma PASSAGEM_LISTA
+* @return VOID
+*/
 void carregarPassagem(PASSAGEM_LISTA* lista)
 {
 	if (!lista)
@@ -93,6 +116,12 @@ void carregarPassagem(PASSAGEM_LISTA* lista)
 	fclose(fich);
 }
 
+/**
+* @brief Funcao responsavel por receber um PASSAGEM_NODE e adiciona-lo a uma lista de passagens
+* @param lista : Recebe um ponteiro para a PASSAGEM_LISTA para onde a passagem vai ser "armazenada"
+* @param node : Recebe o PASSAGEM_NODE que vai ser inserido no parametro de entrada lista
+* @return VOID
+*/
 void adicionarListaPassagem(PASSAGEM_LISTA* lista, PASSAGEM_NODE* node)
 {
 	if (!lista || !node)
@@ -116,7 +145,12 @@ void adicionarListaPassagem(PASSAGEM_LISTA* lista, PASSAGEM_NODE* node)
 	}
 }
 
-// Avança para o no correto, por exemplo da display dos 20 primeiros nodes,
+/**
+* @brief Funcao responsavel por listar todas as passagens presentes na Lista de passagens
+* @param lista : Recebe um ponteiro de uma PASSAGEM_LISTA, que ja contem todas as passagens
+* @return VOID
+*/
+// AvanÃ§a para o no correto, por exemplo da display dos 20 primeiros nodes,
 // na proxima pagina avanca ate esses 20 e comeca o display apartir dai , 
 // para nao existir repeticao dos dados
 PASSAGEM_NODE* avancarAtePassagem(PASSAGEM_NODE* passagemNode, int pos) {
@@ -192,6 +226,11 @@ void mostrarListaPassagem(PASSAGEM_LISTA* lista)
 	}
 }
 
+/**
+* @brief Funcao responsavel por receber um PASSAGEM_NODE e destruir libertando toda a memoria e os dados que possui
+* @param node : Recebe um ponteiro PASSAGEM_NODE
+* @return NULL se o node inserido nao existir
+*/
 void libertarNodePassagem(PASSAGEM_NODE* node)
 {
 	if (!node)
@@ -206,6 +245,11 @@ void libertarNodePassagem(PASSAGEM_NODE* node)
 
 }
 
+/**
+* @brief Funcao responsavel por libertar a memoria alocada de toda a lista de passagens e todo o seu conteudo
+* @param lista : Recebe um ponteiro de uma PASSAGEM_LISTA para ser destruida
+* @return VOID
+*/
 void libertarListaPassagem(PASSAGEM_LISTA* lista)
 {
 	if (!lista)
@@ -241,7 +285,11 @@ void libertarListaPassagem(PASSAGEM_LISTA* lista)
 	}
 }
 
-//registar uma passagem manualmente
+/**
+* @brief Funcao responsavel por registar uma passagem manualmente (pelo utilizador)
+* @param lista : Recebe um ponteiro de uma PASSAGEM_LISTA
+* @return VOID
+*/
 void registarPassagem(PASSAGEM_LISTA* lista)
 {
 	if (!lista)
@@ -342,6 +390,11 @@ void registarPassagem(PASSAGEM_LISTA* lista)
 
 }
 
+/**
+* @brief Funcao responsavel por verificar se a data no node de uma lista estÃ£o dentro de limites vÃ¡lidos definidos
+* @param node : Recebe o PASSAGEM_NODE que vai ser analisado/verificado
+* @return VOID
+*/
 int verificarNodeDadosPassagem(PASSAGEM_NODE* node)
 {
 	//utilizar a struct tm presente no time.h para obter a data do sistema
@@ -383,7 +436,12 @@ int verificarNodeDadosPassagem(PASSAGEM_NODE* node)
 	
 }
 
-//retorna o NODECarro com o id especificado
+/**
+* @brief Funcao responsavel por procurar um id na listaHash de carros
+* @param listaHash : Recebe um ponteiro de uma LISTA_HASHC
+* @param id : Recebe o id a procurar
+* @return nodeCarroEncontrado : retorna o NODE_CARRO com o id especificado
+*/
 NODE_CARRO* procurarPorId(LISTA_HASHC* listaHash, int id)
 {
 	//alocar mem
@@ -411,7 +469,12 @@ NODE_CARRO* procurarPorId(LISTA_HASHC* listaHash, int id)
 	return NULL;
 }
 
-//retorna o carro com o id especificado
+/**
+* @brief Funcao responsavel por procurar e devolver um carro na listaHash de carros
+* @param listaHash : Recebe um ponteiro de uma LISTA_HASHC
+* @param id : Recebe o id a procurar
+* @return nodeCarroEncontrado->info : retorna o carro com o id especificado
+*/
 CARRO* retornaCarro(LISTA_HASHC* listaHash, int id)
 {
 	//alocar mem
@@ -439,7 +502,12 @@ CARRO* retornaCarro(LISTA_HASHC* listaHash, int id)
 	return NULL;
 }
 
-//uso do quickSort para ter um guia de como ordenar
+/**
+* @brief Funcao responsavel por comparar dois carros com base na matricula/cÃ³digo do veÃ­culo
+* @return 1 : retorna 1 se o primeiro carro (a) tiver uma "matricula maior" que o segundo carro (b)
+* @return 0 : retorna 0 se ambos os carros sÃ£o nulos (nÃ£o existentes)
+* @return -1 : retorna -1 se o segundo carro (b) tiver uma "matricula maior" que o primeiro carro (a)
+*/
 int compararCarros(const void* a, const void* b)
 {
 	//converter o ponteiro generico recebido para um NODE CARRO
@@ -459,13 +527,17 @@ int compararCarros(const void* a, const void* b)
 		return -1;
 	}
 
-	// usar a função maiorMatricula
+	// usar a funÃ§Ã£o maiorMatricula
 	if (maiorMatricula(carroA->info->codVeiculo, carroB->info->codVeiculo, listaParaComparar) == 1)
 		return 1;
 	else
 		return -1;
 }
-//listar Ordenadamente matricula passagem na autoestrada durante periodo x (inicio - fim)
+
+/**
+* @brief Funcao responsavel por listar ordenadamente, por matricula, os carros que circulam na autoestrada durante um periodo x (inicio - fim)
+* @return VOID
+*/
 void carrosCircularamduranteX(PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaHashCarros)
 {
 	if (!listaPassagem || !listaHashCarros)
@@ -563,7 +635,7 @@ void carrosCircularamduranteX(PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaH
 
 
 	//listar os conteudos da array (que ja esta ordenada por matricula)
-	// Cabeçalho da lista
+	// CabeÃ§alho da lista
 	printf("**************************************************************\n");
 	printf("|                        LISTA CARROS                        |\n");
 	printf("**************************************************************\n");
@@ -594,7 +666,10 @@ void carrosCircularamduranteX(PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaH
 
 }
 
-//verifica se esta entre o tempoX e Y
+/**
+* @brief Funcao responsavel por verificar se esta entre o tempo X e Y
+* @return 1 : retorna 1 se passou os testes, ou seja, esta dentro do intervalo
+*/
 int checkPeriodoX(PASSAGEM_NODE* nodePassagem, DATA* periodoInicial, DATA* periodoFinal)
 {
 	//verificar se esta antes da data inicial
@@ -663,7 +738,10 @@ int checkPeriodoX(PASSAGEM_NODE* nodePassagem, DATA* periodoInicial, DATA* perio
 	return 1;
 }
 
-//verificar se a seguinte matricula  e maior (por IDCARRO)
+/**
+* @brief Funcao responsavel por verificar se a seguinte matricula e maior (por IDCARRO)
+* @return 1 : retorna 1 se a primeira matricula for "maior" que a segunda
+*/
 int maiorMatricula(int pCarro, int sCarro, LISTA_HASHC* listaHashCarro)
 {
 	NODE_CARRO* primeiroCarro = NULL;
@@ -710,7 +788,10 @@ int maiorMatricula(int pCarro, int sCarro, LISTA_HASHC* listaHashCarro)
 	}
 }
 
-//ordena por total de km percorridos por carro
+/**
+* @brief Funcao responsavel por listar ordenadamente, por total de km percorridos por carro, todos os carros pertencentes a um periodo x
+* @return VOID
+*/
 void totalKmCarroDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPassagem, DISTANCIAS_LISTA* listaDistancias)
 {
 	if (!listaPassagem || !listaHashCarros || !listaDistancias)
@@ -832,9 +913,17 @@ void totalKmCarroDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPas
 		//dar reset ao aux
 		aux = listaViagens->header;
 		troca = 0;
+		//
+		salto: 
 		//so troca se existir um proximo node
-		while (aux->next!= NULL)
+		while (aux != NULL)
 		{
+			//quando o proximo e nulo, chegamos ao fim nao vai comparar com mais nenhum, NULL para sair do ciclo
+			if (aux->next == NULL)
+			{
+				aux = NULL;
+				goto salto; // serve para saltar do while
+			}
 			//verificar se o atual e menor que o seguinte
 			if (aux->totalKm < aux->next->totalKm)
 			{
@@ -852,11 +941,11 @@ void totalKmCarroDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPas
 			}
 			aux = aux->next;
 		}
-	} while (troca); // percorre sempre uma ultima vez a lista se nao existirem trocas, a lista esta ordenada
+	} while (troca == 1); // percorre sempre uma ultima vez a lista se nao existirem trocas, a lista esta ordenada
 	
 	//print da listaViagens
 	aux = listaViagens->header;
-	// Cabeçalho da lista
+	// CabeÃ§alho da lista
 	printf("**************************************************************\n");
 	printf("|                        LISTA VIAGENS                        |\n");
 	printf("**************************************************************\n");
@@ -871,6 +960,10 @@ void totalKmCarroDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPas
 	freeListaViagens(listaViagens);
 }
 
+/**
+* @brief Funcao responsavel por calcular o tempo que o carro demorou a fazer a viagem, em milisegudos
+* @return tempoViagemMS : retorna o tempo que o carro demorou a fazer viagem
+*/
 long int calculoDistancia(DATA* dataEntrada, DATA* dataSaida)
 {
 
@@ -905,6 +998,10 @@ long int calculoDistancia(DATA* dataEntrada, DATA* dataSaida)
 	}
 }
 
+/**
+* @brief Funcao responsavel por listar ordenadamente, por ordem decresente de velocidade media, todos os carros com infracoes pertencentes a um periodo x
+* @return VOID
+*/
 void infracoesDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPassagem, DISTANCIAS_LISTA* listaDistancias)
 {
 	if (!listaPassagem || !listaHashCarros || !listaDistancias)
@@ -1052,7 +1149,7 @@ void infracoesDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPassag
 
 	//print da listaViagens
 	aux = listaViagens->header;
-	// Cabeçalho da lista
+	// CabeÃ§alho da lista
 	printf("**************************************************************\n");
 	printf("|                        LISTA VIAGENS                        |\n");
 	printf("**************************************************************\n");
@@ -1074,9 +1171,13 @@ void infracoesDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPassag
 	freeListaViagens(listaViagens);
 }
 
+/**
+* @brief Funcao responsavel por listar, por ordem decresente de total de km's por marca, todos as marcas pertencentes a um periodo x
+* @return VOID
+*/
 void totalKmMarcaDuranteX(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPassagem, DISTANCIAS_LISTA* listaDistancias)
 {
-	// Validação da existência das listas
+	// ValidaÃ§Ã£o da existÃªncia das listas
 	if (!listaPassagem || !listaHashCarros || !listaDistancias)
 	{
 		return;
@@ -1086,7 +1187,7 @@ void totalKmMarcaDuranteX(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPas
 	DATA* periodoInicial = (DATA*)malloc(sizeof(DATA));
 	DATA* periodoFinal = (DATA*)malloc(sizeof(DATA));
 
-	// Validação da alocação de memória
+	// ValidaÃ§Ã£o da alocaÃ§Ã£o de memÃ³ria
 	if (periodoInicial && periodoFinal == NULL)
 	{
 		return;
@@ -1126,31 +1227,31 @@ void totalKmMarcaDuranteX(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPas
 	printf("MINUTOS: ");
 	scanf("%d", &periodoFinal->minuto);
 
-	// Criação da Lista Viagens
+	// CriaÃ§Ã£o da Lista Viagens
 	LISTA_VIAGENS* listaViagens = criarListaViagens();
 
 	// Estrutura para armazenar os totais Km's por marca
 	LISTA_HASHC* listaMarcas = listaHashCarros;
 
-	// Validação da situação de haver algum carro que passe na autoestrada durante a data de pesquisa
+	// ValidaÃ§Ã£o da situaÃ§Ã£o de haver algum carro que passe na autoestrada durante a data de pesquisa
 	PASSAGEM_NODE* nodePassagem = listaPassagem->header;
 
-	int contador = 0; // Contador para ver quantos carros estão dentro da data de pesquisa
-	int idEntrada = 0; // ID de Entrada temporário para calcular a distancia entre os sensores
-	int idSaida = 0; // ID de Saída temporário para calcular a distancia entre os sensores
+	int contador = 0; // Contador para ver quantos carros estÃ£o dentro da data de pesquisa
+	int idEntrada = 0; // ID de Entrada temporÃ¡rio para calcular a distancia entre os sensores
+	int idSaida = 0; // ID de SaÃ­da temporÃ¡rio para calcular a distancia entre os sensores
 
 	while (nodePassagem) // Percorre a lista das Passagens
 	{
-		// Encontra as datas que satisfaçam a condição
+		// Encontra as datas que satisfaÃ§am a condiÃ§Ã£o
 		if (checkPeriodoX(nodePassagem, periodoInicial, periodoFinal) == 1)
 		{
-			// Cria um Nó apenas se ainda não existir o carro na Lista Viagens (EVITAR REPETIÇÃO DE DADOS)
+			// Cria um NÃ³ apenas se ainda nÃ£o existir o carro na Lista Viagens (EVITAR REPETIÃ‡ÃƒO DE DADOS)
 			if (existeCarroListaViagens(listaViagens, nodePassagem->info->codVeiculo) == 0)
 			{
-				// Se for um sensor de entrada cria um novo Nó
+				// Se for um sensor de entrada cria um novo NÃ³
 				if (nodePassagem->info->tipoRegisto == 0)
 				{
-					// Criação do NODE_VIAGENS
+					// CriaÃ§Ã£o do NODE_VIAGENS
 					NODE_VIAGENS* nodeViagens = criarNodeViagens();
 
 					// Adicionar o carro ao NODE_VIAGENS
@@ -1161,7 +1262,7 @@ void totalKmMarcaDuranteX(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPas
 					idSaida = nodePassagem->next->info->idSensor;
 
 					// Ver a distancia entre o Sensor de ENTRADA e o Sensor de SAIDA
-					// De seguida atualiza o somatório
+					// De seguida atualiza o somatÃ³rio
 					nodeViagens->totalKm += distanciaEntreSensor(idEntrada, idSaida, listaDistancias);
 
 					// Adicionar a lista nodeViagens a lista Viagens
@@ -1169,7 +1270,7 @@ void totalKmMarcaDuranteX(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPas
 					contador++;
 				}
 			}
-			else // se o carro já existir
+			else // se o carro jÃ¡ existir
 			{
 				// vai adicionar apenas os km da nova passagem se for o sensor de entrada
 				if (nodePassagem->info->tipoRegisto == 0)
@@ -1180,10 +1281,10 @@ void totalKmMarcaDuranteX(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPas
 					NODE_VIAGENS* nodeViagem = listaViagens->header;
 					while (nodeViagem)
 					{
-						// Encontrar a posição do carro e adicionar apenas os novos km
+						// Encontrar a posiÃ§Ã£o do carro e adicionar apenas os novos km
 						if (nodeViagem->carro->codVeiculo == nodePassagem->info->codVeiculo)
 						{
-							// Adicionar o ID de entrada e saída
+							// Adicionar o ID de entrada e saÃ­da
 							idEntrada = nodePassagem->info->idSensor;
 							idSaida = nodePassagem->next->info->idSensor;
 							nodeViagem->totalKm += distanciaEntreSensor(idEntrada, idSaida, listaDistancias);
@@ -1198,7 +1299,7 @@ void totalKmMarcaDuranteX(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPas
 
 	printf("EXISTEM [%d] carros que satisfazem a condicao\n\n", contador);
 
-	// **Agora, devemos somar os quilómetros de cada carro por marca**
+	// **Agora, devemos somar os quilÃ³metros de cada carro por marca**
 	NODE_HASHC* nodeHash = listaMarcas->header;
 
 	while (nodeHash)
@@ -1225,11 +1326,11 @@ void totalKmMarcaDuranteX(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPas
 		nodeHash = nodeHash->next;
 	}
 
-	// Ordenção das marcas pelo total de km percorridos (ordem decrescente)
+	// OrdenÃ§Ã£o das marcas pelo total de km percorridos (ordem decrescente)
 
 	ordenarListaMarcasPorKm(listaMarcas);
 
-	// Apresentação da Lista de Marcas por Ordem Decrescente de Km's Totais
+	// ApresentaÃ§Ã£o da Lista de Marcas por Ordem Decrescente de Km's Totais
 	nodeHash = listaMarcas->header;
 
 	printf("**************************************************************\n");
@@ -1243,10 +1344,14 @@ void totalKmMarcaDuranteX(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPas
 	}
 
 	printf("\n");
-	// Liberar memória para a lista de viagens
+	// Liberar memÃ³ria para a lista de viagens
 	freeListaViagens(listaViagens);
 }
 
+/**
+* @brief Funcao responsavel por ordenar a lista de carros, por ordem decresente de total de km's por marca
+* @return VOID
+*/
 void ordenarListaMarcasPorKm(LISTA_HASHC* lista) {
 
 	if (!lista || !lista->header)
@@ -1289,6 +1394,10 @@ void ordenarListaMarcasPorKm(LISTA_HASHC* lista) {
 	} while (troca);
 }
 
+/**
+* @brief Funcao responsavel por listar ordenadamente, por ordem decresente de total de infracoes por carro, todos os carros com infracoes pertencentes a um periodo x
+* @return VOID
+*/
 void totalinfracoesDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaPassagem, DISTANCIAS_LISTA* listaDistancias)
 {
 	if (!listaPassagem || !listaHashCarros || !listaDistancias)
@@ -1339,7 +1448,7 @@ void totalinfracoesDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaP
 	scanf("%d", &periodoFinal->minuto);
 	//descartamos os segundos
 
-	// Criar lista de viagens com infrações
+	// Criar lista de viagens com infraÃ§Ãµes
 	LISTA_VIAGENS* listaInfracoes = criarListaViagens();
 
 	// Verifica se algum carro passou na autoestrada durante periodo X
@@ -1347,7 +1456,7 @@ void totalinfracoesDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaP
 
 	while (nodePassagem && nodePassagem->next)
 	{
-		// Considera apenas registos de entrada dentro do período X
+		// Considera apenas registos de entrada dentro do perÃ­odo X
 		if (nodePassagem->info->tipoRegisto == 0 && checkPeriodoX(nodePassagem, periodoInicial, periodoFinal))
 		{
 			PASSAGEM_NODE* proximo = nodePassagem->next;
@@ -1365,7 +1474,7 @@ void totalinfracoesDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaP
 
 			if (velocidade > 120)
 			{
-				// Verifica se já existe NODE_VIAGENS para o carro
+				// Verifica se jÃ¡ existe NODE_VIAGENS para o carro
 				NODE_VIAGENS* nodeViagem = listaInfracoes->header;
 				int encontrou = 0;
 
@@ -1429,7 +1538,7 @@ void totalinfracoesDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaP
 		}
 	} while (troca);
 
-	// Cabeçalho
+	// CabeÃ§alho
 	printf("**************************************************************\n");
 	printf("|              RANKING DE INFRACOES POR VEICULO              |\n");
 	printf("**************************************************************\n");
@@ -1444,7 +1553,7 @@ void totalinfracoesDuranteX(LISTA_CARRO* listaHashCarros, PASSAGEM_LISTA* listaP
 		aux = aux->next;
 	}
 
-	// Destruir a memória alocada para a Lista e os Períodos
+	// Destruir a memÃ³ria alocada para a Lista e os PerÃ­odos
 	freeListaViagens(listaInfracoes);
 	free(periodoInicial);
 	free(periodoFinal);

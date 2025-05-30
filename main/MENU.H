@@ -1,5 +1,8 @@
-#include <stdlib.h>
-#include <stdio.h>
+/**
+ * @file MENU.H
+ * @brief Definicao das Estruturas relacionadas com os menus e prototipagem das funcoes utilizadas no MENU.c
+ */
+
 
 typedef struct listaSensor LISTA_SENSOR;
 typedef struct distanciaLista DISTANCIAS_LISTA;
@@ -9,7 +12,7 @@ typedef struct ListaDonos LISTA_DONOS;
 typedef struct listaHashCarros LISTA_HASHC;
 
 
-//prototipagem
+// PROTOTIPAGEM
 int verificarNumero(int max);
 int menuPrincipal(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_CARRO* listaCarro, LISTA_DONOS* listaDonos);
 void menuDistancias(DISTANCIAS_LISTA* listaDistancias);

@@ -332,7 +332,6 @@ NODE_CARRO* avancarAte(NODE_CARRO* pertencelista, int pos) {
 /**
 * @brief Funcao responsavel por listar todos os carros presentes na Lista de carros
 * @param lista : Recebe um ponteiro de uma LISTA_CARRO, que ja contem todos os carros pertencentes uma determinada marca
-* 
 * @return VOID
 */
 void mostrarListaCarro(LISTA_CARRO* lista)
@@ -842,7 +841,7 @@ void maiorVelocidadeMediaMarca(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* lis
 				NODE_CARRO* carro = procuraCarroPorID(entrada->codVeiculo, listaHashCarros);
 				if (carro)
 				{
-					if (km > 0 && minutos > 0) // evitar viagens e kilometros negativos
+					if (minutos > 0) // evitar viagens e kilometros negativos
 					{
 						carro->info->totalKMPercorridos += km;
 						carro->info->totalMinutosPercorridos += minutos;

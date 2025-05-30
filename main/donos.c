@@ -1,15 +1,32 @@
+/**
+ * @file donos.c
+ * @brief Implementacao das funcoes respetivas aos donos.
+ */
+
+
+// BIBLIOTECAS
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <malloc.h>
+#include <locale.h>
+
 #include "donos.h"
 #include "carros.h"
 #include "PASSAGEM.h"
 #include "DISTANCIAS.h"
 
 
+/**
+* @brief Funcao responsavel por criar uma lista que ira conter donos
+* @return ponteiro para uma LISTA_DONOS, que e o resultado da alocacao de memoria da estrutura LISTA_DONOS
+*/
 LISTA_DONOS* criarListaDonos()
 {
-	//AlÁocaÁao de memoria da lista de Donos
+	//Al√ßoca√ßao de memoria da lista de Donos
 	LISTA_DONOS* lista = (LISTA_DONOS*)malloc(sizeof(LISTA_DONOS));
 	
-	//ValidaÁao da alocaÁao da lista
+	//Valida√ßao da aloca√ßao da lista
 	if (lista != NULL) {
 
 		lista->primeiro = NULL;  // ponteiro para o inicio da lista
@@ -20,27 +37,35 @@ LISTA_DONOS* criarListaDonos()
 	return lista;
 }
 
+/**
+* @brief Funcao responsavel por alocar memoria para um node que contem todos os dados de um respetiv dono
+* @return retorna um ponteiro para um NODE_DONOS, com todos os valores da estrutura nulos
+*/
+NODE_DONOS* criarNodeDonos()
+{
 
-NODE_DONOS* criarNodeDonos(){
-
-	//AlocaÁao de memoria para elemento da lista de Donos
+	//Aloca√ßao de memoria para elemento da lista de Donos
 	NODE_DONOS* node = (NODE_DONOS*)malloc(sizeof(NODE_DONOS));
 	
-	//ValidaÁao da alocÁao do elemento
+	//Valida√ßao da aloc√ßao do elemento
 	if(!node){
 		return NULL;
 	}
 
-	//AlocaÁao de memoria para o conteudo dentro do elemento
+	//Aloca√ßao de memoria para o conteudo dentro do elemento
 	node->info = (Donos*)malloc(sizeof(Donos)); //conteudo do elemento Donos
-	node->next = NULL; //ponteiro para o proximo È NULL porque È adicionado no fim da lista
+	node->next = NULL; //ponteiro para o proximo √© NULL porque √© adicionado no fim da lista
 
 	return node;
 }
 
-
-
-int freeNodeDonos(NODE_DONOS* node){
+/**
+* @brief Funcao responsavel por receber um NODE_DONOS e destruir esse mesmo no, libertando toda a memoria e os dados que possui
+* @param node : Recebe um ponteiro NODE_DONOS
+* @return NULL se o node inserido nao existir
+*/
+int freeNodeDonos(NODE_DONOS* node)
+{
 	
 	//Entra se o Elemento nao for =NULL
 	if (node != NULL) {
@@ -51,7 +76,13 @@ int freeNodeDonos(NODE_DONOS* node){
 	return 1;
 }
 
-void carregarDadosDonos(LISTA_DONOS* lista) {
+/**
+* @brief Funcao responsavel por ler o ficheiro "donos.txt", e inserir cada dono presente no ficheiro na estrutura da lista de donos
+* @param lista : Recebe um ponteiro de uma LISTA_DONOS
+* @return VOID
+*/
+void carregarDadosDonos(LISTA_DONOS* lista) 
+{
 
 	setlocale(LC_ALL, "en_US.UTF-8");
 
@@ -71,7 +102,7 @@ void carregarDadosDonos(LISTA_DONOS* lista) {
 	char str_aux[200]; // buffer para armazenar a linha lida
 
 	while (fgets(str_aux, sizeof(str_aux), ficheiro)) {
-		if (str_aux[0] == '\n') { // Verifica se a linha est· vazia
+		if (str_aux[0] == '\n') { // Verifica se a linha est√° vazia
 			continue;
 		}
 
@@ -95,7 +126,14 @@ void carregarDadosDonos(LISTA_DONOS* lista) {
 	fclose(ficheiro);
 }
 
-void adicionarListaDonos(LISTA_DONOS* lista, NODE_DONOS* node) {
+/**
+* @brief Funcao responsavel por receber um NODE_DONOS e adiciona-lo a uma lista de donos
+* @param lista : Recebe um ponteiro para a LISTA_DONOS para onde o dono vai ser "armazenado"
+* @param node : Recebe o NODE_DONOS que vai ser inserido no parametro de entrada lista
+* @return VOID
+*/
+void adicionarListaDonos(LISTA_DONOS* lista, NODE_DONOS* node) 
+{
 
 	//Verifica se exista a lista e o node
 	if (lista == NULL || node == NULL) return;
@@ -117,7 +155,13 @@ void adicionarListaDonos(LISTA_DONOS* lista, NODE_DONOS* node) {
 	}
 }
 
-void registarDonos(LISTA_DONOS* lista) {
+/**
+* @brief Funcao responsavel por adicionar um novo dono, a uma lista de donos, pelo utilizador
+* @param lista : Recebe um ponteiro para a LISTA_DONOS para onde o dono vai ser "armazenado"
+* @return VOID
+*/
+void registarDonos(LISTA_DONOS* lista)
+{
 	
 	//Cria um elemento novo
 	NODE_DONOS* novoNode = criarNodeDonos();
@@ -145,6 +189,11 @@ void registarDonos(LISTA_DONOS* lista) {
 	
 }
 
+/**
+* @brief Funcao responsavel por listar todos os donos presentes na Lista de donos
+* @param lista : Recebe um ponteiro de uma LISTA_DONOS
+* @return VOID
+*/
 //vai avancar para o donoCorreto (pagina)
 NODE_DONOS* avancarAteDono(NODE_DONOS* nodeDono, int pos) 
 {
@@ -161,7 +210,7 @@ NODE_DONOS* avancarAteDono(NODE_DONOS* nodeDono, int pos)
 void listarDonos(LISTA_DONOS* lista) 
 {
 	if (!lista) {
-		printf("Lista n„o existe\n");
+		printf("Lista n√£o existe\n");
 		return;
 	}
 
@@ -189,7 +238,7 @@ void listarDonos(LISTA_DONOS* lista)
 				printf("%-16d\t%-20s\t%s\n",atual->info->numCont,atual->info->nome,atual->info->codpost);
 			}
 			else {
-				printf("Erro: info do node atual È NULL\n");
+				printf("Erro: info do node atual √© NULL\n");
 			}
 			atual = atual->next;
 			contador++;
@@ -223,14 +272,19 @@ void listarDonos(LISTA_DONOS* lista)
 	}
 }
 
-
-void freeListaDonos(LISTA_DONOS* lista) {
-	// Verifica se a lista n„o È nula
+/**
+* @brief Funcao responsavel por libertar a memoria alocada de toda a lista de donos e todo o seu conteudo
+* @param lista : Recebe um ponteiro de uma LISTA_DONOS para ser destruida
+* @return VOID
+*/
+void freeListaDonos(LISTA_DONOS* lista) 
+{
+	// Verifica se a lista n√£o √© nula
 	if (!lista) {
 		printf("Nao exite lista\n");
 		return;
 	}
-	// Libera todos os nÛs da lista
+	// Libera todos os n√≥s da lista
 	while (lista->primeiro) {
 		NODE_DONOS* aux = lista->primeiro;
 		lista->primeiro = aux->next;
@@ -240,7 +294,11 @@ void freeListaDonos(LISTA_DONOS* lista) {
 	printf("LISTA DONOS REMOVIDA\n");
 }
 
-//ordenar (alfabeticamente) nome de todos os condutores
+/**
+* @brief Funcao responsavel por ordenar (alfabeticamente) a lista de donos pelo nome de todos os condutores
+* @param lista : Recebe um ponteiro de uma LISTA_DONOS
+* @return VOID
+*/
 void ordenarListaDonosAlfabeticamente(LISTA_DONOS* lista)
 {
 	if (!lista)
@@ -281,6 +339,11 @@ void ordenarListaDonosAlfabeticamente(LISTA_DONOS* lista)
 	printf("LISTA ORDENADA COM SUCESSO\n");
 }
 
+/**
+* @brief Funcao responsavel por ordenar (por ordem crescente) a lista de donos pelo numero de contribuinte de todos os condutores
+* @param lista : Recebe um ponteiro de uma LISTA_DONOS
+* @return VOID
+*/
 void ordenarListaDonosContribuinte(LISTA_DONOS* lista)
 {
 	if (!lista)
@@ -321,9 +384,14 @@ void ordenarListaDonosContribuinte(LISTA_DONOS* lista)
 }
 
 
-//CONSIDERANDO QUE NO EXERCICIO QUEREMOS SABER APENAS O CONDUTOR COM O CARRO QUE CIRCULA A MAIOR VELOCIDADE MEDIA
+/**
+* @brief Funcao responsavel por calcular e apresentar a maior velocidade m√©dia de um condutor (de todas as passagem)
+* @param lista : Recebe um ponteiro de uma LISTA_DONOS
+* @return VOID
+*/
 void maiorVelocidadeMediaDonos(LISTA_DONOS* listaDonos, LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias)
 {
+	//CONSIDERANDO QUE NO EXERCICIO QUEREMOS SABER APENAS O CONDUTOR COM O CARRO QUE CIRCULA A MAIOR VELOCIDADE MEDIA
 
 	float maiorVelocidadeMediaCarro = 0.0f;
 	int idDonoCarroMaisRapido;
@@ -351,7 +419,7 @@ void maiorVelocidadeMediaDonos(LISTA_DONOS* listaDonos, LISTA_HASHC* listaHashCa
 				NODE_CARRO* carro = procuraCarroPorID(entrada->codVeiculo, listaHashCarros);
 				if (carro)
 				{
-					if (km > 0 && minutos > 0) // evitar viagens e kilometros negativos
+					if (minutos > 0) // evitar viagens e kilometros negativos
 					{
 						carro->info->totalKMPercorridos += km;
 						carro->info->totalMinutosPercorridos += minutos;
@@ -400,11 +468,11 @@ void velocidadeMediaPorCodigoPostal(LISTA_DONOS* listaDonos, LISTA_HASHC* listaH
 {
 	if (!listaDonos || !listaHashCarros || !listaPassagens || !listaDistancias || !codigoPostal)
 	{
-		printf("ERRO! Par‚metros inv·lidos.\n");
+		printf("ERRO! Par√¢metros inv√°lidos.\n");
 		return;
 	}
 
-	// Vari·veis para acumular totais
+	// Vari√°veis para acumular totais
 	float totalKm = 0.0f;
 	float totalMinutos = 0.0f;
 	int contadorCarros = 0;

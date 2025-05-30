@@ -1,3 +1,10 @@
+/**
+ * @file MENU.c
+ * @brief Implementacao das funcoes respetivas aos menus.
+ */
+
+
+// BIBLIOTECAS
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
@@ -9,7 +16,13 @@
 #include "carros.h"
 #include "donos.h"
 
-int verificarNumero(int max) // para a validação das escolhas dos menus
+
+/**
+* @brief Funcao responsavel por fazer a validação das escolhas dos menus
+* @param max : Recebe um inteiro, que corresponde ao limite maximo das escolhas possiveis
+* @return escolha : retorna a opcao, se for um inteiro dentro dos limites das escolhas possiveis
+*/
+int verificarNumero(int max)
 {
 	char opcao[2];
 	int c, escolha;
@@ -29,7 +42,10 @@ int verificarNumero(int max) // para a validação das escolhas dos menus
 	return escolha;
 }
 
-//RESPONSAVEL POR CRIAR TODOS OS MENUS DO PROGRAMA
+/**
+* @brief Funcao responsavel por criar o menu principal do programa
+* @return escolha : retorna a opcao, se for um inteiro dentro dos limites das escolhas possiveis
+*/
 int menuPrincipal(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, PASSAGEM_LISTA* listaPassagem, LISTA_HASHC* listaHashCarro,LISTA_DONOS *listaDonos)
 {
 	//verificar se todas as listas estao presentes
@@ -61,6 +77,10 @@ int menuPrincipal(LISTA_SENSOR* listaSensor, DISTANCIAS_LISTA* listaDistancias, 
 	return escolha;
 } 
 
+/**
+* @brief Funcao responsavel por criar o menu das distancias
+* @return VOID
+*/
 void menuDistancias(DISTANCIAS_LISTA* listaDistancias)
 {
 	system("cls");
@@ -98,6 +118,10 @@ void menuDistancias(DISTANCIAS_LISTA* listaDistancias)
 	
 }
 
+/**
+* @brief Funcao responsavel por criar o menu das passagens
+* @return VOID
+*/
 void menuPassagens(PASSAGEM_LISTA* listaPassagens, LISTA_HASHC* listaHashCarros, DISTANCIAS_LISTA* listaDistancias)
 {
 	system("cls");
@@ -169,6 +193,10 @@ void menuPassagens(PASSAGEM_LISTA* listaPassagens, LISTA_HASHC* listaHashCarros,
 	}
 }
 
+/**
+* @brief Funcao responsavel por criar o menu dos sensores
+* @return VOID
+*/
 void menuSensores(LISTA_SENSOR* listaSensores)
 {
 	system("cls");
@@ -204,6 +232,10 @@ void menuSensores(LISTA_SENSOR* listaSensores)
 	}
 }
 
+/**
+* @brief Funcao responsavel por criar o menu dos carros
+* @return VOID
+*/
 void menuCarros(LISTA_HASHC* hashCarros, LISTA_DONOS* listaDonos, PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias)
 {
 	system("cls");
@@ -275,6 +307,10 @@ void menuCarros(LISTA_HASHC* hashCarros, LISTA_DONOS* listaDonos, PASSAGEM_LISTA
 	}
 }
 
+/**
+* @brief Funcao responsavel por criar o menu dos donos
+* @return VOID
+*/
 void menuDonos(LISTA_DONOS* listaDonos, LISTA_HASHC* hashCarro, PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias)
 {
 	system("cls");
@@ -343,6 +379,11 @@ void menuDonos(LISTA_DONOS* listaDonos, LISTA_HASHC* hashCarro, PASSAGEM_LISTA* 
 	}
 }
 
+/**
+* 
+* @brief Funcao responsavel por criar o menu das exportacoes 
+* @return VOID
+*/
 void menuGuardarEDFicheiro(LISTA_SENSOR* listaSensor,DISTANCIAS_LISTA* listaDistancias,PASSAGEM_LISTA* listaPassagem,LISTA_HASHC* listaHashCarros,LISTA_DONOS* listaDonos)
 {
 	system("cls");
