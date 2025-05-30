@@ -17,7 +17,8 @@
 #include "DISTANCIAS.H"
 #include "PASSAGEM.H"
 
-
+//******* TESTE
+#define CARROS_POR_PAGINA 20
 /**
 * @brief Funcao responsavel por criar uma lista que ira conter carros
 * @return ponteiro para uma Lista_Carro, que e o resultado da alocacao de memoria da estrutura LISTA_CARRO
@@ -47,19 +48,19 @@ LISTA_CARRO* criarListaCarro()
 */
 NODE_CARRO* criarNodeCarro()
 {
-	// AlocaÁ„o de memÛria para elemento da lista de Carros
+	// Aloca√ß√£o de mem√≥ria para elemento da lista de Carros
 	NODE_CARRO* node = (NODE_CARRO*)malloc(sizeof(NODE_CARRO));
 
-	// ValidaÁ„o da alocaÁ„o do elemento
+	// Valida√ß√£o da aloca√ß√£o do elemento
 	if (!node)
 	{
 		printf("ERRO a alocar o elemento da lista de carros!\n");
 		return NULL;
 	}
 
-	// AlocaÁ„o de memÛria para o conte˙do dentro do elemento
-	node->info = (CARRO*)malloc(sizeof(CARRO)); // Conte˙do do Elemento = Carro
-	node->next = NULL; // ponteiro para o prÛximo È "= NULL", pois È adicionado no fim da lista
+	// Aloca√ß√£o de mem√≥ria para o conte√∫do dentro do elemento
+	node->info = (CARRO*)malloc(sizeof(CARRO)); // Conte√∫do do Elemento = Carro
+	node->next = NULL; // ponteiro para o pr√≥ximo √© "= NULL", pois √© adicionado no fim da lista
 	node->info->totalKMPercorridos = 0.0;
 	node->info->totalMinutosPercorridos = 0;
 	node->info->velocidadeMediaKM = 0;
@@ -74,15 +75,15 @@ NODE_CARRO* criarNodeCarro()
 */
 int freeNodeCarro(NODE_CARRO* node)
 {
-	// ValidaÁ„o da existÍncia do elemento na lista de carros
+	// Valida√ß√£o da exist√™ncia do elemento na lista de carros
 	if (!node)
 	{
 		printf("ERRO! O elemento nao existe.\n");
 		return NULL;
 	}
 
-	free(node->info); // Libertar a memÛria alocada para conte˙do/carro dentro do elemento
-	free(node); // Libertar a memÛria alocada para o elemento
+	free(node->info); // Libertar a mem√≥ria alocada para conte√∫do/carro dentro do elemento
+	free(node); // Libertar a mem√≥ria alocada para o elemento
 	
 }
 
@@ -96,7 +97,7 @@ void carregarDadosCarro(LISTA_HASHC* listaHashCarros)
 	// Reconhecimento de caracteres especiais do ficheiro, por parte do compilador
 	setlocale(LC_ALL, "en_US.UTF-8");
 
-	// ValidaÁ„o da existÍncia da lista de carros
+	// Valida√ß√£o da exist√™ncia da lista de carros
 	if (!listaHashCarros)
 	{
 		printf("ERRO! A lista nao existe.\n");
@@ -106,29 +107,29 @@ void carregarDadosCarro(LISTA_HASHC* listaHashCarros)
 	// Abertura do ficheiro de texto em modo leitura/read ("r")
 	FILE* f = fopen("carros.txt", "r");
 
-	// ValidaÁ„o da correta abertura do ficheiro
+	// Valida√ß√£o da correta abertura do ficheiro
 	if (!f)
 	{
 		printf("ERRO ao abrir o ficheiro em modo leitura.\n");
 		return;
 	}
 
-	char str_aux[50]; // Vari·vel string auxiliar para guardar o conte˙do de cada linha do ficheiro
+	char str_aux[50]; // Vari√°vel string auxiliar para guardar o conte√∫do de cada linha do ficheiro
 
 	// Ciclo para ler linha a linha do ficheiro
 	while (fgets(str_aux, sizeof(str_aux), f))
 	{
-		// VerificaÁ„o dos casos de existir linhas em branco
+		// Verifica√ß√£o dos casos de existir linhas em branco
 		if (strcmp(str_aux, "\n") == 0)
 		{
 			// Linha em Branco encontrada
 		}
-		else // Caso a linha tenha conte˙do:
+		else // Caso a linha tenha conte√∫do:
 		{
 			// Cria o elemento da lista
 			NODE_CARRO* node = criarNodeCarro();
 
-			// Adiciona o conte˙do ‡ vari·vel string auxiliar
+			// Adiciona o conte√∫do √† vari√°vel string auxiliar
 			sscanf(str_aux, "%s\t%s\t%s\t%d\t%d\t%d", 
 				node->info->matricula, node->info->marca, node->info->modelo, 
 				&node->info->ano, &node->info->dono, &node->info->codVeiculo);
@@ -197,24 +198,24 @@ void carregarDadosCarro(LISTA_HASHC* listaHashCarros)
 */
 void addListaCarro(LISTA_CARRO* lista, NODE_CARRO* node)
 {
-	// VerificaÁ„o  da existÍncia da lista de carros e do elemento
+	// Verifica√ß√£o  da exist√™ncia da lista de carros e do elemento
 	if (!lista || !node)
 	{
 		printf("ERRO! A lista de carros e o elemento nao existem.\n");
 		return;
 	}
 
-	// CriaÁ„o de um elemento auxiliar para percorrer a lista
+	// Cria√ß√£o de um elemento auxiliar para percorrer a lista
 	NODE_CARRO* aux = lista->header;
 
-	// Caso a lista n„o tenha nenhum elemento:
+	// Caso a lista n√£o tenha nenhum elemento:
 	if (lista->header == NULL)
 	{
 		lista->header = node;
 		lista->ultimo_node = node;
 		lista->num_elem++;
 	}
-	else // Caso a lista j· tenha elementos criados:
+	else // Caso a lista j√° tenha elementos criados:
 	{
 		lista->ultimo_node->next = node;
 		lista->ultimo_node = node;
@@ -235,10 +236,10 @@ void criarCarroUtilizador(LISTA_HASHC* hashCarro, LISTA_DONOS* listaDonos)
 		printf("ERRO! A lista hash do carro nao existe");
 		return;
 	}
-	// CriaÁ„o de um elemento novo por parte do utilizador
+	// Cria√ß√£o de um elemento novo por parte do utilizador
 	NODE_CARRO* novo_elem = criarNodeCarro();
 
-	// InserÁ„o do conte˙do do novo elemento = dados do veÌculo
+	// Inser√ß√£o do conte√∫do do novo elemento = dados do ve√≠culo
 	printf("\tINSIRA DADOS DO VEICULO:");
 	printf("\n-> Matricula: ");
 	scanf("%s", novo_elem->info->matricula);
@@ -315,6 +316,18 @@ void criarCarroUtilizador(LISTA_HASHC* hashCarro, LISTA_DONOS* listaDonos)
 
 	
 }
+// Avan√ßa para o no correto, por exemplo da display dos 20 primeiros nodes,
+// na proxima pagina avanca ate esses 20 e comeca o display apartir dai , 
+// para nao existir repeticao dos dados
+NODE_CARRO* avancarAte(NODE_CARRO* pertencelista, int pos) {
+	int i = 0;
+	NODE_CARRO* atual = pertencelista;
+	while (atual && i < pos) {
+		atual = atual->next;
+		i++;
+	}
+	return atual;
+}
 
 /**
 * @brief Funcao responsavel por listar todos os carros presentes na Lista de carros
@@ -323,31 +336,61 @@ void criarCarroUtilizador(LISTA_HASHC* hashCarro, LISTA_DONOS* listaDonos)
 */
 void mostrarListaCarro(LISTA_CARRO* lista)
 {
-	// ValidaÁ„o da existÍncia da lista de carros
+	// Valida√ß√£o da exist√™ncia da lista de carros
 	if (!lista)
 	{
 		printf("ERRO! A lista nao existe.\n");
 		return;
 	}
-
-	// CriaÁ„o de um elemento auxiliar para percorrer a lista
-	NODE_CARRO* aux = lista->header;
-
-	// CabeÁalho da lista
-	printf("**************************************************************\n");
-	printf("|                        LISTA CARROS                        |\n");
-	printf("**************************************************************\n");
-	printf("\nMatricula\tMarca\t\tModelo\t\tAno\t\tID_Dono\t\tCodigo_Veiculo\n\n");
+	int total = lista->num_elem; 
+	int paginaAtual = 0; // variavel que guarda o numero da pagina atual
+	int totalPaginas = (total + CARROS_POR_PAGINA - 1) / CARROS_POR_PAGINA; //calculo do max de paginas possiveis (relacionado com o tamanho da lista do carro)
+	char opcao[10];
 	
-	// Ciclo para percorrer a lista atÈ ao fim
-	while (aux)
-	{
-		printf("%s\t%s\t\t%s\t\t%d\t\t%d\t\t%d\n", aux->info->matricula, aux->info->marca, aux->info->modelo, aux->info->ano, aux->info->dono, aux->info->codVeiculo);
-		aux = aux->next;
-	}
+	while (1) {
+        // cabecalho
+        printf("Pagina %d de %d (Total de carros: %d)\n", paginaAtual + 1, totalPaginas, total);
+        printf("----------------------------------------------------------------------------------------\n");
+        printf("Matricula\tMarca\t\tModelo\t\tAno\tDono\t\tCod. Veiculo\n");
+        printf("----------------------------------------------------------------------------------------\n");
 
-	// Fim da Lista
-	printf("**************************************************************\n");
+        // mostrar 20 carros por pagina
+        NODE_CARRO* atual = avancarAte(lista->header, paginaAtual * CARROS_POR_PAGINA);
+        int contador = 0;
+		 //apresentar os primeiros 20 carros da lista
+        while (atual && contador < CARROS_POR_PAGINA) {
+            CARRO* c = atual->info;
+            printf("%-10s\t%-10s\t%-10s\t%d\t%d\t\t%d\n", c->matricula, c->marca, c->modelo, c->ano, c->dono, c->codVeiculo);
+
+            atual = atual->next;
+            contador++;
+        }
+
+        // opcoes 
+        printf("--------------------------------------------------------------------------\n");
+        printf("[N] Proxima pagina | [P] Pagina anterior | [S] Sair desta marca\nEscolha: ");
+        fgets(opcao, sizeof(opcao), stdin);
+        opcao[0] = toupper(opcao[0]); // para ter a certeza que se o user meter minuscula passa o input para Maiusucla
+
+        if (opcao[0] == 'N') {
+            if (paginaAtual < totalPaginas - 1)
+                paginaAtual++;
+            else {
+                printf("Ja esta na ultima pagina. ENTER para continuar...\n");
+                getchar();
+            }
+        } else if (opcao[0] == 'P') {
+            if (paginaAtual > 0)
+                paginaAtual--;
+            else {
+                printf("Ja esta na primeira pagina.ENTER para continuar...\n");
+                getchar();
+            }
+        } else if (opcao[0] == 'S') {
+			system("cls");
+            break;
+        }
+    }
 }
 
 /**
@@ -402,28 +445,28 @@ void freeListaHashCarro(LISTA_HASHC* listaHashCarro)
 int verificarDONOexiste(int idDono, LISTA_DONOS* listaDonos)
 {
 	if (!listaDonos) {
-		printf("Lista DONOS n„o existe\n");
+		printf("Lista DONOS n√£o existe\n");
 		return;
 	}
 
 	NODE_DONOS* atual = listaDonos->primeiro;
 
 	while (atual) {
-		// Verifica se o nÛ atual n„o È nulo
+		// Verifica se o n√≥ atual n√£o √© nulo
 		if (atual->info != NULL) {
 
 			//compara o ID
 			if (idDono == atual->info->numCont)
 			{
-				//printf("O DONO … VALIDO!\n");
+				//printf("O DONO √â VALIDO!\n");
 				return 1;
 			}
 		}
-		// Se o nÛ atual for nulo, imprime uma mensagem de erro
+		// Se o n√≥ atual for nulo, imprime uma mensagem de erro
 		else {
-			printf("Erro: info do nÛ atual È NULL\n");
+			printf("Erro: info do n√≥ atual √© NULL\n");
 		}
-		// AvanÁa para o prÛximo nÛ
+		// Avan√ßa para o pr√≥ximo n√≥
 		atual = atual->next;
 
 	}
@@ -465,12 +508,11 @@ int verificarMatriculaExiste(char* matricula, LISTA_CARRO* listaCarro)
 
 
 //***************** HASHING ************************
-
-
 /**
 * @brief Funcao responsavel por criar uma Lista hash que vai armazenar os nodes hash organizados por marcas.
 * @return retorna um ponteiro LISTA_HASH vazia
 */
+
 LISTA_HASHC* criarListaHashCarro()
 {
 	//alocar memoria para a lista hash
@@ -582,8 +624,8 @@ void ordenarMarcasHashCarrosAlfabeticamente(LISTA_HASHC* listaHash)
 	//bouble sort
 	NODE_HASHC* atual;
 	NODE_HASHC* proximo;
-	LISTA_CARRO* temp; // para trocar as listas dentro dos nÛs
-	char* temp_chave[MAX_CHAR_STR]; // para trocar as listas dentro dos nÛs
+	LISTA_CARRO* temp; // para trocar as listas dentro dos n√≥s
+	char* temp_chave[MAX_CHAR_STR]; // para trocar as listas dentro dos n√≥s
 	int troca;
 
 	printf("A ORDENAR HASH!\n");
@@ -857,7 +899,7 @@ void maiorVelocidadeMediaMarca(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* lis
 		printf("**************************************************************\n");
 	}
 	else
-		printf("Nenhuma marca com dados v·lidos.\n");
+		printf("Nenhuma marca com dados v√°lidos.\n");
 }
 
 
@@ -868,14 +910,14 @@ void maiorVelocidadeMediaMarca(LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* lis
 */
 void marcaMaisComum(LISTA_HASHC* listaHashCarros)
 {
-	// VerificaÁ„o da existÍncia da Hash
+	// Verifica√ß√£o da exist√™ncia da Hash
 	if (!listaHashCarros)
 	{
 		printf("ERRO! A lista HASH nao existe.\n");
 		return;
 	}
 
-	// Vari·veis para guardar o numero de elementos e o nome da marca mais comum
+	// Vari√°veis para guardar o numero de elementos e o nome da marca mais comum
 	int elem_marca_maior = 0;
 	char marca_maior[MAX_CHAR_STR + 1];
 	// Ponteiro para percorrer a Hash de Carros
@@ -884,7 +926,7 @@ void marcaMaisComum(LISTA_HASHC* listaHashCarros)
 	// Ciclo para percorrer a Hash de Carros
 	while (node_atual)
 	{
-		// DeterminaÁ„o da Marca Mais Comum
+		// Determina√ß√£o da Marca Mais Comum
 		if (node_atual->listaCarros->num_elem > elem_marca_maior)
 		{
 			elem_marca_maior = node_atual->listaCarros->num_elem;

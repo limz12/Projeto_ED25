@@ -14,6 +14,8 @@ typedef struct listaHashCarros LISTA_HASHC;
 // CONSTANTES
 #define MAX_NOME_SIZE 60
 #define MAX_CODPOST_SIZE 10
+#define DONOS_POR_PAGINA 20 // max de donos por pagina
+
 
  /**
  * @struct Donos
@@ -42,9 +44,9 @@ typedef struct nodeDonos
 */
 typedef struct ListaDonos
 {
-    NODE_DONOS* primeiro; // Ponteiro para o primeiro nó
-    NODE_DONOS* ultimo; // Ponteiro para o último nó
-	int elem;   // Número de elementos na lista
+    NODE_DONOS* primeiro; // Ponteiro para o primeiro nÃ³
+    NODE_DONOS* ultimo; // Ponteiro para o Ãºltimo nÃ³
+	int elem;   // NÃºmero de elementos na lista
 } LISTA_DONOS;
 
 // PROTOTIPAGEM
@@ -57,5 +59,7 @@ void registarDonos(LISTA_DONOS* lista);
 void listarDonos(LISTA_DONOS* lista);
 void freeListaDonos(LISTA_DONOS* lista);
 void ordenarListaDonosAlfabeticamente(LISTA_DONOS* lista);
-void ordenarListaDonosContribuinte(LISTA_DONOS* lista);
+void ordenarListaDonosContribuinte(LISTA_DONOS* lista); // ex 5
 void maiorVelocidadeMediaDonos(LISTA_DONOS* listaDnos, LISTA_HASHC* listaHashCarros, PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias);
+void velocidadeMediaPorCodigoPostal(LISTA_DONOS* listaDonos, LISTA_HASHC* listaHashCarros,PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias,const char* codigoPostal);
+NODE_DONOS* avancarAteDono(NODE_DONOS* nodeDono, int pos);

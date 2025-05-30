@@ -23,10 +23,10 @@
 */
 LISTA_DONOS* criarListaDonos()
 {
-	//Alçocaçao de memoria da lista de Donos
+	//AlÃ§ocaÃ§ao de memoria da lista de Donos
 	LISTA_DONOS* lista = (LISTA_DONOS*)malloc(sizeof(LISTA_DONOS));
 	
-	//Validaçao da alocaçao da lista
+	//ValidaÃ§ao da alocaÃ§ao da lista
 	if (lista != NULL) {
 
 		lista->primeiro = NULL;  // ponteiro para o inicio da lista
@@ -44,17 +44,17 @@ LISTA_DONOS* criarListaDonos()
 NODE_DONOS* criarNodeDonos()
 {
 
-	//Alocaçao de memoria para elemento da lista de Donos
+	//AlocaÃ§ao de memoria para elemento da lista de Donos
 	NODE_DONOS* node = (NODE_DONOS*)malloc(sizeof(NODE_DONOS));
 	
-	//Validaçao da alocçao do elemento
+	//ValidaÃ§ao da alocÃ§ao do elemento
 	if(!node){
 		return NULL;
 	}
 
-	//Alocaçao de memoria para o conteudo dentro do elemento
+	//AlocaÃ§ao de memoria para o conteudo dentro do elemento
 	node->info = (Donos*)malloc(sizeof(Donos)); //conteudo do elemento Donos
-	node->next = NULL; //ponteiro para o proximo é NULL porque é adicionado no fim da lista
+	node->next = NULL; //ponteiro para o proximo Ã© NULL porque Ã© adicionado no fim da lista
 
 	return node;
 }
@@ -102,7 +102,7 @@ void carregarDadosDonos(LISTA_DONOS* lista)
 	char str_aux[200]; // buffer para armazenar a linha lida
 
 	while (fgets(str_aux, sizeof(str_aux), ficheiro)) {
-		if (str_aux[0] == '\n') { // Verifica se a linha está vazia
+		if (str_aux[0] == '\n') { // Verifica se a linha estÃ¡ vazia
 			continue;
 		}
 
@@ -194,38 +194,82 @@ void registarDonos(LISTA_DONOS* lista)
 * @param lista : Recebe um ponteiro de uma LISTA_DONOS
 * @return VOID
 */
+//vai avancar para o donoCorreto (pagina)
+NODE_DONOS* avancarAteDono(NODE_DONOS* nodeDono, int pos) 
+{
+	int i = 0;
+	NODE_DONOS* atual = nodeDono;
+	while (atual && i < pos) {
+		atual = atual->next;
+		i++;
+	}
+	return atual;
+}
+
+// LISTAR DONOS
 void listarDonos(LISTA_DONOS* lista) 
 {
 	if (!lista) {
-		printf("Lista não existe\n");
+		printf("Lista nÃ£o existe\n");
 		return;
 	}
 
-	NODE_DONOS* atual = lista->primeiro;
+	int total = lista->elem; //armazenar o total de donos 
+	int paginaAtual = 0; 
+	int totalPaginas = (total + DONOS_POR_PAGINA - 1) / DONOS_POR_PAGINA; // calculo do total de paginas
+	char opcao[10];
 
-	printf("*********************************************\n");
-	printf("|               Lista de Donos              |\n");
-	printf("*********************************************\n");
-	printf("Contribuinte\t\tNome\t\tCodigo Postal\n");
-		
-	while (atual) {
-		// Verifica se o nó atual não é nulo
-		if (atual->info != NULL) {			
-			
-			// Imprime os dados do dono
-			printf("%d\t\t%s\t\t%s\n", atual->info->numCont, atual->info->nome, atual->info->codpost);
-			
+	while (1) {
+		system("cls");
+
+		printf("*********************************************\n");
+		printf("|               Lista de Donos              |\n");
+		printf("*********************************************\n");
+		printf("Pagina %d de %d (Total: %d donos)\n", paginaAtual + 1, totalPaginas, total);
+		printf("-------------------------------------------------------------\n");
+		printf("Contribuinte\t\tNome\t\t\tCodigo Postal\n");
+		printf("-------------------------------------------------------------\n");
+
+		NODE_DONOS* atual = avancarAteDono(lista->primeiro, paginaAtual * DONOS_POR_PAGINA);
+		int contador = 0;
+
+		while (atual && contador < DONOS_POR_PAGINA) {
+			if (atual->info) {
+				printf("%-16d\t%-20s\t%s\n",atual->info->numCont,atual->info->nome,atual->info->codpost);
+			}
+			else {
+				printf("Erro: info do node atual Ã© NULL\n");
+			}
+			atual = atual->next;
+			contador++;
 		}
-		// Se o nó atual for nulo, imprime uma mensagem de erro
-		else {
-			printf("Erro: info do nó atual é NULL\n");
+
+		printf("-------------------------------------------------------------\n");
+		printf("[N] Proxima pagina | [P] Pagina anterior | [S] Sair\nEscolha: ");
+		fgets(opcao, sizeof(opcao), stdin);
+		opcao[0] = toupper(opcao[0]);
+
+		if (opcao[0] == 'N') {
+			if (paginaAtual < totalPaginas - 1)
+				paginaAtual++;
+			else {
+				printf("Ja esta na ultima pagina.ENTER...\n");
+				getchar();
+			}
 		}
-		// Avança para o próximo nó
-		atual = atual->next;
-		
+		else if (opcao[0] == 'P') {
+			if (paginaAtual > 0)
+				paginaAtual--;
+			else {
+				printf("Ja esta na primeira pagina.ENTER...\n");
+				getchar();
+			}
+		}
+		else if (opcao[0] == 'S') {
+			system("cls");
+			break;
+		}
 	}
-
-	printf("*********************************************\n");
 }
 
 /**
@@ -235,12 +279,12 @@ void listarDonos(LISTA_DONOS* lista)
 */
 void freeListaDonos(LISTA_DONOS* lista) 
 {
-	// Verifica se a lista não é nula
+	// Verifica se a lista nÃ£o Ã© nula
 	if (!lista) {
 		printf("Nao exite lista\n");
 		return;
 	}
-	// Libera todos os nós da lista
+	// Libera todos os nÃ³s da lista
 	while (lista->primeiro) {
 		NODE_DONOS* aux = lista->primeiro;
 		lista->primeiro = aux->next;
@@ -341,7 +385,7 @@ void ordenarListaDonosContribuinte(LISTA_DONOS* lista)
 
 
 /**
-* @brief Funcao responsavel por calcular e apresentar a maior velocidade média de um condutor (de todas as passagem)
+* @brief Funcao responsavel por calcular e apresentar a maior velocidade mÃ©dia de um condutor (de todas as passagem)
 * @param lista : Recebe um ponteiro de uma LISTA_DONOS
 * @return VOID
 */
@@ -415,3 +459,106 @@ void maiorVelocidadeMediaDonos(LISTA_DONOS* listaDonos, LISTA_HASHC* listaHashCa
 	}
 
 }
+
+
+
+void velocidadeMediaPorCodigoPostal(LISTA_DONOS* listaDonos, LISTA_HASHC* listaHashCarros,
+	PASSAGEM_LISTA* listaPassagens, DISTANCIAS_LISTA* listaDistancias,
+	const char* codigoPostal)
+{
+	if (!listaDonos || !listaHashCarros || !listaPassagens || !listaDistancias || !codigoPostal)
+	{
+		printf("ERRO! ParÃ¢metros invÃ¡lidos.\n");
+		return;
+	}
+
+	// VariÃ¡veis para acumular totais
+	float totalKm = 0.0f;
+	float totalMinutos = 0.0f;
+	int contadorCarros = 0;
+	int donosEncontrados = 0;
+
+	// Percorrer todos os donos
+	NODE_DONOS* nodeDono = listaDonos->primeiro;
+	while (nodeDono)
+	{
+		if (strcmp(nodeDono->info->codpost, codigoPostal) == 0)
+		{
+			donosEncontrados++;
+
+			// Encontrar todos os carros desse dono
+			NODE_HASHC* nodeHash = listaHashCarros->header;
+			while (nodeHash)
+			{
+				NODE_CARRO* nodeCarro = nodeHash->listaCarros->header;
+				while (nodeCarro)
+				{
+					if (nodeCarro->info->dono == nodeDono->info->numCont)
+					{
+						contadorCarros++;
+
+						
+						nodeCarro->info->totalKMPercorridos = 0.0f;
+						nodeCarro->info->totalMinutosPercorridos = 0;
+
+						// Processar passagens deste carro
+						PASSAGEM_NODE* nodePassagem = listaPassagens->header;
+						while (nodePassagem && nodePassagem->next)
+						{
+							if (nodePassagem->info->codVeiculo == nodeCarro->info->codVeiculo &&
+								nodePassagem->info->tipoRegisto == 0 &&
+								nodePassagem->next->info->tipoRegisto == 1)
+							{
+								float km = distanciaEntreSensor(nodePassagem->info->idSensor,
+									nodePassagem->next->info->idSensor,
+									listaDistancias);
+								long tempoMs = calculoDistancia(nodePassagem->info->data,
+									nodePassagem->next->info->data);
+								float minutos = tempoMs / 60000.0f;
+
+								if (km > 0 && minutos > 0)
+								{
+									nodeCarro->info->totalKMPercorridos += km;
+									nodeCarro->info->totalMinutosPercorridos += minutos;
+								}
+							}
+							nodePassagem = nodePassagem->next;
+						}
+
+						// Acumular totais
+						if (nodeCarro->info->totalMinutosPercorridos > 0)
+						{
+							totalKm += nodeCarro->info->totalKMPercorridos;
+							totalMinutos += nodeCarro->info->totalMinutosPercorridos;
+						}
+					}
+					nodeCarro = nodeCarro->next;
+				}
+				nodeHash = nodeHash->next;
+			}
+		}
+		nodeDono = nodeDono->next;
+	}
+
+	
+	printf("\n****************************************************\n");
+	if (donosEncontrados == 0)
+	{
+		printf("NENHUM DONO ENCONTRADO COM CODIGO POSTAL %s\n", codigoPostal);
+	}
+	else if (contadorCarros > 0 && totalMinutos > 0)
+	{
+		float velocidadeMediaGeral = totalKm / (totalMinutos / 60.0f);
+		printf("RESULTADO PARA CODIGO POSTAL %s\n", codigoPostal);
+		printf("Donos: %d | Carros: %d\n", donosEncontrados, contadorCarros);
+		printf("VELOCIDADE MEDIA: %.2f km/h\n", velocidadeMediaGeral);
+	}
+	else
+	{
+		printf("Donos encontrados: %d\n", donosEncontrados);
+		printf("Nenhum dado de viagem valido encontrado.\n");
+	}
+	printf("****************************************************\n");
+}
+
+

@@ -330,14 +330,15 @@ void menuDonos(LISTA_DONOS* listaDonos, LISTA_HASHC* hashCarro, PASSAGEM_LISTA* 
 		printf("|  (2) Registar Dono                                         |\n");
 		printf("|  (3) Ordenar Lista Alfabeticamente                         |\n");
 		printf("|  (4) Ordenar Donos por Numero de Contribuinte              |\n");
-		printf("|  (5) Dono com a maior velocidade media		     |\n");
+		printf("|  (5) Maior Velocidade Media Donos                          |\n");
+		printf("|  (6) Velocidade Media por Codigo Postal                    |\n");
 		printf("|------------------------------------------------------------|\n");
 		printf("|  (0) Menu Principal                                        |\n");
 		printf("#------------------------------------------------------------#\n");
-	
+
 		printf("Seleciona uma opcao: \n");
-		escolha = verificarNumero(5);
-	} while (escolha < 0 || escolha > 5);
+		escolha = verificarNumero(6);
+	} while (escolha < 0 || escolha > 6);
 
 	//chamar as funcoes aqui
 	switch (escolha)
@@ -365,6 +366,14 @@ void menuDonos(LISTA_DONOS* listaDonos, LISTA_HASHC* hashCarro, PASSAGEM_LISTA* 
 	case 5:
 		system("cls");
 		maiorVelocidadeMediaDonos(listaDonos, hashCarro, listaPassagens, listaDistancias);
+		printf("\n");
+		break;
+	case 6:
+		system("cls");
+		char codPostal[MAX_CODPOST_SIZE];
+		printf("Insira o codigo postal: ");
+		scanf("%s", codPostal);
+		velocidadeMediaPorCodigoPostal(listaDonos, hashCarro, listaPassagens, listaDistancias, codPostal);
 		printf("\n");
 		break;
 	}
